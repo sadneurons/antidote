@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="generator" content="quarto-0.9.80">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="author" content="Ross Dunne">
+  <title>antidote - AnTIDOTe RCT statistical analysis plan</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+
+  <script src="site_libs/quarto-nav/quarto-nav.js"></script>
+  <script src="site_libs/quarto-nav/headroom.min.js"></script>
+  <script src="site_libs/clipboard/clipboard.min.js"></script>
+  <meta name="quarto:offset" content="./">
+  <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+  <script src="site_libs/quarto-search/fuse.min.js"></script>
+  <script src="site_libs/quarto-search/quarto-search.js"></script>
+  <script src="site_libs/quarto-html/quarto.js"></script>
+  <script src="site_libs/quarto-html/popper.min.js"></script>
+  <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+  <script src="site_libs/quarto-html/anchor.min.js"></script>
+  <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+  <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
+  <script src="site_libs/bootstrap/bootstrap.min.js"></script>
+  <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+  <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+  <script id="quarto-search-options" type="application/json">{
+    "location": "navbar",
+    "copy-button": false,
+    "collapse-after": 2,
+    "panel-placement": "end",
+    "type": "overlay",
+    "limit": 20,
+    "language": {
+      "search-no-results-text": "No results",
+      "search-matching-documents-text": "matching documents",
+      "search-copy-link-title": "Copy link to search",
+      "search-hide-matches-text": "Hide additional matches",
+      "search-more-match-text": "more match in this document",
+      "search-more-matches-text": "more matches in this document",
+      "search-clear-button-title": "Clear",
+      "search-detached-cancel-button-title": "Cancel",
+      "search-submit-button-title": "Submit"
+    }
+  }</script>
+  <script src="site_libs/font-awesome-5.13.0/js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">antidote</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html">Home</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./sap.html" aria-current="page">Statistical analysis plan</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html">About</a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+<h2 id="toc-title">On this page</h2>
+<ul>
+<li><a href="#part-i-sample-size-calculations-for-a-randomised-controlled-trial-in-delirium" class="nav-link active" data-scroll-target="#part-i-sample-size-calculations-for-a-randomised-controlled-trial-in-delirium">Part I: Sample size calculations for a randomised controlled trial in delirium</a></li>
+</ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+<header id="title-block-header" class="quarto-title-block default">
+
+
+
+<div class="quarto-title"><h1 class="title display-7">AnTIDOTe RCT statistical analysis plan</h1><p class="subtitle lead">Draft v0.1</p></div><div class="quarto-title-meta"><div><div class="quarto-title-meta-heading">Author</div><div class="quarto-title-meta-contents"><div class="quarto-title-authors"><p>Ross Dunne</p></div></div></div></div></header>
+
+<section id="part-i-sample-size-calculations-for-a-randomised-controlled-trial-in-delirium" class="level1 page-columns page-full">
+<h1>Part I: Sample size calculations for a randomised controlled trial in delirium</h1>
+<section id="project-title-anakinra-for-the-treatment-of-inflammation-and-delirium-after-orthopaedic-trauma-and-repair-antidote-randomised-controlled-trial." class="level2">
+<h2 class="anchored" data-anchor-id="project-title-anakinra-for-the-treatment-of-inflammation-and-delirium-after-orthopaedic-trauma-and-repair-antidote-randomised-controlled-trial.">Project Title: ANakinra for the Treatment of Inflammation and Delirium after Orthopaedic Trauma and rEpair (ANTIDOTE) – Randomised Controlled Trial.</h2>
+</section>
+<section id="picot" class="level2">
+<h2 class="anchored" data-anchor-id="picot">PICOT</h2>
+<p><strong>(P)</strong> – Patients presenting to Emergency Departments in South Manchester with radiologically confirmed hip fracture who are aged 65 and over and have none of the following exclusion criteria: 1) Lack of a study partner or caregiver 2) Active infection 3) History of hypersensitivity to or unacceptable side effects of Anakinra 4) Current substance misuse 5) Active malignancy 6) Acute stroke or TIA 7) Currently participating in clinical trial of an investigational medicinal product (CTIMP) 8) Women of child-bearing potential 9) Neutropenia of any cause.</p>
+<p><strong>(I)</strong> – Anakinra given subcutaneously at time 0 [presentation to ED] then bd for 48 hours during the perioperative period.</p>
+<p><strong>(C)</strong> – Normal saline given subcutaneously at time 0 [presentation to ED] then bd for 48 hours during the perioperative period.</p>
+<p><strong>(O)</strong> – 1°) Severity of delirium postoperatively as measured by the XXXXXXXX 2) (2°) Time to first weight bearing postoperatively 3) (3°) Time until medically fit for discharge postoperatively 4) (3°) Safety of Anakinra during the perioperative period and in wound healing 5) (3°) Tolerability of Anakinra versus placebo in terms of common side effects 6) (3°) Effect of Anakinra on 30-day mortality</p>
+<p><strong>(T)</strong> – Recruitment period: 24 months; Treatment/assessment period: to 48hrs postop, measured from surgical wound closure.</p>
+</section>
+<section id="background" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="background">Background</h2>
+<p>Delirium is a syndrome of disturbed alertness, orientation and arousal, complicated by neuropsychiatric abnormalities like paranoia and hallucinations. A single episode of delirium may permanently damage cognition(1) and increases the risk of dementia 3-fold over the following 3 years(2). Delirium is more common in older people and occurs in 20% of hospital inpatients and 40% of postoperative surgical patients, including those undergoing hip repair(3). Up to 90% of those who fracture their hip have underlying abnormalities in biomarkers for Alzheimer’s disease (rising to 98% in those with known mild cognitive problems)(4).</p>
+<p>In the UK, 65,000 people fracture their hip every year(3). On average, 7% of these people will die within a month of their fracture. Postoperative delirium doubles the risk of death in the 12 months after fracture(5), especially if superimposed on pre-existing dementia(6). So, hip fracture is a major public health concern, both hastening dementia onset and causing premature death in those living with dementia. There is currently no treatment that prevents or shortens the duration of delirium, and no promising candidate. Delirium is often treated by addressing the underlying contributors (e.g.&nbsp;infection, pain, sedating medicines) and using sensitive nursing practice and clear communication. This can improve outcomes. However, after hip surgery, delirium impairs the early mobilisation and engagement with physiotherapy vital for good postoperative outcomes in dementia, like mobility and discharge to your own home.</p>
+<section id="review-of-existing-evidence" class="level3">
+<h3 class="anchored" data-anchor-id="review-of-existing-evidence">Review of existing evidence</h3>
+<p><strong>Pre-clinical:</strong> IL-1 is a pro-inflammatory cytokine pivotal to the earliest stages of inflammatory response(7). It induces IL-6 and IL-8 gene expression and promotes lymphocyte differentiation and cellular immune response. The most prevalent preclinical model of delirium uses injection of bacterial lipopolysaccharide (LPS) to switch on the inflammatory cascade. IL-1 in isolation can mimic the cognitive effects of LPS in this model(8). Blockade of IL-1 action using recombinant receptor antagonists prevents the pro-inflammatory effects of LPS in these animal models of delirium(8). Thus, blockade of this early, amplifying step in the pro-inflammatory cytokine cascade may prevent cognitive deterioration.</p>
+<p><strong>Clinical:</strong> In humans, IL-1 is a key driver of neuroinflammation after hip fracture, with raised CSF and serum levels(9).</p>
+<p>Anakinra is a specific IL-1 receptor antagonist (IL-1RA) already in use for patients with autoimmune disease including arthritis and those with critical lung disease due to COVID. It is an analogue of the naturally produced human IL1 receptor antagonist.</p>
+<p><strong>Aim</strong> The aim of the research is to examine whether Anakinra can reduce the incidence of delirium post hip repair in older people. Anakinra is an interleukin-1 (IL-1) receptor antagonist licensed for the treatment of rheumatoid arthritis. It is given subcutaneously twice daily, ideal for inpatients with delirium who may not be able to take oral medications. We will conduct a double-blind randomised controlled trial of Anakinra in older people after hip fracture.</p>
+<p><strong>Objectives</strong> The objectives, in priority order, are to compare subcutaneous Anakinra to placebo given twice daily during the perioperative period in terms of: 1. (1°) Severity of delirium postoperatively as measured by the XXXXXXXX 2. (2°) Time to first weight bearing postoperatively 3. (3°) Time until medically fit for discharge postoperatively 4. (3°) Safety of Anakinra during the perioperative period and in wound healing 5. (3°) Tolerability of Anakinra versus placebo in terms of common side effects 6. (3°) Effect of Anakinra on 30-day mortality</p>
+<p><strong>Inclusion criteria:</strong> 1. Fracture of the hip radiologically confirmed 2. Age &gt; 64 3. Capacity to give informed consent or has relative or caregiver able to give informed consent</p>
+<p><strong>Exclusion criteria:</strong> 1. Lack of a study partner or caregiver 2. Active infection 3. History of hypersensitivity to or unacceptable side effects of Anakinra 4. Current substance misuse 5. Active malignancy 6. Acute stroke or TIA 7. Currently participating in clinical trial of an investigational medicinal product (CTIMP) 8. Women of child-bearing potential 9. Neutropenia of any cause.</p>
+<p><strong>Oversight:</strong> The conduct of the study will be overseen by a Study Steering Committee. All events (Adverse events (AEs) serious adverse events (SAEs)) will be scrutinised by an Independent Data Monitoring Committee (IDMC).</p>
+<p><strong>Setting and recruitment:</strong> Wythenshawe Hospital in Manchester. Participants will be recruited from those presenting to local emergency departments with hip fracture. Where participants lack decision-making capacity to give informed consent, the consent of a caregiver or relative will be sought.</p>
+</section>
+<section id="choice-of-outcome-measure" class="level3">
+<h3 class="anchored" data-anchor-id="choice-of-outcome-measure">Choice of outcome measure</h3>
+<p><strong>Table</strong></p>
+</section>
+<section id="minimum-clinically-significant-difference" class="level3">
+<h3 class="anchored" data-anchor-id="minimum-clinically-significant-difference">Minimum clinically significant difference</h3>
+<p>The minmum clinically significant difference in any of the candidate delirium scales is not well established in the literature. It is clear that preventing cases of delirium will have significant positive economic outcomes for the NHS. Therefore, it would be possible to reason backwards from utilities to a minimum number of prevented cases. However, it is not clear that a reduction in the severity of delirium is associated with a shorter duration of delirium (intuitively appealing as that may be). It is also not clear that a reduction in the severity of delirium is associated with a shorter hospital stay per se, because no treatment has been found which effectively reduces severity. Therefore, we have chosen measures which seek to measure the primary outcome - delirium severity, and measure as secondary outcomes important clinical endpoints such as time-to-stand and time to medical fitness-for-discharge, because there are many confounding postoperative factors apart from delirium which might influence their outcome, signfiicantly lowering the signal-noise ratio.</p>
+</section>
+<section id="frequentist-simulation" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="frequentist-simulation">Frequentist simulation</h3>
+<p><strong>Assumption:</strong>: Delirium rating scales are ordinal measures, not interval measures (a person scoring 4 is not half as delirious as someone scoring 8)</p>
+<p><strong>Solution</strong>: Ordinal logistic regression does not assume interval scales, nor normal distributions of the scores. It does make a proportional-odds assumption testable using the parallel test. The coefficients can be interpreted as the log-odds of a one point increase in the scale score, <span class="math inline">\(y\)</span>, with a one point (or one unit) increase in the predictor variable <span class="math inline">\(x\)</span>.</p>
+<p><strong>Assumption</strong>: While delirium is by its nature a fluctuating condition, we assume there will be correlation within participants in delirium scale scores over time.</p>
+<p><strong>Solution</strong>: Mixed effects models will allow for an autoregressive correlation structure and regularisation of the model. Frequentist ordinal logistic mixed models are facilitated by R packages ‘ordinal’ and ‘rms’ and Bayesian mixed effects ordinal regression models are facilitated by packages ‘brms’ (with cumulative log-odds link function) and ‘rmsb’. These have been used in simulation below.</p>
+<p><strong>Assumption</strong>: There may be significant anaesthetic methods (spinal/GA) in those presenting to the ED with hip fractures. The descriptive statistics for Wythenshawe hospital can be found below.</p>
+<p><strong>Solution</strong> Because the nature of the anaesthetic (spinal versus general) may relate to the nature of the participants’ comorbidities and the presence or absence of preoperative delirium, we will use a minimisation strategy to ensure equal numbers of spinal and general anaesthetic procedures in each trial arm. The numbers of participants having GA will vary month-month.</p>
+<div class="cell column-screen-inset-shaded quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img src="sap_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img src="sap_files/figure-html/unnamed-chunk-2-2.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img src="sap_files/figure-html/unnamed-chunk-2-3.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<a onclick="fetch('data:application/octet-stream;base64,WAoAAAACAAQCAQACAwAAAAMTAAAADQAAABAAAACGAAQACQAAAAhBcHIgMjAxMQAEAAkAAAAITWF5IDIwMTEABAAJAAAACEp1biAyMDExAAQACQAAAAhKdWwgMjAxMQAEAAkAAAAIQXVnIDIwMTEABAAJAAAACFNlcCAyMDExAAQACQAAAAhPY3QgMjAxMQAEAAkAAAAITm92IDIwMTEABAAJAAAACERlYyAyMDExAAQACQAAAAhKYW4gMjAxMgAEAAkAAAAIRmViIDIwMTIABAAJAAAACE1hciAyMDEyAAQACQAAAAhBcHIgMjAxMgAEAAkAAAAITWF5IDIwMTIABAAJAAAACEp1biAyMDEyAAQACQAAAAhKdWwgMjAxMgAEAAkAAAAIQXVnIDIwMTIABAAJAAAACFNlcCAyMDEyAAQACQAAAAhPY3QgMjAxMgAEAAkAAAAITm92IDIwMTIABAAJAAAACERlYyAyMDEyAAQACQAAAAhKYW4gMjAxMwAEAAkAAAAIRmViIDIwMTMABAAJAAAACE1hciAyMDEzAAQACQAAAAhBcHIgMjAxMwAEAAkAAAAITWF5IDIwMTMABAAJAAAACEp1biAyMDEzAAQACQAAAAhKdWwgMjAxMwAEAAkAAAAIQXVnIDIwMTMABAAJAAAACFNlcCAyMDEzAAQACQAAAAhPY3QgMjAxMwAEAAkAAAAITm92IDIwMTMABAAJAAAACERlYyAyMDEzAAQACQAAAAhKYW4gMjAxNAAEAAkAAAAIRmViIDIwMTQABAAJAAAACE1hciAyMDE0AAQACQAAAAhBcHIgMjAxNAAEAAkAAAAITWF5IDIwMTQABAAJAAAACEp1biAyMDE0AAQACQAAAAhKdWwgMjAxNAAEAAkAAAAIQXVnIDIwMTQABAAJAAAACFNlcCAyMDE0AAQACQAAAAhPY3QgMjAxNAAEAAkAAAAITm92IDIwMTQABAAJAAAACERlYyAyMDE0AAQACQAAAAhKYW4gMjAxNQAEAAkAAAAIRmViIDIwMTUABAAJAAAACE1hciAyMDE1AAQACQAAAAhBcHIgMjAxNQAEAAkAAAAITWF5IDIwMTUABAAJAAAACEp1biAyMDE1AAQACQAAAAhKdWwgMjAxNQAEAAkAAAAIQXVnIDIwMTUABAAJAAAACFNlcCAyMDE1AAQACQAAAAhPY3QgMjAxNQAEAAkAAAAITm92IDIwMTUABAAJAAAACERlYyAyMDE1AAQACQAAAAhKYW4gMjAxNgAEAAkAAAAIRmViIDIwMTYABAAJAAAACE1hciAyMDE2AAQACQAAAAhBcHIgMjAxNgAEAAkAAAAITWF5IDIwMTYABAAJAAAACEp1biAyMDE2AAQACQAAAAhKdWwgMjAxNgAEAAkAAAAIQXVnIDIwMTYABAAJAAAACFNlcCAyMDE2AAQACQAAAAhPY3QgMjAxNgAEAAkAAAAITm92IDIwMTYABAAJAAAACERlYyAyMDE2AAQACQAAAAhKYW4gMjAxNwAEAAkAAAAIRmViIDIwMTcABAAJAAAACE1hciAyMDE3AAQACQAAAAhBcHIgMjAxNwAEAAkAAAAITWF5IDIwMTcABAAJAAAACEp1biAyMDE3AAQACQAAAAhKdWwgMjAxNwAEAAkAAAAIQXVnIDIwMTcABAAJAAAACFNlcCAyMDE3AAQACQAAAAhPY3QgMjAxNwAEAAkAAAAITm92IDIwMTcABAAJAAAACERlYyAyMDE3AAQACQAAAAhKYW4gMjAxOAAEAAkAAAAIRmViIDIwMTgABAAJAAAACE1hciAyMDE4AAQACQAAAAhBcHIgMjAxOAAEAAkAAAAITWF5IDIwMTgABAAJAAAACEp1biAyMDE4AAQACQAAAAhKdWwgMjAxOAAEAAkAAAAIQXVnIDIwMTgABAAJAAAACFNlcCAyMDE4AAQACQAAAAhPY3QgMjAxOAAEAAkAAAAITm92IDIwMTgABAAJAAAACERlYyAyMDE4AAQACQAAAAhKYW4gMjAxOQAEAAkAAAAIRmViIDIwMTkABAAJAAAACE1hciAyMDE5AAQACQAAAAhBcHIgMjAxOQAEAAkAAAAITWF5IDIwMTkABAAJAAAACEp1biAyMDE5AAQACQAAAAhKdWwgMjAxOQAEAAkAAAAIQXVnIDIwMTkABAAJAAAACFNlcCAyMDE5AAQACQAAAAhPY3QgMjAxOQAEAAkAAAAITm92IDIwMTkABAAJAAAACERlYyAyMDE5AAQACQAAAAhKYW4gMjAyMAAEAAkAAAAIRmViIDIwMjAABAAJAAAACE1hciAyMDIwAAQACQAAAAhBcHIgMjAyMAAEAAkAAAAITWF5IDIwMjAABAAJAAAACEp1biAyMDIwAAQACQAAAAhKdWwgMjAyMAAEAAkAAAAIQXVnIDIwMjAABAAJAAAACFNlcCAyMDIwAAQACQAAAAhPY3QgMjAyMAAEAAkAAAAITm92IDIwMjAABAAJAAAACERlYyAyMDIwAAQACQAAAAhKYW4gMjAyMQAEAAkAAAAIRmViIDIwMjEABAAJAAAACE1hciAyMDIxAAQACQAAAAhBcHIgMjAyMQAEAAkAAAAITWF5IDIwMjEABAAJAAAACEp1biAyMDIxAAQACQAAAAhKdWwgMjAyMQAEAAkAAAAIQXVnIDIwMjEABAAJAAAACFNlcCAyMDIxAAQACQAAAAhPY3QgMjAyMQAEAAkAAAAITm92IDIwMjEABAAJAAAACERlYyAyMDIxAAQACQAAAAhKYW4gMjAyMgAEAAkAAAAIRmViIDIwMjIABAAJAAAACE1hciAyMDIyAAQACQAAAAhBcHIgMjAyMgAEAAkAAAAITWF5IDIwMjIAAAAOAAAAhkBCAAAAAAAAQEzYUeuFHrhATJHrhR64UkBEAAAAAAAAQDoXCj1wo9dARAAAAAAAAEBElwo9cKPXQELAAAAAAABARAAAAAAAAEBKUKPXCj1xQD9AAAAAAABANW4UeuFHrkBMkeuFHrhSQFBnrhR64UhAT9HrhR64UkBMIAAAAAAAQE4AAAAAAABATSo9cKPXCkBPeuFHrhR7QE0qPXCj1wpAUC1wo9cKPUBR964UeuFIQFLAAAAAAABATo4UeuFHrkBAqj1wo9cKQEkAAAAAAABASQAAAAAAAEBDDMzMzMzNQE9AAAAAAABAVjj1wo9cKUBQquFHrhR7QEg9cKPXCj1AUOR64UeuFEBKqj1wo9cKQFYPXCj1wo9ARHR64UeuFEBJAAAAAAAAQFGAAAAAAABAUKrhR64Ue0BS9wo9cKPXQFKEeuFHrhRAUbUeuFHrhUBPbhR64UeuQFVtcKPXCj1AUccKPXCj10BQWFHrhR64QFaAAAAAAABAVarhR64Ue0BQAAAAAAAAQFQAAAAAAABAVAAAAAAAAEBQQAAAAAAAQFY49cKPXClAUaXCj1wo9kBUPMzMzMzNQFXgAAAAAABATuFHrhR64UBRtR64UeuFQFFOuFHrhR9AUWR64UeuFEBTkKPXCj1xQFTVHrhR64VAVeAAAAAAAEBOb1wo9cKPQEtrhR64UexAUi64UeuFH0BQWFHrhR64QFVtcKPXCj1AUgAAAAAAAEBQ71wo9cKPQFHbhR64UexAU9PXCj1wpEBOb1wo9cKPQFDvXCj1wo9ATm9cKPXCj0BTKuFHrhR7QFSI9cKPXClAU8rhR64Ue0BS9wo9cKPXQFLAAAAAAABATJHrhR64UkBQZ64UeuFIQFLAAAAAAABATSo9cKPXCkBQ9wo9cKPXQEzYUeuFHrhAUQAAAAAAAEBO4UeuFHrhQFU2ZmZmZmZAUT4UeuFHrkBUtwo9cKPXQFJrhR64UexAUlUeuFHrhUBR24UeuFHsQFBOFHrhR65AVSeuFHrhSEBIXCj1wo9cQFTVHrhR64VATCAAAAAAAEBQNwo9cKPXQFLAAAAAAABAU3HrhR64UkBQquFHrhR7QEyR64UeuFJAUiAAAAAAAEBTceuFHrhSQFUAAAAAAABAU6R64UeuFEBGlHrhR64UQEa5mZmZmZpARb1wo9cKPUBLx64UeuFIQFGlwo9cKPZAUKrhR64Ue0BDceuFHrhSQEowo9cKPXFASIeuFHrhSEBE+FHrhR64QEmHrhR64UhARW4UeuFHrkBFDhR64UeuQEcTMzMzMzNATJHrhR64UkBAqj1wo9cKQEeHrhR64UhAQTCj1wo9cUBHQUeuFHrhQEhx64UeuFJASCPXCj1wpEBK1HrhR64UQEqqPXCj1wpASaPXCj1wpEBOnCj1wo9cQE4AAAAAAAAAAAAOAAAAhn/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6JARKAAAAAAAEBFij1wo9cKQEYzMzMzMzNARlR64UeuFEBG49cKPXCkQEhGZmZmZmZASRmZmZmZmkBKFHrhR64UQEsPXCj1wo9ATGj1wo9cKUBNa4UeuFHsQE6vXCj1wo9AT6zMzMzMzUBOoo9cKPXDQE33Cj1wo9dATVCj1wo9cUBMnrhR64UfQEzD1wo9cKRATbhR64UeuEBNyPXCj1wpQE0x64UeuFJATWj1wo9cKUBMZR64UeuFQEzR64UeuFJATBR64UeuFEBMsKPXCj1xQE1cKPXCj1xATiKPXCj1w0BPo9cKPXCkQFASj1wo9cNAT7Cj1wo9cUBPkeuFHrhSQFCI9cKPXClAUKrhR64Ue0BQ8zMzMzMzQFEwAAAAAABAUgXCj1wo9kBSXMzMzMzNQFKSj1wo9cNAUtZmZmZmZkBSrXCj1wo9QFLhR64UeuFAUtcKPXCj10BTQKPXCj1xQFNOFHrhR65AUxzMzMzMzUBTOuFHrhR7QFLFHrhR64VAUmR64UeuFEBSq4UeuFHsQFLFHrhR64VAUveuFHrhSEBS3hR64UeuQFIz1wo9cKRAUkKPXCj1w0BR+j1wo9cKQFH8zMzMzM1AUkKPXCj1w0BSLMzMzMzNQFIz1wo9cKRAUmPXCj1wpEBSGj1wo9cKQFG2ZmZmZmZAUSPXCj1wpEBRco9cKPXDQFIMKPXCj1xAUimZmZmZmkBSXhR64UeuQFIrhR64UexAUc64UeuFH0BRwo9cKPXDQFHWZmZmZmZAUVrhR64Ue0BRdcKPXCj2QFFJmZmZmZpAUWXCj1wo9kBREo9cKPXDQFEuFHrhR65AUQR64UeuFEBRNR64UeuFQFEaPXCj1wpAUXrhR64Ue0BRnCj1wo9cQFFsKPXCj1xAUgCj1wo9cUBRcUeuFHrhQFHyj1wo9cNAUauFHrhR7EBRuuFHrhR7QFF+FHrhR65AUbPXCj1wpEBRUo9cKPXDQFDxR64UeuFAUPUeuFHrhUBRDCj1wo9cQFFXrhR64UhAUUFHrhR64UBRSZmZmZmaQFCq4UeuFHtAUIhR64UeuEBQXhR64UeuQFA9cKPXCj1AT+KPXCj1w0BPD1wo9cKPQE7Cj1wo9cNATSeuFHrhSEBLqj1wo9cKQEpszMzMzM1ASQAAAAAAAEBIzhR64UeuQEjAAAAAAABAST64UeuFH0BIWFHrhR64QEfcKPXCj1xARrmZmZmZmkBG564UeuFIQEbBR64UeuFARrmZmZmZmkBHMKPXCj1xQEcszMzMzM1AR4KPXCj1w0BIbhR64UeuQEjzMzMzMzMAAAAOAAAAhkA2OFHrhR64QCqo9cKPXClAQsAAAAAAAEBJAAAAAAAAQFCq4UeuFHtAKQAAAAAAAEBMkeuFHrhSQCY4UeuFHrgAAAAAAAAAAEAkAAAAAAAAQDQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQDfPXCj1wo8AAAAAAAAAAEA2OFHrhR64QCY4UeuFHrhALJR64UeuFEAxpmZmZmZmQDVuFHrhR65ARrmZmZmZmkBFvXCj1wo9QETVwo9cKPZAO0UeuFHrhUA5AAAAAAAAQFGAAAAAAABAUduFHrhR7EBJAAAAAAAAQDqrhR64UexASQAAAAAAAEAwq4UeuFHsQELAAAAAAABARAAAAAAAAEBF4AAAAAAAQEQAAAAAAABAS8euFHrhSEBKqj1wo9cKQDyR64UeuFJAS8euFHrhSEBNi4UeuFHsQD4AAAAAAABAN4euFHrhSEBGuZmZmZmaQENx64UeuFJATbCj1wo9cUBKeFHrhR64QEReuFHrhR9ANxR64UeuFEBF4AAAAAAAQEVuFHrhR65ARNXCj1wo9kBVJ64UeuFIQEkAAAAAAABATSo9cKPXCkBNaPXCj1wpQFHbhR64UexAR89cKPXCj0BRpcKPXCj2QE6OFHrhR65AQsAAAAAAAEBOjhR64UeuQE4AAAAAAABAQBHrhR64UkBJAAAAAAAAQESXCj1wo9dATCAAAAAAAEBHh64UeuFIQEbqPXCj1wpAS8euFHrhSEBWnrhR64UfQFdVHrhR64VAV+mZmZmZmkBR24UeuFHsQFkAAAAAAABAWQAAAAAAAEBKFcKPXCj2QFbTMzMzMzNAWQAAAAAAAEBVlwo9cKPXQFgq4UeuFHtAWQAAAAAAAEBQquFHrhR7QE0qPXCj1wpATJHrhR64UkBKUKPXCj1xQEqqPXCj1wpARJcKPXCj10BFbhR64UeuQFLAAAAAAABAS4AAAAAAAEBUsKPXCj1xQFOkeuFHrhRATYuFHrhR7EBGAAAAAAAAQEdVwo9cKPZATYuFHrhR7EBHr1wo9cKPQEQAAAAAAABANjhR64UeuEA9K4UeuFHsQFCq4UeuFHtAQdrhR64Ue0AyLhR64UeuQECqPXCj1wpAQvcKPXCj10A3z1wo9cKPQECqPXCj1wpAMi4UeuFHrkBMkeuFHrhSAAAAAAAAAABAVAAAAAAAAEBHVcKPXCj2QDkAAAAAAABASQAAAAAAAEBR24UeuFHsQER0euFHrhRARSeuFHrhSEBTOuFHrhR7QEsVwo9cKPZAUKrhR64Ue0BJAAAAAAAAQEvHrhR64UhAS4AAAAAAAEBQquFHrhR7QEkAAAAAAABAMi4UeuFHrkA5AAAAAAAAQD/R64UeuFJAQdrhR64Ue0A2uuFHrhR7QD9AAAAAAABANAAAAAAAAEBHVcKPXCj2QDMMzMzMzM0AAAAOAAAAhn/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6JAOIeuFHrhSEA2BR64UeuFQDd64UeuFHtAMpR64UeuFEAwq4UeuFHsQCtcKPXCj1xAK6PXCj1wpEAoD1wo9cKPQCoUeuFHrhRAMquFHrhR7EA2szMzMzMzQDgeuFHrhR9AOLhR64UeuEA6cKPXCj1xQD1zMzMzMzNAQco9cKPXCkBChR64UeuFQELAAAAAAABAREuFHrhR7EBEmuFHrhR7QEVBR64UeuFAROFHrhR64UBE3Cj1wo9cQETI9cKPXClARaUeuFHrhUBGg9cKPXCkQEUlHrhR64VARKuFHrhR7EBFgUeuFHrhQEV3Cj1wo9dARFmZmZmZmkBFSj1wo9cKQEVTMzMzMzNARrR64UeuFEBHD1wo9cKPQEbx64UeuFJARZMzMzMzM0BFSPXCj1wpQEWszMzMzM1ARTCj1wo9cUBFij1wo9cKQEZD1wo9cKRAR5MzMzMzM0BIB64UeuFIQElI9cKPXClASJmZmZmZmkBJMzMzMzMzQEoj1wo9cKRAS0ZmZmZmZkBL5R64UeuFQEzvXCj1wo9ATD64UeuFH0BLSj1wo9cKQEr4UeuFHrhAStMzMzMzM0BKZR64UeuFQEk1wo9cKPZASYj1wo9cKUBKlHrhR64UQEy3Cj1wo9dATw4UeuFHrkBPWZmZmZmaQFCQo9cKPXFAUh9cKPXCj0BR9mZmZmZmQFL0euFHrhRAU7zMzMzMzUBUcAAAAAAAQFW0euFHrhRAVoAAAAAAAEBWBR64UeuFQFUpmZmZmZpAVFZmZmZmZkBT8UeuFHrhQFMfXCj1wo9AUjUeuFHrhUBSDhR64UeuQFG0euFHrhRAUNwo9cKPXEBQ4zMzMzMzQFAqPXCj1wpATqzMzMzMzUBNnCj1wo9cQE1FHrhR64VATVmZmZmZmkBNJmZmZmZmQExnrhR64UhAS7cKPXCj10BLAo9cKPXDQEphR64UeuFASWFHrhR64UBGJ64UeuFIQETBR64UeuFAQ9rhR64Ue0BDB64UeuFIQEKdcKPXCj1AQPhR64UeuEBBGZmZmZmaQEAj1wo9cKRAQXrhR64Ue0BCJR64UeuFQEBx64UeuFJAQQuFHrhR7EBCiPXCj1wpQEL3Cj1wo9dAQ0AAAAAAAEBFWuFHrhR7QEaQo9cKPXFASQAAAAAAAEBIvCj1wo9cQEpD1wo9cKRASbhR64UeuEBKVwo9cKPXQEsI9cKPXClASkAAAAAAAEBIpmZmZmZmQEguFHrhR65AR7hR64UeuEBFpmZmZmZmQESZmZmZmZpAQseuFHrhSEBC71wo9cKPQEFvXCj1wo8AAAAOAAAAhkBKAAAAAAAAQDrrhR64UexAQdrhR64Ue0BJAAAAAAAAQFFkeuFHrhRAS4AAAAAAAEBElwo9cKPXQE9AAAAAAABATAAAAAAAAEBHr1wo9cKPQFEwAAAAAABAU6R64UeuFEBFbhR64UeuQEEwo9cKPXFAP9HrhR64UkA/QAAAAAAAQEQAAAAAAABAQsAAAAAAAEBAqj1wo9cKQETVwo9cKPZAQCzMzMzMzUAywAAAAAAAQDkAAAAAAABAQKo9cKPXCkBPQAAAAAAAQEaAAAAAAABARW4UeuFHrkBHz1wo9cKPQELAAAAAAABAJjhR64UeuEA2OFHrhR64QEU1wo9cKPZAOFHrhR64UkBCVcKPXCj2QCeFHrhR64VATYuFHrhR7EBEAAAAAAAAQD4AAAAAAABAOe4UeuFHrkA0sKPXCj1xQDY4UeuFHrhAOQAAAAAAAEBBJR64UeuFQCMKPXCj1wpAPOPXCj1wpEA664UeuFHsQCQAAAAAAABAKqj1wo9cKUA8AAAAAAAAQCbcKPXCj1xAKqj1wo9cKUA0AAAAAAAAQCY4UeuFHrhAPWj1wo9cKUAslHrhR64UQCkAAAAAAABAQaUeuFHrhUA9K4UeuFHsQD7FHrhR64VANb1wo9cKPUAxY9cKPXCkQDCrhR64UexAKQAAAAAAAEBBY9cKPXCkQEAhR64UeuFAO0UeuFHrhUA+xR64UeuFQCVrhR64UexAOAAAAAAAAEA5z1wo9cKPQDfPXCj1wo9AMT1wo9cKPUBDkKPXCj1xQD0HrhR64UhAQWPXCj1wpEA3VHrhR64UQCVrhR64UexANNR64UeuFEArlHrhR64UQDGAAAAAAABAP24UeuFHrkA8HrhR64UfQDkAAAAAAABAQ3HrhR64UkA8keuFHrhSQEUnrhR64UhAQAAAAAAAAEA6eFHrhR64QCg9cKPXCj1AOCPXCj1wpEAxI9cKPXCkQDpR64UeuFJAOquFHrhR7EA5tcKPXCj2QEFj1wo9cKRAJxR64UeuFEBJo9cKPXCkQDCrhR64UexARFCj1wo9cUA9uuFHrhR7QDkAAAAAAABANjhR64UeuEA4PXCj1wo9QEQ9cKPXCj1AO4AAAAAAAEA2OFHrhR64QCAAAAAAAABANW4UeuFHrkBGlHrhR64UQEkAAAAAAABAShXCj1wo9kBAqj1wo9cKQDeHrhR64UhAPgAAAAAAAEBOjhR64UeuQEVuFHrhR65AR5XCj1wo9kBLa4UeuFHsQEZXCj1wo9dASbcKPXCj10BLoUeuFHrhQEXLhR64UexARAAAAAAAAEBP8euFHrhSQEp4UeuFHrhAT0AAAAAAAEBKvrhR64UfQEhx64UeuFJASCPXCj1wpEBEuuFHrhR7QEdVwo9cKPZARIPXCj1wpEBDY9cKPXCkQEQAAAAAAAAAAAAOAAAAhn/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6JAShHrhR64UkBJsKPXCj1xQEneuFHrhR9ASePXCj1wpEBJTMzMzMzNQEgQo9cKPXFAR0PXCj1wpEBGvrhR64UfQEXD1wo9cKRARHR64UeuFEBC9HrhR64UQEGwo9cKPXFAQIzMzMzMzUBBbhR64UeuQEHUeuFHrhRAQlhR64UeuEBC564UeuFIQELVwo9cKPZAQgFHrhR64UBBsKPXCj1xQEHUeuFHrhRAQUzMzMzMzUBCS4UeuFHsQEHhR64UeuFAQtXCj1wo9kBB9HrhR64UQEFzMzMzMzNAQKo9cKPXCkA/JmZmZmZmQD3euFHrhR9APpHrhR64UkA/a4UeuFHsQDzXCj1wo9dAPVwo9cKPXEA8euFHrhR7QDuuFHrhR65AOGuFHrhR7EA3TMzMzMzNQDXAAAAAAABANLrhR64Ue0A0sKPXCj1xQDQPXCj1wo9ANKFHrhR64UAyz1wo9cKPQDLuFHrhR65AM0UeuFHrhUAzYUeuFHrhQDUuFHrhR65ANfhR64UeuEA1JmZmZmZmQDW64UeuFHtANZcKPXCj10A2o9cKPXCkQDgrhR64UexAN9HrhR64UkA5AAAAAAAAQDizMzMzMzNAN4KPXCj1w0A3T1wo9cKPQDbPXCj1wo9ANmj1wo9cKUA32ZmZmZmaQDkR64UeuFJAOvMzMzMzM0A6GZmZmZmaQDhCj1wo9cNAN9HrhR64UkA2czMzMzMzQDbR64UeuFJAN49cKPXCj0A3xR64UeuFQDfhR64UeuFAOeZmZmZmZkA5RR64UeuFQDorhR64UexAOgeuFHrhSEA6Sj1wo9cKQDozMzMzMzNAOmPXCj1wpEA6fXCj1wo9QDt4UeuFHrhAOwUeuFHrhUA6zMzMzMzNQDt64UeuFHtAORHrhR64UkA7rhR64UeuQDmzMzMzMzNAOpR64UeuFEA65mZmZmZmQDwZmZmZmZpAO9cKPXCj10A8h64UeuFIQD3rhR64UexAPe4UeuFHrkA9xR64UeuFQDwZmZmZmZpAPLhR64UeuEA7wo9cKPXDQD3rhR64UexAPmFHrhR64UA+qPXCj1wpQD7FHrhR64VAP5cKPXCj10BA+FHrhR64QEEeuFHrhR9AQoPXCj1wpEBD4o9cKPXDQEVGZmZmZmZARnmZmZmZmkBG+ZmZmZmaQEbAAAAAAABARlR64UeuFEBHg9cKPXCkQEgzMzMzMzNASVcKPXCj10BJRR64UeuFQEmI9cKPXClASZR64UeuFEBJDMzMzMzNQEk3Cj1wo9dASMj1wo9cKUBIAo9cKPXDQEfmZmZmZmYAAAAOAAAAhkAezMzMzMzNAAAAAAAAAABAJAAAAAAAAAAAAAAAAAAAQCkAAAAAAABAMjMzMzMzMwAAAAAAAAAAQCqZmZmZmZpAHGZmZmZmZgAAAAAAAAAAQEIzMzMzMzMAAAAAAAAAAEAmMzMzMzMzQDtMzMzMzM1ATIzMzMzMzQAAAAAAAAAAQDCzMzMzMzNAQKZmZmZmZkAmMzMzMzMzQD4AAAAAAABAMjMzMzMzM0BApmZmZmZmQDkAAAAAAAAAAAAAAAAAAEA6szMzMzMzQCYzMzMzMzNAQKZmZmZmZkAkAAAAAAAAQDYzMzMzMzNASQAAAAAAAEA5AAAAAAAAQDyZmZmZmZpAQKZmZmZmZkBLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAEBApmZmZmZmQECmZmZmZmZALJmZmZmZmkBJAAAAAAAAAAAAAAAAAABAMLMzMzMzM0AwszMzMzMzAAAAAAAAAABAHszMzMzMzUAsmZmZmZmaQECmZmZmZmZAOQAAAAAAAEBFczMzMzMzQDkAAAAAAABAOQAAAAAAAEA5AAAAAAAAAAAAAAAAAABAPgAAAAAAAAAAAAAAAAAAAAAAAAAAAABAQKZmZmZmZkA8mZmZmZmaQELAAAAAAABATgAAAAAAAEA5AAAAAAAAQEkAAAAAAABAOQAAAAAAAAAAAAAAAAAAQDQAAAAAAABAMLMzMzMzM0ApAAAAAAAAAAAAAAAAAABAUKzMzMzMzUBZAAAAAAAAQFQAAAAAAABAVAAAAAAAAEA2MzMzMzMzQFCszMzMzM1AUsAAAAAAAEBMjMzMzMzNQFkAAAAAAABARAAAAAAAAEBZAAAAAAAAQFVszMzMzM1AT8zMzMzMzUBGMzMzMzMzQELAAAAAAAAAAAAAAAAAAEA5AAAAAAAAQEIzMzMzMzNAQsAAAAAAAEBApmZmZmZmQDkAAAAAAAAAAAAAAAAAAEAwszMzMzMzQDQAAAAAAABAUsAAAAAAAEBApmZmZmZmQE9AAAAAAABAQKZmZmZmZkA5AAAAAAAAQDQAAAAAAABARxmZmZmZmkBCMzMzMzMzAAAAAAAAAABAVeAAAAAAAEA5AAAAAAAAQDGZmZmZmZpARsAAAAAAAAAAAAAAAAAAQEkAAAAAAABAMLMzMzMzM0A8mZmZmZmaQDIzMzMzMzNAOQAAAAAAAEA2MzMzMzMzAAAAAAAAAABAS8zMzMzMzUA7TMzMzMzNQECmZmZmZmZAPAAAAAAAAEBBpmZmZmZmQEVzMzMzMzNAQKZmZmZmZkA3zMzMzMzNQDeAAAAAAABARXMzMzMzM0AhZmZmZmZmQDYzMzMzMzNAS4AAAAAAAEAqAAAAAAAAQCIzMzMzMzNANWZmZmZmZkA3gAAAAAAAQDVmZmZmZmZAKQAAAAAAAEBFDMzMzMzNAAAAAAAAAAAAAAAOAAAAhn/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6JAI2ZmZmZmZkAkAAAAAAAAQCfMzMzMzM1ALQAAAAAAAEAuMzMzMzMzQC8AAAAAAABAMLMzMzMzM0AxMzMzMzMzQDLmZmZmZmZANGZmZmZmZkA25mZmZmZmQDVmZmZmZmZANpmZmZmZmkA4MzMzMzMzQDazMzMzMzNANZmZmZmZmkA1gAAAAAAAQDXMzMzMzM1ANWZmZmZmZkA2ZmZmZmZmQDaAAAAAAABAOAAAAAAAAEA6szMzMzMzQDozMzMzMzNAOIAAAAAAAEA5MzMzMzMzQDrmZmZmZmZAOUzMzMzMzUA8ZmZmZmZmQDszMzMzMzNAOgAAAAAAAEA5AAAAAAAAQDfmZmZmZmZANMzMzMzMzUAwTMzMzMzNQDEzMzMzMzNANDMzMzMzM0A0TMzMzMzNQDOAAAAAAABANEzMzMzMzUAyGZmZmZmaQDMZmZmZmZpANMzMzMzMzUA0mZmZmZmaQDRMzMzMzM1AOWZmZmZmZkA7AAAAAAAAQDvmZmZmZmZAPmZmZmZmZkA8zMzMzMzNQD7mZmZmZmZAPuZmZmZmZkA7zMzMzMzNQDuAAAAAAABAOkzMzMzMzUA55mZmZmZmQDnmZmZmZmZAPAAAAAAAAEBBwAAAAAAAQESAAAAAAABARSZmZmZmZkBEgAAAAAAAQEWAAAAAAABAR1mZmZmZmkBJ2ZmZmZmaQEymZmZmZmZATaZmZmZmZkBQjMzMzMzNQFGZmZmZmZpAUXMzMzMzM0BQGZmZmZmaQE4AAAAAAABASQAAAAAAAEBJQAAAAAAAQEezMzMzMzNARhmZmZmZmkBFJmZmZmZmQEPmZmZmZmZAQoAAAAAAAEBApmZmZmZmQD0AAAAAAABAPOZmZmZmZkA7zMzMzMzNQD3mZmZmZmZAQXMzMzMzM0BA2ZmZmZmaQEBMzMzMzM1AQQAAAAAAAEBBJmZmZmZmQEAzMzMzMzNAQ2ZmZmZmZkBDgAAAAAAAQEJmZmZmZmZAQYAAAAAAAEBApmZmZmZmQD+AAAAAAABAPrMzMzMzM0A/gAAAAAAAQD6zMzMzMzNAPEzMzMzMzUA7AAAAAAAAQDvMzMzMzM1AObMzMzMzM0A55mZmZmZmQDxMzMzMzM1AOszMzMzMzUA9AAAAAAAAQD6ZmZmZmZpAP2ZmZmZmZkA+szMzMzMzQD7MzMzMzM1AQAzMzMzMzUA9zMzMzMzNQD2zMzMzMzNAPuZmZmZmZkA9ZmZmZmZmQDszMzMzMzNAOmZmZmZmZkA5mZmZmZmaQDfMzMzMzM1ANkzMzMzMzUA3zMzMzMzNQDZmZmZmZmYAAAAOAAAAhn/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHokBLZmZmZmZmQFFAAAAAAABAUYAAAAAAAEBRZmZmZmZmQFKMzMzMzM1ASAAAAAAAAEBRgAAAAAAAQEuZmZmZmZpATgAAAAAAAEBQ7MzMzMzNQE+zMzMzMzNATozMzMzMzUBUTMzMzMzNQE1mZmZmZmZAVCZmZmZmZkBQ+ZmZmZmaQFVMzMzMzM1AUUzMzMzMzUBO5mZmZmZmQFX5mZmZmZpAUUAAAAAAAEBPczMzMzMzQFaAAAAAAABAVNMzMzMzM0BSkzMzMzMzQFOTMzMzMzNAUKzMzMzMzUBSczMzMzMzQFXGZmZmZmZAU4ZmZmZmZkBQ5mZmZmZmQFHZmZmZmZpAVNMzMzMzM0BXeZmZmZmaQFfMzMzMzM1AVUAAAAAAAEBShmZmZmZmQFUAAAAAAABAVLMzMzMzM0BVxmZmZmZmQFfgAAAAAABAVeAAAAAAAEBVTMzMzMzNQFY5mZmZmZpAVpMzMzMzM0BVQAAAAAAAQFagAAAAAABAVrmZmZmZmkBYMzMzMzMzQFh5mZmZmZpAWEZmZmZmZkBYWZmZmZmaQFUmZmZmZmZAVtmZmZmZmkBXmZmZmZmaQFhGZmZmZmZAVTMzMzMzM0BXQAAAAAAAQFXAAAAAAABAV0ZmZmZmZkBWjMzMzMzNQFaTMzMzMzNAVozMzMzMzUBVbMzMzMzNQFhMzMzMzM0AAAAOAAAAhn/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHokBCAAAAAAAAQEImZmZmZmZARHMzMzMzM0BEmZmZmZmaQETmZmZmZmZARYzMzMzMzUBFjMzMzMzNQEYMzMzMzM1ARsAAAAAAAEBGgAAAAAAAQEfzMzMzMzNAR6ZmZmZmZkBIDMzMzMzNQEfMzMzMzM1AR6ZmZmZmZkBH8zMzMzMzQEiAAAAAAABASVmZmZmZmkBIszMzMzMzQEjAAAAAAABAScAAAAAAAEBJszMzMzMzQEsZmZmZmZpASpmZmZmZmkBLQAAAAAAAQEtAAAAAAABAS8zMzMzMzUBKmZmZmZmaQEwmZmZmZmZATEzMzMzMzUBLJmZmZmZmQEvAAAAAAABAS8AAAAAAAEBMZmZmZmZmQExMzMzMzM1ATEzMzMzMzUBMwAAAAAAAQEzZmZmZmZpATSZmZmZmZkBNGZmZmZmaQE3ZmZmZmZpATaZmZmZmZkBOTMzMzMzNQE5zMzMzMzNATqZmZmZmZkBOMzMzMzMzQE5zMzMzMzNATtmZmZmZmkBO2ZmZmZmaQFBMzMzMzM1AUAAAAAAAAEBQmZmZmZmaQE+ZmZmZmZpAT9mZmZmZmkBQOZmZmZmaQFAzMzMzMzNAUCZmZmZmZkBQJmZmZmZmQE/zMzMzMzNAUBMzMzMzM0BQMzMzMzMzQFBTMzMzMzNAUAzMzMzMzUBQOZmZmZmaQFCZmZmZmZoAAAMOAAAAhkDNbIAAAAAAQM17gAAAAABAzYsAAAAAAEDNmgAAAAAAQM2pgAAAAABAzbkAAAAAAEDNyAAAAAAAQM3XgAAAAABAzeaAAAAAAEDN9gAAAAAAQM4FgAAAAABAzhQAAAAAAEDOI4AAAAAAQM4ygAAAAABAzkIAAAAAAEDOUQAAAAAAQM5ggAAAAABAznAAAAAAAEDOfwAAAAAAQM6OgAAAAABAzp2AAAAAAEDOrQAAAAAAQM68gAAAAABAzsqAAAAAAEDO2gAAAAAAQM7pAAAAAABAzviAAAAAAEDPB4AAAAAAQM8XAAAAAABAzyaAAAAAAEDPNYAAAAAAQM9FAAAAAABAz1QAAAAAAEDPY4AAAAAAQM9zAAAAAABAz4EAAAAAAEDPkIAAAAAAQM+fgAAAAABAz68AAAAAAEDPvgAAAAAAQM/NgAAAAABAz90AAAAAAEDP7AAAAAAAQM/7gAAAAABA0AVAAAAAAEDQDQAAAAAAQNAUwAAAAABA0BvAAAAAAEDQI4AAAAAAQNArAAAAAABA0DLAAAAAAEDQOkAAAAAAQNBCAAAAAABA0EnAAAAAAEDQUUAAAAAAQNBZAAAAAABA0GCAAAAAAEDQaEAAAAAAQNBwAAAAAABA0HdAAAAAAEDQfwAAAAAAQNCGgAAAAABA0I5AAAAAAEDQlcAAAAAAQNCdgAAAAABA0KVAAAAAAEDQrMAAAAAAQNC0gAAAAABA0LwAAAAAAEDQw8AAAAAAQNDLgAAAAABA0NKAAAAAAEDQ2kAAAAAAQNDhwAAAAABA0OmAAAAAAEDQ8QAAAAAAQND4wAAAAABA0QCAAAAAAEDRCAAAAAAAQNEPwAAAAABA0RdAAAAAAEDRHwAAAAAAQNEmwAAAAABA0S3AAAAAAEDRNYAAAAAAQNE9AAAAAABA0UTAAAAAAEDRTEAAAAAAQNFUAAAAAABA0VvAAAAAAEDRY0AAAAAAQNFrAAAAAABA0XKAAAAAAEDRekAAAAAAQNGCAAAAAABA0YkAAAAAAEDRkMAAAAAAQNGYQAAAAABA0aAAAAAAAEDRp4AAAAAAQNGvQAAAAABA0bcAAAAAAEDRvoAAAAAAQNHGQAAAAABA0c3AAAAAAEDR1YAAAAAAQNHdQAAAAABA0eSAAAAAAEDR7EAAAAAAQNHzwAAAAABA0fuAAAAAAEDSAwAAAAAAQNIKwAAAAABA0hKAAAAAAEDSGgAAAAAAQNIhwAAAAABA0ilAAAAAAEDSMQAAAAAAQNI4wAAAAABA0j/AAAAAAEDSR4AAAAAAQNJPAAAAAABA0lbAAAAAAEDSXkAAAAAAQNJmAAAAAABA0m3AAAAAAEDSdUAAAAAAQNJ9AAAAAABA0oSAAAAAAEDSjEAAAAAAQNKUAAAAAABA0psAAAAAAEDSosAAAAAAQNKqQAAAAAAAAAQCAAAAAQAEAAkAAAAFY2xhc3MAAAAQAAAAAQAEAAkAAAAERGF0ZQAAAP4AAAAOAAAAhgAAAAAAAAAAQD4AAAAAAABAToAAAAAAAEBWwAAAAAAAQF6AAAAAAABAYyAAAAAAAEBm4AAAAAAAQGrAAAAAAABAboAAAAAAAEBxMAAAAAAAQHMgAAAAAABAdPAAAAAAAEB24AAAAAAAQHjAAAAAAABAerAAAAAAAEB8kAAAAAAAQH6AAAAAAABAgDgAAAAAAECBKAAAAAAAQIIgAAAAAABAgxAAAAAAAECECAAAAAAAQIUAAAAAAABAheAAAAAAAECG2AAAAAAAQIfIAAAAAABAiMAAAAAAAECJsAAAAAAAQIqoAAAAAABAi6AAAAAAAECMkAAAAAAAQI2IAAAAAABAjngAAAAAAECPcAAAAAAAQJA0AAAAAABAkKQAAAAAAECRIAAAAAAAQJGYAAAAAABAkhQAAAAAAECSjAAAAAAAQJMIAAAAAABAk4QAAAAAAECT/AAAAAAAQJR4AAAAAABAlPAAAAAAAECVbAAAAAAAQJXoAAAAAABAllgAAAAAAECW1AAAAAAAQJdMAAAAAABAl8gAAAAAAECYQAAAAAAAQJi8AAAAAABAmTgAAAAAAECZsAAAAAAAQJosAAAAAABAmqQAAAAAAECbIAAAAAAAQJucAAAAAABAnBAAAAAAAECcjAAAAAAAQJ0EAAAAAABAnYAAAAAAAECd+AAAAAAAQJ50AAAAAABAnvAAAAAAAECfaAAAAAAAQJ/kAAAAAABAoC4AAAAAAECgbAAAAAAAQKCqAAAAAABAoOIAAAAAAEChIAAAAAAAQKFcAAAAAABAoZoAAAAAAECh1gAAAAAAQKIUAAAAAABAolIAAAAAAECijgAAAAAAQKLMAAAAAABAowgAAAAAAECjRgAAAAAAQKOEAAAAAABAo7wAAAAAAECj+gAAAAAAQKQ2AAAAAABApHQAAAAAAECksAAAAAAAQKTuAAAAAABApSwAAAAAAEClaAAAAAAAQKWmAAAAAABApeIAAAAAAECmIAAAAAAAQKZeAAAAAABAppYAAAAAAECm1AAAAAAAQKcQAAAAAABAp04AAAAAAECnigAAAAAAQKfIAAAAAABAqAYAAAAAAECoQgAAAAAAQKiAAAAAAABAqLwAAAAAAECo+gAAAAAAQKk4AAAAAABAqXIAAAAAAECpsAAAAAAAQKnsAAAAAABAqioAAAAAAECqZgAAAAAAQKqkAAAAAABAquIAAAAAAECrHgAAAAAAQKtcAAAAAABAq5gAAAAAAECr1gAAAAAAQKwUAAAAAABArEwAAAAAAECsigAAAAAAQKzGAAAAAABArQQAAAAAAECtQAAAAAAAQK1+AAAAAABArbwAAAAAAECt+AAAAAAAQK42AAAAAABArnIAAAAAAECusAAAAAAAQK7uAAAAAABAryYAAAAAAECvZAAAAAAAQK+gAAAAAAAAAAQCAAAAAQAEAAkAAAAFbmFtZXMAAAAQAAAADQAEAAkAAAAWQWRtaXNzaW9uIFllYXIgJiBNb250aAAEAAkAAAAVR2VuZXJhbCBhbmFlc3RoZXRpYyAlAAQACQAAAB5HZW5lcmFsIGFuYWVzdGhldGljICUgKGFubnVhbCkABAAJAAAAHyUgb2YgR2VuZXJhbHMgZ2l2ZW4gbmVydmUgYmxvY2sABAAJAAAAKCUgb2YgR2VuZXJhbHMgZ2l2ZW4gbmVydmUgYmxvY2sgKGFubnVhbCkABAAJAAAAFFNwaW5hbCBhbmFlc3RoZXRpYyAlAAQACQAAAB1TcGluYWwgYW5hZXN0aGV0aWMgJSAoYW5udWFsKQAEAAkAAAAeJSBvZiBTcGluYWxzIGdpdmVuIG5lcnZlIGJsb2NrAAQACQAAACclIG9mIFNwaW5hbHMgZ2l2ZW4gbmVydmUgYmxvY2sgKGFubnVhbCkABAAJAAAAHyUgR2l2ZW4gbmVydmUgYmxvY2sgcHJlIHRoZWF0cmUABAAJAAAAKCUgQUxMIE5IRkQgZ2l2ZW4gbmVydmUgYmxvY2sgcHJlIHRoZWF0cmUABAAJAAAACHN1cmdkYXRlAAQACQAAAARkYXlzAAAEAgAAAAEABAAJAAAACXJvdy5uYW1lcwAAAA0AAAACgAAAAP///3oAAAQCAAAB/wAAABAAAAAEAAQACQAAAAtzcGVjX3RibF9kZgAEAAkAAAAGdGJsX2RmAAQACQAAAAN0YmwABAAJAAAACmRhdGEuZnJhbWUAAAQCAAAAAQAEAAkAAAAEc3BlYwAAAxMAAAADAAACEwAAAAsAAAMTAAAAAAAABAIAAAH/AAAAEAAAAAIABAAJAAAAE2NvbGxlY3Rvcl9jaGFyYWN0ZXIABAAJAAAACWNvbGxlY3RvcgAAAP4AAAMTAAAAAAAABAIAAAH/AAAAEAAAAAIABAAJAAAAEGNvbGxlY3Rvcl9kb3VibGUABAAJAAAACWNvbGxlY3RvcgAAAP4AAAMTAAAAAAAABAIAAAH/AAAAEAAAAAIABAAJAAAAEGNvbGxlY3Rvcl9kb3VibGUABAAJAAAACWNvbGxlY3RvcgAAAP4AAAMTAAAAAAAABAIAAAH/AAAAEAAAAAIABAAJAAAAEGNvbGxlY3Rvcl9kb3VibGUABAAJAAAACWNvbGxlY3RvcgAAAP4AAAMTAAAAAAAABAIAAAH/AAAAEAAAAAIABAAJAAAAEGNvbGxlY3Rvcl9kb3VibGUABAAJAAAACWNvbGxlY3RvcgAAAP4AAAMTAAAAAAAABAIAAAH/AAAAEAAAAAIABAAJAAAAEGNvbGxlY3Rvcl9kb3VibGUABAAJAAAACWNvbGxlY3RvcgAAAP4AAAMTAAAAAAAABAIAAAH/AAAAEAAAAAIABAAJAAAAEGNvbGxlY3Rvcl9kb3VibGUABAAJAAAACWNvbGxlY3RvcgAAAP4AAAMTAAAAAAAABAIAAAH/AAAAEAAAAAIABAAJAAAAEGNvbGxlY3Rvcl9kb3VibGUABAAJAAAACWNvbGxlY3RvcgAAAP4AAAMTAAAAAAAABAIAAAH/AAAAEAAAAAIABAAJAAAAEGNvbGxlY3Rvcl9kb3VibGUABAAJAAAACWNvbGxlY3RvcgAAAP4AAAMTAAAAAAAABAIAAAH/AAAAEAAAAAIABAAJAAAAEGNvbGxlY3Rvcl9kb3VibGUABAAJAAAACWNvbGxlY3RvcgAAAP4AAAMTAAAAAAAABAIAAAH/AAAAEAAAAAIABAAJAAAAEGNvbGxlY3Rvcl9kb3VibGUABAAJAAAACWNvbGxlY3RvcgAAAP4AAAQCAAAC/wAAABAAAAALAAQACQAAABZBZG1pc3Npb24gWWVhciAmIE1vbnRoAAQACQAAABVHZW5lcmFsIGFuYWVzdGhldGljICUABAAJAAAAHkdlbmVyYWwgYW5hZXN0aGV0aWMgJSAoYW5udWFsKQAEAAkAAAAfJSBvZiBHZW5lcmFscyBnaXZlbiBuZXJ2ZSBibG9jawAEAAkAAAAoJSBvZiBHZW5lcmFscyBnaXZlbiBuZXJ2ZSBibG9jayAoYW5udWFsKQAEAAkAAAAUU3BpbmFsIGFuYWVzdGhldGljICUABAAJAAAAHVNwaW5hbCBhbmFlc3RoZXRpYyAlIChhbm51YWwpAAQACQAAAB4lIG9mIFNwaW5hbHMgZ2l2ZW4gbmVydmUgYmxvY2sABAAJAAAAJyUgb2YgU3BpbmFscyBnaXZlbiBuZXJ2ZSBibG9jayAoYW5udWFsKQAEAAkAAAAfJSBHaXZlbiBuZXJ2ZSBibG9jayBwcmUgdGhlYXRyZQAEAAkAAAAoJSBBTEwgTkhGRCBnaXZlbiBuZXJ2ZSBibG9jayBwcmUgdGhlYXRyZQAAAP4AAAMTAAAAAAAABAIAAAH/AAAAEAAAAAIABAAJAAAAD2NvbGxlY3Rvcl9ndWVzcwAEAAkAAAAJY29sbGVjdG9yAAAA/gAAABAAAAABAAQACQAAAAEsAAAEAgAAAv8AAAAQAAAAAwAEAAkAAAAEY29scwAEAAkAAAAHZGVmYXVsdAAEAAkAAAAFZGVsaW0AAAQCAAAB/wAAABAAAAABAAQACQAAAAhjb2xfc3BlYwAAAP4AAAQCAAAAAQAEAAkAAAAIcHJvYmxlbXMAAAAWAAAA/gAAAP4AAAD+').then(res => res.blob()).then(blob => {
+      const downloadURL = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      document.body.appendChild(a);
+      a.href = downloadURL;
+      a.download = 'Wythenshawe_Hip_Surgery_Anaesthesia.rds'; a.click();
+      window.URL.revokeObjectURL(downloadURL);
+      document.body.removeChild(a);
+    });">
+<button class="btn btn-default" has_icon="TRUE"><i class="fa fa-save"></i> Download R data object (.rds)</button>
+</a>
+</div>
+</div>
+<p>This can be modelled using a restricted cubic spline function with <span class="math inline">\(k = 3\)</span> knots, in order to estimate the month to month variation (rather than including the variation over years). However, it is also clear that we would expect the percentage of participants receiving general anaesthetics to decrease over the 24-month duration of the trial if it started now.</p>
+<div class="cell">
+<div class="cell-output-stdout">
+<pre><code>Linear Regression Model
+ 
+ rms::ols(formula = `General anaesthetic %` ~ rcs(days, 3), data = wyhipsurg)
+ 
+                  Model Likelihood    Discrimination    
+                        Ratio Test           Indexes    
+ Obs      134    LR chi2     76.22    R2       0.434    
+ sigma11.6048    d.f.            2    R2 adj   0.425    
+ d.f.     131    Pr(&gt; chi2) 0.0000    g       11.533    
+ 
+ Residuals
+ 
+      Min       1Q   Median       3Q      Max 
+ -28.2919  -7.6429   0.8064   8.3643  27.4490 
+ 
+ 
+           Coef    S.E.   t      Pr(&gt;|t|)
+ Intercept 42.3887 2.7708  15.30 &lt;0.0001 
+ days       0.0219 0.0023   9.50 &lt;0.0001 
+ days'     -0.0286 0.0029 -10.00 &lt;0.0001 
+ </code></pre>
+</div>
+</div>
+<div class="cell column-screen-inset-shaded quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="sap_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="sap_files/figure-html/unnamed-chunk-8-2.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</div>
+<p>We thus have a predicted trial starting percentage of GA cases of 44.3% and a month-month variation (sd of residuals of ols model using restricted cubic spline) of 11.52%.</p>
+<p><strong>Assumption</strong>: There may be significant variation in time to operation in those presenting to the ED with hip fractures. Time-to-operation is a KPI in the National Hip Fracture Database and the descriptive statistics for Wythenshawe hospital can be found below.</p>
+<p><strong>Solution</strong>:</p>
+<div class="cell column-screen-inset-shaded quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img src="sap_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img src="sap_files/figure-html/unnamed-chunk-10-2.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img src="sap_files/figure-html/unnamed-chunk-10-3.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<a onclick="fetch('data:application/octet-stream;base64,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LMzMzMzNQFgMzMzMzM1AWFMzMzMzM0BYEzMzMzMzQFkAAAAAAABAWBMzMzMzM0BZAAAAAAAAQFhGZmZmZmZAV8zMzMzMzUBYRmZmZmZmQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWCZmZmZmZkBZAAAAAAAAQFhTMzMzMzNAWCZmZmZmZkBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFfgAAAAAABAWQAAAAAAAEBZAAAAAAAAQFbszMzMzM1AWQAAAAAAAEBZAAAAAAAAQFgZmZmZmZpAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWEZmZmZmZkBXpmZmZmZmQFkAAAAAAABAWGAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFgAAAAAAABAWQAAAAAAAEBYDMzMzMzNQFkAAAAAAABAWQAAAAAAAEBYhmZmZmZmQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWHmZmZmZmkBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBYZmZmZmZmQFkAAAAAAAAAAAAOAAAAekBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAV8AAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFgAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAAAAAAAOAAAAekBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBXzMzMzMzNQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWDmZmZmZmkBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBYhmZmZmZmQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAAAAAAAOAAAAekBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBYAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWFMzMzMzM0BZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFhTMzMzMzNAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFgAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAAAAAAAOAAAAen/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHokBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFamZmZmZmZAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAAAAAAAOAAAAen/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHokBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFhAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFhTMzMzMzNAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBXrMzMzMzNQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBYDMzMzMzNQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFiAAAAAAABAWHmZmZmZmkBZAAAAAAAAQFkAAAAAAABAWDMzMzMzM0BZAAAAAAAAQFkAAAAAAAAAAAAOAAAAen/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHon/wAAAAAAeif/AAAAAAB6J/8AAAAAAHokBZAAAAAAAAQFfzMzMzMzNAWQAAAAAAAEBVwAAAAAAAQFkAAAAAAABAV8zMzMzMzUBZAAAAAAAAQFg5mZmZmZpAWGzMzMzMzUBYMzMzMzMzQFgTMzMzMzNAWQAAAAAAAEBXUzMzMzMzQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFhTMzMzMzNAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAV8AAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFgAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBXrMzMzMzNQFgAAAAAAABAWQAAAAAAAEBZAAAAAAAAQFkAAAAAAABAWQAAAAAAAEBYDMzMzMzNQFkAAAAA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').then(res => res.blob()).then(blob => {
+      const downloadURL = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      document.body.appendChild(a);
+      a.href = downloadURL;
+      a.download = 'Wythenshawe_Hip_Surgery_Best_Practice.rds'; a.click();
+      window.URL.revokeObjectURL(downloadURL);
+      document.body.removeChild(a);
+    });">
+<button class="btn btn-default" has_icon="TRUE"><i class="fa fa-save"></i> Download R data object (.rds)</button>
+</a>
+</div>
+</div>
+</section>
+<section id="osla-scale" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="osla-scale">OSLA scale</h3>
+<p><img src="Delirium-assessment-tool-OSLA.png" class="img-fluid" data-fig-align="center" alt="OSLA"> The OSLA scale is a 4-item scale with a minimum score of 0 and a maximum score of 15. Items respectively have a range of :</p>
+<table class="table">
+<caption>OSLA Items</caption>
+<thead>
+<tr class="header">
+<th>Item</th>
+<th>Min</th>
+<th>Max</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Eye opening</td>
+<td>0</td>
+<td>5</td>
+</tr>
+<tr class="even">
+<td>Eye contact</td>
+<td>0</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td>Posture</td>
+<td>0</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td>Movement</td>
+<td>0</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<div class="page-columns page-full">
+<div class="sourceCode" id="cb2"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>OSLA <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">severity=</span><span class="st">"None"</span>, <span class="at">return_format =</span> <span class="st">"df"</span>){</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># generate an OSLA score vector depending on severity</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># return as dataframe if return_format = df</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># return as vector if return_format = vector</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># return as integer sum if return_format = sum</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (severity <span class="sc">==</span> <span class="st">"Severe"</span>){</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    probability <span class="ot">&lt;-</span> <span class="fl">0.85</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> <span class="cf">if</span> (severity <span class="sc">==</span> <span class="st">"Moderate"</span>){</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    probability <span class="ot">&lt;-</span> <span class="fl">0.5</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> <span class="cf">if</span> (severity <span class="sc">==</span> <span class="st">"Mild"</span>){</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    probability <span class="ot">&lt;-</span> <span class="fl">0.3</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> <span class="cf">if</span> (severity <span class="sc">==</span> <span class="st">"None"</span>){</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    probability <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  EO <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1</span>, <span class="dv">5</span>, <span class="at">prob=</span>probability) <span class="co"># eye opening</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  EC <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="at">prob=</span>probability) <span class="co"># eye contact</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  P <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="at">prob=</span>probability) <span class="co"># posture</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>  M <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="at">prob=</span>probability) <span class="co"># movement</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(return_format <span class="sc">==</span> <span class="st">"df"</span>){</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>    returned_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">cbind</span>(EO, EC, P, M))</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(returned_df)</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> <span class="cf">if</span>(return_format <span class="sc">==</span> <span class="st">"vector"</span>){</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    returned_vec <span class="ot">&lt;-</span> <span class="fu">c</span>(EO, EC, P, M)</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(returned_vec)</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> <span class="cf">if</span>(return_format <span class="sc">==</span> <span class="st">"sum"</span>){</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>    returned_sum <span class="ot">&lt;-</span> <span class="fu">sum</span>(EO, EC, P, M)</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(returned_sum)</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> {</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">"Unknown value for returned_format"</span>)</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="cn">NULL</span>)</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="co"># make a **population** of mixed severity N= 100,000</span></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a><span class="co"># at baseline from which to sample</span></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>severe_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">10000</span>, <span class="fu">OSLA</span>(<span class="st">"Severe"</span>, <span class="st">"sum"</span>))</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>moderate_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">15000</span>, <span class="fu">OSLA</span>(<span class="st">"Moderate"</span>, <span class="st">"sum"</span>))</span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>mild_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">15000</span>, <span class="fu">OSLA</span>(<span class="st">"Mild"</span>, <span class="st">"sum"</span>))</span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>none_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">60000</span>, <span class="fu">OSLA</span>(<span class="st">"None"</span>, <span class="st">"sum"</span>))</span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>total_pop_1 <span class="ot">&lt;-</span> <span class="fu">c</span>(severe_pop, moderate_pop, mild_pop, none_pop)</span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>total_pop_1 <span class="sc">|&gt;</span><span class="fu">hist</span>(<span class="at">main=</span><span class="st">"Histogram I of OSLA scores (zero inflated)"</span>, <span class="at">xlab=</span><span class="st">"OSLA score"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>severe_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">60000</span>, <span class="fu">OSLA</span>(<span class="st">"Severe"</span>, <span class="st">"sum"</span>))</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>moderate_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">15000</span>, <span class="fu">OSLA</span>(<span class="st">"Moderate"</span>, <span class="st">"sum"</span>))</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>mild_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">15000</span>, <span class="fu">OSLA</span>(<span class="st">"Mild"</span>, <span class="st">"sum"</span>))</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>none_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">10000</span>, <span class="fu">OSLA</span>(<span class="st">"None"</span>, <span class="st">"sum"</span>))</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>total_pop_2 <span class="ot">&lt;-</span> <span class="fu">c</span>(severe_pop, moderate_pop, mild_pop, none_pop)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>total_pop_2<span class="sc">|&gt;</span><span class="fu">hist</span>(<span class="at">main=</span><span class="st">"Histogram II of OSLA scores (severe)"</span>, <span class="at">xlab=</span><span class="st">"OSLA score"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>severe_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">30000</span>, <span class="fu">OSLA</span>(<span class="st">"Severe"</span>, <span class="st">"sum"</span>))</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>moderate_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">25000</span>, <span class="fu">OSLA</span>(<span class="st">"Moderate"</span>, <span class="st">"sum"</span>))</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>mild_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">30000</span>, <span class="fu">OSLA</span>(<span class="st">"Mild"</span>, <span class="st">"sum"</span>))</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>none_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">15000</span>, <span class="fu">OSLA</span>(<span class="st">"None"</span>, <span class="st">"sum"</span>))</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>total_pop_3 <span class="ot">&lt;-</span> <span class="fu">c</span>(severe_pop, moderate_pop, mild_pop, none_pop)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>total_pop_3 <span class="sc">|&gt;</span><span class="fu">hist</span>(<span class="at">main=</span><span class="st">"Histogram III of OSLA scores (mild/severe)"</span>, <span class="at">xlab=</span><span class="st">"OSLA score"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>severe_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">10000</span>, <span class="fu">OSLA</span>(<span class="st">"Severe"</span>, <span class="st">"sum"</span>))</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>moderate_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">60000</span>, <span class="fu">OSLA</span>(<span class="st">"Moderate"</span>, <span class="st">"sum"</span>))</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>mild_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">20000</span>, <span class="fu">OSLA</span>(<span class="st">"Mild"</span>, <span class="st">"sum"</span>))</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>none_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">10000</span>, <span class="fu">OSLA</span>(<span class="st">"None"</span>, <span class="st">"sum"</span>))</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>total_pop_4 <span class="ot">&lt;-</span> <span class="fu">c</span>(severe_pop, moderate_pop, mild_pop, none_pop)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>total_pop_4 <span class="sc">|&gt;</span><span class="fu">hist</span>(<span class="at">main=</span><span class="st">"Histogram IV of OSLA scores (moderate)"</span>, <span class="at">xlab=</span><span class="st">"OSLA score"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell column-screen-inset-shaded quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<p><img src="sap_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<p><img src="sap_files/figure-html/unnamed-chunk-14-2.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<p><img src="sap_files/figure-html/unnamed-chunk-14-3.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<p><img src="sap_files/figure-html/unnamed-chunk-14-4.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</div>
+</div>
+
+
+</section>
+</section>
+</section>
+</main> <!-- /main -->
+<script type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    setTimeout(function() {
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+</body></html>

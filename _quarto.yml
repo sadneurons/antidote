@@ -1,0 +1,22 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "antidote"
+  navbar:
+    background: primary
+    left:
+      - href: index.qmd
+        text: Home
+      - href: sap.qmd
+        text: Statistical analysis plan
+      - about.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+
+editor: visual
+
