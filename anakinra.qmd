@@ -8,7 +8,15 @@ Anakinra is an IL-1 receptor analogue....
 
 ## Why Anakinra in delirium?
 
+![Anakinra](anakinra_covid.jpg){fig-align="center"}
+
 ## Links
+
+1.  British National Formulary: https://bnf.nice.org.uk/drugs/anakinra/ 
+2.  Wikipedia: https://en.wikipedia.org/wiki/Anakinra
+3.  European Medicines Agency: https://www.ema.europa.eu/en/medicines/human/EPAR/kineret
+4.  Manufacturer site: https://www.kineretrx.com/
+5.  
 
 ## References
 
