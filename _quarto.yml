@@ -11,11 +11,13 @@ website:
         text: Home
       - href: sap.qmd
         text: Statistical analysis plan
+      - href: protocol.qmd
+        text: Protocol
       - about.qmd
 
 format:
   html:
-    theme: cosmo
+    theme: lumen
     css: styles.css
 
 editor: source
