@@ -13,8 +13,11 @@ website:
         text: Statistical analysis plan
       - href: protocol.qmd
         text: Protocol
+      - href: team.qmd
+        text: Team
+      - href: anakinra.qmd
+        text: Anakinra
       - about.qmd
-
 format:
   html:
     theme: cyborg
