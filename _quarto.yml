@@ -21,6 +21,8 @@ website:
         text: Team
       - href: anakinra.qmd
         text: Anakinra
+      - href: funding.qmd
+        text: Funding
       - about.qmd
 format:
   html:

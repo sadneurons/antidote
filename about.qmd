@@ -2,8 +2,14 @@
 title: "About"
 ---
 
-About this site
+## About this site
 
-```{r}
-1 + 1
-```
+## What is Quarto?
+
+## What is R?
+
+## What is Python?
+
+## What is Git?
+
+## What is Github?
