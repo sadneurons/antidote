@@ -67,6 +67,41 @@
     "href": "team.html",
     "title": "Team",
     "section": "",
-    "text": "Scientific advisory teamData monitoring and ethicsTrial steering committeeStatistical support\n\n\n\nPlot.rectY(data, \n  Plot.stackY(\n    Plot.binX( \n      {y: \"count\"}, \n      {x: \"body_mass\", fill: \"species\", thresholds: 20})\n    )\n  ).plot({\n    facet: {\n      data,\n      x: \"sex\"\n    },\n    marks: [Plot.frame()]\n  })\n\n\n\n\n\n\n\n\n\nInputs.table(filtered)"
+    "text": "Scientific advisory teamData monitoring and ethicsClinical research teamPrincipal investigatorsChief investigatorTrial steering committeeStatistical support\n\n\n\nPlot.rectY(data, \n  Plot.stackY(\n    Plot.binX( \n      {y: \"count\"}, \n      {x: \"body_mass\", fill: \"species\", thresholds: 20})\n    )\n  ).plot({\n    facet: {\n      data,\n      x: \"sex\"\n    },\n    marks: [Plot.frame()]\n  })\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInputs.table(filtered)"
+  },
+  {
+    "objectID": "sap.html#part-i-sample-size-calculations-for-a-randomised-controlled-trial-in-delirium",
+    "href": "sap.html#part-i-sample-size-calculations-for-a-randomised-controlled-trial-in-delirium",
+    "title": "AnTIDOTe RCT statistical analysis plan",
+    "section": "Part I: Sample size calculations for a randomised controlled trial in delirium",
+    "text": "Part I: Sample size calculations for a randomised controlled trial in delirium"
+  },
+  {
+    "objectID": "protocol.html#roles-and-responsibilities-of-trial-management-commiteesgroups-individuals",
+    "href": "protocol.html#roles-and-responsibilities-of-trial-management-commiteesgroups-individuals",
+    "title": "CTIMP Protocol Development Tool",
+    "section": "ROLES AND RESPONSIBILITIES OF TRIAL MANAGEMENT COMMITEES/GROUPS & INDIVIDUALS",
+    "text": "ROLES AND RESPONSIBILITIES OF TRIAL MANAGEMENT COMMITEES/GROUPS & INDIVIDUALS\n\nTrial Management Committees\n\n\n\nTrial Steering Committee \nData Monitoring (and ethics) Committee \nTrial Management Group     \n\n\n\nProtocol contributors"
+  },
+  {
+    "objectID": "protocol.html#key-words-insert-relevant-key-words-to-describe-the-trial-no-more-than-6-phrases",
+    "href": "protocol.html#key-words-insert-relevant-key-words-to-describe-the-trial-no-more-than-6-phrases",
+    "title": "CTIMP Protocol Development Tool",
+    "section": "KEY WORDS: Insert relevant key words to describe the trial; no more than 6 phrases",
+    "text": "KEY WORDS: Insert relevant key words to describe the trial; no more than 6 phrases\n\nTRIAL FLOW CHART     ## BACKGROUND Aim: To place the trial in the context of available evidence.         \n\n2 RATIONALE               \n2.1 Assessment and management of risk      \n\n\n\n\n\nThis trial is categorised as: (delete as appropriate)    \n3 OBJECTIVES AND OUTCOME MEASURES/ENDPOINTS              \n3.2 Secondary objectives     \n3.3 Outcome measures/endpoints            \n3.4 Primary endpoint/outcome   \n3.5 Secondary endpoints/outcomes  \n3.6 Exploratory endpoints/outcomes \n3.7 Table of endpoints/outcomes"
+  },
+  {
+    "objectID": "protocol_CTIMP.html#roles-and-responsibilities-of-trial-management-commiteesgroups-individuals",
+    "href": "protocol_CTIMP.html#roles-and-responsibilities-of-trial-management-commiteesgroups-individuals",
+    "title": "CTIMP Protocol Development Tool",
+    "section": "ROLES AND RESPONSIBILITIES OF TRIAL MANAGEMENT COMMITEES/GROUPS & INDIVIDUALS",
+    "text": "ROLES AND RESPONSIBILITIES OF TRIAL MANAGEMENT COMMITEES/GROUPS & INDIVIDUALS\n\nTrial Management Committees\n\n\n\nTrial Steering Committee \nData Monitoring (and ethics) Committee \nTrial Management Group     \n\n\n\nProtocol contributors"
+  },
+  {
+    "objectID": "protocol_CTIMP.html#key-words-insert-relevant-key-words-to-describe-the-trial-no-more-than-6-phrases",
+    "href": "protocol_CTIMP.html#key-words-insert-relevant-key-words-to-describe-the-trial-no-more-than-6-phrases",
+    "title": "CTIMP Protocol Development Tool",
+    "section": "KEY WORDS: Insert relevant key words to describe the trial; no more than 6 phrases",
+    "text": "KEY WORDS: Insert relevant key words to describe the trial; no more than 6 phrases\n\nTRIAL FLOW CHART     ## BACKGROUND Aim: To place the trial in the context of available evidence.         \n\n2 RATIONALE               \n2.1 Assessment and management of risk      \n\n\n\n\n\nThis trial is categorised as: (delete as appropriate)    \n3 OBJECTIVES AND OUTCOME MEASURES/ENDPOINTS              \n3.2 Secondary objectives     \n3.3 Outcome measures/endpoints            \n3.4 Primary endpoint/outcome   \n3.5 Secondary endpoints/outcomes  \n3.6 Exploratory endpoints/outcomes \n3.7 Table of endpoints/outcomes"
   }
 ]

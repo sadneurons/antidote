@@ -2,7 +2,7 @@
 title: "Team"
 format:
   html:
-    page-layout: custom
+    page-layout: article
 ---
 
 ::: {.panel-tabset}
@@ -26,6 +26,12 @@ Plot.rectY(data,
 ```
 
 ## Data monitoring and ethics
+
+## Clinical research team
+
+## Principal investigators
+
+## Chief investigator
 
 ```{ojs}
 Inputs.table(filtered)

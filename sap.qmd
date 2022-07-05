@@ -2,18 +2,22 @@
 title: "AnTIDOTe RCT \n statistical analysis plan"
 subtitle: "Draft v0.1"
 author: "Ross Dunne"
-format: html
+format: 
+  html:
+    toc: true
+    toc-depth: 3
+    toc-title: "Contents"
+    toc-location: left
+    page-layout: article
 editor: source
-page-layout: article
-toc: true
-toc-depth: 4
 reference-location: margin
 citation-location: margin
+body-footer: "Copyright (c) 2022"
 ---
 
-# Part I: Sample size calculations for a randomised controlled trial in delirium
+## Part I: Sample size calculations for a randomised controlled trial in delirium {.unnumbered .unlisted}
 
-## Project Title: ANakinra for the Treatment of Inflammation and Delirium after Orthopaedic Trauma and rEpair (ANTIDOTE) -- Randomised Controlled Trial.
+## Project Title: ANakinra for the Treatment of Inflammation and Delirium after Orthopaedic Trauma and rEpair (ANTIDOTE) -- Randomised Controlled Trial. {.unnumbered .unlisted}
 
 ## PICOT
 
