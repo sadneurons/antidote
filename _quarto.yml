@@ -9,10 +9,14 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: sap.qmd
-        text: Statistical analysis plan
       - href: protocol.qmd
         text: Protocol
+      - href: sap.qmd
+        text: Statistical analysis plan
+      - href: dmp.qmd
+        text: Data management plan
+      - href: data.qmd
+        text: Trial data
       - href: team.qmd
         text: Team
       - href: anakinra.qmd
@@ -20,7 +24,7 @@ website:
       - about.qmd
 format:
   html:
-    theme: cyborg
+    theme: pulse
     css: styles.css
 
 editor: source

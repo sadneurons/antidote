@@ -6,7 +6,9 @@ format: html
 editor: source
 page-layout: article
 toc: true
-toc-depth: 1
+toc-depth: 4
+reference-location: margin
+citation-location: margin
 ---
 
 # Part I: Sample size calculations for a randomised controlled trial in delirium
@@ -31,7 +33,7 @@ Delirium is a syndrome of disturbed alertness, orientation and arousal, complica
 
 In the UK, 65,000 people fracture their hip every year(3). On average, 7% of these people will die within a month of their fracture. Postoperative delirium doubles the risk of death in the 12 months after fracture(5), especially if superimposed on pre-existing dementia(6). So, hip fracture is a major public health concern, both hastening dementia onset and causing premature death in those living with dementia. There is currently no treatment that prevents or shortens the duration of delirium, and no promising candidate. Delirium is often treated by addressing the underlying contributors (e.g. infection, pain, sedating medicines) and using sensitive nursing practice and clear communication. This can improve outcomes. However, after hip surgery, delirium impairs the early mobilisation and engagement with physiotherapy vital for good postoperative outcomes in dementia, like mobility and discharge to your own home.
 
-### Review of existing evidence
+## Review of existing evidence
 
 **Pre-clinical:** IL-1 is a pro-inflammatory cytokine pivotal to the earliest stages of inflammatory response(7). It induces IL-6 and IL-8 gene expression and promotes lymphocyte differentiation and cellular immune response. The most prevalent preclinical model of delirium uses injection of bacterial lipopolysaccharide (LPS) to switch on the inflammatory cascade. IL-1 in isolation can mimic the cognitive effects of LPS in this model(8). Blockade of IL-1 action using recombinant receptor antagonists prevents the pro-inflammatory effects of LPS in these animal models of delirium(8). Thus, blockade of this early, amplifying step in the pro-inflammatory cytokine cascade may prevent cognitive deterioration.
 
@@ -51,15 +53,15 @@ Anakinra is a specific IL-1 receptor antagonist (IL-1RA) already in use for pati
 
 **Setting and recruitment:** Wythenshawe Hospital in Manchester. Participants will be recruited from those presenting to local emergency departments with hip fracture. Where participants lack decision-making capacity to give informed consent, the consent of a caregiver or relative will be sought.
 
-### Choice of outcome measure
+## Choice of outcome measure
 
 **Table**
 
-### Minimum clinically significant difference
+## Minimum clinically significant difference
 
 The minmum clinically significant difference in any of the candidate delirium scales is not well established in the literature. It is clear that preventing cases of delirium will have significant positive economic outcomes for the NHS. Therefore, it would be possible to reason backwards from utilities to a minimum number of prevented cases. However, it is not clear that a reduction in the severity of delirium is associated with a shorter duration of delirium (intuitively appealing as that may be). It is also not clear that a reduction in the severity of delirium is associated with a shorter hospital stay per se, because no treatment has been found which effectively reduces severity. Therefore, we have chosen measures which seek to measure the primary outcome - delirium severity, and measure as secondary outcomes important clinical endpoints such as time-to-stand and time to medical fitness-for-discharge, because there are many confounding postoperative factors apart from delirium which might influence their outcome, signfiicantly lowering the signal-noise ratio.
 
-### Frequentist simulation
+## Frequentist simulation
 
 **Assumption:**: Delirium rating scales are ordinal measures, not interval measures (a person scoring 4 is not half as delirious as someone scoring 8)
 

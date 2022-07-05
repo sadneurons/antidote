@@ -1,3 +1,43 @@
 ---
 title: "Team"
+format:
+  html:
+    page-layout: custom
 ---
+
+::: {.panel-tabset}
+
+## Scientific advisory team
+
+```{ojs}
+Plot.rectY(data, 
+  Plot.stackY(
+    Plot.binX( 
+      {y: "count"}, 
+      {x: "body_mass", fill: "species", thresholds: 20})
+    )
+  ).plot({
+    facet: {
+      data,
+      x: "sex"
+    },
+    marks: [Plot.frame()]
+  })
+```
+
+## Data monitoring and ethics
+
+```{ojs}
+Inputs.table(filtered)
+```
+
+
+## Trial steering committee
+
+
+
+## Statistical support
+
+
+
+:::
