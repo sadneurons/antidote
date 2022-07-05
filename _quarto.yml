@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "antidote"
+  title: "AnTIDOTe Trial"
   navbar:
     background: primary
     left:
@@ -17,7 +17,7 @@ website:
 
 format:
   html:
-    theme: lumen
+    theme: cyborg
     css: styles.css
 
 editor: source
