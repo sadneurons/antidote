@@ -1,10 +1,13 @@
 ---
-title: "CTIMP Protocol Development Tool"
-# format:
-#   docx:
-#     toc: true
-#     number-sections: true
-#     highlight-style: github
+title: "Anakinra in the Treatment of Inflammation and Delirium in Orthopaedic Trauma and Repair (AnTIDOTe) Randomised Controlled Trial"
+subtitle: "Protocol version 0.01"
+highlight-style: github
+format:
+  pdf:
+    toc: true
+    number-sections: true
+    number-offset: [1,1]
+    top-level-division: chapter
 ---
 
 ```{r echo=FALSE}
@@ -17,29 +20,27 @@ CLINICAL_TRIALS.GOV_NUMBER <- FALSE
 ISRCTN_NUMBER <- FALSE
 ```
 
-We would also appreciate self-declaration of how you've used this template so we are able to measure its uptake.
+\newpage
 
-On the following page, please indicate the compatibility of this template with any existing templates you already use by stating one of the following on the front of each submitted protocol:
+**This protocol has regard for the HRA guidance and order of content** <!-- We would also appreciate self-declaration of how you've used this template so we are able to measure its uptake. -->
 
--   This protocol has regard for the HRA guidance and order of content; OR
+<!-- On the following page, please indicate the compatibility of this template with any existing templates you already use by stating one of the following on the front of each submitted protocol: -->
 
--   This protocol has regard for the HRA guidance; OR
+<!-- -   This protocol has regard for the HRA guidance and order of content; OR -->
 
--   This protocol does not have regard to the HRA guidance and order of content
+<!-- -   This protocol has regard for the HRA guidance; OR -->
+
+<!-- -   This protocol does not have regard to the HRA guidance and order of content -->
 
 \newpage
 
 ### FULL/LONG TITLE OF THE TRIAL
 
+Anakinra in the Treatment of Inflammation and Delirium Orthopaedic Trauma and Repair, a phase III, Bayesian Adaptive Randomised Controlled Trial in people aged over 65 presenting with fractured neck of femur.
+
 ### SHORT TRIAL TITLE / ACRONYM
 
-DELETE AS APPROPRIATE:
-
--   This protocol has regard for the HRA guidance and order of content; OR
-
--   This protocol has regard for the HRA guidance; OR
-
--   This protocol does not have regard to the HRA guidance and order of content
+AnTIDOTe
 
 \newpage
 
@@ -49,9 +50,13 @@ DELETE AS APPROPRIATE:
 
 ### PROTOCOL VERSION NUMBER AND DATE
 
+v0.1 7th July 2022
+
 ### OTHER RESEARCH REFERENCE NUMBERS
 
 ### SPONSOR / CO-SPONSORS / JOINT-SPONSORS
+
+University of Manchester
 
 \newpage
 
@@ -166,58 +171,109 @@ Name: (please print): Position:\
 
 <!-- Define all unusual or ‘technical’ terms related to the trial.  Add or delete as appropriate to your trial.  Maintain alphabetical order for ease of reference. -->
 
-|                |                                                                                                                        |
-|------------------------|-----------------------------------------------|
-| AE             | Adverse Event                                                                                                          |
-| AR             | Adverse Reaction                                                                                                       |
-| CA             | Competent Authority                                                                                                    |
-| CI             | Chief Investigator                                                                                                     |
-| CRF            | Case Report Form                                                                                                       |
-| CRO            | Contract Research Organisation                                                                                         |
-| CTA            | Clinical Trial Authorisation                                                                                           |
-| CTIMP          | Clinical Trial of Investigational Medicinal Product                                                                    |
-| CTU            | Clinical Trials Unit                                                                                                   |
-| DMC            | Data Monitoring Committee                                                                                              |
-| DSUR           | Development Safety Update Report                                                                                       |
-| EC             | European Commission                                                                                                    |
-| EMEA           | European Medicines Agency                                                                                              |
-| EU             | European Union                                                                                                         |
-| EUCTD          | European Clinical Trials Directive                                                                                     |
-| EudraCT        | European Clinical Trials Database                                                                                      |
-| EudraVIGILANCE | European database for Pharmacovigilance                                                                                |
-| GCP            | Good Clinical Practice                                                                                                 |
-| GMP            | Good Manufacturing Practice                                                                                            |
-| IB             | Investigator Brochure                                                                                                  |
-| ICF            | Informed Consent Form                                                                                                  |
-| ICH            | International Conference on Harmonisation of technical requirements for registration of pharmaceuticals for human use. |
-| IMP            | Investigational Medicinal Product                                                                                      |
-| IMPD           | Investigational Medicinal Product Dossier                                                                              |
-| ISF            | Investigator Site File (This forms part of the TMF)                                                                    |
-| ISRCTN         | International Standard Randomised Controlled Trials Number                                                             |
-| MA             | Marketing Authorisation                                                                                                |
-| MHRA           | Medicines and Healthcare products Regulatory Agency                                                                    |
-| MS             | Member State                                                                                                           |
-| NHS R&D        | National Health Service Research & Development                                                                         |
-| NIMP           | Non-Investigational Medicinal Product                                                                                  |
-| PI             | Principal Investigator                                                                                                 |
-| PIC            | Participant Identification Centre                                                                                      |
-| PIS            | Participant Information Sheet                                                                                          |
-| QA             | Quality Assurance                                                                                                      |
-| QC             | Quality Control                                                                                                        |
-| QP             | Qualified Person                                                                                                       |
-| RCT            | Randomised Control Trial                                                                                               |
-| REC            | Research Ethics Committee                                                                                              |
-| SAE            | Serious Adverse Event                                                                                                  |
-| SAR            | Serious Adverse Reaction                                                                                               |
-| SDV            | Source Data Verification                                                                                               |
-| SOP            | Standard Operating Procedure                                                                                           |
-| SmPC           | Summary of Product Characteristics                                                                                     |
-| SSI            | Site Specific Information                                                                                              |
-| SUSAR          | Suspected Unexpected Serious Adverse Reaction                                                                          |
-| TMF            | Trial Master File                                                                                                      |
-| TMG            | Trial Management Group                                                                                                 |
-| TSC            | Trial Steering Committee                                                                                               |
++-------------------------+------------------------------------------------------------------------------------------------------------------------+
+| AE                      | Adverse Event                                                                                                          |
++-------------------------+------------------------------------------------------------------------------------------------------------------------+
+| AR                      | Adverse Reaction                                                                                                       |
++-------------------------+------------------------------------------------------------------------------------------------------------------------+
+| CA                      | Competent Authority                                                                                                    |
++-------------------------+------------------------------------------------------------------------------------------------------------------------+
+| CI                      | Chief Investigator                                                                                                     |
++-------------------------+------------------------------------------------------------------------------------------------------------------------+
+| CRF                     | Case Report Form                                                                                                       |
++-------------------------+------------------------------------------------------------------------------------------------------------------------+
+| CRO                     | Contract Research Organisation                                                                                         |
++-------------------------+------------------------------------------------------------------------------------------------------------------------+
+| CTA                     | Clinical Trial Authorisation                                                                                           |
++-------------------------+------------------------------------------------------------------------------------------------------------------------+
+| CTIMP                   | Clinical Trial of Investigational Medicinal Product                                                                    |
++-------------------------+------------------------------------------------------------------------------------------------------------------------+
+| CTU                     | Clinical Trials Unit                                                                                                   |
++-------------------------+------------------------------------------------------------------------------------------------------------------------+
+| DMC                     | Data Monitoring Committee                                                                                              |
++-------------------------+------------------------------------------------------------------------------------------------------------------------+
+| DSUR                    | Development Safety Update Report                                                                                       |
++-------------------------+------------------------------------------------------------------------------------------------------------------------+
+| EC                      | European Commission                                                                                                    |
++-------------------------+------------------------------------------------------------------------------------------------------------------------+
+| EMEA                    | European Medicines Agency                                                                                              |
++-------------------------+------------------------------------------------------------------------------------------------------------------------+
+| EU                      | European Union                                                                                                         |
++-------------------------+------------------------------------------------------------------------------------------------------------------------+
+| EUCTD                   | European Clinical Trials Directive                                                                                     |
++-------------------------+------------------------------------------------------------------------------------------------------------------------+
+| EudraCT                 | European Clinical Trials Database                                                                                      |
++-------------------------+------------------------------------------------------------------------------------------------------------------------+
+| EudraVIGILANCE          | European database for Pharmacovigilance                                                                                |
++-------------------------+------------------------------------------------------------------------------------------------------------------------+
+| GCP                     | Good Clinical Practice                                                                                                 |
++-------------------------+------------------------------------------------------------------------------------------------------------------------+
+| GMP                     | Good Manufacturing Practice                                                                                            |
++-------------------------+------------------------------------------------------------------------------------------------------------------------+
+| IB                      | Investigator Brochure                                                                                                  |
++-------------------------+------------------------------------------------------------------------------------------------------------------------+
+| ICF                     | Informed Consent Form                                                                                                  |
++-------------------------+------------------------------------------------------------------------------------------------------------------------+
+| ICH                     | International Conference on Harmonisation of technical requirements for registration of pharmaceuticals for human use. |
++-------------------------+------------------------------------------------------------------------------------------------------------------------+
+| IMP                     | Investigational Medicinal Product                                                                                      |
++-------------------------+------------------------------------------------------------------------------------------------------------------------+
+| IMPD                    | Investigational Medicinal Product Dossier                                                                              |
++-------------------------+------------------------------------------------------------------------------------------------------------------------+
+| ISF                     | Investigator Site File (This forms part of the TMF)                                                                    |
++-------------------------+------------------------------------------------------------------------------------------------------------------------+
+| ISRCTN                  | International Standard Randomised Controlled Trials Number                                                             |
++-------------------------+------------------------------------------------------------------------------------------------------------------------+
+| MA                      | Marketing Authorisation                                                                                                |
++-------------------------+------------------------------------------------------------------------------------------------------------------------+
+| MHRA                    | Medicines and Healthcare products Regulatory Agency                                                                    |
++-------------------------+------------------------------------------------------------------------------------------------------------------------+
+| MS                      | Member State                                                                                                           |
++-------------------------+------------------------------------------------------------------------------------------------------------------------+
+| NHS R&D                 | National Health Service Research & Development                                                                         |
++-------------------------+------------------------------------------------------------------------------------------------------------------------+
+| NIMP                    | Non-Investigational Medicinal Product                                                                                  |
++-------------------------+------------------------------------------------------------------------------------------------------------------------+
+| PI                      | Principal Investigator                                                                                                 |
++-------------------------+------------------------------------------------------------------------------------------------------------------------+
+| PIC                     | Participant Identification Centre                                                                                      |
++-------------------------+------------------------------------------------------------------------------------------------------------------------+
+| PIS                     | Participant Information Sheet                                                                                          |
++-------------------------+------------------------------------------------------------------------------------------------------------------------+
+| QA                      | Quality Assurance                                                                                                      |
++-------------------------+------------------------------------------------------------------------------------------------------------------------+
+| QC                      | Quality Control                                                                                                        |
++-------------------------+------------------------------------------------------------------------------------------------------------------------+
+| QP                      | Qualified Person                                                                                                       |
++-------------------------+------------------------------------------------------------------------------------------------------------------------+
+| RCT                     | Randomised Control Trial                                                                                               |
++-------------------------+------------------------------------------------------------------------------------------------------------------------+
+| REC                     | Research Ethics Committee                                                                                              |
++-------------------------+------------------------------------------------------------------------------------------------------------------------+
+| SAE                     | Serious Adverse Event                                                                                                  |
++-------------------------+------------------------------------------------------------------------------------------------------------------------+
+| SAR                     | Serious Adverse Reaction                                                                                               |
++-------------------------+------------------------------------------------------------------------------------------------------------------------+
+| SDV                     | Source Data Verification                                                                                               |
++-------------------------+------------------------------------------------------------------------------------------------------------------------+
+| SOP                     | Standard Operating Procedure                                                                                           |
++-------------------------+------------------------------------------------------------------------------------------------------------------------+
+| SmPC                    | Summary of Product Characteristics                                                                                     |
++-------------------------+------------------------------------------------------------------------------------------------------------------------+
+| SSI                     | Site Specific Information                                                                                              |
++-------------------------+------------------------------------------------------------------------------------------------------------------------+
+| SUSAR                   | Suspected Unexpected Serious Adverse Reaction                                                                          |
++-------------------------+------------------------------------------------------------------------------------------------------------------------+
+| TMF                     | Trial Master File                                                                                                      |
++-------------------------+------------------------------------------------------------------------------------------------------------------------+
+| TMG                     | Trial Management Group                                                                                                 |
++-------------------------+------------------------------------------------------------------------------------------------------------------------+
+| TSC                     | Trial Steering Committee                                                                                               |
++-------------------------+------------------------------------------------------------------------------------------------------------------------+
+\newpage
+
 ### TRIAL SUMMARY
+
 <!-- It may be useful to include a brief synopsis of the trial for quick reference. Complete information and, if required, add additional rows. -->
 
 | Trial Title                                |                |
@@ -239,139 +295,2027 @@ Name: (please print): Position:\
 
 : Trial Summary
 
-v. ROLE OF TRIAL SPONSOR AND FUNDER
-<!-- Aim: To clarify the potential influence of sponsor and funders over the trial -->
-<!-- The sponsor can be defined as the company, institution, or organisation assuming overall responsibility for the initiation and management of the trial, and is not necessarily the main funder. Identification of the trial sponsor provides transparency and accountability.  -->
-<!-- The protocol should explicitly outline the roles and responsibilities of the sponsor(s) and any funder(s) in trial design, conduct, data analysis and interpretation, manuscript writing, and dissemination of results. It is also important to state the obligation of the sponsor or funder in terms of the final decision regarding any of these aspects of the trial. -->
+###  ROLE OF TRIAL SPONSOR AND FUNDER 
+<!-- Aim: To clarify the potential influence of sponsor and funders over the trial --> <!-- The sponsor can be defined as the company, institution, or organisation assuming overall responsibility for the initiation and management of the trial, and is not necessarily the main funder. Identification of the trial sponsor provides transparency and accountability.  --> <!-- The protocol should explicitly outline the roles and responsibilities of the sponsor(s) and any funder(s) in trial design, conduct, data analysis and interpretation, manuscript writing, and dissemination of results. It is also important to state the obligation of the sponsor or funder in terms of the final decision regarding any of these aspects of the trial. -->
 
 <!-- NB in a CTIMP the sponsor has legal responsibilities that cannot be delegated. -->
+\newpage
 
-## ROLES AND RESPONSIBILITIES OF TRIAL MANAGEMENT COMMITEES/GROUPS &    INDIVIDUALS
+## ROLES AND RESPONSIBILITIES OF TRIAL MANAGEMENT COMMITEES/GROUPS & INDIVIDUALS
+
 ### Trial Management Committees
+
 <!-- Aim: To outline the various committees or groups involved in trial coordination and conduct.  -->
+
 <!-- There are three main trial management groups which may be involved in the set up and management of a clinical trial, depending on the trial size, design, number of sites and documented risk assessment of the trial. For each committee/group the protocol should state their roles and responsibilities and degree of independence from Sponsor and Investigators. If not included in the document the protocol should state where the information on the committee/group can be found. -->
--  Trial Steering Committee
-<!-- The TSC must have a majority independent representation, including the Chair, meet regularly and send reports to the sponsor. Lay members or patient representatives are desirable -->
--  Data Monitoring (and ethics) Committee 
-<!-- 	Independence is a key characteristic of a Data Monitoring Committee where the committee members are completely uninvolved in the running of the trial and who cannot be unfairly influenced (either directly or indirectly) by people, or institutions, involved in the trial. -->
-- Trial Management Group
-<!-- 	The Trial Management Group should meet regularly to ensure all practical details of the trial are progressing well and working well and everyone within the trial understands them. -->
-<!-- For guidance on Trial Steering Committees & Data Monitoring Committees follow this link -->
-<!-- http://www.hra.nhs.uk/documents/2013/10/data-monitoring-committees-in-clinical-trials.pdf -->
-<!-- For guidance on Data Monitoring Committee Charters follow this link -->
-<!-- http://www.ema.europa.eu/docs/en_GB/document_library/Scientific_guideline/2009/09/WC500003635.pdf -->
+
+-   Trial Steering Committee <!-- The TSC must have a majority independent representation, including the Chair, meet regularly and send reports to the sponsor. Lay members or patient representatives are desirable -->
+-   Data Monitoring (and ethics) Committee <!--    Independence is a key characteristic of a Data Monitoring Committee where the committee members are completely uninvolved in the running of the trial and who cannot be unfairly influenced (either directly or indirectly) by people, or institutions, involved in the trial. -->
+-   Trial Management Group <!--    The Trial Management Group should meet regularly to ensure all practical details of the trial are progressing well and working well and everyone within the trial understands them. --> <!-- For guidance on Trial Steering Committees & Data Monitoring Committees follow this link --> <!-- http://www.hra.nhs.uk/documents/2013/10/data-monitoring-committees-in-clinical-trials.pdf --> <!-- For guidance on Data Monitoring Committee Charters follow this link --> <!-- http://www.ema.europa.eu/docs/en_GB/document_library/Scientific_guideline/2009/09/WC500003635.pdf -->
+\newpage
 
 ### Protocol contributors
+
 <!-- Aim: To describe all the contributors to the protocol -->
+
 <!-- The protocol should:  -->
-<!-- •	Describe the input of relevant expertise from individuals for example, statisticians, pharmacists, pathologists and radiation experts. -->
-<!-- •	Describe in what aspects of the protocol design have patients, service users, and/or their carers, or members of the public been involved.  -->
 
-## KEY WORDS:	Insert relevant key words to describe the trial; no more than 6 phrases
+<!-- •  Describe the input of relevant expertise from individuals for example, statisticians, pharmacists, pathologists and radiation experts. -->
 
-ix. TRIAL FLOW CHART
-<!-- Aim: To give readers a schematic overview of the trial -->
+<!-- •  Describe in what aspects of the protocol design have patients, service users, and/or their carers, or members of the public been involved.  -->
+
+### KEY WORDS: Insert relevant key words to describe the trial; no more than 6 phrases
+
+<!-- ix. TRIAL FLOW CHART <!-- Aim: To give readers a schematic overview of the trial -->
+
 <!-- A flow diagram should be included. -->
+
 <!-- Careful consideration must be given by the protocol authors to ensure that the protocol is sensibly structured and ordered to allow users of the document to follow the patient and trial pathway accurately and with ease. Flow diagrams are helpful tools to guide users of the protocol through the patient and trial pathway, for instance a participant pathway detailing intended fit of the screening and recruitment process with usual practice may be helpful for complex intervention trials and a schedule of events in table format is also recommended. The schedule of events can be included where most appropriate in the protocol.   -->
-<!-- Key information to convey includes the timing of all trial activity, starting from initial eligibility screening, each trial visit through to trial close-out and long term follow-up; time periods during which trial interventions will be administered; and the procedures and assessments performed at each visit (with reference to specific data collection forms, if relevant)  -->
-##	BACKGROUND
-Aim: To place the trial in the context of available evidence.
-<!-- The background should be supported by appropriate references to the published literature on the disease or condition, its treatment and the use of the trial drug for the indication and contain:- -->
-<!-- •	an up-to-date systematic review of relevant studies, new research should build on formal review of prior evidence -->
-<!-- •	a brief description of the proposed trial -->
-<!-- •	a description of the population to be studied -->
-<!-- •	the investigational product(s) and their mechanism of action -->
-<!-- •	relevant data from preclinical/non-clinical studies -->
-<!-- •	relevant data from previous clinical trials such as efficacy, safety, tolerability, pharmacokinetics & pharmacodynamics -->
-<!-- •	if no data is available, include a statement that there is no available clinical research data to date on the investigational product -->
+
+<!-- Key information to convey includes the timing of all trial activity, starting from initial eligibility screening, each trial visit through to trial close-out and long term follow-up; time periods during which trial interventions will be administered; and the procedures and assessments performed at each visit (with reference to specific data collection forms, if relevant) -->
+\newpage
+
+### BACKGROUND
+
+<!-- Aim: To place the trial in the context of available evidence.  -->
+
+<!-- The background should be supported by appropriate references to the published literature on the disease or condition, its treatment and the use of the trial drug for the indication and contain: -->
+
+<!-- •  an up-to-date systematic review of relevant studies, new research should build on formal review of prior evidence -->
+
+<!-- •  a brief description of the proposed trial -->
+
+<!-- •  a description of the population to be studied -->
+
+<!-- •  the investigational product(s) and their mechanism of action -->
+
+<!-- •  relevant data from preclinical/non-clinical studies -->
+
+<!-- •  relevant data from previous clinical trials such as efficacy, safety, tolerability, pharmacokinetics & pharmacodynamics -->
+
+<!-- •  if no data is available, include a statement that there is no available clinical research data to date on the investigational product -->
+
 <!-- It should be written so it is easy to read and understand by someone with a basic sense of the topic who may not necessarily be an expert in the area. Some explanation of terms and concepts is likely to be beneficial.  -->
 
-2	RATIONALE 
-<!-- Aim: To explain why the research questions being asked are important and why closely related questions are not being covered.  -->
-<!-- This should include: -->
-<!-- •	a clear explanation of the research question/hypothesis and the justification of the trial i.e. why the question is worth asking and, through consultation with public and patient groups, why this is worthwhile to patients. Replication to check the validity of previous research is justified, but unnecessary duplication is unethical. -->
-<!-- •	the currently available treatment(s) and their limitations, why you think the IMP(s) might be an improvement on those treatments, why the treatment difference is clinically important to patients and if it is  realistic. (The treatment difference is often referred to as the minimum clinically important difference or the difference we should not want to miss. A drug which reduces everyone’s systolic blood pressure by 2 mm of mercury may be genuinely effective, but the effect would not form the basis of a routine intervention) -->
-<!-- •	this justification is particularly important if the trial proposes to use the IMP: -->
-<!-- o	in children or in adults unable to consent for themselves -->
-<!-- o	in higher doses -->
-<!-- o	for longer duration -->
-<!-- o	in a participant population that might handle it differently (e.g. hepatic or renally impaired patients, children, elderly or immunocompromised individuals) -->
-<!-- o	it is being used in combination with another medicinal product -->
-<!-- o	the indication/ medical condition compromises the participant’s tolerance -->
-<!-- o	in healthy volunteers -->
-<!-- •	the rationale for the use of a placebo in the trial if one is being used -->
-<!-- •	justification for the choice of route of administration, dosage, dosage regimen, and treatment period(s) -->
-<!-- •	it should also include an explanation and justification as to the choice of control interventions/comparators especially if it  involves withholding or delaying standard of care -->
+\newpage
 
-2.1	Assessment and management of risk
+### RATIONALE
+
+<!-- Aim: To explain why the research questions being asked are important and why closely related questions are not being covered.  -->
+
+<!-- This should include: -->
+
+<!-- •  a clear explanation of the research question/hypothesis and the justification of the trial i.e. why the question is worth asking and, through consultation with public and patient groups, why this is worthwhile to patients. Replication to check the validity of previous research is justified, but unnecessary duplication is unethical. -->
+
+<!-- •  the currently available treatment(s) and their limitations, why you think the IMP(s) might be an improvement on those treatments, why the treatment difference is clinically important to patients and if it is  realistic. (The treatment difference is often referred to as the minimum clinically important difference or the difference we should not want to miss. A drug which reduces everyone’s systolic blood pressure by 2 mm of mercury may be genuinely effective, but the effect would not form the basis of a routine intervention) -->
+
+<!-- •  this justification is particularly important if the trial proposes to use the IMP: -->
+
+<!-- o  in children or in adults unable to consent for themselves -->
+
+<!-- o  in higher doses -->
+
+<!-- o  for longer duration -->
+
+<!-- o  in a participant population that might handle it differently (e.g. hepatic or renally impaired patients, children, elderly or immunocompromised individuals) -->
+
+<!-- o  it is being used in combination with another medicinal product -->
+
+<!-- o  the indication/ medical condition compromises the participant’s tolerance -->
+
+<!-- o  in healthy volunteers -->
+
+<!-- •  the rationale for the use of a placebo in the trial if one is being used -->
+
+<!-- •  justification for the choice of route of administration, dosage, dosage regimen, and treatment period(s) -->
+
+<!-- •  it should also include an explanation and justification as to the choice of control interventions/comparators especially if it  involves withholding or delaying standard of care -->
+\newpage
+
+### Assessment and management of risk
+
 <!-- Aim: To describe a risk/benefit analysis plus risk management of all the medication involved in the trial (whether in or outside of licence).  -->
+
 <!-- The following should be described: -->
-<!-- •	the known and potential risks and benefits to human participants  -->
-<!-- •	how high the risk is compared to normal standard practice -->
-<!-- •	frequency of risk -->
-<!-- •	how the risk will be minimised/managed -->
+
+<!-- •  the known and potential risks and benefits to human participants  -->
+
+<!-- •  how high the risk is compared to normal standard practice -->
+
+<!-- •  frequency of risk -->
+
+<!-- •  how the risk will be minimised/managed -->
 
 <!-- Consider the starting dose, dose increments, dose escalation, administration of doses, stopping rules and the resources required by site(s); particularly in terms of facilities and staff, procedures, type of patients, staff training required.  -->
+
 <!-- Please refer to the following documentation in preparing this section: -->
+
 <!-- https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/343677/Risk-adapted_approaches_to_the_management_of_clinical_trials_of_investigational_medicinal_products.pdf   -->
+
 <!-- The MHRA GCP forum has a useful Q&A: -->
+
 <!-- http://forums.mhra.gov.uk/forumdisplay.php?1-Good-Clinical-Practice-(GCP) -->
 
 This trial is categorised as: (delete as appropriate)
-<!--  	• Type A = No higher than the risk of standard medical care -->
-<!-- 	• Type B = Somewhat higher than the risk of standard medical care -->
-<!-- 	• Type C = Markedly higher than the risk of standard medical care -->
+
+<!--    • Type A = No higher than the risk of standard medical care -->
+
+<!--    • Type B = Somewhat higher than the risk of standard medical care -->
+
+<!--    • Type C = Markedly higher than the risk of standard medical care -->
+
 <!-- See Appendix 1 -->
 
-3	OBJECTIVES AND OUTCOME MEASURES/ENDPOINTS
+## OBJECTIVES AND OUTCOME MEASURES/ENDPOINTS
+
 <!-- Aim: To define the primary research question, to address a specific hypothesis and to clearly define the secondary objectives -->
+
 <!-- The objectives are generally phrased using neutral wording (e.g., “to compare the effect of intervention A versus intervention B on outcome X”) rather than in terms of a particular direction of effect.  -->
-<!-- 3.1	Primary objective -->
+
+<!-- 3.1    Primary objective -->
+
 <!-- Aim: To define the primary research question, to address a specific hypothesis  -->
+
 <!-- The protocol should define: -->
-<!-- •	the hypothesis which should be stated in quantifiable terms; e.g. “the experimental treatment will result in 12 months of additional survival compared to the control treatment” -->
-<!-- •	the null and the alternative hypotheses -->
-<!-- •	for multi-arm trials, the objectives should clarify the way in which all the intervention groups will be compared (e.g., A versus B; A versus C) -->
+
+<!-- •  the hypothesis which should be stated in quantifiable terms; e.g. “the experimental treatment will result in 12 months of additional survival compared to the control treatment” -->
+
+<!-- •  the null and the alternative hypotheses -->
+
+<!-- •  for multi-arm trials, the objectives should clarify the way in which all the intervention groups will be compared (e.g., A versus B; A versus C) -->
+
 <!--  A useful guide to use in the development of a specific research question are the PICOT criteria: -->
-<!-- 	P	Population (patients) - What specific patient population are you interested in? -->
-<!-- 	I	Intervention (for intervention studies only) - What is your investigational 	intervention? -->
-<!-- 	C	Comparison group - What is the main alternative to compare with the 	intervention? -->
-<!-- 	O	Outcome of interest - What do you intend to accomplish, measure, improve or 	affect? -->
-<!-- 	T	Time - What is the appropriate follow-up time to assess outcome -->
 
-3.2	Secondary objectives
+<!--    P   Population (patients) - What specific patient population are you interested in? -->
+
+<!--    I   Intervention (for intervention studies only) - What is your investigational     intervention? -->
+
+<!--    C   Comparison group - What is the main alternative to compare with the     intervention? -->
+
+<!--    O   Outcome of interest - What do you intend to accomplish, measure, improve or     affect? -->
+
+<!--    T   Time - What is the appropriate follow-up time to assess outcome -->
+
+### Secondary objectives
+
 <!-- Aim: To clearly define the secondary objectives -->
+
 <!-- The protocol should describe the secondary objectives which: -->
-<!-- •	may or may not be hypothesis-driven -->
-<!-- •	may include secondary outcomes -->
-<!-- •	may include more general non-experimental objectives (e.g., to develop a registry, to collect natural history data) -->
 
-3.3	Outcome measures/endpoints
+<!-- •  may or may not be hypothesis-driven -->
+
+<!-- •  may include secondary outcomes -->
+
+<!-- •  may include more general non-experimental objectives (e.g., to develop a registry, to collect natural history data) -->
+
+### Outcome measures/endpoints
+
 <!-- Aim: To define primary and secondary endpoints/outcomes for the trial which usually appear in the objectives and sample size calculation. -->
-<!-- An ideal endpoint/outcome is valid, reproducible, relevant to the target population, and responsive to changes in the health condition being studied. The COMET (Core Outcome Measures in Effectiveness Trials www.comet-initiative.org ) provides a common set of key trial outcomes and it is beneficial to ascertain whether there is a core outcome set relevant to the trial. This does not preclude inclusion of additional relevant outcomes. -->
-<!-- The protocol should define: -->
-<!-- •	the endpoint/outcome of main interest (primary outcome 3.4) -->
-<!-- •	the remaining endpoints/outcomes (secondary outcomes 3.5) -->
-<!-- •	whether the endpoint/outcome reflect efficacy (beneficial effect) or harm (adverse effect) -->
-<!-- •	the rationale for the choice of trial endpoint/outcome -->
-<!-- •	For each endpoint/outcome, the trial protocol should define four components:  -->
-<!-- o	the specific measurement variable, which corresponds to the data collected directly from trial participants (e.g. all cause mortality);  -->
-<!-- o	the participant-level analysis metric, which corresponds to the format of the outcome data that will be used from each trial participant for analysis (e.g., change from baseline, final value, time to event); -->
-<!-- o	 the method of aggregation, which refers to the summary measure format for each trial group (e.g., mean, proportion with score > 2);  -->
-<!-- o	the specific measurement time point of interest for analysis -->
 
-3.4	Primary endpoint/outcome
+<!-- An ideal endpoint/outcome is valid, reproducible, relevant to the target population, and responsive to changes in the health condition being studied. The COMET (Core Outcome Measures in Effectiveness Trials www.comet-initiative.org ) provides a common set of key trial outcomes and it is beneficial to ascertain whether there is a core outcome set relevant to the trial. This does not preclude inclusion of additional relevant outcomes. -->
+
+<!-- The protocol should define: -->
+
+<!-- the endpoint/outcome of main interest (primary outcome 3.4) -->
+
+<!-- the remaining endpoints/outcomes (secondary outcomes 3.5) -->
+
+<!-- whether the endpoint/outcome reflect efficacy (beneficial effect) or harm (adverse effect) -->
+
+<!-- the rationale for the choice of trial endpoint/outcome -->
+
+<!-- For each endpoint/outcome, the trial protocol should define four components:  -->
+
+<!-- o  the specific measurement variable, which corresponds to the data collected directly from trial participants (e.g. all cause mortality);  -->
+
+<!-- o  the participant-level analysis metric, which corresponds to the format of the outcome data that will be used from each trial participant for analysis (e.g., change from baseline, final value, time to event); -->
+
+<!-- o   the method of aggregation, which refers to the summary measure format for each trial group (e.g., mean, proportion with score > 2);  -->
+
+<!-- o  the specific measurement time point of interest for analysis -->
+
+### Primary endpoint/outcome
+
 <!-- Aim: To identify a single response variable (primary endpoint/outcome) to answer the primary research question. -->
+
 <!-- The primary endpoint/outcome should be a clear, unarguable, quantitative measure of effect that will be the focus of the primary analysis and will drive the choice of sample size. Less is more e.g. “The primary endpoint/outcome is 28 day survival.” It may be pertinent to list the time point at which endpoint/outcome will be measured if it is possible to be measured more than once during the trial. The protocol should describe any rules, references or programmes for calculation of derived values and describe what form it will take for analysis (e.g. continuous, categorical, ordinal) -->
+
 <!-- Since there is only one choice of sample size, which may be based on the statistical power for the single primary analysis, there can only be one primary endpoint/outcome.  The exception to this is in a trial that is comparing a new diagnostic or measurement technique to an existing standard. In which case, it is acceptable to have two co-primary endpoints: the old and the new technique.  -->
 
-3.5	Secondary endpoints/outcomes
+### Secondary endpoints/outcomes
+
 <!-- Aim: To identify a series of well established endpoints of clinical importance that in theory could be the primary endpoint in another trial -->
+
 <!-- This should be a sequence of concise statements referring to observations that say nothing about the trial objectives or analysis. There can be any number of secondary measures, although they should all be relevant to the declared aims of the trial -->
 
-3.6	Exploratory endpoints/outcomes 
-<!-- Aim: To identify any other endpoints/outcomes which are not well established. -->
+### Exploratory endpoints/outcomes
 
-3.7 	Table of endpoints/outcomes
+<!-- Aim: To identify any other endpoints/outcomes which are not well established. -->
+\newpage
+
+### Table of endpoints/outcomes
+
 <!-- Aim: To give a clear and concise representation of all end/points/outcomes of the trial.   -->
 
++-----------------------------------------------------------------------+------------------+------------+
+| Objectives                                                            | Outcome measures | Timepoints |
++=======================================================================+==================+============+
+| **Primary Objective**\                                                |                  |            |
+| <!--# Example: To compare                                             |                  |            |
+| the effect of treatment A versus treatment B on the levels of protein |                  |            |
+| X in the blood-->                                                     |                  |            |
++-----------------------------------------------------------------------+------------------+------------+
+|                                                                       |                  |            |
++-----------------------------------------------------------------------+------------------+------------+
+|                                                                       |                  |            |
++-----------------------------------------------------------------------+------------------+------------+
+
+: Trial outcomes
+
+
+\newpage
+
+## TRIAL DESIGN
+
+<!-- Aim: To describe the ideal design for the research question and what the trial is designed to show.  -->
+
+<!-- The framework of a trial refers to its overall objective to test: -->
+
+<!--     • the superiority (treatment is superior to placebo or comparator treatment) -->
+
+<!--     • non-inferiority (‘not worse than’ the comparator treatment) -->
+
+<!--     • equivalence (treatment is similar to the comparator treatment ) of one intervention with another -->
+
+<!--     • in the case of exploratory pilot trials, to gather preliminary information on the intervention (e.g. harm, pharmacokinetics, etc.) and the feasibility of conducting a full-scale trial -->
+
+<!-- Common designs include:  -->
+
+<!--     • Parallel group design: each group of participants receives only one of the trial treatments. -->
+
+<!--     • Cross-over design: each of the participants is given all the trial treatments in successive periods. The order in which the participants receive each treatment is determined at random.  -->
+
+<!--     • Factorial design: two or more treatments are evaluated separately and in combination against a control. For instance, in a factorial design to assess the effect of drug A and drug B for the treatment of pain, participants would receive drug A only, drug B only, a combination of drug A and B, or placebo. -->
+
+<!--     • Cluster randomised controlled trials: the treatment is randomised to groups of participants (e.g. families) rather than individual participants. -->
+
+<!--     • Groups sequential: outcomes are assessed in a group and sequential manner -->
+
+<!--     • Multiple-armed design: trial with more than two arms. For example, a three-armed trial comparing a treatment with inactive control/placebo, and an alternative active treatment -->
+
+<!--     • Pragmatic trial: reflects variations between patients that occur in real clinical practice and aims to inform choices between treatments. Although these are called pragmatic the same level of detail is required outlining the design as all other trials.  -->
+
+<!-- There is increasing interest in adaptive designs for clinical trials, defined as the use of accumulating data to decide how to modify aspects of a trial as it continues, without undermining the validity and integrity of the trial. Examples of potential adaptations include stopping the trial early, modifying the allocation ratio, re-estimating the sample size, and changing the eligibility criteria. The most valid adaptive designs are those in which the opportunity to make adaptations is based on pre-specified decision rules that are fully
+documented in the protocol. -->
+
+\newpage
+
+## TRIAL SETTING
+
+<!-- Aim: To describe where the trial will be run and any site specific requirements -->
+
+<!-- The protocol should include: -->
+
+<!--     • if it is a multicentre or single centre trial -->
+
+<!--     • if there are any site specific requirements to run the trial  -->
+
+<!--     • Whether there are different ‘types’ of site (e.g. recruiting, treating, continuing care, etc.) and what the specific requirements are for each -->
+
+<!--     • where a list of the participating sites can be found -->
+
+<!--     • if applicable, eligibility criteria for trial centres and individuals who will perform the interventions (e.g., surgeons, psychotherapists) -->
+
+<!--     • consideration of the participant population and where they are found. What are the usual care pathways? Are patients with the condition of interest found in primary or secondary care? If using secondary care sites, will primary care Participant Identification Centres (PICs) be needed to recruit participants, or are patients found in secondary care? -->
+
+<!-- The National Institute for Health Research Clinical Research Network feasibility resources may be helpful in determining the appropriate trial setting in terms of site requirements and patient population: -->
+
+<!--     • Commercial: -->
+
+<!--             ◦ http://www.crn.nihr.ac.uk/can-help/life-sciences-industry/feasibility/ -->
+
+<!--         ◦ http://www.crn.nihr.ac.uk/can-help/life-sciences-industry/  -->
+
+<!--         ◦ https://www.submitmystudy.nihr.ac.uk/  -->
+
+<!--     • Non-commercial:  -->
+
+<!--         ◦ http://www.crn.nihr.ac.uk/can-help/funders-academics/ -->
+
+
+\newpage
+
+## PARTICIPANT ELIGIBILITY CRITERIA
+
+<!-- Aim: To define the trial population -->
+
+<!-- This section should set out precise definitions of which participants are eligible for the trial, defining both inclusion and exclusion criteria. Inclusion criteria should define the population the trial is aiming to include and indicate the generalisability of the trial findings. Exclusion criteria should exclude sub-groups of the population due to, for example, safety and other clinical risks or burden to the participant.  -->
+
+<!-- The eligibility criteria should be clear so they can be applied consistently through the trial and definitions for the timelines and flexibility of each eligibility criterion must be carefully considered to ensure that arbitrary or un-workable definitions are not used. Such definitions can affect eligibility due to the fact that eligibility waivers are usually not permitted by Regulatory Authorities. The choice of criteria can affect recruitment and attrition to the trial as well as it generalisability. -->
+
+### Inclusion criteria
+
+<!-- • participants capable of giving informed consent, or if appropriate, participants having an acceptable individual lcapable of giving consent on the participant’s behalf (e.g. parent or guardian of a child under 16 years of age) -->
+
+<!-- • gender -->
+
+<!-- • Age -->
+
+<!-- • clinical parameters, compliance with EACH parameter for each participant will need to be clearly documented -->
+
+### Exclusion criteria
+
+<!-- females of childbearing potential and males must be willing to use a highly effective (acceptable effective contraceptive measures are only acceptable for IMP’s with unlikely human teratogenicity / fetotoxicity in early pregnancy)  method of contraception (hormonal or barrier method of birth control; abstinence) Contraceptive methods that can achieve a failure rate of less than 1% per year when used consistently and correctly are considered as highly effective birth control methods. Such methods include: -->
+
+<!-- • combined (estrogen and progestogen containing) hormonal contraception associated with inhibition of ovulation: -->
+
+<!--    o oral -->
+
+<!--    o intravaginal -->
+
+<!--    o transdermal -->
+
+<!-- • progestogen-only hormonal contraception associated with inhibition of ovulation -->
+
+<!--    o oral -->
+
+<!--    o injectable -->
+
+<!--    o implantable  -->
+
+<!-- • intrauterine device (IUD)  -->
+
+<!-- • intrauterine hormone-releasing system ( IUS)  -->
+
+<!-- • bilateral tubal occlusion  -->
+
+<!-- • vasectomised partner  -->
+
+<!-- • sexual abstinence -->
+
+<!-- Note - In order to specify the duration of the risk mitigation measures after discontinuation of treatment with the IMP, the risk assessment should include an estimation of the end of relevant systemic exposure (the time point where the IMP, including any active or major metabolites, has decreased to a concentration that is no longer considered relevant for human teratogenicity/fetotoxicity). -->
+
+<!--     •  If the SmPCs of the IMPs state that the IMPs are not teratogenic you might be able to state that this is NA for your trial]. Please note that the MHRA advise double contraception  -->
+
+<!--     • Note - A combination of male condom with either cap, diaphragm or sponge with spermicide (double barrier methods) are also considered acceptable, but not highly effective, birth control methods. -->
+
+<!--     • females of childbearing potential must have a negative pregnancy test within 7 days prior to treatment initiation).   [If the SmPCs of the IMPs state that the IMPs are not teratogenic you might be able to state that this is NA for your trial].  NOTE:  Participants are considered not of child bearing potential if they are surgically sterile (i.e. they have undergone a hysterectomy, bilateral tubal ligation, or bilateral oophorectomy) or they are postmenopausal.  -->
+
+<!--     • WOCBP should only be included after a confirmed menstrual period and a negative highly sensitive urine or serum pregnancy test, except for IMPs where an absence of risk of human teratogenicity/fetotoxicity in early pregnancy can be justified by human pregnancy data. -->
+
+<!--     • Note - For advanced therapy medicinal products (ATMP) embryofetal risk assessment and the need for contraception and pregnancy testing recommendations should be considered on a case-by-case basis. -->
+
+<!--     • females must not be breastfeeding. -->
+
+<!--     • Males - For genotoxic IMPs, the male participant should use condom during treatment and until the end of relevant systemic exposure in the male participant, plus a further 90-day period. For a non-pregnant WOCBP partner, contraception recommendations should also be considered. -->
+
+<!--     • consider contraindications to trial treatment (e.g. as listed in SmPC), incompatible concurrent treatments, recent involvement in other research. -->
+
+<!--     • allergies to excipients of IMP and placebo -->
+
+<!--     • significant medical history of a particular illness/disease. It is important to detail specifically how long you consider the history needs to be eg. evidence of very early childhood asthma with no recurrence in adulthood is potentially not very significant in a patient aged 50. -->
+
+<!-- Guidance on the acceptable contraception methods can be found here: -->
+
+<!-- http://www.hma.eu/fileadmin/dateien/Human_Medicines/01-About_HMA/Working_Groups/CTFG/2014_09_HMA_CTFG_Contraception.pdf  -->
+
+
+\newpage
+
+## TRIAL PROCEDURES
+
+<!-- Add schedule of procedures as an appendix, if appropriate -->
+
+<!-- Aim: To provide a clear and concise timeline of the trial visits, enrolment process, interventions, and assessments performed on participants -->
+
+<!-- The protocol should describe what the procedures/assessments are at each visit and where they will be undertaken i.e. hospital/ GP surgeries/ at home and if not at the trial site the timelines for notification of these results to the trial team, especially if they are outside of the range etc. A defined, appropriate, visit window should be established e.g. +-3 days. -->
+
+### Recruitment
+
+<!-- Aim: to describe how patients are identified and recruited -->
+
+<!-- This section should give details of the participant eligibility screening process for the project including information to be collected regarding participants who are screened and for participants who are not randomised / registered where data is being collated for Consolidated Standards of Reporting Trials (CONSORT) or other similar reasons for reporting the generalisability of the results. If a decision is made to not collect this information, the justification for this should be documented.   -->
+
+<!-- Anonymised information on participants who are not randomised / registered for CONSORT reporting should include: -->
+
+<!--     • age, -->
+
+<!--     • gender, -->
+
+<!--     • ethnicity (if applicable), -->
+
+<!--     • whether the patient is registered or not registered, -->
+
+<!--     • the reason not eligible for trial participation, or if they are eligible but declined -->
+
+#### Participant identification
+
+<!-- The following should be described in the protocol:- -->
+
+<!--     • who will identify participants -->
+
+<!--     • what resources will be used  -->
+
+<!--     • will identification involve reviewing or screening the identifiable personal information of patients, service users or any other person(if so will this be undertaken by members of the normal clinical team or will Section 251 – http://www.hra.nhs.uk/about-the-hra/our-committees/section-251/what-is-section-251/ - be applied for?) -->
+
+<!--     • will any participants be recruited  through PICs -->
+
+<!--     • will any participants be recruited by publicity; posters, leaflets, adverts or websites -->
+
+<!--     • details of the sources of identifiable personal information that will be used to identify potential participant. Normally only a member of the patient’s existing clinical care team should have access to patient records without explicit consent in order to identify potential participants, check whether they meet the inclusion criteria or make the initial approach to patients.  If the research proposes to use someone outside the clinical team to identify suitable participants or as first contact with the participant, the reason for this should be explained -->
+
+<!--     • The arrangements for referral if the participants are to be identified by a separate research team -->
+
+<!--     • If  patient or disease registers are used to identify potential participants a  brief description of the consent and confidentiality arrangements of the register should be included -->
+
+<!--     •  Certain studies, such as cluster trials, incorporate a separate screening process relevant to that trial design – in such cases it may be appropriate to collect more detailed information regarding screened participants. -->
+
+<!--     • It should be clear who will confirm eligibility. NB in a CTIMP this must be confirmed by a medical practitioner. -->
+
+#### Screening
+
+<!-- Aim: To list any screening requirements such as laboratory or diagnostic testing necessary to meet any noted inclusion or exclusion criteria such as:- -->
+
+<!--     • ECG -->
+
+<!--     • laboratory tests -->
+
+<!--     • biopsies and samples -->
+
+<!--     • scans -->
+
+<!-- Any assessments and or procedures performed as part of routine care which will be used to screen patients for eligibility will require defined timelines (e.g. x-rays within the last 6 months). Specify the maximum duration allowed between screening and recruitment (if applicable). -->
+
+<!-- Screen failures i.e. patients who do not meet eligibility criteria at time of screening may be eligible for rescreening participant to acceptable parameters. If this is the case then the process needs to be clearly laid out. -->
+
+<!-- If eligibility screening involves procedures that emit ionising radiation it is vital that the exposure is categorised correctly. The following guidance should be followed: -->
+
+<!-- Ionising radiation exposures are considered to be ‘research exposures’ where the exposure is required as a specified part of, and for the purpose of, the research. For example:  -->
+
+<!--     • diagnostic procedures undertaken prospectively to confirm the eligibility of potential participants for the trial or to provide (qualitative or quantitative) data regarding disease status at baseline; or -->
+
+<!--     • radiotherapy as part of a treatment strategy to which patients are assigned prospectively by the protocol, either as part of an experimental or control arm, and which will be evaluated by the trial; or -->
+
+<!--     • diagnostic procedures scheduled at formal time-points within the trial protocol to assess disease status or response to treatment; or -->
+
+<!--     • diagnostic imaging or image-guided procedures undertaken prospectively whilst the patient is enrolled in the trial -->
+
+<!-- Exposures which meet any of these criteria are considered to be research exposures even where they would otherwise be part of normal clinical care for patients treated outside the research setting, and whether or not research participation will result in ‘additional’ exposure over and above routine care. -->
+
+#### Payment
+
+<!-- The protocol should also detail all intended payments to participants e.g. reasonable travel expenses for any visits additional to normal care. -->
+
+<!-- http://www.hra.nhs.uk/documents/2014/05/hra-guidance-payments-incentives-research-v1-0-final-2014-05-21.pdf -->
+
+### Consent
+
+<!-- The Principal Investigator (PI) retains overall responsibility for the conduct of research at their site, this includes the taking of informed consent of participants at their site. They must ensure that any person delegated responsibility to participate in the informed consent process is duly authorised, trained and competent to participate according to the ethically approved protocol, principles of Good Clinical Practice (GCP) and Declaration of Helsinki. If delegation of consent is acceptable then details should be provided. -->
+
+<!-- Informed consent must be obtained prior to the participant undergoing procedures that are specifically for the purposes of the trial and are out-with standard routine care at the participating site (including the collection of identifiable participant data unless the trial has prior approval from the Confidentiality Advisory Group (CAG) and the Research Ethics Committee (REC)) -->
+
+<!-- The right of a participant to refuse participation without giving reasons must be respected.   -->
+
+<!-- The participant must remain free to withdraw at any time from the trial without giving reasons and without prejudicing his/her further treatment and must be provided with a contact point where he/she may obtain further information about the trial. Data and samples collected up to the point of withdrawal can only be used after withdrawal if the participant has consented for this. Any intention to utilise such data should be outlined in the consent literature. Where a participant is required to re-consent or new information is required to be provided to a participant it is the responsibility of the PI to ensure this is done in a timely manner.  -->
+
+<!-- The PI takes responsibility for ensuring that all vulnerable participants are protected and participate voluntarily in an environment free from coercion or undue influence -->
+
+<!-- Where the participant population is likely to include a significant proportion of participants who cannot read or write, require translators or have cognitive impairment, appropriate alternative methods for supporting the informed consent process should be employed. This may include allowing a witness to sign on a participant’s behalf (in the case of problems with reading or writing), or allowing someone to date the form on behalf of the participant, or providing Participant Information Sheets in other languages or in a format easily understood by the participant population (in the case of minors or cognitive impairment). -->
+
+<!-- The protocol should specify what arrangements the sponsor considers to be appropriate at site(s) to support the consent process for these participants. For example, if verbal translation is needed, should this be via a hospital interpreter or a independent interpreter; are telephone translation services acceptable; if translated written material is to be provided to participants, are these to be provided by the sponsor, or translated locally, and what arrangements are in place to confirm the accuracy of the translation, e.g. back translation; if age appropriate information for minors is to be provided, what age ranges is this divided into; if parent/guardian consent for a minor to participate is being sought, what are the acceptable relationships of the guardian to the minor? -->
+
+<!-- Note that for studies involving sites in Wales, to comply with the Welsh Language Act 1993, the Participant Information Sheets and Consent forms must be translated into Welsh or provided bilingually where this is requested by a participant at a research site. -->
+
+<!-- The protocol should fully describe the process which typically involves: -->
+
+<!--     • discussion between the potential participant or his/her legally acceptable representative and an individual knowledgeable about the research about the nature and objectives of the trial and possible risks associated with their participation -->
+
+<!--     • the presentation of written material (e.g., information leaflet and consent document which must be approved by the REC and be in compliance with GCP, local regulatory requirements and legal requirements -->
+
+<!--     • the opportunity for potential participants to ask questions -->
+
+<!--     • assessment of capacity. For consent to be ethical and valid in law, participants must be capable of giving consent for themselves. A capable person will:  -->
+
+<!--         ◦ understand the purpose and nature of the research  -->
+
+<!--         ◦ understand what the research involves, its benefits (or lack of benefits), risks and burdens  -->
+
+<!--         ◦ understand the alternatives to taking part  -->
+
+<!--         ◦ be able to retain the information long enough to make an effective decision. -->
+
+<!--         ◦ be able to make a free choice  -->
+
+<!--         ◦ be capable of making this particular decision at the time it needs to be made (though their capacity may fluctuate, and they may be capable of making some decisions but not others depending on their complexity) -->
+
+<!--         ◦ where participants are capable of consenting for themselves but are particularly susceptible to coercion, it is important to explain how their interests will be protected -->
+
+<!-- General good practice in research (and the basis of legal frameworks relating to both CTIMPs and non-CTIMPs) require that persons incapable of giving legal consent should be given special protection.  -->
+
+<!-- A person is assumed to have the mental capacity to make a decision unless it is shown to be absent. Mental capacity is considered to be lacking if, in a specific circumstance, a person is unable to make a decision for him or herself because of impairment or a disturbance in the functioning of their mind or brain. In practice for participants with mental incapacity this means that they should not be included in clinical trials if the same results can be obtained using persons capable of giving consent and should only be included where there are grounds for expecting that their taking part will be of direct benefit to that participant, thereby outweighing the risks. The Mental Capacity Act 2005 does not apply to CTIMPs. -->
+
+<!-- The Clinical Trial Regulations define a child as a person under the age of 16 years of age.  The legal framework and ethical considerations for involving young people (between the ages of 16 and 17) in research are set out in the Department of Health Reference Guide to Consent for Examination or Treatment (2009) and should be referred to for any trial including young people (between the ages of 16 and 17). In practice for young people and children this means that only medicinal products which are likely to be of significant value for young people and children are fully studied and the protection of participating children is fully considered.  -->
+
+<!-- For further details on the ethical considerations of including persons with mental incapacity or minors in research see the guidance notes available on the HRA website.  -->
+
+<!-- http://www.hra.nhs.uk/resources/before-you-apply/consent-and-participation/consent-and-participant-information/ -->
+
+<!-- Where the trial allows the inclusion of participants who lack the capacity to consent for themselves (for example, in cases where the research is related to the disease / illness causing mental incapacity) the full procedure for consent by a legal representative must be included in the protocol, along with appropriate information sheets and consent forms.  -->
+
+<!-- The issue of entry of incapacitated adults into CTIMPs is covered by The Medicines for Human Use (Clinical Trials) Regulations and the required procedures to be included in the trial protocol are detailed within these regulations. For studies involving Scottish research sites these Regulations supersede the Adults with Incapacity (Scotland) Act 2000 where any conflict arises. The specific schedules of the Regulations must be read and adhered to by the protocol authors. -->
+
+<!-- Where a participant is able to consent for a CTIMP but later becomes incapacitated, the management of these participants must also be stipulated in the protocol; in all such cases the original consent given endures the loss of capacity, providing that the trial has not significantly altered (there may be clinical justification under such circumstances for cessation of any further clinical intervention while data collection for follow-up purposes continues). -->
+
+<!-- ####   Additional consent provisions for collection and use of participant data and biological specimens in ancillary studies, if applicable -->
+
+<!-- Aim: to describe the consenting procedure for ancillary studies (if applicable) -->
+
+<!-- The protocol should state: -->
+
+<!--     • if data and/or biological specimens for ancillary studies will be acquired, transferred and stored during the trial (in line with section 7.11). -->
+
+<!--     • if the data and/or biological specimens will be used for a specified subset of studies or for submission to ethically approved research tissue banks for future specified or unspecified research -->
+
+<!--     • what options participants will be given in respect to their participation in ancillary research including:  -->
+
+<!--         ◦ whether participation in the ancillary research is required for participation in  trial or if participants may opt out but still participate in the main trial -->
+
+<!--         ◦ consent for the use of their data and specimens in specified protocols -->
+
+<!--         ◦ consent for use in future research unrelated to the clinical condition under trial -->
+
+<!--         ◦ consent for submission to an unrelated bio-bank -->
+
+<!--         ◦ consent to be contacted by trial investigators for further informational and     consent-related purposes  -->
+
+<!--     • whether their withdrawal from the ancillary research is possible and what will happen to material provided up to that point: -->
+
+<!--         ◦ for example if the data and/or specimens will be coded and identifiable -->
+
+<!--         ◦ what withdrawal means in this context -->
+
+<!--         ◦ what information derived from the specimen related research will be provided to them, if any -->
+
+### The randomisation scheme (if randomised trial)
+
+<!-- Aim: to provide an overview of the process of how treatments will be allocated between participants in enough detail to theoretically enable a full reproduction of the process. -->
+
+<!-- The protocol should describe: -->
+
+<!--     • The method of randomisation e.g.: -->
+
+<!--     • simple randomisation based solely on a single, constant allocation ratio is known as simple randomisation. Simple randomisation with a 1:1 allocation ratio is analogous to a coin toss. No other method of allocation surpasses the bias prevention and unpredictability of simple randomisation -->
+
+<!--     • restricted randomisation which includes any randomised approach that is not simple randomisation including:-  -->
+
+<!--         ◦ Blocked randomisation -->
+
+<!--         ◦ Biased coin and urn randomisation -->
+
+<!--         ◦ Stratified randomisation -->
+
+<!--     • if an un-equal treatment allocation will be used and a justification for its use -->
+
+<!--     • if the allocation ratio will adaptively evolve over the course of the trial and a short overview statement to that effect with a reference  to the full description in the “Interim Analysis” section -->
+
+<!--     • if minimisation is going to be used. Minimisation assures similar distribution of selected participant factors between trial groups. The first participant is truly randomly allocated; for each subsequent participant, the treatment allocation that minimises the imbalance on the selected factors between groups at that time is selected. That allocation may then be used, or a choice may be made at random with a heavy weighting in favour of the intervention that would minimise imbalance (for example, with a probability of 0.8).  -->
+
+<!-- Full details of a restricted randomisation scheme (including minimisation) should not be included in the trial protocol as knowledge of these details might undermine randomisation by facilitating deciphering of the allocation sequence. Instead, this specific information should be provided in a separate document with restricted access to protect the trial from selection/allocation bias -->
+
+<!-- Sponsors should provide detailed guidance on the randomisation scheme to individual sites ahead of recruitment. -->
+
+#### Method of implementing the randomisation/allocation sequence
+
+<!-- Aim: to describe how the allocation sequence will be run in the trial. -->
+
+<!-- Successful randomisation in practice depends on two interrelated aspects:  -->
+
+<!--    1) generation of an unpredictable allocation sequence and  -->
+
+<!--    2) concealment of that sequence until assignment irreversibly occurs. -->
+
+<!-- Protocols should describe details of the randomisation/registration procedure/method. Describe how patients will be allocated to trial treatments/groups.  -->
+
+<!-- For example,  -->
+
+<!--     •  the system to be used (e.g. a web based randomisation/treatment allocation system) and whether delegated to a third party provide,  -->
+
+<!--         ◦ Telephone randomisation/ registration with fax/email confirmation . If this is the case, include the telephone number and the ‘opening hours’ for randomisation/registration. -->
+
+<!--         ◦ Faxed randomisation with fax/email confirmation. If this is the case, include the fax. number and the ‘opening hours’ for randomisation/ registration. -->
+
+<!--         ◦ Remote randomisation/ registration process (IXRS). If this is the case, include reference to training manual, location and site staff access to remote system. Give details of the randomisation/ registration procedure. -->
+
+<!-- State who will receive new patient/randomisation alerts (preferably to include pharmacy), together with research nurse and/or investigator. Describe how these alerts will be received. -->
+
+<!-- Studies that involve a trial-specific procedure prior to randomisation must include a registration phase prior to randomisation. Describe the procedure for registration and how it relates to subsequent randomisation e.g. -->
+
+<!--     • After randomisation, if a patient is eligible for randomisation do they get allocated a randomisation number to be used in conjunction with the registration number?  -->
+
+<!--     • Who will be informed of the patient registration and how? -->
+
+<!--         ◦ Telephone randomisation/ registration with fax/email confirmation . If this is the case, include the telephone number and the ‘opening hours’ for randomisation/registration. -->
+
+<!--         ◦ Faxed randomisation with fax/email confirmation. If this is the case, include the fax. number and the ‘opening hours’ for randomisation/ registration. -->
+
+<!--         ◦ Remote randomisation/ registration process. If this is the case, include reference to training manual, location and site staff access to remote system. Give details of the randomisation/ registration procedure. -->
+
+<!--     • who will access this at each site -->
+
+<!--     • how the allocation will be documented e.g. will the system provide an immediate allocation with a confirmatory email  -->
+
+<!--     • who else will be provided with a copy of the treatment allocation or randomisation number etc.  -->
+
+<!--     • how will randomisation codes be accessed out-of-hours or in an emergency -->
+
+<!-- State who will receive new patient/randomisation alerts (preferably to include pharmacy), together with research nurse and/or investigator. Describe how these alerts will be received. -->
+
+<!-- Studies that involve a trial-specific procedure prior to randomisation must include a registration phase prior to randomisation. Describe the procedure for registration and how it relates to subsequent randomisation e.g. -->
+
+<!--     • After randomisation, if a patient is eligible for randomisation do they get allocated a randomisation number to be used in conjunction with the registration number?  -->
+
+### Blinding
+
+<!-- Aim: to describe the blinding process to avoid bias in detail. If blinding is not to be used then justification should be provided. If a non-randomised trail then this section can be deleted.  -->
+
+<!-- The protocol should explicitly describe:  -->
+
+<!--     • who will be blinded to intervention groups including: -->
+
+<!--         ◦ trial participants -->
+
+<!--         ◦ care providers -->
+
+<!--         ◦ outcome assessors -->
+
+<!-- A full description is essential and ambiguous terminology such as “single blind”, “masked” or “double blind” should not be used.  -->
+
+<!--     • the comparability of blinded interventions e.g. similarities in appearance, use of specific flavours to mask a distinctive taste -->
+
+<!--     •  the timing of final unblinding of all trial participants (e.g., after the creation of a locked analysis data set) -->
+
+<!--     •  any strategies to reduce the potential for unblinding such as pretrial testing of blinding procedures. -->
+
+<!--     • when blinding of trial participants and care providers is not possible because of obvious differences between the interventions, blinding of the outcome assessors can often still be implemented. It may also be possible to blind participants or trial personnel to the trial hypothesis in terms of which intervention is considered active. -->
+
+<!--     •    Special attention should be paid to situations where some members of the team are blinded and others unblinded . In this situation the protocol should be explicit in unblinding/masking strategies to ensure compliance. -->
+
+<!--     • Management of sites/CROs etc where both blind and unblind members of the research team may interact (e.g. pharmacist and nurse drawing up the dose are unblind vs the rest of the research team in order to protect the blind. Consider stating explicit strategies for management of this. Could also include other things which may reveal the treatment i.e. internal INR measurement vs sham outputs. -->
+
+### Emergency Unblinding
+
+<!-- Aim: to provide a clear description of the conditions and procedures for unblinding. If the trial is  not blinded then this section can be deleted.  -->
+
+<!-- The trial code should only be broken for valid medical or safety reasons e.g. in the case of a seriouse adverse event where it is necessary for the investigator or treating health care professional to know which treatment the patient is receiving before the participant can be treated. Participant always to clinical need, where possible, members of the research team should remain blinded. -->
+
+<!-- The protocol should provide a description of the code break method (e.g. code break envelopes, via randomisation list, via interactive voice/web response system). Where the sponsor requires code break to be managed by a particular department/ individuals, this should be explicitly described in the protocol including the rationale for the decision.  -->
+
+<!-- The protocol should out line that if the trial is single or double-blind it should give details of who is responsible for unblinding a participant/patient in an emergency. Including full details of the procedure to be followed and by who. If an automated IXRS system is used give details of who and how sites will have access to the unblinding facility e.g. investigator/pharmacy. Bear in mind that an out of hours, an ‘on call pharmacist’ without specialist knowledge of clinical trials may be involved. Include details of any documentation which must be completed at the time of unblinding and by who.  -->
+
+<!-- It is essential that any unblinding mechanism does not unblind the whole trial, but only the -->
+
+<!-- individual concerned. The actual allocation must NOT be disclosed to the participant and/or other -->
+
+<!-- study personnel including other site personnel, monitors, corporate sponsors or project office staff; -->
+
+<!-- nor should there be any written or verbal disclosure of the code in any of the corresponding -->
+
+<!-- participant documents. -->
+
+<!-- The following information (or similar) should be inserted into the protocol: -->
+
+<!--     • the code breaks for the trial are held [please add relevant department] and are the responsibility of [please add personnel]  -->
+
+<!--     • in the event a code is required to be unblinded a formal request for unblinding will be made by the Investigator/treating health care professional -->
+
+<!--     • if the person requiring the unblinding is a member of the Investigating team then a request to the holder of the code break envelope/list, or their delegate will be made and the unblinded information obtained -->
+
+<!--     • if the person requiring the unblinding is not the CI/PI then that health care professional will notify the Investigating team that an unblinding is required for a trial participant and an assessment to unblind should be made in consultation with the clinical and research teams -->
+
+<!--     • on receipt of the treatment allocation details the CI/PI or treating health care professional will continue to deal with the participant’s medical emergency as appropriate -->
+
+<!--     • the CI/PI documents the breaking of the code and the reasons for doing so on the CRF/data collection tool, in the site file and medical notes. It will also be documented at the end of the trial in any final trial report and/or statistical report -->
+
+<!--     • the CI/Investigating team will notify the Sponsor in writing as soon as possible following the code break detailing the necessity of the code break -->
+
+<!--     • the CI/PI will also notify the relevant authorities.  -->
+
+<!--     • The written information will be disseminated to the Data Safety Monitoring Committee for review in accordance with the DMC Charter. The responsibility for which should be assigned and documented -->
+
+<!--     • As investigator is responsible for the medical care of the individual trial participant (Declaration of Helsinki 3§ and ICH 4.3) the coding system in blinded trials should include a mechanism that permits rapid un-blinding (ICH GCP 5.13.4). The investigator cannot be required to discuss un-blinding with the sponsor if he or she feels that emergent unblinding is necessary.  -->
+
+<!--     • SUSARs are required to be reported unblinded -->
+
+<!-- http://www.ema.europa.eu/ema/index.jsp?curl=pages/regulation/q_and_a/q_and_a_detail_000016.jsp&mid=WC0b01ac05800296c5 -->
+
+### Baseline data
+
+<!-- Aim: To clearly describe the baseline data that needs to be collected. NB only data that forms part of the predefined data set essential for analysis should be collected. -->
+
+<!-- The following should be considered: -->
+
+<!--     • the relevance of each baseline variable. Do not include a variable solely on the grounds that it is always recorded, if there is genuinely no interest in the variable -->
+
+<!--     • do any of the procedures need to be undertaken in a certain order or in a certain way – i.e. sitting vs standing, left arm vs right arm, fasted state -->
+
+<!--     • are explanations needed? E.g. if 3 measurements are to be taken and averaged that should be explained -->
+
+<!--     • for particularly complex procedures or those that differ from routine standard practice, these should be detailed in full. E.g. if a 6 lead ECG is normal routine practice but the trial requires a 12 lead EGC this will need to be made clear to avoid potential errors -->
+
+<!--     • if there are any translational aspects of the trial for example the collection of blood or tissue samples, this should be detailed in the relevant sections of the protocol (e.g., assessments section, analysis section, storage of samples section etc) -->
+
+<!--     • if specialist, non standardised assessments are required, care should be taken to detail exactly what needs to happen during the assessment -->
+
+<!--     • It is an offence under the data protection act to process data that is irrelevant or excessive for the purpose for which it was collected.  CRFs must therefore collect only the information directly relevant to the objectives and outcome measures detailed in the protocol.  Collecting additional data not so specified is not permissible. -->
+
+### Trial assessments
+
+<!-- Aim: To clearly describe the trial assessments. -->
+
+<!-- The protocol should describe: -->
+
+<!--     • all trial procedures and assessments, including those that are part of routine care -->
+
+<!--     • the timing of the assessments should be detailed and broken down into visit numbers as appropriate, for example clearly defined visit window i.e. +-3 days -->
+
+<!--     • the detail of any run-in or washout periods -->
+
+<!--     • the time points for assessment data e.g. The following are to be recorded each month for the first 12 months and every three months afterwards:  -->
+
+<!--     • History and clinical examination  -->
+
+<!--     • Assessment of the toxicity of the previous course  -->
+
+<!--     • Weight  -->
+
+<!--     • Full blood count  -->
+
+<!--     • Biochemical series  -->
+
+<!--     • Chest X-ray  -->
+
+<!--     • Etc. -->
+
+<!--     •  how compliance will be checked if home dosing -->
+
+<!--     •  when diary cards should be checked -->
+
+<!--     • any use of electronic patient reported outcome devices.  In general, if third parties are involved in the provision of services related to the assessment or data collection then this should be detailed.   -->
+
+<!--     • assessment data required at the end of trial visit -->
+
+<!--     • the methods and timing for assessing, recording and analysing efficacy parameters e.g.: -->
+
+<!--     • the values/scores that will determine success or failure and how they will be assessed if appropriate -->
+
+<!--     • Survival e.g.: These will be measured from the date of randomisation and will be reported for all deaths due to all causes. The cause of death is to be recorded in all instances -->
+
+<!--     • Quality of life assessments if required -->
+
+### Long term follow-up assessments
+
+<!-- Aim: To clearly describe the long term follow-up assessments -->
+
+<!-- If patients will be monitored after the active treatment phase has closed the protocol should describe: -->
+
+<!--     • The  frequency of follow-up visits -->
+
+<!--     • duration of follow-up period -->
+
+<!--     • assessments to be carried out -->
+
+<!--     • how the follow up due to the research differs from standard of care -->
+
+<!--     • retention strategies -->
+
+<!--     • how patients will be identified as ‘lost to follow-up’ -->
+
+<!--     • measures taken to obtain the information if visits or data collection time-points are missed. -->
+
+<!--     • which outcome data will be recorded from protocol non-adherers -->
+
+<!-- Trial investigators should seek a balance between achieving a sufficiently long follow-up for a clinically relevant outcome measurement, and a sufficiently short follow-up to prevent missing data and avoid the associated complexities in both the trial analysis and interpretation. -->
+
+### Qualitative assessments
+
+<!-- Aim: To describe any qualitative research that forms part of the trial -->
+
+<!-- This section should detail any qualitative component to the trial and provide a rationale for the timing and tools for assessment, for example measuring the acceptability of the intervention or measuring reasons for non-adherence to trial medication . This section should also detail instructions for the timing and administration of measures and whether the nested qualitative component is optional or not. Timing should include the window around the time point for which each questionnaire/ focus group/interview should be completed, details regarding chasing of questionnaires and how participants with missing baseline measures will be followed-up. NB Any data that contribute to the outcome/ endpoints of the trial should ideally be included in the case report form with a signature of the reviewer. -->
+
+<!-- Further information on nested studies can be found in the Medical Research Council’s guidance on developing and evaluating complex interventions. www.sphsu.mrc.ac.uk/Complex_interventions_guidance.pdf -->
+
+### Withdrawal criteria
+
+<!-- Aim: To give a full description of the withdrawal criteria -->
+
+<!-- It is always within the remit of the physician responsible for a patient to withdraw a patient from a trial (or certain aspects of the trial) for appropriate medical reasons, be they individual adverse events or new information gained about a treatment.   -->
+
+<!-- The protocol should therefore: -->
+
+<!--     • Describe under what circumstances and how participants will be withdrawn from the trial / investigational product treatment – including whether the patient would continue to be part of the trial if IMP was withdrawn for specific reasons.  -->
+
+<!--     • Attention should be paid to what aspects of the trial the participant is withdrawing/ been withdrawn from. Are there certain aspects of the trial that you wish to continue? For example withdrawal from further treatment, withdrawal from translational aspect or complete withdrawal. -->
+
+<!--     • Give details of documentation to be completed on participant withdrawal (including recording reasons for withdrawal and any follow-up information collected with timing) -->
+
+<!--     • Whether and how participants are to be replaced  -->
+
+<!--     • The follow up of participants that have withdrawn from the treatment / trial -->
+
+<!--     • State under what circumstances the trial might be prematurely stopped. -->
+
+### Storage and analysis of clinical samples (if details are provided in a laboratory/pathology manual there is no requirement to duplicate information in the protocol)
+
+<!-- Aim: To describe the procedure for dealing with biological samples -->
+
+<!-- The protocol should describe the procedure for dealing with biological samples: -->
+
+<!--     • the criteria for the collection, analysis, storage and destruction of biological samples -->
+
+<!--     • the record keeping requirements for processing, transfer and storage should be clearly outlined -->
+
+<!--     • the arrangements for sample collection -->
+
+<!--         ◦ sample type(s) e.g. whole blood, plasma, serum, saliva, urine, stool, fresh tissue biopsy, paraffin tissue block -->
+
+<!--         ◦ volume of sample(s) to be collected -->
+
+<!--         ◦ types of tubes, containers, swabs to be used for sample collection, and whether these will be provided by the sponsor or must be sourced locally by site(s) -->
+
+<!--         ◦ sample processing arrangements e.g. centrifugation (how soon after collection should samples be spun, how long for, at what speed, at what temperature)  -->
+
+<!--     • the arrangements for sample analysis -->
+
+<!--         ◦ whether samples will be tested/analysed locally or sent to a central facility -->
+
+<!--         ◦ how soon after collection should the samples be analysed or shipped -->
+
+<!--         ◦ if the samples are to be shipped, include details of the arrangements for this (e.g. on dry ice), indicate whether the sponsor or the site(s) will be responsible for arranging the courier to transport the samples -->
+
+<!--         ◦ what will happen to the samples after they have been analysed; will they be stored or destroyed (see below) -->
+
+<!--     • the storage arrangements for samples -->
+
+<!--         ◦ how soon after collection should the samples be put under storage conditions -->
+
+<!--         ◦ how long will the samples be stored for, and what will  be done with the samples after this time (e.g. destruction) -->
+
+<!--         ◦ where samples will be stored; locally at site(s) or sent to a central storage facility (and shipping arrangements if the latter) -->
+
+<!--         ◦ whether any samples will be held in long-term storage for future unspecified use, or held in an ethically approved tissue bank (in which case consent and Human Tissue Act need to be considered and addressed) -->
+
+<!--         ◦ what conditions should the samples be stored under (if samples are to be stored in specialist fridges or freezers e.g. a -80°C freezer, then it is beneficial to specify that samples will be stored at -80°C +/- 10°C (or the tolerance to which you specify), rather than to state -80°C. This will avoid numerous notifications of temperature deviations, when not really required) -->
+
+<!--     • the destruction arrangements for samples -->
+
+<!--         ◦ when the samples will be destroyed; after analysis, after a set storage period? -->
+
+<!--         ◦ how the samples should be destroyed -->
+
+<!--         ◦ how destruction should be recorded -->
+
+<!--         ◦ that for any specialist sample handling, processing and or shipment, a lab manual will be available and to refer to the manual -->
+
+<!-- The following statement sets out the responsibilities of the trial site in regard to samples and can be included in the protocol if appropriate. -->
+
+<!--  “It is the responsibility of the trial site to ensure that samples are appropriately labelled in accordance with the trial procedures to comply with the 1998 Data Protection Act. Biological samples collected from participants as part of this trial will be transported, stored, accessed and processed in accordance with national legislation relating to the use and storage of human tissue for research purposes and such activities shall at least meet the requirements as set out in the 2004 Human Tissue Act and the 2006 Human Tissue (Scotland) Act.” -->
+
+### End of trial
+
+<!-- For trials requiring MHRA approval the end of the trial should be clearly defined in the protocol. The sponsor must notify the MHRA of the end of a clinical trial within 90 days of its completion. It is usually the date of the last visit/data item of the last patient undergoing the trial. For the purpose of informing the MHRA “database lock” is not appropriate as a definition as it does not allow for early termination (section 10.6) to be reported within 15 days.  -->
+
+\newpage
+
+## TRIAL TREATMENTS
+
+<!-- Aim: To provide a full description of the investigational drug(s) to be used plus any other non-investigational medicines, medical device, food supplement, radiation, surgery, behavioural interventions, etc. that forms part of the trial -->
+
+<!-- According to the definition of the EU clinical trial directive 2001/20/EC, an investigational medicinal product is a pharmaceutical form of an active substance or placebo being tested or used as a reference in a clinical trial, including products already with a marketing authorisation, but used or assembled (formulated or packaged) in a way different from the authorised form, or when used for an unauthorised indication, or when used to gain further information about the authorised form. Information about the comparator product/placebo should also be given in this section if they are not classed as IMPs. If the comparator/placebo is classed as an IMP it should be listed in section 8.1. -->
+
+<!-- It is recommended that expertise is sought from clinical trial pharmacist/technician whilst developing a protocol.  -->
+
+<!-- For this section of the protocol you might find the following document useful to read: -->
+
+<!-- “Guidance on Investigational Medicinal Products (IMPs) and other medicinal products used in Clinical Trials”  -->
+
+<!-- This document can be downloaded at: -->
+
+<!-- http://ec.europa.eu/health/documents/eudralex/vol-10/index_en.htm -->
+
+### Name and description of investigational medicinal product(s)
+
+<!-- Aim: To give a full description on the IMP and other medication to be used in the trial -->
+
+<!-- Please refer to the following guidance for classification of IMPs:  -->
+
+<!-- http://ec.europa.eu/health/files/eudralex/vol-10/imp_03-2011.pdf  -->
+
+<!-- The protocol should specify: -->
+
+<!--     • For each IMP, specify its international nonproprietary name (or a unique reference code where the active ingredient is still under development), strength, formulation, and pack size.  -->
+
+<!--     • Where the IMP has been manufactured/packaged specifically for the trial (i.e. different to what is commercially available on the market), this should be clearly stated in the protocol, and the details of its presentation (i.e. dimensions, contents and labelling) should be provided in a separate guide/manual for IMP handling and management.  -->
+
+<!--     • If the IMP is a product with marketing authorisation (i.e. UK-licensed and commercially available on the UK market), specify the brand name/manufacturer where a specific brand/manufacturer is required.  Where the brand/manufacturer is not specified in the protocol, include a statement making clear that any brand/manufacturer of the IMP with a marketing authorisation in the UK can be used. (Seek further advice if the trial involves research sites outside of the European Economic Area)  -->
+
+<!--     • For IMPs under development or where commercially marketed products have been modified (e.g. encapsulation), provide a description of the final dosage form including a summary of its chemical properties and excipient content.  -->
+
+<!--     • For CTIMPs using chemotherapy treatment the National Institute for Health Research, Clinical Research Network; Cancer Chemotherapy and Pharmacy Advisory Service (CPAS) Guidance should be referred to in drafting this section of the protocol -->
+
+<!--     • For blinded clinical trials, provide details of how the IMP will be packaged to maintain blinding. For example: -->
+
+<!--         ◦ Drug X and Drug Y will be packaged in an identical manner. A unique pack ID will be used to identify each pack and its content.  -->
+
+<!--         ◦ Drug X and placebo will be packaged in a manner  which is distinguishable to research sites so must be received by and handled only by unblinded personnel until distinguishing features are obliterated at the point of issue to blinded researchers or dispensing to the patient.  -->
+
+### Regulatory status of the drug
+
+<!-- Aim: To define the regulatory status of the IMP -->
+
+<!-- For each IMP, specify whether it has a marketing authorisation (MA) in the UK and whether or not it is being used in its marketed presentation and packaging bearing the MA number. -->
+
+<!-- Where the IMP has a marketing authorisation in the UK but is further processed (e.g. repackaging and trial labelling) for the trial, specify the name and address of the organisation(s) performing such activities.  -->
+
+<!-- Where the IMP does not have a marketing authorisation in the UK, specify the name and address of the manufacturer(s), and importer where appropriate. (Seek further advice if the trial involves an IMP which is licensed in a country within the European Economic Area but not licensed in the UK)  -->
+
+### Product Characteristics
+
+<!-- All CTIMPs are expected to include Reference Safety Information. The protocol should detail if a Summary of Product Characteristics (SmPC) or Investigator Brochure (IB) or “Simplified IMP dossier” is going to be used and how updated versions will be incorporated into the trial. These should relate to the clinical management of the drug and be in line with section 9 (PHARMACOVIGILANCE). -->
+
+### Drug storage and supply (if this included in a pharmacy manual then there is no requirement to duplicate information in the protocol)
+
+<!-- Aim: To describe the procedures for the ordering, shipment, receipt, distribution, return and destruction of the investigational medicinal products including placebo.  -->
+
+<!-- The protocol should include: -->
+
+<!--     • For each IMP, specify the source of supply – For example:  -->
+
+<!--         ◦ Free of charge and delivered from sponsor  -->
+
+<!--         ◦ Discounted commercial supply ordered via trial specific arrangement (specify details of discount arrangement & source of supply) -->
+
+<!--         ◦ Sourced locally by the research site pharmacy at market price -->
+
+<!--     • For each IMP, provide an overview of the initial order and re-ordering process. For example: -->
+
+<!--         ◦ Initial shipment: Supplied at site activation/ triggered by participant enrolment / manual ordering  -->
+
+<!--         ◦ Re-ordering: Automatic triggered supply / manual ordering -->
+
+<!--     •  any special supply processes, e.g. a triggered release process or central supply to all sites from a 3rd party -->
+
+<!--     • how the drug should be stored -->
+
+<!--     • who will supply e.g. which site and how e.g. ‘upon receipt of a suitably signed trial specific prescription’ -->
+
+<!--     • any storage instructions once dispensed from pharmacy e.g. stored in a fridge at ##°C and used within 24 hours depending on the requirements of the product -->
+
+<!--     • details of accountability and destruction/return, so that it can be verified who received what treatment and when -->
+
+<!--     • any recall procedures stipulated by the sponsor -->
+
+<!--     • Arrangements for post-trial access to IMP -->
+
+<!-- For multicentre trials where supply details may vary between sites, this section should cover only aspects applicable to all sites. -->
+
+### Preparation and labelling of Investigational Medicinal Product
+
+<!-- Aim: To give a precise and complete description of the preparation and labelling of the IMP (If these details are listed in a Pharmacy Manual it is acceptable to reference the document here so long as the Pharmacy Manual is supplied alongside the protocol for regulatory review)  -->
+
+<!-- The protocol should provide an overview of the method of IMP reconstitution/ dilution/ preparation for each IMP.  Reference the guide/manual for IMP handling and management for further information on IMP preparation. -->
+
+<!-- For each IMP, provide information on labelling status/ requirements. For example: -->
+
+<!--     • IMP supplied by sponsor with annex 13 compliant labels -->
+
+<!--     • Research site pharmacies to apply annex 13 compliant labels under Regulation 37 exemption.  -->
+
+<!--     • Exemptions to annex 13 labelling apply -->
+
+<!-- Preparation and labelling of the investigational medicinal products should be completed in accordance with the relevant GMP guidelines.  -->
+
+<!-- http://www.ec.europa.eu/health/documents/eudralex/vol-4/index_en.htm -->
+
+### Dosage schedules
+
+<!-- Aim: To give a precise and complete description of the dosage schedules -->
+
+<!-- The dosing schedule for each drug should include:- -->
+
+<!--     • description and justification of route of administration; oral, intravenous etc. -->
+
+<!--     • frequency of administration -->
+
+<!--     • details of increments and adjustments  -->
+
+<!--     • number of cycles/duration for chemotherapy  -->
+
+<!--     • timing of each dose -->
+
+<!--     • dose capping -->
+
+<!--     • information on what action would be taken if: -->
+
+<!--         ◦ a dose is missed doses i.e. is there a window within which a subject can take a missed dose e.g. within 6 hours of usual dosing time  -->
+
+<!--         ◦ vomiting following a dose -->
+
+<!--     • Dose-banding: State whether or not dose-banding of drugs is acceptable and indicate which drug(s), this applies to. -->
+
+<!--     • if the drug is to be infused, it is important to detail how long the infusions will take – for example 5mg/kg (to a maximum of 250mg) infused over 8 hours -->
+
+<!--     • maximum dosage allowed each time the drug is given  -->
+
+<!--     • methods for monitoring cumulative dosing where required -->
+
+<!--     • Where dosage is dependent on laboratory data, specify whether blood specimens must be taken on the day of dosing or specimens can be taken in advance in line with routine local procedure. -->
+
+<!--     • methods for individualised doses, if calculations are required then state what specific calculation is to be used (if applicable) -->
+
+<!--     • Where dosage is calculated using parameter(s) (e.g. body surface area, creatinine clearance) derived from specific equation(s), specify the equations(s) to be used or specify that routine local practice is acceptable. Any additional rules to be applied when using these equations should also be clearly stated.    -->
+
+<!--     • For weight based dosing, specify whether weight must be taken on the day of dosing or can be taken in advance (state time limits). -->
+
+<!--     • maximum duration of treatment of a participant. The total amount of time the patient will be receiving the IMP. This is not necessarily the length of patient participation in the trial -->
+
+<!--     • State whether dosage will be adjusted with weight change, and clearly detail any rules (e.g. Patient should be weighed and if required, adjustment of dosage should only occur every 12 weeks at visit 3, 6, and 9) -->
+
+<!--     • restarting treatment after temporary suspension. -->
+
+<!--     • any blinding requirements for lines, giving sets, pumps etc -->
+
+### Dosage modifications
+
+<!-- Aim: To give deails here on required dose modifications (if applicable) -->
+
+<!-- The protocol should dettail: -->
+
+<!--     • if the dose should be modified for example in the case of certain adverse events (specify the exact dose modifications and events) -->
+
+<!--     • the stopping rules (for individual participants and the trial as a whole) -->
+
+<!--     • the restarting rules (for individual participants and the trial as a whole) -->
+
+<!--     • treatment breaks/ drug-free holidays  -->
+
+<!--     • whether patients can increase the dose if they have previously been dose reduced for some reason. Also what about treatment breaks/ drug-free holidays -->
+
+<!--     • whether the dosage will be modified in accordance with the patients results (e.g. lab results – and what the results should be) and whether this will be completed under controlled hospital conditions or whether the patient will be required to adjust their own dosages following medical guidance at home -->
+
+<!--     • whether the dose can be modified due to patient request -->
+
+<!--     • procedures in the event of toxicity reactions (if applicable) e.g. if it is possible to reduce the dosage of IMP or if any rescue medication may need to be administered -->
+
+<!--     • when a dose modification will result in the participant having to withdraw from treatment -->
+
+### Known drug reactions and interaction with other therapies
+
+<!-- Aim: To identify any known drug reactions or interaction with other therapies or situations e.g. photosensitivity -->
+
+<!-- The protocol should: -->
+
+<!--     • cross-reference this with the section on safety reporting if applicable -->
+
+<!--     • also cross reference this with the SmPC and/or IB -->
+
+<!--     • list any prohibited concomitant medications or therapies in this section -->
+
+### Concomitant medication
+
+<!-- Aim: To provide a full description of concomitant medication, it is important to consider topical medicine as well as oral and IV e.g. use of steroids – are topical steroids and inhaled steroids permitted but not systemic steroids? Use of other creams and emollients and timings for topical IMP trials -->
+
+<!-- The protocol should: -->
+
+<!--     • specify medication(s)/treatment(s) permitted and not permitted before, during and/or after the trial including their time restrictions -->
+
+<!--     • consider possible interactions or effects that could confound the results and conclusions. Do not confuse these with Non-Investigational Medicinal Products (NIMPs) -->
+
+<!--     • state wash out times from previous medication if applicable -->
+
+<!--     • whether surgery/radiotherapy is allowed whilst on trial drug -->
+
+### Trial restrictions
+
+<!-- Aim: To provide a full description of trial restrictions   -->
+
+<!-- The protocol should specify: -->
+
+<!--     • any contraindications whilst on the active phase of the trial including dietary requirements/restrictions -->
+
+<!--     • whether contraception needs to be used and the duration for use. The list of approved contraception for the trial should be fairly extensive. For example: Women of childbearing potential are required to use adequate contraception for the duration of the trial and for ## after the completion of the trial. This includes: -->
+
+<!--         ◦ Intrauterine Device (IUD) -->
+
+<!--         ◦ Hormonal based contraception (pill, contraceptive injection etc.) -->
+
+<!--         ◦ Double Barrier contraception (condom and occlusive cap e.g. diaphragm or cervical cap with spermicide) -->
+
+<!--         ◦ True abstinence -->
+
+<!--     • also list any requirements for male participants -->
+
+### Assessment of compliance with treatment
+
+<!-- Aim: To describe how and by who compliance will be assessed -->
+
+<!-- Define procedures for: -->
+
+<!--     • monitoring (e.g. watching participant swallow pills and checking their mouth afterwards, getting patients to complete a diary card, package returns, weighing and measuring) -->
+
+<!--     • deciding the percentage of IMP compliance acceptable for patient to continue on the trial -->
+
+<!--     • recording of participant compliance information (what will be recorded, when and where and by who  -->
+
+<!--     • how noncompliance to the protocol trial procedures will be documented by the investigator and reported to the Sponsor  -->
+
+<!--     • deciding when persistent noncompliance will lead the patient to be withdrawn from the trial e.g. percentage of noncompliance acceptable for patient to continue on the trial is <80% noncompliance equates to patient withdrawal (this includes compliance with IMP and trial procedures e.g.. visit window, refusal of trial specific assessments)  -->
+
+<!--     • following-up non-compliant participants -->
+
+<!--     • improving compliance- ideally these should be strategies that can be easily implemented in clinical practice so that the level of compliance in the real world setting is comparable to that observed in the trial -->
+
+### Name and description of each Non-Investigational Medicinal Product (NIMP)
+
+<!-- Aim: To give a full description of each NIMP -->
+
+<!-- The protocol should include some details about the NIMPs which are any products supplied to the trial participants according the protocol but are NOT under investigation. -->
+
+<!-- They could be: -->
+
+<!--     • challenge agents -->
+
+<!--     • rescue or escape medication  -->
+
+<!--     • any other product which is not under investigation that will be used in the trial, including any background medication(s) administered to all participants -->
+
+<!-- Include details of the dosage, treatment duration and administration; if it is going to be provided by the sponsor and other details of storage and supply as appropriate. -->
+
+<!-- Please refer to the following guidance for classification of NIMPs: -->
+
+<!-- http://ec.europa.eu/health/files/eudralex/vol-10/imp_03-2011.pdf -->
+
+<!-- A similar system to that required for IMPs needs to be implemented if the NIMPs are unlicensed (e.g. might come from another EU country or a country outside EEA) -->
+
+<!-- In all other cases host sites are responsible to maintain a system which allows adequate reconstruction of NIMP movements.  There should be a procedure to record which patients received which NIMPs during the trial and an evaluation of the compliance. -->
+
+\newpage
+
+## PHARMACOVIGILANCE
+
+### Definitions
+
+<!-- Term -->
+
+<!-- Definition -->
+
+<!-- Adverse Event (AE) -->
+
+<!-- Any untoward medical occurrence in a participant to whom a medicinal product has been administered, including occurrences which are not necessarily caused by or related to that product. -->
+
+<!-- Adverse Reaction (AR) -->
+
+<!-- An untoward and unintended response in a participant to an investigational medicinal product which is related to any dose administered to that participant. -->
+
+<!-- The phrase "response to an investigational medicinal product" means that a causal relationship between a trial medication and an AE is at least a reasonable possibility, i.e. the relationship cannot be ruled out. -->
+
+<!-- All cases judged by either the reporting medically qualified professional or the Sponsor as having a reasonable suspected causal relationship to the trial medication qualify as adverse reactions. It is important to note that this is entirely separate to the known side effects listed in the SmPC. It is specifically a temporal relationship between taking the drug, the half-life, and the time of the event or any valid alternative etiology that would explain the event. -->
+
+<!-- Serious Adverse Event (SAE) -->
+
+<!-- A serious adverse event is any untoward medical occurrence that: -->
+
+<!--     • results in death -->
+
+<!--     • is life-threatening -->
+
+<!--     • requires inpatient hospitalisation or prolongation of existing hospitalisation -->
+
+<!--     • results in persistent or significant disability/incapacity -->
+
+<!--     • consists of a congenital anomaly or birth defect -->
+
+<!-- Other ‘important medical events’ may also be considered serious if they jeopardise the participant or require an intervention to prevent one of the above consequences. -->
+
+<!-- NOTE: The term "life-threatening" in the definition of "serious" refers to an event in which the participant was at risk of death at the time of the event; it does not refer to an event which hypothetically might have caused death if it were more severe. -->
+
+<!-- Serious Adverse Reaction (SAR) -->
+
+<!-- An adverse event that is both serious and, in the opinion of the reporting Investigator, believed with reasonable probability to be due to one of the trial treatments, based on the information provided. -->
+
+<!-- Suspected Unexpected Serious Adverse Reaction (SUSAR) -->
+
+<!-- A serious adverse reaction, the nature and severity of which is not consistent with the information about the medicinal product in question set out in the reference safety information: -->
+
+<!--     • in the case of a product with a marketing authorisation, this could be in the summary of product characteristics (SmPC) for that product, so long as it is being used within it’s licence. If it is being used off label an assessment of the SmPCs suitability will need to be undertaken. -->
+
+<!--     • in the case of any other investigational medicinal product, in the investigator’s brochure (IB) relating to the trial in question -->
+
+<!-- NB: to avoid confusion or misunderstanding of the difference between the terms “serious” and “severe”, the following note of clarification is provided: “Severe” is often used to describe intensity of a specific event, which may be of relatively minor medical significance. “Seriousness” is the regulatory definition supplied above. -->
+
+<!-- Detailed guidance can be found here:  -->
+
+<!--  http://ec.europa.eu/health/files/eudralex/vol-10/2011_c172_01/2011_c172_01_en.pdf -->
+
+### Operational definitions for (S)AEs
+
+<!-- Aim: to provide operational definitions for (S)AEs -->
+
+<!-- This section of the protocol must describe the following for (S)AEs and for (Serious) Adverse Reactions ((S)ARs): -->
+
+<!--    a) What will be reported to the Sponsor and using which CRF -->
+
+<!--    b) Whether (S)AEs and (S)ARs will be evaluated for duration and intensity according to  standard references such as the National Cancer Institute Common Terminology Criteria   for Adverse Events V4.0 (NCI-CTCAE) -->
+
+<!-- The identification of (S)AEs and (S)ARs that require reporting to the Sponsor will differ for individual trials and will be influenced by: -->
+
+<!--     1. The nature of the intervention, for example: -->
+
+<!--     • CTIMP with well known safety profile; using licensed drug(s) in licensed indication: in such trials it may be considered appropriate that certain AEs and ARs are not required to be reported, but should be recorded, if they will not improve the knowledge regarding the safety profile of the drug and are not required for the trial analysis.  -->
+
+<!--     • CTIMP with less well known safety profile; using unlicensed drug(s) or licensed drug(s) outside of the licensed indication and where little class evidence is available. In such trials it would be considered appropriate that all ARs are required to be reported with consideration given to whether all or certain AEs will be reported. NB All AEs must be recorded in order to make a judgement on whether they should be reported.  -->
+
+<!--     • Any reduced reporting must be justified and in-line with the documented risk assessment (section 2.1) as per MHRA guidance.  -->
+
+<!--     • For blinded CTIMPs with high morbidity or mortality, where efficacy endpoints could also be SUSARs, the integrity of the trial may be compromised if the blind is systematically broken and under these or similar circumstances such SUSARs / SARs would be treated as disease related and not subject to systematic unblinding. The MHRA require that all SUSARs are reported unblended. -->
+
+<!--     2. The endpoints or design of the trial, for example: -->
+
+<!--     • Anticipated SAEs for the disease and trial drug / intervention should be listed in the protocol or Reference Safety Information and it should be stated that these would not be considered to be SUSARs unless the severity of the event was considered to be unexpected. Where SAEs are listed but happen rarely then an explanation of the likely risk of an event may be considered of value.  -->
+
+<!--     • Where efficacy endpoints could also be (S)AEs or (S)ARs the integrity of the trial may be compromised by having such events reported through the safety monitoring / pharmacovigilance process.  In such cases, the protocol can specify that deterioration of the existing condition or known side-effects recorded as primary or secondary endpoints are not reported as (S)AEs or (S)ARs but are recorded separately. For example, the protocol can specify that deterioration of the existing condition or known side-effects recorded as primary or secondary endpoints are not reported as adverse events. -->
+
+<!--     • Other exceptions may include hospitalisation for: -->
+
+<!--         ◦ Routine treatment or monitoring of the studied indication not associated with any deterioration in condition. -->
+
+<!--         ◦ Treatment which was elective or pre-planned, for a pre-existing condition not associated with any deterioration in condition, e.g. pre-planned hip replacement operation which does not lead to further complications. -->
+
+<!--         ◦ Any admission to hospital or other institution for general care where there was no deterioration in condition. -->
+
+<!--         ◦ Treatment on an emergency, outpatient basis for an event not fulfilling any of the definitions of serious as given above and not resulting in hospital admission. -->
+
+<!-- In all cases AEs and / or laboratory abnormalities that are critical to the safety evaluation of the participant must be reported to the Sponsor; these may be volunteered by the participant, discovered by the investigator questioning or detected through physical examination, laboratory test or other investigation. Where certain AEs are not required to be reported to the Sponsor, these should still be recorded in the participant’s medical records. Clear guidance in the protocol should state where this is the case. -->
+
+<!-- When determining the anticipated nature of ARs and SARs, appropriate Reference Safety Information (RSI) must be used, for instance an IB for the IMP must be used where the IMP is unlicensed (i.e. it does not have a marketing authorisation).  Where the IMP being used is licensed, but is being used outside of its licensed indication, an IB should be used where available and should be supplied from the collaborating pharmaceutical company, if they are supplying the drug. Otherwise it is acceptable to use the latest SmPC. Where a generic IMP is to be used one comprehensive SmPC should be chosen at time of request for a CTA for use in the trial for the purposes of pharmacovigilance monitoring only; for any other information regarding a generic IMP, the site should be instructed to refer to the relevant manufacturer’s SmPC and ensure that a copy of this is saved in the Investigator Site File.  -->
+
+<!-- The Reference Safety Information (RSI) that is used for pharmacovigilance purposes is used to assess the expectedness of events and will be checked by the sponsor for changes on the anniversary of the issue date of the reference safety information. A statement should be included in the protocol describing which document is approved for use within the trial for pharmacovigilance monitoring (it is best not to include the IB / SmPC as an appendix to the protocol, as a protocol amendment would be required if the IB / SmPC is updated).  -->
+
+<!-- Routinely breaking the blind in double blind trials could compromise the integrity of the trial. It is important to separate out emergency unblinding (section 7.5) and unblinding for expedited reporting to authorities. For this reason the protocol should state that breaking the blind will only take place where information about the participant’s trial treatment is clearly necessary for the appropriate medical management of the participant. In all cases the Investigator would be anticipated to evaluate the causality and expectedness of SAEs as though the participant was receiving the active medication. -->
+
+### Recording and reporting of SAEs, SARs AND SUSARs
+
+<!-- Aim: to describe the recording and reporting of SAEs, SARs  AND SUSARs  -->
+
+<!-- The period of time over which AEs, ARs, SAEs, SARs and SUSARs must be recorded and reported must be clearly stated in the protocol. The point where recording / reporting usually starts is: -->
+
+<!--     • For AEs / SAEs – consent -->
+
+<!--     • For ARs / SARs and SUSARs – 1st IMP dose -->
+
+<!-- The point where recording / reporting ends is based on the regulatory requirements, intervention and the trial design and the following should be considered in making this decision: -->
+
+<!--     • The active monitoring period for (S)ARs should be defined based on the amount of information available regarding how long the IMP remains active in the participant, how long it may remain active / inactive in the participant and potentially be transferable to a foetus, how long it takes for (S)ARs to peak (e.g. is there an anticipated cumulative effect of dosing and when is this likely to occur), known late effects (e.g. secondary malignancies that will require active monitoring). It is not acceptable to simply state that SAEs will be actively monitored for 30 days post last treatment without justification.  -->
+
+<!--     • following the active monitoring period (when the participant has finished treatment and the active monitoring period has ended) investigators are still required to report any SARs or SUSARs that they become aware of.  -->
+
+<!--     • Safety reporting periods for SAEs and SARs must be equal across all arms of a randomised trial to prevent any bias in reporting. -->
+
+<!-- Where a participant withdraws consent for further processing of data, this does not preclude the reporting of SARs and SUSARs which are required to continue being reported according to the protocol for regulatory purposes. The PIS should include a section explaining this to the participant.  -->
+
+<!-- In all cases SAEs should be reported to the Sponsor, although it is acceptable to specify that certain SAEs do not require immediate reporting, e.g. in trials using a drug with a well-known safety profile based on a documented risk assessment (section 2.1). Assessment of seriousness, causality and expectedness for trials involving IMPs must be made by the sponsor or designated authority e.g. CI. If an authorised doctor from the reporting site is unavailable, initial reports without assessment of whether the event was anticipated should be submitted to the Sponsor by a healthcare professional within 24hours of becoming aware of the SAE, but must be followed-up by medical assessment as soon as possible thereafter. -->
+
+<!-- Suggested standard text which may be amended as appropriate it can be used for paper or e-CRF.  -->
+
+<!-- “All [SAEs* / SUSARs* (*delete as appropriate)] occurring from the time of [written informed consent / registration / randomisation / start of trial treatment] until [XXX] days post cessation of trial treatment must be recorded on the [indicate relevant form] Form and faxed to the Sponsor within 24 hours of the research staff becoming aware of the event. Once all resulting queries have been resolved, the Sponsor will request the original form should also be posted to the Sponsor and a copy to be retained on site. -->
+
+<!-- For each [SAEs* / SUSARs* (*delete as appropriate)] the following information will be collected: -->
+
+<!--     • full details in medical terms and case description -->
+
+<!--     • event duration (start and end dates, if applicable) -->
+
+<!--     • action taken -->
+
+<!--     • outcome -->
+
+<!--     • seriousness criteria -->
+
+<!--     • causality (i.e. relatedness to trial drug / investigation), in the opinion of the investigator -->
+
+<!--     • whether the event would be considered anticipated. -->
+
+<!-- Any change of condition or other follow-up information should be faxed to the Sponsor as soon as it is available or at least within 24 hours of the information becoming available. Events will be followed up until the event has resolved or a final outcome has been reached.”   -->
+
+<!-- Suggested standard text which may be amended as appropriate  -->
+
+<!-- “All SAEs assigned by the PI or delegate (or following central review) as both suspected to be related to IMP-treatment and unexpected will be classified as SUSARs and will be subject to expedited reporting to the Medicines and Healthcare Products Regulatory Agency (MHRA). The sponsor will inform the MHRA, the REC and Marketing Authorisation Holder (if not the sponsor) of SUSARs within the required expedited reporting timescales.” -->
+
+### Responsibilities
+
+<!-- Aim: To define responsibilities -->
+
+<!-- This section should detail the responsibilities for reporting and reviewing toxicity and safety information arising from the trial and any timeline associate with these. Responsibilities for the PI, CI, Sponsor, Trial Steering Committee (TSC) and Data Monitoring Committee (DMC) should always be included. Depending on the trial, if a pharmaceutical company is involved, their responsibilities will also need to be included, for example the company may take on the function of delegated sponsor review. -->
+
+<!-- A process must be in place to review individual SAEs, AEs, ARs and trends in events and reactions will be independently reviewed in addition to usual trial safety monitoring procedures. The decision regarding the frequency of review of individual and cumulative SAEs will be based on the trial design, risk assessment and advice from the Sponsor / TSC / DMC but may include: -->
+
+<!--     • Clinical review of a line listing of all life threatening or SAEs resulting in death within 1 week of their occurrence (for lower risk trial). -->
+
+<!--     • Clinical review of a line listing of all other SAEs on a monthly basis (for lower risk trial). -->
+
+<!--     • Clinical review in real time of each SAE as it occurs (for higher risk trial). -->
+
+<!--     • Cumulative review of all safety information by the DMC on a 3 or 6 monthly basis.  -->
+
+<!--     • Total numbers of SAEs per month sent to the DMC Chair – in order to expedite a safety review if more SAEs are being seen than would be expected. -->
+
+<!-- An appropriate member of the Trial Management Group (TMG) should also be identified to prepare the written sections of the Development Safety Update Report (DSUR). -->
+
+<!-- If the trial has joint- or co-sponsorship, state which party is the lead sponsor, and indicate how the responsibilities have been allocated between the sponsors. Indicate any activities that the sponsor is delegating to a third party and any expectations of the third party when working with the research site(s). Highlight any activities that the sponsor is delegating to the research site(s) and identify any specific requirements that the research site(s) will need to meet to carry out the delegated activities. -->
+
+<!-- NB in a CTIMP the sponsor has legal responsibilities that cannot be delegated. -->
+
+<!-- Suggested standard text  -->
+
+<!-- “Principal Investigator (PI):  -->
+
+<!-- Checking for AEs and ARs when participants attend for treatment / follow-up. -->
+
+<!--     1. Using medical judgement in assigning seriousness, causality and whether the event/reaction was anticipated [in Phase III and late Phase II CTIMPs] using the Reference Safety Information approved for the trial. -->
+
+<!--     2. Using medical judgement in assigning seriousness and causality and providing an opinion on whether the event/reaction was anticipated [in Phase I and early Phase II CTIMPs] using the Reference Safety Information approved for the trial.  -->
+
+<!--     3. Ensuring that all SAEs are recorded and reported to the sponsor within 24 hours of becoming aware of the event and provide further follow-up information as soon as available. Ensuring that SAEs are chased with Sponsor if a record of receipt is not received within 2 working days of initial reporting.  -->
+
+<!--     4. Ensuring that AEs and ARs are recorded and reported to the sponsor in line with the requirements of the protocol.  -->
+
+<!-- Chief Investigator (CI) / delegate or independent clinical reviewer: -->
+
+<!--     1. Clinical oversight of the safety of patients participating in the trial, including an ongoing review of the risk / benefit. -->
+
+<!--     2. Using medical judgement in assigning the SAEs seriousness, causality and whether the event was anticipated (in line with the Reference Safety Information) where it has not been possible to obtain local medical assessment. -->
+
+<!--     3. Using medical judgement in assigning whether and event/reaction was anticpated or expectedness in line with the Reference Safety Information [in Phase I and early Phase II CTIMPs]. -->
+
+<!--     4. Immediate review of all SUSARs.  -->
+
+<!--     5. Review of specific SAEs and SARs in accordance with the trial risk assessment and protocol as detailed in the Trial Monitoring Plan. -->
+
+<!--     6. Assigning Medical Dictionary for Regulatory Activities (MedDRA) or Body System coding to all SAEs and SARs. -->
+
+<!--     7. Preparing the clinical sections and final sign off of the Development Safety Update Report (DSUR). -->
+
+<!-- Sponsor: (NB where relevant these can be delegated to CI) -->
+
+<!--     1. Central data collection and verification of AEs, ARs, SAEs, SARs and SUSARs according to the trial protocol onto a database.  -->
+
+<!--     2. Reporting safety information to the CI, delegate or independent clinical reviewer for the ongoing assessment of the risk / benefit according to the Trial Monitoring Plan. -->
+
+<!--     3. Reporting safety information to the independent oversight committees identified for the trial (Data Monitoring Committee (DMC) and / or Trial Steering Committee (TSC)) according to the Trial Monitoring Plan. -->
+
+<!--     4. Expedited reporting of SUSARs to the Competent Authority (MHRA in UK) and REC within required timelines. -->
+
+<!--     5. Notifying Investigators of SUSARs that occur within the trial. -->
+
+<!--     6. The unblinding of a participant for the purpose of expedited SUSAR reporting [For double blind trials only]. -->
+
+<!--     7. Checking for (annually) and notifying PIs of updates to the Reference Safety Information for the trial. -->
+
+<!--     8. Preparing standard tables and other relevant information for the DSUR in collaboration with the CI and ensuring timely submission to the MHRA and REC. -->
+
+<!-- Trial Steering Committee (TSC):  -->
+
+<!-- In accordance with the Trial Terms of Reference for the TSC, periodically reviewing safety data and liaising with the DMC regarding safety issues. -->
+
+<!-- Data Monitoring Committee (DMC): -->
+
+<!-- In accordance with the Trial Terms of Reference for the DMC, periodically reviewing overall safety data to determine patterns and trends of events, or to identify safety issues, which would not be apparent on an individual case basis.  -->
+
+### Notification of deaths
+
+<!-- Aim: to describe the procedure for notification of death which does not constitute a SAR or SUSAR. -->
+
+<!-- The protocol should state: -->
+
+<!--     • whether, how and when the chief investigator will notify deaths to the sponsor e.g. -->
+
+<!--     • “All deaths will be reported to the sponsor irrespective of whether the death is related to disease progression, the IMP, or an unrelated event”. This statement should be used for Phase I/First Time In Man (FTIM) trials. -->
+
+<!--     • “Only deaths that are assessed to be caused by the IMP will be reported to the sponsor. This report will be immediate”. -->
+
+<!--     • “All deaths, including deaths deemed unrelated to the IMP, if they occur earlier than expected will be reported to the sponsor”. -->
+
+<!-- The protocol needs to specify the timelines of such reports. -->
+
+### Pregnancy reporting
+
+<!-- Aim: to describe the procedure for notification of pregnancy (where applicable) -->
+
+<!-- The protocol needs to state: -->
+
+<!--     • All pregnancies within the trial (either the trial participant or the participant’s partner, with participants consent) should be reported to the Chief Investigator and the Sponsor using the relevant Pregnancy Reporting Form within 24 hours of notification -->
+
+<!--     • Pregnancy is not considered an AE unless a negative or consequential outcome is recorded for the mother or child/foetus. If the outcome meets the serious criteria, this would be considered an SAE -->
+
+<!--     • follow-up of pregnant participant: Describe in detail the process for monitoring and managing  a pregnancy -->
+
+<!--     • follow-up of child born to a pregnant trial participant, or to the partner of a male trial participant. (How long will follow-up be for?)  -->
+
+### Overdose
+
+<!-- Aim: to describe the procedure for notification of overdose -->
+
+<!-- The protocol should describe: -->
+
+<!--     • The definition of an overdose -->
+
+<!--     • How to record and notify overdoses to the sponsor (this information should be placed on the deviation log) -->
+
+<!--     • Where can overdoses be observed from (pill counts, diary cards, drug charts or patient comment) -->
+
+<!--     • How will it affect final analysis e.g. will patients be withdrawn from the trial? (Consider what will constitute an overdose that warrants trial discontinuation) -->
+
+<!--     • If an SAE is associated with the overdose ensure the overdose if fully described in the SAE report form -->
+
+### Reporting urgent safety measures
+
+<!-- If any urgent safety measures are taken the CI/Sponsor shall immediately and in any event no later than 3 days from the date the measures are taken, give written notice to the MHRA and the relevant REC of the measures taken and the circumstances giving rise to those measures. -->
+
+<!-- Please refer to the following website for details on clinical trials safety reporting: http://www.mhra.gov.uk/Howweregulate/Medicines/Licensingofmedicines/Clinicaltrials/Safetyreporting-SUSARSandASRs/index.htm -->
+
+### The type and duration of the follow-up of participants after adverse reactions.
+
+<!-- This section needs to describe the type and duration of follow-up care for participants following an adverse drug reaction. -->
+
+<!-- This section of the protocol also needs to specify how long after the last dose of IMP has been administered to the participants will adverse events and reactions be recorded and reported.  -->
+
+<!-- Please include ‘Any SUSAR will need to be reported to the Sponsor irrespective of how long after IMP administration the reaction has occurred until resolved.’ -->
+
+### Development safety update reports
+
+<!-- Aim: to demonstrate that the trial will comply with reporting requirements -->
+
+<!-- Where appropriate, the IMP manufacturer should be encouraged to submit Development Safety Update Reports (DSURs). These reports should be prepared by the sponsor (or delegate). -->
+
+<!-- However, in the absence of this -->
+
+<!-- Either -->
+
+<!-- <Name of Marketing Authorisation Holder (MAH)> will submit DSURs once a year throughout the clinical trial, or as necessary to the Competent Authority (MHRA in the UK) and where relevant the Research Ethics Committee.  -->
+
+<!-- Or in cases where the sponsor has delegated responsibility -->
+
+<!-- the CI will provide (in addition to the expedited reporting above) DSURs once a year throughout the clinical trial, or as necessary, to the Competent Authority (MHRA in the UK), where relevant the Research Ethics Committee and the sponsor.   -->
+
+<!-- The report will be submitted within 60 days of the Developmental International Birth Date (DIBD) of the trial each year until the trial is declared ended -->
+
+## STATISTICS AND DATA ANALYSIS
+
+<!-- Where possible the statistician should write this section. -->
+
+<!-- The sub-headings given below are suggestions.  However, if a Statistical Analysis Plan is to be produced separately, state this here and condense the most relevant information from the sub sections here. -->
+
+### Sample size calculation
+
+<!-- Aim: To define how the planned number of participants was derived -->
+
+<!-- This section should detail the methods used for the determination of the sample size and a reference to tables or statistical software used to carry out the calculation. Sufficient information should be provided so that the sample size calculation can be reproduced. -->
+
+<!-- For trials that involve a formal sample size calculation, the guiding principle is that the planned sample size should be large enough to have a high probability (power) of detecting a true effect of a given magnitude, should it exist. Sample size calculations are generally based on one primary outcome; however, it may also be worthwhile to plan for adequate trial power or report the power that will be available (given the proposed sample size) for other important outcomes or analyses because trials are often underpowered to detect harms or subgroup effects. -->
+
+<!-- If the planned sample size is not derived statistically, then this should be explicitly stated along with a rationale for the intended sample size (e.g., exploratory nature of pilot studies; pragmatic considerations for trials in rare diseases). -->
+
+<!-- Formal sample size calculations typically require the power to be specified and the following values with justification: -->
+
+<!--     • Treatment Effect or Alternative Hypothesis: is this the smallest size of effect that would be of clinical interest- how is this justified in the form of appropriate references, pilot data or clinical arguments.  -->
+
+<!--     • null Hypothesis: A clear statement of the hypothesis, in terms of numerical values, of the treatment being ineffective. For example: an absolute difference in response rates between arms of zero.  -->
+
+<!--     • significance level: what risk is acceptable of concluding the treatment is effective, when in reality the treatment is ineffective.  -->
+
+<!--     • In trials with continuous outcomes the standard deviation of the primary endpoint should be included: if previous studies or literature are used to estimate or justify the assumptions made to determine this parameter, or any other parameters relevant to the design (e.g. dropout rate, noncompliance rates median survival rate, response rate), provide references.  -->
+
+<!--     • If one or more interim analysis(es) are planned, it should be considered whether the sample size should be increased to account for multiple testing. -->
+
+<!-- NB an appropriate level of statistical advice should be sought to ensure trial validity. -->
+
+### Planned recruitment rate
+
+<!-- Aim: to estimate the planned recruitment rate -->
+
+<!-- Realistic estimates of expected accrual rate and duration of participant entry based on estimated sample size should be provided. This section may also include information such as the number of recruiting centres, the size / percentage of the population that is captured by the eligibility criteria, the expected consent rate, and the expected screen failure rate. This information will help sites to determine whether they are likely to be able to recruit their target number of participants. -->
+
+### Statistical analysis plan
+
+Aim: to fully describe the statistical analysis plan
+
+#### Summary of baseline data and flow of patients
+
+<!-- • list variables to be used to assess baseline comparability of the randomised groups including for each factor: a definition, any rules, references or programmes for calculation of derived values, what form it will take for analysis (e.g. continuous, categorical, ordinal) and how it will be reported (e.g. means, standard deviations, medians, proportions) -->
+
+<!-- • plans to produce a consort flow diagram (http://www.consort-statement.org/)  -->
+
+#### Primary outcome analysis
+
+<!-- Plans for statistical analyses of the primary outcome including: -->
+
+<!--     • summary measures to be reported -->
+
+<!--     • method of analysis (justified with consideration of form of the data , assumptions of the method and structure of the data (e.g. unpaired, paired, clustered) etc.) -->
+
+<!--     • plans for handling multiple comparisons, missing data, non-compliers, spurious data and withdrawals in analysis -->
+
+<!--     • plans for predefined subgroup analyses -->
+
+<!--     • statement regarding use of intention to treat (ITT) analysis -->
+
+<!--     • description of any non-statistical methods that might be used (e.g. qualitative methods) -->
+
+#### Secondary outcome analysis
+
+<!-- Plans for statistical analysis of each secondary outcome.  In general the use of hypothesis    tests may not be appropriate if the trial has not been powered to address these and use     of estimates with confidence intervals is preferred. Secondary analyses should be   considered as hypothesis generating rather than providing firm conclusions. -->
+
+### Subgroup analyses
+
+<!-- Aim: to describe sub-group analyses -->
+
+<!-- Subgroup analyses explore whether estimated treatment effects vary significantly between subcategories of trial participants. As these data can help tailor healthcare decisions to individual patients, a modest number of pre-specified subgroup analyses can be sensible.  -->
+
+### Adjusted analysis
+
+<!-- Aim: to describe any adjusted analysis to account for imbalances between trial groups (e.g., chance imbalance across trial groups in small trials), improve power, or account for a known prognostic variable.  -->
+
+<!-- The protocol should state: -->
+
+<!--     • if there is an intention to perform or consider adjusted analyses -->
+
+<!--     • any known variables for adjustment (if it is not clear in advance which these should be then the objective criteria to be used to select variables should be pre-specified) -->
+
+<!--     • how continuous variables will be handled -->
+
+<!--     • if unadjusted and adjusted analyses are intended, what the main analysis is -->
+
+### Interim analysis and criteria for the premature termination of the trial
+
+<!-- Aim: to describe any interim analysis and criteria for stopping the trial. -->
+
+<!-- The protocol should describe: -->
+
+<!--     • any interim analysis plan, even if it is only to be performed at the request of an oversight body (e.g., DMC) -->
+
+<!--     • include the statistical methods -->
+
+<!--     • who will perform the analyses -->
+
+<!--     • when they will be conducted (timing and indications) -->
+
+<!--     • the decision criteria—statistical or other—that will be adopted to judge the interim results as part of a guideline for early stopping or other adaptations.  -->
+
+<!--     • who will see the outcome data while the trial is ongoing -->
+
+<!--     • whether these individuals will remain blinded (masked) to trial groups -->
+
+<!--     • how the integrity of the trial implementation will be protected (e.g., maintaining blinding) when any adaptations to the trial are made -->
+
+<!--     • who has the ultimate authority to stop or modify the trial e.g. the Chief Investigator, trial steering committee, or sponsor -->
+
+<!--     • the stopping guidelines -->
+
+<!--         ◦ Criteria for stopping for harm are often different from those for benefit and might not employ a formal statistical criterion -->
+
+<!--         ◦ Stopping for futility occurs in instances where, if the trial were to continue, it is unlikely that an important effect would be seen (i.e., low chance of rejecting null hypothesis)  -->
+
+<!--             ▪ if pre-specified interim analyses are to be used for other trial adaptations such as sample size re-estimation, alteration to the proportion of participants allocated to each trial group, and changes to eligibility criteria.  -->
+
+<!-- NB in CTIMPs recommendations made by the DMC must be expedited to the MHRA where they are deemed relevant for the safety of participants participating within the trial (refer to the EU Guidance Document ‘Detailed guidance on the collection, verification and presentation of adverse reaction reports arising from clinical trials on medicinal products for human use’). -->
+
+### Participant population
+
+<!-- Aim: to describe the participant populations whose data will be subjected to the trial analysis. -->
+
+<!-- Protocols should describe: -->
+
+<!--     • the participant populations whose data will be subjected to the trial analysis – both for the primary analysis and any applicable secondary analyses e.g. -->
+
+<!--     • All-randomised population: Any participant randomised into the trial, regardless of whether they received trial drug -->
+
+<!--     • All-treated population: Any participant randomised into the trial that received at least one dose of trial drug -->
+
+<!--     • Protocol-compliant population: Any participant who was randomised and received the protocol required trial drug exposure and required protocol processing -->
+
+<!--     • if the participant is to be included in the analysis will vary by outcome e.g. analysis of harms (adverse events) is sometimes restricted to participants who received the intervention, so that absence or occurrence of harm is not attributed to a treatment that was never received. -->
+
+<!-- To avoid: -->
+
+<!--     • selection bias, an “as randomised” analysis retains participants in the group to which they were originally allocated -->
+
+<!--     • attrition bias, out-come data obtained from all participants are included in the data analysis, regardless of protocol adherence -->
+
+<!-- These two conditions (i.e., all participants, as randomised) define an “intention to treat” analysis, which is widely recommended as the preferred analysis strategy.  -->
+
+### Procedure(s) to account for missing or spurious data
+
+<!-- Aim: to describe how missing data will be dealt with -->
+
+<!-- The protocol should describe: -->
+
+<!--     • the strategies to maximise follow-up and prevent missing data -->
+
+<!--     • how recording of reasons for missing data will be undertaken -->
+
+<!--     • how missing data will be handled in the analysis and detail any planned methods to impute (estimate) missing outcome data, including which variables will be used in the imputation process (if applicable). Methods of multiple imputation are more complex but are widely preferred to single imputation methods (e.g., last observation carried forward; baseline observation carried forward), as the latter introduce greater bias and produce confidence intervals that are too narrow. Sensitivity analyses are highly recommended to assess the robustness of trial results under different methods of handling missing data. -->
+
+### Other statistical considerations.
+
+<!-- Aim: to describe any other statistical consideration pertinent to the trial. -->
+
+<!-- The protocol should describe: -->
+
+<!--     • procedures for reporting any deviation(s) from the original statistical plan -->
+
+<!--     • any other statistical considerations e.g. if there is a requirement for an economic analysis plan in which case it should be included in this section -->
+
+<!-- 10.10  Economic evaluation -->
+
+<!-- If economic evaluation is to be undertaken this section should include the rationale for inclusion of the economic investigation and means of assessment.  -->
+
+<!-- NB it should be written by the health economic investigator -->
+
+## DATA MANAGEMENT
+
+### Data collection tools and source document identification
+
+<!-- Aim: to describe procedures for data collection, recording and handling -->
+
+<!-- Source Data -->
+
+<!-- ICH E6 section 1.51, defines source data as "All information in original records and certified copies of original records or clinical findings, observations, or other activities in a clinical trial necessary for the reconstruction and evaluation of the trial. Source data are contained in source documents (original records or certified copies)." -->
+
+<!-- The basic concept of source data is that it permits not only reporting and analysis but also verification at various steps in the process for the purposes of confirmation, quality control, audit or inspection. A number of attributes are considered of universal importance to source data and the records that hold those data. These include that the data and records are:  -->
+
+<!--     • Accurate  -->
+
+<!--     • Legible  -->
+
+<!--     • Contemporaneous  -->
+
+<!--     • Original  -->
+
+<!--     • Attributable  -->
+
+<!--     • Complete  -->
+
+<!--     • Consistent  -->
+
+<!--     • Enduring  -->
+
+<!--     • Available when needed  -->
+
+<!-- Source Documents -->
+
+<!-- ICH E6 1.52, defines source documents as "Original documents, data and records (e.g., hospital records, clinical and office charts, laboratory notes, memoranda, participants' diaries of evaluation checklists, pharmacy dispensing records, recorded data from automated instruments, copies or transcriptions certified after verification as being accurate and complete, microfiches, photographic negatives, microfilm or magnetic media, x-rays, participant files, and records kept at the pharmacy, at the laboratories, and at medico-technical departments involved in the clinical trial)." -->
+
+<!-- Case report forms -->
+
+<!-- A case report form (CRF) is a form on which individual patient data required by the trial protocol are recorded. It may be a printed or electronic document (eCRF). The CRF data is used to perform statistical analysis for the trial. Design of individual CRFs will vary from trial to trial, but it is essential that the design ensures that: -->
+
+<!--     • adequate collection of data has been performed -->
+
+<!--     • proper audit trails can be kept to demonstrate the validity of the trial (both during and after the trial) -->
+
+<!--     • only the data required by the protocol are captured in the CRF (using the CRF to capture secondary data not required for the trial may be a criminal beach of the Data Protection Act, makes the CRF unnecessarily complicated, and can make it more difficult to extract the primary data for analysis) -->
+
+<!-- CRFs as Source Documents -->
+
+<!-- If the protocol allows data to be entered directly onto the case report forms (CRF), the CRF would then be considered a source document. If the CRF is then transmitted to the sponsor, it is necessary for the trial site to retain a copy to ensure that the PI has an independent account from the sponsor as to what has occurred during the trial at his/her site. Additional information can be found in ICH E6, section 6.4.9. -->
+
+<!-- Guidance can be found here: http://www.ema.europa.eu/docs/en_GB/document_library/Regulatory_and_procedural_guideline/2010/08/WC500095754.pdf -->
+
+<!-- The protocol should: -->
+
+<!--     • specify whether the data are from a standardised tool (e.g. McGill pain score) or involves a procedure (in which case full details should be supplied) -->
+
+<!--     • specify if a non standard tool is to be used, giving detail on its reliability and validity  -->
+
+<!--     • describe the methods used to maximise completeness of data e.g. telephoning participants who have not returned postal questionnaires -->
+
+<!--     • specify that the investigator /institutions should keep records of all participating patients (sufficient information to link records e.g., CRFs, hospital records and samples), all original signed informed consent forms and copies of the CRF pages  -->
+
+### Data handling and record keeping (If this information is included in a data management plan then there is no requirement to duplicate this information in the protocol)
+
+<!-- GCP requires that sponsors operating such systems validate the system, maintain SOPs for the use of the system, maintain an audit trail of data changes ensuring that there is no deletion of entered data, maintain a security system to protect against unauthorized access, maintain a list of the individuals authorized to make data changes, maintain adequate backup of the data, safeguard the blinding of the trial and archiving of any source data (i.e. hard copy and electronic). If data are transformed during processing, it should always be possible to compare the original data and observations with the processed data. The sponsor should use an unambiguous participant identification code that allows identification of all the data reported for each participant. Sponsors are responsible for ensuring compliance with the requirements outlined above when tasks are subcontracted. There should be no loss of quality when an electronic system is used in place of a paper system.  -->
+
+<!-- Specific principles can be found here: http://www.ema.europa.eu/docs/en_GB/document_library/Regulatory_and_procedural_guideline/2010/08/WC500095754.pdf -->
+
+### Access to Data
+
+<!-- Direct access will be granted to authorised representatives from the Sponsor, host institution and the regulatory authorities to permit trial-related monitoring, audits and inspections- in line with participant consent. -->
+
+### Archiving
+
+<!-- Aim: to describe the process for archiving the trial documentation at the end of the trial -->
+
+<!-- The protocol should state: -->
+
+<!--     • archiving will be authorised by the Sponsor following submission of the end of trial report -->
+
+<!--     • which trial documents the sponsor will be responsible for archiving and which trial documents the site(s) will be responsible for archiving -->
+
+<!--     • the location and duration of record retention for:    -->
+
+<!--     • essential documents -->
+
+<!--     • the trial database -->
+
+<!--     • all essential documents will be archived for a minimum of 5 years after completion of trial -->
+
+<!--     • destruction of essential documents will require authorisation from the Sponsor -->
+
+## MONITORING, AUDIT & INSPECTION
+
+<!-- Aim: to describe the procedures for monitoring audit and inspection (if this information is supplied as part of a monitoring plan then this section should reference it and not duplicate its detail) -->
+
+<!-- The protocol should state: -->
+
+<!--     • A Trial Monitoring Plan will be developed and agreed by the Trial Management Group (TMG), TSC and CI based on the trial risk assessment which may include on site monitoring. This will be dependent on a documented risk assessment of the trial. -->
+
+<!--     • The procedures and anticipated frequency for monitoring -->
+
+<!--     • If monitoring procedures are detailed elsewhere (e.g., monitoring manual), where the full details can be obtained -->
+
+<!--     • The degree of independence from the trial investigators and sponsor of the monitoring personnel -->
+
+<!--     • The processes reviewed can relate to participant enrolment, consent, eligibility, and allocation to trial groups; adherence to trial interventions and policies to protect participants, including reporting of harm and completeness, accuracy, and timeliness of data collection -->
+
+<!--     • Monitoring can be done by exploring the trial dataset or performing site visits -->
+
+<!--     • Any obligations that will be expected of sites to assist the sponsor in monitoring the trial. These may include hosting site visits, providing information for remote monitoring, or putting procedures in place to monitor the trial internally -->
+
+<!--     • Monitoring might be initially conducted across all sites, and subsequently conducted using a risk based approach that focuses, for example, on sites that have the highest enrolment rates, large numbers of withdrawals, or atypical (low or high) numbers of reported adverse events. -->
+
+## ETHICAL AND REGULATORY CONSIDERATIONS
+
+### Research Ethics Committee (REC) review& reports
+
+<!-- Aim: to demonstrate that the trial will receive ethical review and approval  -->
+
+<!-- The protocol should state that: -->
+
+<!--     • before the start of the trial, approval will be sought from a REC for the trial protocol, informed consent forms and other relevant documents e.g. advertisements and GP information letters -->
+
+<!--     • substantial amendments that require review by REC will not be implemented until the REC grants a favourable opinion for the trial (note that amendments may also need to be reviewed and accepted by the MHRA and/or NHS R&D departments before they can be implemented in practice at sites) -->
+
+<!--     • all correspondence with the REC will be retained in the Trial Master File/Investigator Site File  -->
+
+<!--     • an annual progress report (APR) will be submitted to the REC within 30 days of the anniversary date on which the favourable opinion was given, and annually until the trial is declared ended -->
+
+<!--     • it is the Chief Investigator’s responsibility to produce the annual reports as required. -->
+
+<!--     • the Chief Investigator will notify the REC of the end of the trial -->
+
+<!--     • if the trial is ended prematurely, the Chief Investigator will notify the REC, including the reasons for the premature termination -->
+
+<!--     • within one year after the end of the trial, the Chief Investigator will submit a final report with the results, including any publications/abstracts, to the REC -->
+
+### Peer review
+
+<!-- Aim: to descibe the peer review process for the trial which should be instigated or approved by the Sponsor -->
+
+<!-- The protocol should provide details on who reviewed this trial protocol e.g. the funder or an internal Trust department/committee, but not include individual names unless the person in question gives their express permission. -->
+
+<!-- The NIHR CRN provide the following standard for peer review for studies to be included on their portfolio: -->
+
+<!-- High quality peer review  -->
+
+<!-- Peer review must be independent, expert, and proportionate: -->
+
+<!--     a) Independent: At least two individual experts should have reviewed the trial. The definition of independent used here is that the reviewers must be external to the investigators’ host institution and not involved in the trial in any way. Reviewers do not need to be anonymous.  -->
+
+<!--     b) Expert: Reviewers should have knowledge of the relevant discipline to consider the clinical and/or service based aspects of the protocol, and/or have the expertise to assess the methodological and statistical aspects of the trial.  -->
+
+<!--     c) Proportionate: Peer review should be commensurate with the size and complexity of the trial. Large multicentre studies should have higher level (more reviewers with broader expertise and often independent review committee or board), and potentially international peer review.  -->
+
+13.3 Public and Patient Involvement <!-- Aim: to describe the involvement of Patients and Public in the research --> <!-- This section of the protocol should detail which aspects of the research process have actively involved, or will involve, patients, service users, and/or their carers, or members of the public in particular; --> <!--     • Design of the research --> <!--     • Management of the research --> <!--     • Undertaking the research --> <!--     • Analysis of results --> <!--     • Dissemination of findings --> <!-- Guidance on involving patients and the public in research can be found on the INVOLVE website. http://www.invo.org.uk/ -->
+
+### Regulatory Compliance
+
+<!-- Aim: to demonstrate that the trial will comply with regulations -->
+
+<!-- The protocol should state that: -->
+
+<!--     • the trial will not commence until a Clinical Trial Authorisation (CTA) is obtained from the MHRA and Favourable REC opinion.  -->
+
+<!--     • the protocol and trial conduct will comply with the Medicines for Human Use (Clinical Trials) Regulations 2004 and any relevant amendments -->
+
+<!--     • For trials using ionising radiation the protocol should state that: -->
+
+<!--         ◦ the procedures are compliant with the Ionising Radiation (Medical Exposure) Regulations, and appropriate review by a Medical Physics Expert and Clinical Radiation Expert has been undertaken, and -->
+
+<!--         ◦ Where a trial involves the administration of radioactive substances the protocol should clearly identify that a current Administration of Radioactive Substances Advisory Committee (ARSAC) certificate will be required for each site and, where exposures are additional to normal standard of care, a research ARSAC certificate will be required for each site -->
+
+<!-- NB Ionising radiation includes: -->
+
+<!--     • X-rays, CT scans, DXA scans -->
+
+<!--     • Radiotherapy (including brachytherapy and radionuclide therapy, using unsealed sources) -->
+
+<!--     • Radionuclide studies (including nuclear medicine imaging, PET-CT and in vitro measurements) -->
+
+<!--     • Administration of a radioactive substance -->
+
+<!-- Neither MRI nor ultrasound involve ionising radiation. -->
+
+<!-- There is a legal and ethical need to justify the use of ionising radiation in research protocols. Be aware that the Ionising Radiation (Medical Exposure) Regulations relate to any research exposure, not only to those additional to routine clinical care.  -->
+
+<!-- Procedures involving administration of radioactive material to participants, which differ from standard of care, must be covered by an appropriate ARSAC certificate. Procedures might include: -->
+
+<!--     • Radionucleotide imaging -->
+
+<!--     • MUGA scans -->
+
+<!--     • Brachytherapy -->
+
+<!-- ARSAC certificates are specific to the site, procedure and purpose (diagnosis, treatment, or research) of the administration. Under the current ARSAC arrangements, a research ARSAC certificate is only needed at a site where the administration required by a research protocol is additional to that which participants would receive under routine clinical care at that site (routine procedures will be covered by existing diagnostic or treatment ARSAC certificates held by a certificate holder at the site). Currently research ARSAC certificates are trial specific, so each site will need to apply for a research ARSAC certificate for each trial that involves administration additional to routine clinical care.   -->
+
+<!-- Special consideration should be given to potential variation in procedure at sites; what might be routine at one site could be additional to routine care at another site. Also, care should be taken where the protocol gives sites an option on the testing method, for example heart function may be determined either by echocardiogram or MUGA scan. Sites may intend to use echocardiograms, so not apply for a research ARSAC certificate to cover the MUGA scans, but this would leave them in a difficult position if, due to practical reasons, they were unable to use echocardiograms (e.g. equipment failure, scheduling issues) to perform the tests required by the protocol. -->
+
+<!-- All imaging technologies have the potential to uncover previously unknown pathology.  You should always consider how likely such a discovery may be, and how best to handle this discovery when developing research protocols that involve any imaging techniques. -->
+
+<!-- The protocol should state that: -->
+
+<!--     • Before any site can enrol patients into the study, the Chief Investigator/Principal Investigator or designee will ensure that appropriate approvals from participating organisations are in place. Specific arrangements on how to gain approval from participating organisations are in place and comply with the relevant guidance. Different arrangements for NHS and non NHS sites are described as relevant. -->
+
+<!--     • For any amendment to the study, the Chief Investigator or designee, in agreement with the sponsor will submit information to the appropriate body in order for them to issue approval for the amendment. The Chief Investigator or designee will work with sites (R&D departments at NHS sites as well as the study delivery team) so they can put the necessary arrangements in place to implement the amendment to confirm their support for the study as amended. -->
+
+### Protocol compliance
+
+<!-- Aim: to demonstrate how protocol compliance will be managed and documented -->
+
+<!-- Protocol non-compliances are departures from the approved protocol. -->
+
+<!-- The protocol should state that: -->
+
+<!--     • prospective, planned deviations or waivers to the protocol are not allowed under the UK regulations on Clinical Trials and must not be used e.g. it is not acceptable to enrol a participant if they do not meet the eligibility criteria or restrictions specified in the trial protocol -->
+
+<!--     • accidental protocol deviations can happen at any time. They must be adequately documented on the relevant forms and reported to the Chief Investigator and Sponsor immediately.  -->
+
+<!--     • deviations from the protocol which are found to frequently recur are not acceptable, will require immediate action and could potentially be classified as a serious breach. -->
+
+### Notification of Serious Breaches to GCP and/or the protocol
+
+<!-- Aim: to demonstrate how serious breaches will be managed -->
+
+<!-- A “serious breach” is a breach which is likely to effect to a significant degree – -->
+
+<!--         (a) the safety or physical or mental integrity of the participants of the trial; or -->
+
+<!--         (b) the scientific value of the trial -->
+
+<!-- The protocol should state that: -->
+
+<!--     • the sponsor will be notified immediately of any case where the above definition applies during the trial conduct phase -->
+
+<!--     • the sponsor of a clinical trial will notify the licensing authority in writing of any serious breach of -->
+
+<!--         (a) the conditions and principles of GCP in connection with that trial; or  -->
+
+<!--         (b) the protocol relating to that trial, as amended from time to time, within 7 days of becoming aware of that breach -->
+
+### Data protection and patient confidentiality
+
+<!-- AIM; To describe how patient confidentiality will be maintained and how the trial is compliant with the requirements of the Data Protection Act 1998 -->
+
+<!-- The protocol should state that all investigators and trial site staff must comply with the requirements of the Data Protection Act 1998 with regards to the collection, storage, processing and disclosure of personal information and will uphold the Act’s core principles.  -->
+
+<!--  The protocol should describe: -->
+
+<!--     • the means whereby personal information is collected, kept secure, and maintained. In general, this involves: -->
+
+<!--         ◦ the creation of coded, depersonalised data where the participant’s identifying information is replaced by an unrelated sequence of characters -->
+
+<!--         ◦ secure maintenance of the data and the linking code in separate locations using encrypted digital files within password protected folders and storage media -->
+
+<!--         ◦ limiting access to the minimum number of individuals necessary for quality control, audit, and analysis -->
+
+<!--     • how the confidentiality of data will be preserved when the data are transmitted to sponsors and co-investigators -->
+
+<!--     • how long the data will be stored for -->
+
+<!--     • who is the data custodian -->
+
+### Financial and other competing interests for the chief investigator, PIs at each site and committee members for the overall trial management
+
+<!-- Aim: to identify and disclose any competing interests that might influence trial design, conduct, or reporting -->
+
+<!-- At a minimum, disclosure should reflect: -->
+
+<!--     • ownership interests that may be related to products, services, or interventions considered for use in the trial or that may be significantly affected by the trial -->
+
+<!--     • commercial ties requiring disclosure include, but are not restricted to, any pharmaceutical, behaviour modification, and/or technology company -->
+
+<!--     • any non-commercial potential conflicts e.g. professional collaborations that may impact on academic promotion. -->
+
+<!-- However the oversight groups should determine what it is appropriate to report. -->
+
+<!-- At the time of writing the protocol not all sites/personnel may have been identified. When this is the case then the protocol should state that this information will be collected and where it will be documented. -->
+
+### Indemnity
+
+<!-- Aim: to fully describe indemnity arrangements for the trial -->
+
+<!-- The following areas should be addressed in the protocol: -->
+
+<!--     1. what arrangements will be made for insurance and/or indemnity to meet the potential legal liability of the sponsor(s) for harm to participants arising from the management of the research? -->
+
+<!--     2. what arrangements will be made for insurance and/ or indemnity to meet the potential legal liability of the sponsor(s) or employer(s) for harm to participants arising from the design of the research? -->
+
+<!--     3. what arrangements will be made for insurance and/ or indemnity to meet the potential legal liability of investigators/collaborators arising from harm to participants in the conduct of the research? Note that if the trial involves sites that are not covered by the NHS indemnity scheme (e.g. GP surgeries in primary care) these investigators/collaborators will need to ensure that their activity on the trial is covered under their own professional indemnity -->
+
+<!--     4. has the sponsor(s) made arrangements for payment of compensation in the event of harm to the research participants where no legal liability arises? -->
+
+<!--     5. if equipment is to be provided to site(s) for the purposes of the trial, the protocol should describe what arrangements will be made for insurance and/ or indemnity to meet the potential legal liability arising in relation to the equipment (e.g. loss, damage, maintenance responsibilities for the equipment itself, harm to participants or site staff arising from the use of the equipment)  -->
+
+<!-- NB Usually the responsibility for sections 1&2 lie with the sponsor, section 3 with the participating site and section 4 with the sponsor. Section 4 is not mandatory and should be assessed in relation to the inherent risks of the trial; however, it may be a condition of REC favourable opinion to have these arrangements in place. -->
+
+### Amendments
+
+<!-- Aim: to describe the process for dealing with amendments -->
+
+<!-- Under the Medicines for Human Use (Clinical Trials) Regulations 2004, the sponsor may make a non-substantial amendment at any time during a trial. If the sponsor wishes to make a substantial amendment to the CTA or the documents that supported the original application for the CTA, the sponsor must submit a valid notice of amendment to the licencing authority (MHRA) for consideration. If the sponsor wishes to make a substantial amendment to the REC application or the supporting documents, the sponsor must submit a valid notice of amendment to the REC for consideration. The MHRA and/or the REC will provide a response regarding the amendment within 35 days of receipt of the notice. It is the sponsor’s responsibility to decide whether an amendment is substantial or non-substantial for the purposes of submission to the MHRA and/or REC. -->
+
+<!-- If applicable, other specialist review bodies (e.g. CAG) need to be notified about substantial amendments in case the amendment affects their opinion of the trial. -->
+
+<!-- Amendments also need to be notified to the national coordinating function of the UK country where the lead NHS R&D office is based and communicated to the participating organisations (R&D office and local research team) departments of participating sites to assess whether the amendment affects the NHS permission for that site. Note that some amendments that may be considered to be non-substantial for the purposes of REC still need to be notified to NHS R&D (e.g. a change to the funding arrangements).  -->
+
+<!-- The protocol should describe: -->
+
+<!--     • the process for making amendments  -->
+
+<!--     • who will be responsible for the decision to amend the protocol and for deciding whether an amendment is substantial or non-substantial -->
+
+<!--     • how substantive changes will be communicated to relevant stakeholders (e.g., REC, trial registries, R&D, regulatory agencies) -->
+
+<!--     • how the amendment history will be tracked to identify the most recent protocol version. -->
+
+<!-- Guidance on the categorisation of amendments can be found on the HRA website. http://www.hra.nhs.uk/resources/after-you-apply/amendments/ -->
+
+### Post trial care
+
+<!-- Aim: to describe what care the sponsor will continue to provide to participants after the trial is completed, including whether funding arrangements are in place. -->
+
+<!-- The Declaration of Helsinki states that “In advance of a clinical trial, sponsors, researchers and host country governments should make provisions for post-trial access for all participants who still need an intervention identified as beneficial in the trial. This information must also be disclosed to participants during the informed consent process” and that “in clinical trials, the protocol must also describe appropriate arrangements for post-trial provisions.” -->
+
+<!-- The protocol should describe any interventions, benefits, or other care that the sponsor will continue to provide to participants after the trial is completed, and provide justification if continued access to the trial treatment(s) will not be funded. See the link for guidance https://www.gov.uk/government/publications/guidance-on-attributing-the-costs-of-health-and-social-care-research   -->
+
+### Access to the final trial dataset
+
+<!-- Aim: to describe who will have access to the final dataset -->
+
+<!-- The protocol should: -->
+
+<!--     • identify the individuals involved in the trial who will have access to the full dataset -->
+
+<!--     • explicitly describe any restrictions in access for trial investigators e.g. for some multicentre trials, only the steering group has access to the full trial dataset in order to ensure that the overall results are not disclosed by an individual trial site prior to the main publication  -->
+
+<!--     • state if the trial will allow site investigators to access the full dataset if a formal request describing their plans is approved by the steering group -->
+
+## DISSEMINIATION POLICY
+
+### Dissemination policy
+
+<!-- Aim: to describe the dissemination policy for the trial -->
+
+<!-- It is highly recommended that the Consort Guidelines and checklist are reviewed prior to generating any publications for the trial to ensure they meet the standards required for submission to high quality peer reviewed journals etc. http://www.consort-statement.org/ -->
+
+<!-- The protocol should state -->
+
+<!--     • who owns the data arising from the trial -->
+
+<!--     • that on completion of the trial, the data will be analysed and tabulated and a Final Trial Report prepared -->
+
+<!--     • where the full trial report can be accessed -->
+
+<!--     • if any of the participating investigators will have rights to publish any of the trial data  -->
+
+<!--     • if there are any time limits or review requirements on the publications -->
+
+<!--     • whether any funding or supporting body needs to be acknowledged within the publications and whether they have review and publication rights of the data from the trial -->
+
+<!--     • whether there are any plans to notify the participants of the outcome of the trial, either by provision of the publication, or via a specifically designed newsletter etc. -->
+
+<!--     • if it possible for the participant to specifically request results from their PI and when would this information be provided e.g. after the Final Trial Report had been compiled or after the results had been published  -->
+
+<!--     • whether the trial protocol, full trial report, anonymised participant level dataset, and statistical code for generating the results will be made publicly available; and if so, describe where, the timeframe and any other conditions for access. -->
+
+<!-- 14.2   Authorship eligibility guidelines and any intended use of professional writers -->
+
+<!-- Aim: to describe who will be granted authorship on the final trial report -->
+
+<!-- The protocol should detail: -->
+
+<!--     • guidelines on authorship on the final trial report -->
+
+<!--     • criteria for individually named authors or group authorship(The International Committee of Medical Journal Editors has defined authorship criteria for manuscripts submitted for publication) -->
+
+<!--     • if professional medical writers are going to be hired and how their employment and funding will be acknowledged in trial reports -->
+
+## REFERENCES
