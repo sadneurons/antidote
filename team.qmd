@@ -9,22 +9,6 @@ format:
 
 ## Scientific advisory team
 
-```{ojs}
-Plot.rectY(data, 
-  Plot.stackY(
-    Plot.binX( 
-      {y: "count"}, 
-      {x: "body_mass", fill: "species", thresholds: 20})
-    )
-  ).plot({
-    facet: {
-      data,
-      x: "sex"
-    },
-    marks: [Plot.frame()]
-  })
-```
-
 ## Data monitoring and ethics
 
 ## Clinical research team
@@ -33,16 +17,9 @@ Plot.rectY(data,
 
 ## Chief investigator
 
-```{ojs}
-Inputs.table(filtered)
-```
-
-
 ## Trial steering committee
 
-
-
-## Statistical support
+## Statistical support / CTU
 
 
 
