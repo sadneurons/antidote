@@ -9,7 +9,7 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: protocol_CTIMP.qmd
+      - href: protocol.qmd
         text: Protocol
       - href: sap.qmd
         text: Statistical analysis plan
