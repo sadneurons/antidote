@@ -30,10 +30,12 @@ ul.task-list{list-style: none;}
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -100,6 +102,9 @@ ul.task-list{list-style: none;}
     <a class="nav-link" href="./about.html">About</a>
   </li>  
 </ul>
+              <div class="quarto-toggle-container">
+                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+              </div>
               <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
@@ -119,18 +124,16 @@ ul.task-list{list-style: none;}
   <li><a href="#research-reference-numbers" id="toc-research-reference-numbers" class="nav-link" data-scroll-target="#research-reference-numbers"> <span class="header-section-number">0.3</span> RESEARCH REFERENCE NUMBERS</a></li>
   <li><a href="#trial-registry-number-and-date" id="toc-trial-registry-number-and-date" class="nav-link" data-scroll-target="#trial-registry-number-and-date"> <span class="header-section-number">0.4</span> TRIAL REGISTRY NUMBER AND DATE</a></li>
   <li><a href="#protocol-version-number-and-date" id="toc-protocol-version-number-and-date" class="nav-link" data-scroll-target="#protocol-version-number-and-date"> <span class="header-section-number">0.5</span> PROTOCOL VERSION NUMBER AND DATE</a></li>
-  <li><a href="#other-research-reference-numbers" id="toc-other-research-reference-numbers" class="nav-link" data-scroll-target="#other-research-reference-numbers"> <span class="header-section-number">0.6</span> OTHER RESEARCH REFERENCE NUMBERS</a></li>
-  <li><a href="#sponsor-co-sponsors-joint-sponsors" id="toc-sponsor-co-sponsors-joint-sponsors" class="nav-link" data-scroll-target="#sponsor-co-sponsors-joint-sponsors"> <span class="header-section-number">0.7</span> SPONSOR / CO-SPONSORS / JOINT-SPONSORS</a></li>
-  <li><a href="#fulllong-title-of-the-trial-1" id="toc-fulllong-title-of-the-trial-1" class="nav-link" data-scroll-target="#fulllong-title-of-the-trial-1"> <span class="header-section-number">0.8</span> FULL/LONG TITLE OF THE TRIAL</a></li>
-  <li><a href="#short-trial-title-acronym-1" id="toc-short-trial-title-acronym-1" class="nav-link" data-scroll-target="#short-trial-title-acronym-1"> <span class="header-section-number">0.9</span> SHORT TRIAL TITLE / ACRONYM</a></li>
-  <li><a href="#protocol-version-number-and-date-1" id="toc-protocol-version-number-and-date-1" class="nav-link" data-scroll-target="#protocol-version-number-and-date-1"> <span class="header-section-number">0.10</span> PROTOCOL VERSION NUMBER AND DATE</a></li>
-  <li><a href="#research-reference-numbers-1" id="toc-research-reference-numbers-1" class="nav-link" data-scroll-target="#research-reference-numbers-1"> <span class="header-section-number">0.11</span> RESEARCH REFERENCE NUMBERS</a></li>
-  <li><a href="#iras-number" id="toc-iras-number" class="nav-link" data-scroll-target="#iras-number"> <span class="header-section-number">0.12</span> IRAS Number:</a></li>
-  <li><a href="#signature-page" id="toc-signature-page" class="nav-link" data-scroll-target="#signature-page"> <span class="header-section-number">0.13</span> SIGNATURE PAGE</a></li>
-  <li><a href="#key-trial-contacts" id="toc-key-trial-contacts" class="nav-link" data-scroll-target="#key-trial-contacts"> <span class="header-section-number">0.14</span> Key Trial Contacts</a></li>
-  <li><a href="#list-of-abbreviations" id="toc-list-of-abbreviations" class="nav-link" data-scroll-target="#list-of-abbreviations"> <span class="header-section-number">0.15</span> LIST OF ABBREVIATIONS</a></li>
-  <li><a href="#trial-summary" id="toc-trial-summary" class="nav-link" data-scroll-target="#trial-summary"> <span class="header-section-number">0.16</span> TRIAL SUMMARY</a></li>
-  <li><a href="#role-of-trial-sponsor-and-funder" id="toc-role-of-trial-sponsor-and-funder" class="nav-link" data-scroll-target="#role-of-trial-sponsor-and-funder"> <span class="header-section-number">0.17</span> ROLE OF TRIAL SPONSOR AND FUNDER</a></li>
+  <li><a href="#sponsor" id="toc-sponsor" class="nav-link" data-scroll-target="#sponsor"> <span class="header-section-number">0.6</span> SPONSOR</a></li>
+  <li><a href="#fulllong-title-of-the-trial-1" id="toc-fulllong-title-of-the-trial-1" class="nav-link" data-scroll-target="#fulllong-title-of-the-trial-1"> <span class="header-section-number">0.7</span> FULL/LONG TITLE OF THE TRIAL</a></li>
+  <li><a href="#short-trial-title-acronym-1" id="toc-short-trial-title-acronym-1" class="nav-link" data-scroll-target="#short-trial-title-acronym-1"> <span class="header-section-number">0.8</span> SHORT TRIAL TITLE / ACRONYM</a></li>
+  <li><a href="#protocol-version-number-and-date-1" id="toc-protocol-version-number-and-date-1" class="nav-link" data-scroll-target="#protocol-version-number-and-date-1"> <span class="header-section-number">0.9</span> PROTOCOL VERSION NUMBER AND DATE</a></li>
+  <li><a href="#research-reference-numbers-1" id="toc-research-reference-numbers-1" class="nav-link" data-scroll-target="#research-reference-numbers-1"> <span class="header-section-number">0.10</span> RESEARCH REFERENCE NUMBERS</a></li>
+  <li><a href="#signature-page" id="toc-signature-page" class="nav-link" data-scroll-target="#signature-page"> <span class="header-section-number">0.11</span> SIGNATURE PAGE</a></li>
+  <li><a href="#key-trial-contacts" id="toc-key-trial-contacts" class="nav-link" data-scroll-target="#key-trial-contacts"> <span class="header-section-number">0.12</span> Key Trial Contacts</a></li>
+  <li><a href="#list-of-abbreviations" id="toc-list-of-abbreviations" class="nav-link" data-scroll-target="#list-of-abbreviations"> <span class="header-section-number">0.13</span> LIST OF ABBREVIATIONS</a></li>
+  <li><a href="#trial-summary" id="toc-trial-summary" class="nav-link" data-scroll-target="#trial-summary"> <span class="header-section-number">0.14</span> TRIAL SUMMARY</a></li>
+  <li><a href="#role-of-trial-sponsor-and-funder" id="toc-role-of-trial-sponsor-and-funder" class="nav-link" data-scroll-target="#role-of-trial-sponsor-and-funder"> <span class="header-section-number">0.15</span> ROLE OF TRIAL SPONSOR AND FUNDER</a></li>
   <li><a href="#roles-and-responsibilities-of-trial-management-commiteesgroups-individuals" id="toc-roles-and-responsibilities-of-trial-management-commiteesgroups-individuals" class="nav-link" data-scroll-target="#roles-and-responsibilities-of-trial-management-commiteesgroups-individuals"> <span class="header-section-number">1</span> ROLES AND RESPONSIBILITIES OF TRIAL MANAGEMENT COMMITEES/GROUPS &amp; INDIVIDUALS</a>
   <ul class="collapse">
   <li><a href="#trial-management-committees" id="toc-trial-management-committees" class="nav-link" data-scroll-target="#trial-management-committees"> <span class="header-section-number">1.1</span> Trial Management Committees</a></li>
@@ -273,15 +276,44 @@ ul.task-list{list-style: none;}
 <div style="page-break-after: always;"></div>
 <section id="fulllong-title-of-the-trial" class="level3" data-number="0.1">
 <h3 data-number="0.1" class="anchored" data-anchor-id="fulllong-title-of-the-trial"><span class="header-section-number">0.1</span> FULL/LONG TITLE OF THE TRIAL</h3>
-<p>Anakinra in the Treatment of Inflammation and Delirium Orthopaedic Trauma and Repair, a phase III, Bayesian Adaptive Randomised Controlled Trial in people aged over 65 presenting with fractured neck of femur.</p>
+<p>Anakinra in the Treatment of Inflammation and Delirium in Orthopaedic Trauma and Repair, a phase III, Bayesian-Adaptive Randomised Controlled Trial in people aged over 65 presenting with fractured neck of femur.</p>
 </section>
 <section id="short-trial-title-acronym" class="level3" data-number="0.2">
 <h3 data-number="0.2" class="anchored" data-anchor-id="short-trial-title-acronym"><span class="header-section-number">0.2</span> SHORT TRIAL TITLE / ACRONYM</h3>
-<p>AnTIDOTe</p>
+<p>AnTIDOTe RCT</p>
 <div style="page-break-after: always;"></div>
 </section>
 <section id="research-reference-numbers" class="level3" data-number="0.3">
 <h3 data-number="0.3" class="anchored" data-anchor-id="research-reference-numbers"><span class="header-section-number">0.3</span> RESEARCH REFERENCE NUMBERS</h3>
+<table class="table">
+<caption>Research reference numbers</caption>
+<tbody>
+<tr class="odd">
+<td>IRAS</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>EUDRACT</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>ClinicalTrials.gov</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>ISCRTN</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>University of Manchester</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>KCL CTU</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="trial-registry-number-and-date" class="level3" data-number="0.4">
 <h3 data-number="0.4" class="anchored" data-anchor-id="trial-registry-number-and-date"><span class="header-section-number">0.4</span> TRIAL REGISTRY NUMBER AND DATE</h3>
@@ -290,37 +322,33 @@ ul.task-list{list-style: none;}
 <h3 data-number="0.5" class="anchored" data-anchor-id="protocol-version-number-and-date"><span class="header-section-number">0.5</span> PROTOCOL VERSION NUMBER AND DATE</h3>
 <p>v0.1 7th July 2022</p>
 </section>
-<section id="other-research-reference-numbers" class="level3" data-number="0.6">
-<h3 data-number="0.6" class="anchored" data-anchor-id="other-research-reference-numbers"><span class="header-section-number">0.6</span> OTHER RESEARCH REFERENCE NUMBERS</h3>
-</section>
-<section id="sponsor-co-sponsors-joint-sponsors" class="level3" data-number="0.7">
-<h3 data-number="0.7" class="anchored" data-anchor-id="sponsor-co-sponsors-joint-sponsors"><span class="header-section-number">0.7</span> SPONSOR / CO-SPONSORS / JOINT-SPONSORS</h3>
+<section id="sponsor" class="level3" data-number="0.6">
+<h3 data-number="0.6" class="anchored" data-anchor-id="sponsor"><span class="header-section-number">0.6</span> SPONSOR</h3>
 <p>University of Manchester</p>
 <div style="page-break-after: always;"></div>
 </section>
-<section id="fulllong-title-of-the-trial-1" class="level3" data-number="0.8">
-<h3 data-number="0.8" class="anchored" data-anchor-id="fulllong-title-of-the-trial-1"><span class="header-section-number">0.8</span> FULL/LONG TITLE OF THE TRIAL</h3>
+<section id="fulllong-title-of-the-trial-1" class="level3" data-number="0.7">
+<h3 data-number="0.7" class="anchored" data-anchor-id="fulllong-title-of-the-trial-1"><span class="header-section-number">0.7</span> FULL/LONG TITLE OF THE TRIAL</h3>
+<p>Anakinra in the Treatment of Inflammation and Delirium in Orthopaedic Trauma and Repair, a phase III, Bayesian-Adaptive Randomised Controlled Trial in people aged over 65 presenting with fractured neck of femur.</p>
 <div class="cell">
 
 </div>
 </section>
-<section id="short-trial-title-acronym-1" class="level3" data-number="0.9">
-<h3 data-number="0.9" class="anchored" data-anchor-id="short-trial-title-acronym-1"><span class="header-section-number">0.9</span> SHORT TRIAL TITLE / ACRONYM</h3>
+<section id="short-trial-title-acronym-1" class="level3" data-number="0.8">
+<h3 data-number="0.8" class="anchored" data-anchor-id="short-trial-title-acronym-1"><span class="header-section-number">0.8</span> SHORT TRIAL TITLE / ACRONYM</h3>
 <div class="cell">
 
 </div>
 </section>
-<section id="protocol-version-number-and-date-1" class="level3" data-number="0.10">
-<h3 data-number="0.10" class="anchored" data-anchor-id="protocol-version-number-and-date-1"><span class="header-section-number">0.10</span> PROTOCOL VERSION NUMBER AND DATE</h3>
+<section id="protocol-version-number-and-date-1" class="level3" data-number="0.9">
+<h3 data-number="0.9" class="anchored" data-anchor-id="protocol-version-number-and-date-1"><span class="header-section-number">0.9</span> PROTOCOL VERSION NUMBER AND DATE</h3>
 <div class="cell">
 
 </div>
 </section>
-<section id="research-reference-numbers-1" class="level3" data-number="0.11">
-<h3 data-number="0.11" class="anchored" data-anchor-id="research-reference-numbers-1"><span class="header-section-number">0.11</span> RESEARCH REFERENCE NUMBERS</h3>
-</section>
-<section id="iras-number" class="level3" data-number="0.12">
-<h3 data-number="0.12" class="anchored" data-anchor-id="iras-number"><span class="header-section-number">0.12</span> IRAS Number:</h3>
+<section id="research-reference-numbers-1" class="level3" data-number="0.10">
+<h3 data-number="0.10" class="anchored" data-anchor-id="research-reference-numbers-1"><span class="header-section-number">0.10</span> RESEARCH REFERENCE NUMBERS</h3>
+<p>IRAS Number:</p>
 <div class="cell">
 
 </div>
@@ -337,8 +365,8 @@ ul.task-list{list-style: none;}
 </div>
 <div style="page-break-after: always;"></div>
 </section>
-<section id="signature-page" class="level3" data-number="0.13">
-<h3 data-number="0.13" class="anchored" data-anchor-id="signature-page"><span class="header-section-number">0.13</span> SIGNATURE PAGE</h3>
+<section id="signature-page" class="level3" data-number="0.11">
+<h3 data-number="0.11" class="anchored" data-anchor-id="signature-page"><span class="header-section-number">0.11</span> SIGNATURE PAGE</h3>
 <p>The undersigned confirm that the following protocol has been agreed and accepted and that the Chief Investigator agrees to conduct the trial in compliance with the approved protocol and will adhere to the principles outlined in the Medicines for Human Use (Clinical Trials) Regulations 2004 (SI 2004/1031), amended regulations (SI 2006/1928) and any subsequent amendments of the clinical trial regulations, GCP guidelines, the Sponsor’s (and any other relevant) SOPs, and other regulatory requirements as amended.</p>
 <p>I agree to ensure that the confidential information contained in this document will not be used for any other purpose other than the evaluation or conduct of the clinical investigation without the prior written consent of the Sponsor.</p>
 <p>I also confirm that I will make the findings of the trial publically available through publication or other dissemination tools without any unnecessary delay and that an honest accurate and transparent account of the trial will be given; and that any discrepancies and serious breaches of GCP from the trial as planned in this protocol will be explained.</p>
@@ -351,61 +379,71 @@ Date: ……/……/…… Name: (please print):</p>
 Name: (please print): Position:<br>
 </p>
 </section>
-<section id="key-trial-contacts" class="level3" data-number="0.14">
-<h3 data-number="0.14" class="anchored" data-anchor-id="key-trial-contacts"><span class="header-section-number">0.14</span> Key Trial Contacts</h3>
+<section id="key-trial-contacts" class="level3" data-number="0.12">
+<h3 data-number="0.12" class="anchored" data-anchor-id="key-trial-contacts"><span class="header-section-number">0.12</span> Key Trial Contacts</h3>
 <table class="table">
 <caption>Key Contacts</caption>
+<colgroup>
+<col style="width: 39%">
+<col style="width: 60%">
+</colgroup>
 <tbody>
 <tr class="odd">
 <td>Chief Investigator</td>
-<td></td>
+<td>Dr.&nbsp;Ross A. Dunne</td>
 </tr>
 <tr class="even">
 <td>Trial Co-ordinator</td>
-<td></td>
+<td>Ms.&nbsp;Lynsey Hall</td>
 </tr>
 <tr class="odd">
 <td>Sponsor</td>
-<td></td>
+<td>University of Manchester</td>
 </tr>
 <tr class="even">
 <td>Join-sponsor(s) / co-sponsor(s)</td>
-<td></td>
+<td>Greater Manchester Mental Health Foundation Trust</td>
 </tr>
 <tr class="odd">
 <td>Funder(s)</td>
-<td></td>
+<td>NIHR</td>
 </tr>
 <tr class="even">
 <td>Clinical Trials Unit</td>
-<td></td>
+<td>King’s College London CTU</td>
 </tr>
 <tr class="odd">
 <td>Key Protocol Contributors</td>
-<td></td>
+<td><p>Dr.&nbsp;Ross A. Dunne</p>
+<p>Prof.&nbsp;Leela Biant</p>
+<p>Prof.&nbsp;Colm Cunningham</p>
+<p>Prof.&nbsp;Stuart Allan</p>
+<p>Prof.&nbsp;David Brough</p>
+<p>Prof.&nbsp;Alasdair MacLullich</p></td>
 </tr>
 <tr class="even">
 <td>Statistician</td>
-<td></td>
+<td>TBD</td>
 </tr>
 <tr class="odd">
 <td>Trials Pharmacist</td>
-<td></td>
+<td>Beatriz Duran</td>
 </tr>
 <tr class="even">
 <td>Committees</td>
-<td></td>
+<td><p>DMEC</p>
+<p>TSC</p></td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="list-of-abbreviations" class="level3" data-number="0.15">
-<h3 data-number="0.15" class="anchored" data-anchor-id="list-of-abbreviations"><span class="header-section-number">0.15</span> LIST OF ABBREVIATIONS</h3>
+<section id="list-of-abbreviations" class="level3" data-number="0.13">
+<h3 data-number="0.13" class="anchored" data-anchor-id="list-of-abbreviations"><span class="header-section-number">0.13</span> LIST OF ABBREVIATIONS</h3>
 <!-- Define all unusual or ‘technical’ terms related to the trial.  Add or delete as appropriate to your trial.  Maintain alphabetical order for ease of reference. -->
 <table class="table">
 <colgroup>
-<col style="width: 17%">
-<col style="width: 82%">
+<col style="width: 12%">
+<col style="width: 87%">
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -608,11 +646,15 @@ Name: (please print): Position:<br>
 </table>
 <div style="page-break-after: always;"></div>
 </section>
-<section id="trial-summary" class="level3" data-number="0.16">
-<h3 data-number="0.16" class="anchored" data-anchor-id="trial-summary"><span class="header-section-number">0.16</span> TRIAL SUMMARY</h3>
+<section id="trial-summary" class="level3" data-number="0.14">
+<h3 data-number="0.14" class="anchored" data-anchor-id="trial-summary"><span class="header-section-number">0.14</span> TRIAL SUMMARY</h3>
 <!-- It may be useful to include a brief synopsis of the trial for quick reference. Complete information and, if required, add additional rows. -->
 <table class="table">
 <caption>Trial Summary</caption>
+<colgroup>
+<col style="width: 20%">
+<col style="width: 79%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>Trial Title</th>
@@ -622,27 +664,27 @@ Name: (please print): Position:<br>
 <tbody>
 <tr class="odd">
 <td>Internal Ref. no. (or short title)</td>
-<td></td>
+<td>AmTIDOTe</td>
 </tr>
 <tr class="even">
 <td>Clinical Phase</td>
-<td></td>
+<td>III</td>
 </tr>
 <tr class="odd">
 <td>Trial Design</td>
-<td></td>
+<td>Randomised Controlled Rater Blind</td>
 </tr>
 <tr class="even">
 <td>Planned Sample Size</td>
-<td></td>
+<td>n=</td>
 </tr>
 <tr class="odd">
 <td>Treatment Duration</td>
-<td></td>
+<td>72 hours post surgical repair</td>
 </tr>
 <tr class="even">
 <td>Followup Duration</td>
-<td></td>
+<td>One followup at 30 days</td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -650,37 +692,45 @@ Name: (please print): Position:<br>
 </tr>
 <tr class="even">
 <td>Primary</td>
-<td></td>
+<td>To compare the efficacy of Anakinra with placebo in the treatment and prevention of delirium in participants over 65 undergoing surgical repair of fractured neck of femur</td>
 </tr>
 <tr class="odd">
 <td>Secondary</td>
-<td></td>
+<td>To compare the efficacy of Anakinra with placebo in the time to recovery (first stand) in participants over 65 undergoing surgical repair of fractured neck of femur</td>
 </tr>
 <tr class="even">
+<td>Exploratory</td>
+<td>To compare the efficacy of Anakinra with placebo in the time to medical fitness for discharge in participants over 65 undergoing surgical repair of fractured neck of femur</td>
+</tr>
+<tr class="odd">
 <td></td>
 <td><strong>Outcomes</strong></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Primary</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Secondary</td>
-<td></td>
+<td><p>Confusion Assessment Method,</p>
+<p>Confusion Assessment Method Severity</p>
+<p>Observational Scale of Level of Arousal</p></td>
 </tr>
 <tr class="odd">
-<td>Investigational Medicinal Products</td>
-<td></td>
+<td>Secondary</td>
+<td><p>Time to stand</p>
+<p>Time to medical fitness for discharge</p></td>
 </tr>
 <tr class="even">
-<td>Fomrulation, Dose, Route of Administration</td>
-<td></td>
+<td>Investigational Medicinal Products</td>
+<td>Anakinra</td>
+</tr>
+<tr class="odd">
+<td>Formulation, Dose, Route of Administration</td>
+<td>100mg Subcutaneous twice daily until 72 hours post surgical repair of fractured neck of femur</td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="role-of-trial-sponsor-and-funder" class="level3" data-number="0.17">
-<h3 data-number="0.17" class="anchored" data-anchor-id="role-of-trial-sponsor-and-funder"><span class="header-section-number">0.17</span> ROLE OF TRIAL SPONSOR AND FUNDER</h3>
+<section id="role-of-trial-sponsor-and-funder" class="level3" data-number="0.15">
+<h3 data-number="0.15" class="anchored" data-anchor-id="role-of-trial-sponsor-and-funder"><span class="header-section-number">0.15</span> ROLE OF TRIAL SPONSOR AND FUNDER</h3>
+<p>The sponsor has had no role in the design of the protocol or trial. The sponsor maintains responsibility for trial conduct, indemnity, data security and oversight. The sponsor will ensure provision is made for insurance or indemnity to cover liabilities which may arise in relation to the design, management and conduct of the clinical trial. The sponsor will provide investigator(s) with the necessary information to conduct the clinical trial, ensure proper monitoring of the clinical study, ensure all necessary ethic review(s) and approval(s) are obtained. The sponsor will ensure that any reviewing ethics board and regulatory agencies are promptly informed of any significant new information (for example, important findings that affect product safety). The sponsor will ensure compliance with labelling, reporting and record-keeping requirements. The sponsor will ensure that the clinical study is conducted in accordance with Good Clinical Practice (GCP) and the Declaration of Helsinki. The sponsor will ensure that roles and responsibilities of the parties involved in the research and any delegation by the sponsor of its tasks are agreed and documented. The sponsor will ensure appropriate arrangements are made for making information about the research publicly available before it starts (unless a deferral is agreed by or on behalf of the research ethics committee); agreeing appropriate arrangements for making data and tissue accessible, with adequate consent and privacy safeguards, in a timely manner after it has finished; and ensuring arrangements for information about the findings of the research to be made available, including, where appropriate, to participants (For educational research, registration, accessibility of data and tissues, and dissemination may be limited to institutional arrangements). The sponsor will ensure that, where expected or required, the research has approval from a research ethics committee (Whether outright or following a provisional opinion, resubmission or appeal) and any other relevant approval bodies before it begins. The sponsor will verify that regulatory and practical arrangements are in place, before permitting the research to begin in a safe and timely manner. The sponsor will ensure adequate arrangements for finance and management of the research project, including its competent risk management and data management.</p>
 <!-- Aim: To clarify the potential influence of sponsor and funders over the trial -->
 <!-- The sponsor can be defined as the company, institution, or organisation assuming overall responsibility for the initiation and management of the trial, and is not necessarily the main funder. Identification of the trial sponsor provides transparency and accountability.  -->
 <!-- The protocol should explicitly outline the roles and responsibilities of the sponsor(s) and any funder(s) in trial design, conduct, data analysis and interpretation, manuscript writing, and dissemination of results. It is also important to state the obligation of the sponsor or funder in terms of the final decision regarding any of these aspects of the trial. -->
@@ -694,10 +744,40 @@ Name: (please print): Position:<br>
 <!-- Aim: To outline the various committees or groups involved in trial coordination and conduct.  -->
 <!-- There are three main trial management groups which may be involved in the set up and management of a clinical trial, depending on the trial size, design, number of sites and documented risk assessment of the trial. For each committee/group the protocol should state their roles and responsibilities and degree of independence from Sponsor and Investigators. If not included in the document the protocol should state where the information on the committee/group can be found. -->
 <ul>
-<li>Trial Steering Committee <!-- The TSC must have a majority independent representation, including the Chair, meet regularly and send reports to the sponsor. Lay members or patient representatives are desirable --></li>
-<li>Data Monitoring (and ethics) Committee <!--    Independence is a key characteristic of a Data Monitoring Committee where the committee members are completely uninvolved in the running of the trial and who cannot be unfairly influenced (either directly or indirectly) by people, or institutions, involved in the trial. --></li>
-<li>Trial Management Group <!--    The Trial Management Group should meet regularly to ensure all practical details of the trial are progressing well and working well and everyone within the trial understands them. --> <!-- For guidance on Trial Steering Committees & Data Monitoring Committees follow this link --> <!-- http://www.hra.nhs.uk/documents/2013/10/data-monitoring-committees-in-clinical-trials.pdf --> <!-- For guidance on Data Monitoring Committee Charters follow this link --> <!-- http://www.ema.europa.eu/docs/en_GB/document_library/Scientific_guideline/2009/09/WC500003635.pdf --> </li>
+<li><p>Trial Steering Committee</p>
+<!-- The TSC must have a majority independent representation, including the Chair, meet regularly and send reports to the sponsor. Lay members or patient representatives are desirable --></li>
 </ul>
+<p>The Trial Steering Committee (TSC) will be of majority independent representation including participation by one or more lay persons, preferably with lived experience of delirium or caring for someone with delirium.</p>
+<ul>
+<li>Data Monitoring and Ethics Committee</li>
+</ul>
+<p>The Data Monitoring and Ethics Committee will be of independent representation where the committee members are completely uninvolved in the running of the trial and who cannot be unfairly influenced (either directly or indirectly) by people, or institutions, involved in the trial. At a minimum we will have one independent statistician, one lay member, one expert clinician (Chair)</p>
+<!--    Independence is a key characteristic of a Data Monitoring Committee where the committee members are completely uninvolved in the running of the trial and who cannot be unfairly influenced (either directly or indirectly) by people, or institutions, involved in the trial. -->
+<ul>
+<li>Trial Management Group</li>
+</ul>
+<p>The Trial Management Group (TMG) will consist of the Scientific Advisory Committee, members of the Clinical Research Team, the Clinical Trials Unit (CTU) Team and</p>
+<!--    The Trial Management Group should meet regularly to ensure all practical details of the trial are progressing well and working well and everyone within the trial understands them. -->
+<!-- For guidance on Trial Steering Committees & Data Monitoring Committees follow this link -->
+<!-- http://www.hra.nhs.uk/documents/2013/10/data-monitoring-committees-in-clinical-trials.pdf -->
+<!-- For guidance on Data Monitoring Committee Charters follow this link -->
+<!-- http://www.ema.europa.eu/docs/en_GB/document_library/Scientific_guideline/2009/09/WC500003635.pdf -->
+<ul>
+<li><p>Chief Investigator</p>
+<p>The chief investigator will be the overall lead researcher for a research project. The hief investigator is responsible for the overall conduct of the trial, including:</p></li>
+</ul>
+<ol type="a">
+<li>satisfying themselves that the research proposal or protocol takes into account any relevant systematic reviews, other research evidence and research in progress, that it makes effective use of patient, service user and public involvement where appropriate and that it is scientifically sound, safe, ethical, legal and feasible and remains so for the duration of the research, taking account of developments while the research is ongoing;</li>
+<li>satisfying themselves that the research proposal or protocol has been submitted for appropriate independent expert (‘peer’) review (For educational research, the chief investigator will be a supervisor who may provide an appropriate level of review) and revised in light of that review;</li>
+<li>satisfying themselves that, if expected or required, the proposal has been submitted for review by and obtained approval from a research ethics committee and any other relevant approval bodies; satisfying themselves (For multi-site projects, this may be delegated to the principal investigator at each research site) that everyone involved in the conduct of the research is qualified by education, training (Training should be appropriate and proportionate to the type of research undertaken, and should cover the responsibilities of researchers set out in relevant legislation and standards – HRA planning and improving research page)</li>
+<li>and experience, or otherwise competent, to discharge their roles in the project;</li>
+<li>satisfying themselves that the information given to potential participants is in a suitable format and is clear and relevant to their participation in the research and, where consent is required, to their decision-making about taking part in the research – HRA decision tool.</li>
+<li>adhering to the agreed arrangements (paragraph 8.10) for making information about the research publicly available before it starts (unless a deferral is agreed by or on behalf of the research ethics committee);</li>
+<li>adhering to the agreed arrangements (paragraph 8.11) for making data and tissue accessible, with adequate consent and privacy safeguards, in a timely manner after the research has finished (Funders or others may set expectations about making data and tissue available);</li>
+<li>starting the research only once the sponsor has confirmed that everything is ready for it to begin;</li>
+<li>adhering to the agreed procedures and arrangements for reporting (e.g.&nbsp;progress reports, safety reports) and for monitoring the research, including its conduct, the participants’ safety and well-being and the ongoing suitability of the approved proposal or protocol in light of adverse events or other developments; and</li>
+<li>adhering to the agreed arrangements for making information about the findings of the research available, including, where appropriate to participants. </li>
+</ol>
 </section>
 <section id="protocol-contributors" class="level3" data-number="1.2">
 <h3 data-number="1.2" class="anchored" data-anchor-id="protocol-contributors"><span class="header-section-number">1.2</span> Protocol contributors</h3>
@@ -708,6 +788,7 @@ Name: (please print): Position:<br>
 </section>
 <section id="key-words-insert-relevant-key-words-to-describe-the-trial-no-more-than-6-phrases" class="level3" data-number="1.3">
 <h3 data-number="1.3" class="anchored" data-anchor-id="key-words-insert-relevant-key-words-to-describe-the-trial-no-more-than-6-phrases"><span class="header-section-number">1.3</span> KEY WORDS: Insert relevant key words to describe the trial; no more than 6 phrases</h3>
+<p>Anakinra, delirium, fracture, neck of femur, hip, prevention</p>
 <!-- ix. TRIAL FLOW CHART <!-- Aim: To give readers a schematic overview of the trial -->
 <!-- A flow diagram should be included. -->
 
@@ -1948,6 +2029,103 @@ documented in the protocol. -->
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+    } else {
+      disableStylesheet(alternateStylesheets);
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } 
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {

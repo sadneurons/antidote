@@ -8,7 +8,7 @@ Anakinra is an IL-1 receptor analogue....
 
 ## Why Anakinra in delirium?
 
-![Anakinra is now licesned for COVID19](./images/anakinra_covid.jpg){fig-align="center"}
+![Anakinra is now licensed for COVID19](./images/anakinra_covid.jpg){fig-align="center"}
 
 ## Molecule
 
