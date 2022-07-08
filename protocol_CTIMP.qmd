@@ -6,8 +6,6 @@ format:
   html:
     toc: true
     number-sections: true
-    number-offset: [1,1]
-    top-level-division: chapter
 ---
 
 ```{r echo=FALSE}
