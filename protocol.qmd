@@ -6,6 +6,7 @@ format:
   html:
     toc: true
     number-sections: true
+    linestretch: 2
 ---
 
 ```{r echo=FALSE}
@@ -19,6 +20,7 @@ ISRCTN_NUMBER <- FALSE
 ```
 
 \newpage
+
 
 **This protocol has regard for the HRA guidance and order of content** <!-- We would also appreciate self-declaration of how you've used this template so we are able to measure its uptake. -->
 
@@ -425,6 +427,8 @@ j)  adhering to the agreed arrangements for making information about the finding
 ### KEY WORDS: Insert relevant key words to describe the trial; no more than 6 phrases
 
 Anakinra, delirium, fracture, neck of femur, hip, prevention
+
+### Trial Flowchart
 
 <!-- ix. TRIAL FLOW CHART <!-- Aim: To give readers a schematic overview of the trial -->
 
