@@ -1,0 +1,404 @@
+------------------------------------------------------------------------
+
+
+  Plan Overview
+
+/A Data Management Plan created using DMPonline/
+
+
+*Title: *AnTIDOTe - a Randomised controlled trial of Anakinra for the
+Treatment of Inflammation and Delirium after Orthopaedic Trauma and Repair
+
+
+*Creator:*Ross Dunne
+
+
+*Affiliation: *University of Manchester
+
+
+*Funder: *UK Research and Innovation (UKRI)
+
+
+*Template: *University of Manchester Generic Template
+
+
+*ID: *103572
+
+
+*Last modified: *05-07-2022
+
+
+------------------------------------------------------------------------
+
+
+  AnTIDOTe - a Randomised controlled trial of Anakinra for the Treatment
+  of Inflammation and Delirium after Orthopaedic Trauma and Repair
+
+------------------------------------------------------------------------
+
+
+      Manchester Data Management Outline
+
+
+1. Will this project be reviewed by any of the following bodies (please
+select all that apply)?
+
+
+  * Ethics
+  * Funder
+
+
+
+2. Is The University of Manchester collaborating with other institutions
+on this project?
+
+
+  * Yes - Part of a collaboration and owning or handling data
+
+The trial will be sponsored by the University of Manchester but the
+funding will be hosted by Greater Manchester Mental Health Foundation
+Trust, as this is a requirement of NIHR funding.
+
+
+
+3. What data will you use in this project (please select all that apply)?
+
+
+  * Acquire new data
+
+New data will be generated in the course of the clinical trial. A full
+list of variables collected will be added both here and to the protocol.
+
+
+
+4. Where will the data be stored and backed-up during the project lifetime?
+
+
+  * Other storage system (please list below)
+
+Clinical Trials Unit Data storage and entry system.
+
+
+
+5. If you will be using Research Data Storage, how much storage will you
+require?
+
+
+  * < 1 TB
+
+Clinical Trial data will be strored. Thsi data is likely to consist of
+demographic and clinica linformation but not - for example -
+neuroimaging or other information associated wilth large datafiles.
+
+
+
+6. *Are you going to be receiving data from, or sharing data with an
+external third party?*
+
+
+  * No
+
+
+
+7. How long do you intend to keep your data for after the end of your
+project (in years)?
+
+
+  * 11 - 20 years
+
+
+
+/*Guidance for questions 8 to 13*/
+
+Highly restricted information defined in the Information security
+classification, ownership and secure information handling SOP
+<https://documents.manchester.ac.uk/DocuInfo.aspx?DocID=29971> is
+information that requires enhanced security as unauthorised disclosure
+could cause significant harm to individuals or to the University and its
+ambitions in respect of its purpose, vision and values. This could be:
+information that is subject to export controls; valuable intellectual
+property; security sensitive material or research in key industrial
+fields at particular risk of being targeted by foreign states. See more
+examples of highly restricted information
+<https://documents.manchester.ac.uk/DocuInfo.aspx?DocID=15677>. 
+
+Personal information, also known as personal data, relates to
+identifiable living individuals. Personal data is classed as special
+category personal data if it includes any of the following types of
+information about an identifiable living individual: racial or ethnic
+origin; political opinions; religious or similar philosophical beliefs;
+trade union membership; genetic data; biometric data; health data;
+sexual life; sexual orientation.
+
+Please note that in line with data protection law
+<https://www.staffnet.manchester.ac.uk/igo/data-protection/what-is-data-protection/> (the UK General Data Protection Regulation and Data Protection Act 2018), personal information should only be stored in an identifiable form for as long as is necessary for the project; it should be pseudonymised (partially de-identified) and/or anonymised (completely de—identified) as soon as practically possible. You must obtain the appropriate ethical approval <https://www.staffnet.manchester.ac.uk/rbe/ethics-integrity/ethics/erm/> in order to use identifiable personal data.
+
+*8. What type of information will you be processing (please select all
+that apply)? *
+
+  * Pseudonymised personal data
+  * Personal information, including signed consent forms
+
+
+
+9. How do you plan to store, protect and ensure confidentiality of any
+highly restricted data or personal data (please select all that apply)?
+
+  * Other (please list below in less than 100 words)
+  * Access data hosted by a third-party data provider via their secure
+    facilities (e.g. the UK Data Service Secure Lab)
+  * Access data hosted by the University of Manchester via its secure
+    Virtual Private Network (VPN)
+  * Where needed, follow University of Manchester guidelines for
+    disposing of personal data
+  * Impose suitable non-disclosure agreements (e.g. for managers or
+    users of personal data)
+  * Impose suitable data sharing and collaboration agreements
+  * Pseudonymise data and apply secure key management procedures
+  * Store data in encrypted files, folders, computers or devices
+  * Store data in buildings, rooms or filing cabinets with controlled access
+
+Data antry will be performed by clinical trial researchers a the point
+of collection. Data will be cleaned and stored before database lock and
+statistical analysis. This data will be held on the relveant CTU data
+management system.
+
+10. If you are storing personal information (including contact details)
+will you need to keep it beyond the end of the project?
+
+
+  * Yes – Funder requirement
+
+PArticipants must be contactable after the end of the study in case of
+adverse events or the emergence of information about novel drug side
+effects (for example).
+
+
+
+11. Will the participants’ information (personal and/or sensitive) be
+shared with or accessed by anyone outside of the University of Manchester?
+
+
+  * No
+
+No, data will be pseudonymised using participant clinical trial numbers
+before entry into either the randomisation service portal or the trial
+data management system.
+
+
+
+12. If you will be sharing personal information outside of the
+University of Manchester will the individual or organisation you are
+sharing with be outside the EEA?
+
+
+  * Not applicable
+
+
+
+13. Are you planning to use the personal information for future purposes
+such as research?
+
+
+  * No
+
+PErsonal information will be used only in order to contact participants
+with plain English summaries of trial outcomes, which they or their
+relative can opt out of.
+
+
+
+14. Will this project use innovative technologies to collect or process
+data?
+
+
+  * No
+
+
+
+15. Who will act as the data custodian for this study, and so be
+responsible for the information involved?
+
+
+Chief Investigator (Dunne)
+
+16. Please provide the date on which this plan was last reviewed
+(dd/mm/yyyy).
+
+2022-07-05
+
+
+      Project details
+
+
+What is the purpose of your research project?
+
+The AnTIDOTe trial is a randomised, rater blinded controlled trial of
+ANakinra, an Interleukin-1 receptor analogue versus placebo after hip
+fracture and repair in people over 65 presenting to Wythenshawe hospital
+or referring Emergency Departments.
+
+
+
+What policies and guidelines on data management, data sharing, and data
+security are relevant to your research project?
+
+Relevant UoM policies include:
+
+Research Data Management PolicyOpens in a new window
+<http://documents.manchester.ac.uk/DocuInfo.aspx?DocID=33802%20>
+
+Records Management PolicyOpens in a new window
+<http://documents.manchester.ac.uk/display.aspx?DocID=14916>
+
+Data Protection PolicyOpens in a new window
+<http://documents.manchester.ac.uk/display.aspx?DocID=14914>
+
+Intellectual Property PolicyOpens in a new window
+<http://documents.manchester.ac.uk/display.aspx?DocID=24420>
+
+IT policies and guidelines
+<http://www.itservices.manchester.ac.uk/our-services/security/policy/>
+
+ 
+
+Relevant KCL policies include:
+
+*Policy* 	*URL*
+Research Data Management Policy
+http://www.kcl.ac.uk/governancezone/Research/Research-Data-Management-Policy.aspxOpens in a new window <http://www.kcl.ac.uk/governancezone/Research/Research-Data-Management-Policy.aspx>
+Data Security Policy
+http://www.kcl.ac.uk/governancezone/GovernanceLegal/Data-Protection-Policy.aspxOpens in a new window <http://www.kcl.ac.uk/governancezone/GovernanceLegal/Data-Protection-Policy.aspx>
+Data Sharing Policy
+https://www.kcl.ac.uk/governancezone/informationpolicies/data-governance-policyOpens in a new window <https://www.kcl.ac.uk/governancezone/informationpolicies/data-governance-policy>
+Records & Information Management Policy
+http://www.kcl.ac.uk/governancezone/InformationPolicies/Records-and-Information-Management-Policy.aspxOpens in a new window <http://www.kcl.ac.uk/governancezone/InformationPolicies/Records-and-Information-Management-Policy.aspx>
+IT Acceptable Use Policy
+https://www.kcl.ac.uk/governancezone/informationpolicies/it-acceptable-use-policy <https://www.kcl.ac.uk/governancezone/informationpolicies/it-acceptable-use-policy>
+
+
+
+
+      Responsibilities and Resources
+
+
+Who will be responsible for data management?
+
+The Chief Investigator Dr. Ross Dunne will be ultimately responsible for
+data security. In some instances activity  related to daat handling will
+be delegated to qualified team member, as detailed in the trial
+delegation log.
+
+
+
+What resources will you require to deliver your plan?
+
+
+Question not answered.
+
+
+
+
+      Data Collection
+
+
+What data will you collect or create?
+
+
+
+Question not answered.
+
+
+
+How will the data be collected or created?
+
+
+Question not answered.
+
+
+
+
+      Documentation and Metadata
+
+
+What documentation and metadata will accompany the data?
+
+
+Question not answered.
+
+
+
+
+      Ethics and Legal Compliance
+
+
+How will you manage any ethical issues?
+
+
+Question not answered.
+
+
+
+How will you manage copyright and Intellectual Property Rights (IPR) issues?
+
+
+Question not answered.
+
+
+
+
+      Storage and backup
+
+
+How will the data be stored and backed up?
+
+
+
+Question not answered.
+
+
+
+How will you manage access and security?
+
+
+Question not answered.
+
+
+
+
+      Selection and Preservation
+
+
+Which data should be retained, shared, and/or preserved?
+
+
+Question not answered.
+
+
+
+What is the long-term preservation plan for the dataset?
+
+
+Question not answered.
+
+
+
+
+      Data Sharing
+
+
+How will you share the data?
+
+
+
+Question not answered.
+
+
+
+Are any restrictions on data sharing required?
+
+
+Question not answered.
+
+
+
