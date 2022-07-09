@@ -13,7 +13,7 @@ website:
         text: Protocol
       - href: sap.qmd
         text: Statistical analysis plan
-      - href: "https://dmponline.manchester.ac.uk/plans/103572/export?utf8=%E2%9C%93&format=html&export%5Bform%5D=true&phase_id=8885&export%5Bproject_details%5D=true&export%5Bquestion_headings%5D=true&export%5Bunanswered_questions%5D=true&export%5Bformatting%5D%5Bfont_face%5D=Arial%2C+Helvetica%2C+Sans-Serif&export%5Bformatting%5D%5Bfont_size%5D=10&export%5Bformatting%5D%5Bmargin%5D%5Btop%5D=25&export%5Bformatting%5D%5Bmargin%5D%5Bbottom%5D=20&export%5Bformatting%5D%5Bmargin%5D%5Bleft%5D=12&export%5Bformatting%5D%5Bmargin%5D%5Bright%5D=12&button="
+      - href: dmp.qmd
         text: Data management plan
       - href: data.qmd
         text: Trial data

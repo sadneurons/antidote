@@ -4,6 +4,8 @@ subtitle: "Draft v0.1"
 author: "Ross Dunne"
 format: 
   html:
+    code-fold: true
+    code-summary: "Show the code"
     toc: true
     toc-depth: 3
     toc-title: "Contents"
@@ -21,7 +23,25 @@ body-footer: "Copyright (c) 2022"
 
 ## PICOT
 
-**(P)** -- Patients presenting to Emergency Departments in South Manchester with radiologically confirmed hip fracture who are aged 65 and over and have none of the following exclusion criteria: 1) Lack of a study partner or caregiver 2) Active infection 3) History of hypersensitivity to or unacceptable side effects of Anakinra 4) Current substance misuse 5) Active malignancy 6) Acute stroke or TIA 7) Currently participating in clinical trial of an investigational medicinal product (CTIMP) 8) Women of child-bearing potential 9) Neutropenia of any cause.
+**(P)** -- Patients presenting to Emergency Departments in South Manchester with radiologically confirmed hip fracture who are aged 65 and over and have none of the following exclusion criteria:
+
+1) Lack of a study partner or caregiver 
+
+2) Active infection 
+
+3) History of hypersensitivity to or unacceptable side effects of Anakinra 
+
+4) Current substance misuse 
+
+5) Active malignancy 
+
+6) Acute stroke or TIA 
+
+7) Currently participating in clinical trial of an investigational medicinal product (CTIMP) 
+
+8) Women of child-bearing potential 
+
+9) Neutropenia of any cause.
 
 **(I)** -- Anakinra given subcutaneously at time 0 \[presentation to ED\] then bd for 48 hours during the perioperative period.
 
@@ -31,104 +51,106 @@ body-footer: "Copyright (c) 2022"
 
 **(T)** -- Recruitment period: 24 months; Treatment/assessment period: to 48hrs postop, measured from surgical wound closure.
 
-## Frequentist simulation
+## Descriptive statistics
+### Number of patients 
 
-**Assumption:**: Delirium rating scales are ordinal measures, not interval measures (a person scoring 4 is not half as delirious as someone scoring 8)
-
-**Solution**: Ordinal logistic regression does not assume interval scales, nor normal distributions of the scores. It does make a proportional-odds assumption testable using the parallel test. The coefficients can be interpreted as the log-odds of a one point increase in the scale score, $y$, with a one point (or one unit) increase in the predictor variable $x$.
-
-**Assumption**: While delirium is by its nature a fluctuating condition, we assume there will be correlation within participants in delirium scale scores over time.
-
-**Solution**: Mixed effects models will allow for an autoregressive correlation structure and regularisation of the model. Frequentist ordinal logistic mixed models are facilitated by R packages 'ordinal' and 'rms' and Bayesian mixed effects ordinal regression models are facilitated by packages 'brms' (with cumulative log-odds link function) and 'rmsb'. These have been used in simulation below.
-
-**Assumption**: There may be significant anaesthetic methods (spinal/GA) in those presenting to the ED with hip fractures. The descriptive statistics for Wythenshawe hospital can be found below.
-
-**Solution** Because the nature of the anaesthetic (spinal versus general) may relate to the nature of the participants' comorbidities and the presence or absence of preoperative delirium, we will use a minimisation strategy to ensure equal numbers of spinal and general anaesthetic procedures in each trial arm. The numbers of participants having GA will vary month-month.
-
-```{r echo=FALSE, results='hide', message=FALSE}
+```{r echo=TRUE, results='hide', message=FALSE}
 #| column: screen-inset-shaded
 #| layout-nrow: 1
-library(readr)
+# Decsriptive statistics of the Hip fracture population
 library(tidyverse)
 library(rms)
-wyhipsurg <- read_csv("NHFD-WYT-ANA02-04072022173127.csv")
-wyhipsurg |> ggplot() + geom_histogram(aes(x=`General anaesthetic %`)) + ggtitle("Histogram of percentage of GA per month at Wythenshawe Hospital") + labs(subtitle="Source: NHF Database https://www.nhfd.co.uk/")
-wyhipsurg$surgdate <- wyhipsurg$`Admission Year & Month`
-wyhipsurg$surgdate <- lubridate::my(wyhipsurg$surgdate)
-wyhipsurg |> ggplot() + geom_line(aes(y=`General anaesthetic %`, x=surgdate)) + geom_smooth(aes(y=`General anaesthetic %`, x=surgdate)) + ggtitle("Trend of percentage of GA per month (Loess) at Wythenshawe Hospital") + xlab("Month and year of surgery") + labs(subtitle="Source: NHF Database https://www.nhfd.co.uk/")
-wyhipsurg$days <- as.numeric(wyhipsurg$surgdate)-min(as.numeric(wyhipsurg$surgdate))
-gas_method_mdl<- rms::ols(`General anaesthetic %`~ rcs(days, 3) , data=wyhipsurg)
-pred_method <-  fitted(gas_method_mdl)
-wyhipsurg |> ggplot() + geom_line(aes(y=`General anaesthetic %`, x=surgdate)) + geom_smooth(aes(y=`General anaesthetic %`, x=surgdate)) + ggtitle("Prediction model of percentage of GA per month (rcs) at Wythenshawe Hospital") + xlab("Month and year of surgery") + geom_line(aes(y=pred_method, x=wyhipsurg$surgdate), lwd=2, lty=2) + labs(subtitle="Source: NHF Database https://www.nhfd.co.uk/")
-sd(gas_method_mdl$residuals)
-```
-```{r echo=FALSE}
-library(downloadthis)
+library(plotly)
+library(fable)
+library(tsibble)
+library(tsibbledata)
+library(feasts)
+library(urca)
+los <- read.csv("./NHFD_Data/los_apr_22.csv")
+names(los) <-c("my", "ptnum", 
+               "acutelos", "acutelosannual", 
+               "trustlos", "trustlosannual" )
+vol <- los |> select(my, ptnum)
+vol$my <- lubridate::my(vol$my) 
+ts_vol <- vol %>% mutate(my = tsibble::yearmonth(my)) %>% tsibble()
 
-wyhipsurg %>%
-  download_this(
-    output_name = "Wythenshawe_Hip_Surgery_Anaesthesia",
-    output_extension = ".rds",
-    button_label = "Download R data object (.rds)",
-    button_type = "default",
-    has_icon = TRUE,
-    icon = "fa fa-save"
+p <- vol |> ggplot() + geom_line(aes(x=my, y=ptnum)) +
+  scale_x_date(date_labels = "%m-%Y") +
+  labs(x="Month-Year of discharge", y="Number of patients",
+       title="Patients presenting to Wythenshawe  with #NOF by month", 
+       subtitle = "Data courtesy of the National Hip Fracture Database")
+p
+
+fable_1 <- ts_vol %>% model(  
+    ets = ETS(ptnum),
+    arima = ARIMA(ptnum),
+    snaive = SNAIVE(ptnum)
   )
+forecast_1 <- forecast(fable_1, h = "3 years")
+autoplot(forecast_1, data=vol, level=NULL) +
+  labs(x="Month-Year of discharge",
+       title="ARIMA/ETS/SNAIVE models predicting patients presenting to  
+              Wythenshawe with #NOF",
+       subtitle = "Data courtesy of the National Hip Fracture Database",
+       y="Number of patients")
+forecast_1$.model
+
+arima_means <- forecast_1 %>% filter(.model=='arima')
+arima_mean <- mean(arima_means$.mean)
+ets_means <- forecast_1 %>% filter(.model=='ets')
+ets_mean <- mean(ets_means$.mean)
+snaive_means <- forecast_1 %>% filter(.model=='snaive')
+snaive_mean <- mean(snaive_means$.mean)
+print_mean <- mean(c(snaive_mean, ets_mean, arima_mean)) |> round(2)
 ```
+We conducted a time series forecast (ARIMA, ETS and Naive (SNAIVE)) based on discharges from Wythenshawe over the period 2011 - 2022. This suggests an expected mean number of presentations per month (simple average of 3 model estimates) of `r print_mean`. At this rate, we would expect ~40 x 24 = `r print_mean*24` patients to have surgical repair of fractured neck of femur over the 2-year recruitment course of the trial.
 
-This can be modelled using a restricted cubic spline function with $k = 3$ knots, in order to estimate the month to month variation (rather than including the variation over years). However, it is also clear that we would expect the percentage of participants receiving general anaesthetics to decrease over the 24-month duration of the trial if it started now.
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE}
-(gas_method_mdl)
-```
-
-```{r, echo=FALSE, warning=FALSE, message=FALSE}
+```{r echo=TRUE, results='hide', message=FALSE}
 #| column: screen-inset-shaded
 #| layout-nrow: 1
-hist(gas_method_mdl$residuals, main="Histogram of anaesthetic method model residuals", xlab="Residual")
-start_perc <- as.numeric(pred_method[length(pred_method)])
-newdays <- seq(from=4048, to= 4048 + (365*2), by=30)
-trial_predict_gasmethod <- predict(gas_method_mdl, newdata=newdays, se.fit=TRUE)
-tpg <- cbind(trial_predict_gasmethod$linear.predictors, lubridate::as_date(newdays + 15065)) |> data.frame() 
-names(tpg) <- c("Predicted", "Date")
-tpg$upr<- trial_predict_gasmethod$linear.predictors + trial_predict_gasmethod$se.fit
-tpg$lr<- trial_predict_gasmethod$linear.predictors - trial_predict_gasmethod$se.fit
-tpg |> ggplot() + 
-  geom_line(aes(y=Predicted, x=lubridate::as_date(Date))) + ggtitle("Predicted linear change during trial") + xlab("Month and year of surgery") + geom_line(aes(y=upr, x=lubridate::as_date(Date)), lty=2) + geom_line(aes(y=lr, x=lubridate::as_date(Date)), lty=2)
+los <- read.csv("./NHFD_Data/los_apr_22.csv")
+names(los) <-c("my", "ptnum", 
+               "acutelos", "acutelosannual", 
+               "trustlos", "trustlosannual" )
+acute_los <- los %>% select(my, acutelos)
+acute_los$my <- lubridate::my(acute_los$my) 
+ts_acute_los <- acute_los %>% mutate(my = tsibble::yearmonth(my)) %>% tsibble()
 
+p <- acute_los |> ggplot() + geom_line(aes(x=my, y=acutelos)) +
+  labs(x="Month-Year of discharge", 
+       title="Length-of-stay (LOS) of patients presenting to Wythenshawe Hospital with #NOF by month", 
+       subtitle = "Data courtesy of the National Hip Fracture Database", y="Length of stay")
+p
+
+fable_2 <- ts_acute_los %>% model(  
+  ets = ETS(acutelos),
+  arima = ARIMA(acutelos),
+  snaive = SNAIVE(acutelos)
+)
+forecast_2 <- forecast(fable_2, h = "3 years")
+autoplot(forecast_2, data=acute_los, level=NULL) +
+  labs(x="Month-Year of discharge",
+       title="ARIMA/ETS/SNAIVE models predicting LOS of patients presenting to  
+              Wythenshawe Hospital with #NOF",
+       subtitle = "Data courtesy of the National Hip Fracture Database",
+       y="Number of patients")
+
+
+arima_means <- forecast_2 %>% filter(.model=='arima')
+arima_mean <- mean(arima_means$.mean)
+ets_means <- forecast_2 %>% filter(.model=='ets')
+ets_mean <- mean(ets_means$.mean)
+snaive_means <- forecast_2 %>% filter(.model=='snaive')
+snaive_mean <- mean(snaive_means$.mean)
+print_mean_2 <- mean(c(snaive_mean, ets_mean, arima_mean)) |> round(2)
 ```
+We conducted a further time series forecast (ARIMA, ETS and Naive (SNAIVE)) based on discharges from Wythenshawe over the period 2011 - 2022. This suggests an expected mean length of stay per patient (simple average of 3 model estimates of LOS in days) of `r print_mean_2`. This means that while it is unlikely for patients to be in hospital longer than 2 weeks, we will have adequate time to give Anakinra for up to 72 hours post treatment, even if surgery is delayed.
 
-We thus have a predicted trial starting percentage of GA cases of `r start_perc |> round(2)`% and a month-month variation (sd of residuals of ols model using restricted cubic spline) of `r sd(gas_method_mdl$residuals) |> round(2)`%.
-
-**Assumption**: There may be significant variation in time to operation in those presenting to the ED with hip fractures. Time-to-operation is a KPI in the National Hip Fracture Database and the descriptive statistics for Wythenshawe hospital can be found below.
-
-**Solution**:
-
-```{r, echo=FALSE, warning=FALSE, message=FALSE}
+```{r echo=TRUE, results='hide', message=FALSE}
 #| column: screen-inset-shaded
 #| layout-nrow: 1
-bp <- read_csv("NHFD-WYT-BPT4-04072022185309.csv")
-#names(bp)
-bp$disdate <- bp$`Trust Discharge Year & Month`
-bp$disdate <- lubridate::my(bp$disdate)
-bp$days <- as.numeric(bp$disdate)
-bp |> ggplot() + geom_histogram(aes(x=`Prompt surgery %`), binwidth=4) + ggtitle("Histogram of percentage of people operated on by 24h after admission") + labs(subtitle="Source: NHF Database https://www.nhfd.co.uk/")
-bp |> ggplot() + geom_line(aes(y=`Prompt surgery %`, x=disdate)) +
-  geom_smooth(aes(y=`Prompt surgery %`, x=disdate)) + ggtitle("Percentage of people operated on by 24h after admission") + xlab("Month and year of surgery") + labs(subtitle="Source: NHF Database https://www.nhfd.co.uk/")
-surg_delay_mdl<- rms::ols(`Prompt surgery %`~ rcs(days, 4) , data=bp)
-bp$pred_delay <- predict(surg_delay_mdl)
-bp |> ggplot() + geom_line(aes(y=`Prompt surgery %`, x=disdate)) +
-  geom_smooth(aes(y=`Prompt surgery %`, x=disdate)) + geom_line(aes(y=pred_delay, x=disdate), lwd=2, lty=2) + ggtitle("Prediction model of percentage of people operated on by 24h after admission") + xlab("Month and year of surgery") + labs(subtitle="Source: NHF Database https://www.nhfd.co.uk/")
-```
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE}
-bp %>% download_this(   output_name = "Wythenshawe_Hip_Surgery_Best_Practice",
-    output_extension = ".rds",
-    button_label = "Download R data object (.rds)",
-    button_type = "default",
-    has_icon = TRUE,
-    icon = "fa fa-save"
-  )
 ```
 
 ### OSLA scale
@@ -220,3 +242,16 @@ total_pop_4 <- c(severe_pop, moderate_pop, mild_pop, none_pop)
 total_pop_4 |>hist(main="Histogram IV of OSLA scores (moderate)", xlab="OSLA score")
 
 ```
+## Frequentist simulation
+
+**Assumption:**: Delirium rating scales are ordinal measures, not interval measures (a person scoring 4 is not half as delirious as someone scoring 8)
+
+**Solution**: Ordinal logistic regression does not assume interval scales, nor normal distributions of the scores. It does make a proportional-odds assumption testable using the parallel test. The coefficients can be interpreted as the log-odds of a one point increase in the scale score, $y$, with a one point (or one unit) increase in the predictor variable $x$.
+
+**Assumption**: While delirium is by its nature a fluctuating condition, we assume there will be correlation within participants in delirium scale scores over time.
+
+**Solution**: Mixed effects models will allow for an autoregressive correlation structure and regularisation of the model. Frequentist ordinal logistic mixed models are facilitated by R packages 'ordinal' and 'rms' and Bayesian mixed effects ordinal regression models are facilitated by packages 'brms' (with cumulative log-odds link function) and 'rmsb'. These have been used in simulation below.
+
+**Assumption**: There may be significant anaesthetic methods (spinal/GA) in those presenting to the ED with hip fractures. The descriptive statistics for Wythenshawe hospital can be found below.
+
+**Solution** Because the nature of the anaesthetic (spinal versus general) may relate to the nature of the participants' comorbidities and the presence or absence of preoperative delirium, we will use a minimisation strategy to ensure equal numbers of spinal and general anaesthetic procedures in each trial arm. The numbers of participants having GA will vary month-month.
