@@ -1,6 +1,6 @@
 ---
 title: "Anakinra in the Treatment of Inflammation and Delirium after Orthopaedic Trauma and Repair (AnTIDOTe) Randomised Controlled Trial"
-subtitle: "Protocol version 0.01"
+subtitle: "Protocol version DRAFT 0.01"
 highlight-style: github
 format:
   html:
@@ -20,7 +20,6 @@ ISRCTN_NUMBER <- FALSE
 ```
 
 \newpage
-
 
 **This protocol has regard for the HRA guidance and order of content** <!-- We would also appreciate self-declaration of how you've used this template so we are able to measure its uptake. -->
 
@@ -46,14 +45,14 @@ Anakinra in the Treatment of Inflammation and Delirium after Orthopaedic Trauma 
 
 ### RESEARCH REFERENCE NUMBERS
 
-|                          |     |
-|--------------------------|-----|
-| IRAS                     |     |
-| EUDRACT                  |     |
-| ClinicalTrials.gov       |     |
-| ISCRTN                   |     |
-| University of Manchester |     |
-| KCL CTU                  |     |
+| Organisation             | Number |
+|--------------------------|--------|
+| IRAS                     |        |
+| EUDRACT                  |        |
+| ClinicalTrials.gov       |        |
+| ISCRTN                   |        |
+| University of Manchester |        |
+| KCL CTU                  |        |
 
 : Research reference numbers
 
@@ -75,7 +74,7 @@ Anakinra in the treatment of inflammation and delirium in orthopaedic trauma and
 
 ```{r echo=FALSE}
 # Aim: To identify the Trial to enable retrieval from literature or internet searches. It should be immediately evident what the trial is investigating and on whom to allow rapid judgment of relevance.
-# For intervention or exposure studies a structured title should contain:
+# For intervenion or exposure studies a structured title should contain:
 # Information on participants
 # Intervention (exposure)
 # Comparison groups
@@ -150,7 +149,7 @@ I also confirm that I will make the findings of the trial publically available t
 
 **For and on behalf of the Trial Sponsor:**
 
-Signature: Date: ....../....../...... Name (please print): Position:
+Signature: Date: ..07..../...08.../..2022... Name (please print): Position:
 
 **Chief Investigator:** Signature:\
 Date: ....../....../...... Name: (please print):
@@ -163,43 +162,43 @@ Name: (please print): Position:\
 
 ### Key Trial Contacts
 
-+---------------------------------+-------------------------------------------------------+
-| Chief Investigator              | Dr. Ross A. Dunne                                     |
-+---------------------------------+-------------------------------------------------------+
-| Trial Co-ordinator              | Ms. Lynsey Hall                                       |
-+---------------------------------+-------------------------------------------------------+
-| Sponsor                         | The University of Manchester                          |
-+---------------------------------+-------------------------------------------------------+
-| Join-sponsor(s) / co-sponsor(s) | Greater Manchester Mental Health NHS Foundation Trust |
-+---------------------------------+-------------------------------------------------------+
-| Funder(s)                       | NIHR                                                  |
-+---------------------------------+-------------------------------------------------------+
-| Clinical Trials Unit            | King's College London CTU                             |
-+---------------------------------+-------------------------------------------------------+
-| Key Protocol Contributors       | Dr. Ross A. Dunne                                     |
-|                                 |                                                       |
-|                                 | Prof. Leela Biant                                     |
-|                                 |                                                       |
-|                                 | Prof. Colm Cunningham                                 |
-|                                 |                                                       |
-|                                 | Prof. Stuart Allan                                    |
-|                                 |                                                       |
-|                                 | Prof. David Brough                                    |
-|                                 |                                                       |
-|                                 | Prof. Alasdair MacLullich                             |
-+---------------------------------+-------------------------------------------------------+
-| Statistician                    | TBD                                                   |
-+---------------------------------+-------------------------------------------------------+
-| Trials Pharmacist               | Beatriz Duran                                         |
-+---------------------------------+-------------------------------------------------------+
-| Committees                      | DMEC                                                  |
-|                                 |                                                       |
-|                                 | TSC                                                   |
-+---------------------------------+-------------------------------------------------------+
++---------------------------------+--------------------------------------------------------+
+| Chief Investigator              | Dr. Ross A. Dunne                                      |
++---------------------------------+--------------------------------------------------------+
+| Trial Co-ordinator              | Ms. Lynsey Hall                                        |
++---------------------------------+--------------------------------------------------------+
+| Sponsor                         | The University of Manchester                           |
++---------------------------------+--------------------------------------------------------+
+| Join-sponsor(s) / co-sponsor(s) | Greater Manchester Mental Health NHS Foundation Trust  |
++---------------------------------+--------------------------------------------------------+
+| Funder(s)                       | National Institute for Health and Care research (NIHR) |
++---------------------------------+--------------------------------------------------------+
+| Clinical Trials Unit            | King's College London CTU                              |
++---------------------------------+--------------------------------------------------------+
+| Key Protocol Contributors       | Dr. Ross A. Dunne                                      |
+|                                 |                                                        |
+|                                 | Prof. Leela Biant                                      |
+|                                 |                                                        |
+|                                 | Prof. Colm Cunningham                                  |
+|                                 |                                                        |
+|                                 | Prof. Stuart Allan                                     |
+|                                 |                                                        |
+|                                 | Prof. David Brough                                     |
+|                                 |                                                        |
+|                                 | Prof. Alasdair MacLullich                              |
++---------------------------------+--------------------------------------------------------+
+| Statistician                    | TBD                                                    |
++---------------------------------+--------------------------------------------------------+
+| Trials Pharmacist               | Beatriz Duran                                          |
++---------------------------------+--------------------------------------------------------+
+| Committees                      | Data Monitory and Ethics @sec-dmec                     |
+|                                 |                                                        |
+|                                 | Trial Steering Committee @sec-tsc                      |
++---------------------------------+--------------------------------------------------------+
 
 : Key Contacts
 
-### LIST OF ABBREVIATIONS
+### LIST OF ABBREVIATIONS {#sec-abbrev}
 
 <!-- Define all unusual or ‘technical’ terms related to the trial.  Add or delete as appropriate to your trial.  Maintain alphabetical order for ease of reference. -->
 
@@ -365,27 +364,27 @@ The sponsor has had no role in the design of the protocol or trial. The sponsor 
 
 \newpage
 
-## ROLES AND RESPONSIBILITIES OF TRIAL MANAGEMENT COMMITEES/GROUPS & INDIVIDUALS
+## ROLES AND RESPONSIBILITIES OF TRIAL MANAGEMENT COMMITEES/GROUPS & INDIVIDUALS {#sec-committees}
 
-### Trial Management Committees
+### Trial Management Committees {#sec-tmc}
 
 <!-- Aim: To outline the various committees or groups involved in trial coordination and conduct.  -->
 
 <!-- There are three main trial management groups which may be involved in the set up and management of a clinical trial, depending on the trial size, design, number of sites and documented risk assessment of the trial. For each committee/group the protocol should state their roles and responsibilities and degree of independence from Sponsor and Investigators. If not included in the document the protocol should state where the information on the committee/group can be found. -->
 
--   Trial Steering Committee
+#### Trial Steering Committee {#sec-tsc}
 
-    <!-- The TSC must have a majority independent representation, including the Chair, meet regularly and send reports to the sponsor. Lay members or patient representatives are desirable -->
+<!-- The TSC must have a majority independent representation, including the Chair, meet regularly and send reports to the sponsor. Lay members or patient representatives are desirable -->
 
 The Trial Steering Committee (TSC) will be of majority independent representation including participation by one or more lay persons, preferably with lived experience of delirium or caring for someone with delirium.
 
--   Data Monitoring and Ethics Committee
+#### Data Monitoring and Ethics Committee {#sec-dmec}
 
 The Data Monitoring and Ethics Committee will be of independent representation where the committee members are completely uninvolved in the running of the trial and who cannot be unfairly influenced (either directly or indirectly) by people, or institutions, involved in the trial. At a minimum we will have one independent statistician, one lay member, one expert clinician (Chair)
 
 <!--    Independence is a key characteristic of a Data Monitoring Committee where the committee members are completely uninvolved in the running of the trial and who cannot be unfairly influenced (either directly or indirectly) by people, or institutions, involved in the trial. -->
 
--   Trial Management Group
+#### Trial Management Group
 
 The Trial Management Group (TMG) will consist of the Scientific Advisory Committee, members of the Clinical Research Team, the Clinical Trials Unit (CTU) Team and
 
@@ -399,9 +398,9 @@ The Trial Management Group (TMG) will consist of the Scientific Advisory Committ
 
 <!-- http://www.ema.europa.eu/docs/en_GB/document_library/Scientific_guideline/2009/09/WC500003635.pdf -->
 
--   Chief Investigator
+### Chief Investigator
 
-    The chief investigator will be the overall lead researcher for a research project. The hief investigator is responsible for the overall conduct of the trial, including:
+The Chief Investigator (CI) will be the overall lead researcher for a research project. The chief investigator is responsible for the overall conduct of the trial, including:
 
 a)  satisfying themselves that the research proposal or protocol takes into account any relevant systematic reviews, other research evidence and research in progress, that it makes effective use of patient, service user and public involvement where appropriate and that it is scientifically sound, safe, ethical, legal and feasible and remains so for the duration of the research, taking account of developments while the research is ongoing;
 b)  satisfying themselves that the research proposal or protocol has been submitted for appropriate independent expert ('peer') review (For educational research, the chief investigator will be a supervisor who may provide an appropriate level of review) and revised in light of that review;
@@ -412,11 +411,35 @@ f)  adhering to the agreed arrangements (paragraph 8.10) for making information 
 g)  adhering to the agreed arrangements (paragraph 8.11) for making data and tissue accessible, with adequate consent and privacy safeguards, in a timely manner after the research has finished (Funders or others may set expectations about making data and tissue available);
 h)  starting the research only once the sponsor has confirmed that everything is ready for it to begin;
 i)  adhering to the agreed procedures and arrangements for reporting (e.g. progress reports, safety reports) and for monitoring the research, including its conduct, the participants' safety and well-being and the ongoing suitability of the approved proposal or protocol in light of adverse events or other developments; and
-j)  adhering to the agreed arrangements for making information about the findings of the research available, including, where appropriate to participants. \newpage
+j)  adhering to the agreed arrangements for making information about the findings of the research available, including, where appropriate to participants.
 
-### Protocol contributors
+\newpage
 
-<!-- Aim: To describe all the contributors to the protocol -->
+### Protocol contributors {#sec-protocolcontrib}
+
+#### Scientific advisors {#sec-sciadvisors}
+
+The idea for the use of Anakinra in preventing and treating delirium emerged from conversations between Prof. Colm Cunningham and Prof. Stuart Allan during and after an invited lecture at the [Geoffrey Jefferson Brain Research Centre (GJBRC)](https://gjbrainresearch.org/) at the University of Manchester. As Anakinra had been shown during the COVID19 pandemic to reduce the 'cytokine storm' associated with infection with the SARS-Cov-19 virus, th e rationale of extending use to delirium, where IL-1 production has been demonstrated in animals and humans to drive inflammatory responses and altered mentation, seemed promising. The GJBRC was created in 2021 to bring basic and clinical scientists together for the rapid translation of scientific findings into life-changing therapies for major health problems.
+
+[Prof. Colm Cunningham](https://orcid.org/0000-0003-1423-5209) is a globally recognised leader in the basic science of neuroinflammation and cognition. His laboratory at the Trinity College Institute of Neuroscience (TCIN) in Dublin is one of the world's leading centres for such research. He has been the recipient of numerous awards and fellowships.
+
+[Prof. Stuart Allan](https://orcid.org/0000-0001-9646-4456) leads a renowned neuroinflammation laboratory in the University of Manchester, where his groups is focused on the neuroimmunology of cerebral ischaemia. Working closely with stroke clinician-scientists and researchers at the GJBRC, the team are working on the reduction of post-stroke inflammation leading to dementia.
+
+[Prof. David Brough](https://orcid.org/0000-0002-2250-2381) leads a renowned neuroinflammation laboratory in the University of Manchester, where his groups is focused on the molecular immunology of the inflammatory cascade and novel target and drug development. His team work closely with clinician-scientists at the GJBRC as well as colleagues in Oxford and further afield.
+
+#### Clinical Researchers {#sec-clin-research}
+
+[Prof. Leela Biant](https://orcid.org/0000-0002-5291-8898)
+
+#### Statistical advisers
+
+\[A.N. Statistician\]
+
+\[A.N.O Statistician\]
+
+#### Clinical Trial Methodology
+
+\[CTU Team\] <!-- Aim: To describe all the contributors to the protocol -->
 
 <!-- The protocol should:  -->
 
@@ -440,9 +463,33 @@ Anakinra, delirium, fracture, neck of femur, hip, prevention
 
 \newpage
 
-### BACKGROUND
+### BACKGROUND {#sec-bg}
 
-<!-- Aim: To place the trial in the context of available evidence.  -->
+Delirium is a syndrome of disturbed alertness, orientation and arousal, complicated by neuropsychiatric abnormalities like paranoia and hallucinations. A single episode of delirium may permanently damage cognition(1) and increases the risk of dementia 3-fold over the following 3 years(2). Delirium is more common in older people and occurs in 20% of hospital inpatients and 40% of postoperative surgical patients, including those undergoing hip repair(3). Up to 90% of those who fracture their hip have underlying abnormalities in biomarkers for Alzheimer's disease (rising to 98% in those with known mild cognitive problems)(4).
+
+In the UK, 65,000 people fracture their hip every year(3). On average, 7% of these people will die within a month of their fracture. Postoperative delirium doubles the risk of death in the 12 months after fracture(5), especially if superimposed on pre-existing dementia(6). So, hip fracture is a major public health concern, both hastening dementia onset and causing premature death in those living with dementia. There is currently no treatment that prevents or shortens the duration of delirium, and no promising candidate. Delirium is often treated by addressing the underlying contributors (e.g. infection, pain, sedating medicines) and using sensitive nursing practice and clear communication. This can improve outcomes. However, after hip surgery, delirium impairs the early mobilisation and engagement with physiotherapy vital for good postoperative outcomes in dementia, like mobility and discharge to your own home.
+
+#### Review of existing evidence
+
+**Pre-clinical:** IL-1 is a pro-inflammatory cytokine pivotal to the earliest stages of inflammatory response(7). It induces IL-6 and IL-8 gene expression and promotes lymphocyte differentiation and cellular immune response. The most prevalent preclinical model of delirium uses injection of bacterial lipopolysaccharide (LPS) to switch on the inflammatory cascade. IL-1 in isolation can mimic the cognitive effects of LPS in this model(8). Blockade of IL-1 action using recombinant receptor antagonists prevents the pro-inflammatory effects of LPS in these animal models of delirium(8). Thus, blockade of this early, amplifying step in the pro-inflammatory cytokine cascade may prevent cognitive deterioration.
+
+**Clinical:** In humans, IL-1 is a key driver of neuroinflammation after hip fracture, with raised CSF and serum levels(9).
+
+Anakinra is a specific IL-1 receptor antagonist (IL-1RA) already in use for patients with autoimmune disease including arthritis and those with critical lung disease due to COVID. It is an analogue of the naturally produced human IL1 receptor antagonist.
+
+**Aim** The aim of the research is to examine whether Anakinra can reduce the incidence of delirium post hip repair in older people. Anakinra is an interleukin-1 (IL-1) receptor antagonist licensed for the treatment of rheumatoid arthritis. It is given subcutaneously twice daily, ideal for inpatients with delirium who may not be able to take oral medications. We will conduct a double-blind randomised controlled trial of Anakinra in older people after hip fracture.
+
+**Objectives** The objectives, in priority order, are to compare subcutaneous Anakinra to placebo given twice daily during the perioperative period in terms of: 1. (1°) Severity of delirium postoperatively as measured by the XXXXXXXX 2. (2°) Time to first weight bearing postoperatively 3. (3°) Time until medically fit for discharge postoperatively 4. (3°) Safety of Anakinra during the perioperative period and in wound healing 5. (3°) Tolerability of Anakinra versus placebo in terms of common side effects 6. (3°) Effect of Anakinra on 30-day mortality
+
+**Exclusion criteria:** 1. Lack of a study partner or caregiver 2. Active infection 3. History of hypersensitivity to or unacceptable side effects of Anakinra 4. Current substance misuse 5. Active malignancy 6. Acute stroke or TIA 7. Currently participating in clinical trial of an investigational medicinal product (CTIMP) 8. Women of child-bearing potential 9. Neutropenia of any cause.
+
+## Choice of outcome measure
+
+**Table**
+
+#### Minimum clinically significant difference
+
+The minmum clinically significant difference in any of the candidate delirium scales is not well established in the literature. It is clear that preventing cases of delirium will have significant positive economic outcomes for the NHS. Therefore, it would be possible to reason backwards from utilities to a minimum number of prevented cases. However, it is not clear that a reduction in the severity of delirium is associated with a shorter duration of delirium (intuitively appealing as that may be). It is also not clear that a reduction in the severity of delirium is associated with a shorter hospital stay per se, because no treatment has been found which effectively reduces severity. Therefore, we have chosen measures which seek to measure the primary outcome - delirium severity, and measure as secondary outcomes important clinical endpoints such as time-to-stand and time to medical fitness-for-discharge, because there are many confounding postoperative factors apart from delirium which might influence their outcome, significantly lowering the signal-noise ratio. <!-- Aim: To place the trial in the context of available evidence.  -->
 
 <!-- The background should be supported by appropriate references to the published literature on the disease or condition, its treatment and the use of the trial drug for the indication and contain: -->
 
@@ -472,7 +519,7 @@ Anakinra, delirium, fracture, neck of femur, hip, prevention
 
 <!-- •  a clear explanation of the research question/hypothesis and the justification of the trial i.e. why the question is worth asking and, through consultation with public and patient groups, why this is worthwhile to patients. Replication to check the validity of previous research is justified, but unnecessary duplication is unethical. -->
 
-<!-- •  the currently available treatment(s) and their limitations, why you think the IMP(s) might be an improvement on those treatments, why the treatment difference is clinically important to patients and if it is  realistic. (The treatment difference is often referred to as the minimum clinically important difference or the difference we should not want to miss. A drug which reduces everyone’s systolic blood pressure by 2 mm of mercury may be genuinely effective, but the effect would not form the basis of a routine intervention) -->
+Our hypothesis is the reduction in CNS IL-1 levels caused by the administration of Anakinra in the period before and after surgical repair of the fractured neck of femur will result in reduced severity of delirium in those with <!-- •  the currently available treatment(s) and their limitations, why you think the IMP(s) might be an improvement on those treatments, why the treatment difference is clinically important to patients and if it is  realistic. (The treatment difference is often referred to as the minimum clinically important difference or the difference we should not want to miss. A drug which reduces everyone’s systolic blood pressure by 2 mm of mercury may be genuinely effective, but the effect would not form the basis of a routine intervention) -->
 
 <!-- •  this justification is particularly important if the trial proposes to use the IMP: -->
 
@@ -1139,6 +1186,14 @@ documented in the protocol. -->
 
 <!-- The protocol should describe: -->
 
+#### Screening assessments
+
+#### Baseline assessments
+
+#### Assessment timepoints
+
+#### Followup assessments
+
 <!--     • all trial procedures and assessments, including those that are part of routine care -->
 
 <!--     • the timing of the assessments should be detailed and broken down into visit numbers as appropriate, for example clearly defined visit window i.e. +-3 days -->
@@ -1431,9 +1486,35 @@ documented in the protocol. -->
 
 <!--     • maximum dosage allowed each time the drug is given  -->
 
+Anakinra is given twice daily subcutaneously. The maximum waiting time for surgical repair of fractured neck of femur is likely to be less than 48 hours, with 60\$ of people having repair by the day following presentation to the Emergency Department. Therefore:
+
+For those operated on the following day: {#tab-shortwait}
+
++----+---------+---------------------+----------+----------+----------+----------+
+|    | Day 0   | Day 1               | Day 2    | Day 3    | Day 4    | Day 5    |
++====+=========+=====================+==========+==========+==========+==========+
+| AM | Present | Rx 2                | Rx 4     | Rx 6     | Rx 8     |          |
++----+---------+---------------------+----------+----------+----------+----------+
+|    |         | Repair (Short wait) | 24h      | 48h      | 72h      |          |
++----+---------+---------------------+----------+----------+----------+----------+
+| PM | Rx 1    | Rx 3                | Rx 5     | Rx 7     |          |          |
++----+---------+---------------------+----------+----------+----------+----------+
+
+For those operated on within 48 hours: {#tab-longwait}
+
++----+---------+--------+--------------------+----------+----------+----------+
+|    | Day 0   | Day 1  | Day 2              | Day 3    | Day 4    | Day 5    |
++====+=========+========+====================+==========+==========+==========+
+| AM | Present | Rx 2   | Rx 4               | Rx 6     | Rx 8     | Rx 10    |
++----+---------+--------+--------------------+----------+----------+----------+
+|    |         |        | Repair (Long wait) | 24h      | 48h      | 72h      |
++----+---------+--------+--------------------+----------+----------+----------+
+| PM | Rx 1    | Rx 3   | Rx 5               | Rx 7     | Rx 9     |          |
++----+---------+--------+--------------------+----------+----------+----------+
+
 <!--     • methods for monitoring cumulative dosing where required -->
 
-<!--     • Where dosage is dependent on laboratory data, specify whether blood specimens must be taken on the day of dosing or specimens can be taken in advance in line with routine local procedure. -->
+The number of doses of Anakinra given may differ between participants. 60% of participants are expected to have surgical repair within 24 hours (based on summary descriptive statistics from the National Hip Fracture Database). Therefore, we will continue to give doses of subcutaneous Anakinra twice daily for 72 hours after surgical repair. <!--     • Where dosage is dependent on laboratory data, specify whether blood specimens must be taken on the day of dosing or specimens can be taken in advance in line with routine local procedure. -->
 
 <!--     • methods for individualised doses, if calculations are required then state what specific calculation is to be used (if applicable) -->
 
@@ -1450,32 +1531,83 @@ documented in the protocol. -->
 <!--     • any blinding requirements for lines, giving sets, pumps etc -->
 
 ### Dosage modifications
-
+Doses will be reduced if participants weigh under 50kg. For participants under 50kg a dose of Anakinra of 1.5mg/kg will be used. 
 <!-- Aim: To give deails here on required dose modifications (if applicable) -->
+<!-- The protocol should detail: -->
+Protocol deviations due to missed doses will be treated as follows:
 
-<!-- The protocol should dettail: -->
+1. A.M. doses should be given at the usual time for A.M. medication for inpatients, usually between 8 and 9 a.m.
 
+2. Doses given after 10 a.m. will be considered protocol deviations and recorded as such. The median time at A.M. and P.M. dosing will be recorded and reported in the trial report, as will the median duration between doses. 
+
+3. The A.M. Dose will be considered "missed" if it is not given by 12 noon that day. In these cases, this should be recorded as a protocol deviation and omitted. In these cases the participant will only receive the P.M. dose. 
 <!--     • if the dose should be modified for example in the case of certain adverse events (specify the exact dose modifications and events) -->
 
 <!--     • the stopping rules (for individual participants and the trial as a whole) -->
+**Intubation and I.V. sedation** for any medical reason will render the measurement of delirium parameters impossible. Therefore, ICU admission, intubation or sedation with e.g. I.V Propofol will mean the participant receives no further doses of study medication or placebo, while the change in clinical status will be registered as a SUSAR.
 
 <!--     • the restarting rules (for individual participants and the trial as a whole) -->
-
+Once a participant is withdrawn from the study, dosing with study medicine or placebo will not be reinitiated. 
 <!--     • treatment breaks/ drug-free holidays  -->
-
+As the treatment will only continue for the duration of the participant's hospitalisation, we expect there will be no reason for treatment breaks or drug-free holidays during the course of the study. 
 <!--     • whether patients can increase the dose if they have previously been dose reduced for some reason. Also what about treatment breaks/ drug-free holidays -->
-
+There will be no cause for increasing doses after missed doses, nor will a dosing regime be extended because of a prolngewd stay in hospital. 
 <!--     • whether the dosage will be modified in accordance with the patients results (e.g. lab results – and what the results should be) and whether this will be completed under controlled hospital conditions or whether the patient will be required to adjust their own dosages following medical guidance at home -->
 
 <!--     • whether the dose can be modified due to patient request -->
-
+The dose can not be modified due to participant or relative request. The dose can not be modified sue to clinician or professional request.
 <!--     • procedures in the event of toxicity reactions (if applicable) e.g. if it is possible to reduce the dosage of IMP or if any rescue medication may need to be administered -->
+Toxicity reactions with Anakinra are not common. Site reactions are common after prolongeddosing and usually result in inflammation, erythema and discoloration around injection sites.  As trial participants will only be receiving 8 to 10 injections, and with the benefit of the rotation of sites, we do not anticipate site reactions which would result in either unblinding or discomfort for participants. If site reactions occur, they will be treated as per clinical guidance, by ensuring rotation of the injection site, providing pain relief and careful participant positioning.
 
+Anaphylactic reactions will be dealt with using the local anaphylaxis guidance for Manchester Foundation Trust, and referred for post-anaphylaxis care if possible at the Greater Manchester Rapid Access Anaphylaxis Clinic.  
 <!--     • when a dose modification will result in the participant having to withdraw from treatment -->
 
 ### Known drug reactions and interaction with other therapies
 
 <!-- Aim: To identify any known drug reactions or interaction with other therapies or situations e.g. photosensitivity -->
+#### Contra-indications (BNF)
+Active infection; neutropenia (absolute neutrophil count less than 1.5 x 109/litre)—do not initiate; pre-existing malignancy
+
+#### Cautions (BNF)
+Elderly; history of asthma (increased risk of serious infection); history of recurrent infection; predisposition to infection
+
+#### Interactions (BNF)
+**Abatacept:** Anakinra is predicted to increase the risk of generalised infection (possibly life-threatening) when given with Abatacept. Manufacturer makes no recommendation.  Severity:Severe; vidence:Theoretical
+
+**Bacillus Calmette-Guérin** vaccine is predicted to increase the risk of generalised infection (possibly life-threatening) when given with Anakinra. UKHSA advises avoid (refer to Green Book). Severity:Severe; Evidence:Theoretical
+
+**Certolizumab pegol** is predicted to increase the risk of generalised infection (possibly life-threatening) when given with Anakinra. Manufacturer advises avoid. Severity:Severe; Evidence:Theoretical
+
+
+**Etanercept:** Anakinra is predicted to increase the risk of generalised infection (possibly life-threatening) when given with Etanercept. Manufacturer advises avoid. Severity:Severe; Evidence:Theoretical
+
+**Filgotinib:** Filgotinib is predicted to increase the risk of immunosuppression when given with Anakinra. Manufacturer advises avoid. Severity:Severe; Evidence:Theoretical
+
+**Golimumab** Anakinra is predicted to increase the risk of generalised infection (possibly life-threatening) when given with Golimumab. Manufacturer advises avoid. Severity:Severe; Evidence:Theoretical
+
+**Herpes-zoster live vaccine** is predicted to increase the risk of generalised infection (possibly life-threatening) when given with Anakinra. UKHSA advises avoid (refer to Green Book). Severity:Severe; Evidence:Theoretical
+
+**Influenza vaccine (live)** is predicted to increase the risk of generalised infection (possibly life-threatening) when given with Anakinra. UKHSA advises avoid (refer to Green Book). Severity:Severe; Evidence:Theoretical
+
+**Measles, mumps and rubella vaccine, live:** is predicted to increase the risk of generalised infection (possibly life-threatening) when given with Anakinra. UKHSA advises avoid (refer to Green Book). Severity:Severe; Evidence:Theoretical
+
+**Rotavirus vaccine** is predicted to increase the risk of generalised infection (possibly life-threatening) when given with Anakinra. UKHSA advises avoid (refer to Green Book). Severity:Severe; Evidence:Theoretical
+
+**Typhoid vaccine, oral** is predicted to increase the risk of generalised infection (possibly life-threatening) when given with Anakinra. UKHSA advises avoid (refer to Green Book).  Severity:SevereEvidence:Theoretical
+
+**Varicella-zoster vaccine** is predicted to increase the risk of generalised infection (possibly life-threatening) when given with Anakinra. UKHSA advises avoid (refer to Green Book). Severity:Severe; Evidence:Theoretical
+
+
+**Yellow fever vaccine, live** is predicted to increase the risk of generalised infection (possibly life-threatening) when given with Anakinra. UKHSA advises avoid (refer to Green Book). Severity:Severe; Evidence:Theoretical
+
+#### Side-effects
+*Common or very common:* Headache; infection; neutropenia; thrombocytopenia
+*further information*: Neutropenia reported commonly—discontinue if neutropenia develops.
+
+*Uncommon:* Skin reactions
+
+*Frequency not known:* Hepatitis
+
 
 <!-- The protocol should: -->
 
@@ -1909,9 +2041,9 @@ documented in the protocol. -->
 
 <!-- Realistic estimates of expected accrual rate and duration of participant entry based on estimated sample size should be provided. This section may also include information such as the number of recruiting centres, the size / percentage of the population that is captured by the eligibility criteria, the expected consent rate, and the expected screen failure rate. This information will help sites to determine whether they are likely to be able to recruit their target number of participants. -->
 
-### Statistical analysis plan
+### Statistical analysis plan (summary) {#sec-sap}
 
-Aim: to fully describe the statistical analysis plan
+[Please see full Statistical Analysis Plan for reference]()
 
 #### Summary of baseline data and flow of patients
 
