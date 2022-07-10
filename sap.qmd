@@ -57,7 +57,8 @@ body-footer: "Copyright (c) 2022"
 ```{r echo=TRUE, results='hide', message=FALSE}
 #| column: screen-inset-shaded
 #| layout-nrow: 1
-# Decsriptive statistics of the Hip fracture population
+# Descriptive statistics and forecasting
+# for the Hip fracture population
 library(tidyverse)
 library(rms)
 library(plotly)
@@ -66,47 +67,78 @@ library(tsibble)
 library(tsibbledata)
 library(feasts)
 library(urca)
+library(downloadthis)
+library(fpp3)
 los <- read.csv("./NHFD_Data/los_apr_22.csv")
 names(los) <-c("my", "ptnum", 
-               "acutelos", "acutelosannual", 
-               "trustlos", "trustlosannual" )
+               "acutelos", 
+               "acutelosannual", 
+               "trustlos", 
+               "trustlosannual" )
 vol <- los |> select(my, ptnum)
 vol$my <- lubridate::my(vol$my) 
-ts_vol <- vol %>% mutate(my = tsibble::yearmonth(my)) %>% tsibble()
+ts_vol <- vol %>% 
+  mutate(my = tsibble::yearmonth(my)) %>% 
+  tsibble()
 
-p <- vol |> ggplot() + geom_line(aes(x=my, y=ptnum)) +
+p <- vol |> ggplot() + 
+  geom_line(aes(x=my, y=ptnum)) +
   scale_x_date(date_labels = "%m-%Y") +
-  labs(x="Month-Year of discharge", y="Number of patients",
-       title="Patients presenting to Wythenshawe  with #NOF by month", 
-       subtitle = "Data courtesy of the National Hip Fracture Database")
+  labs(x="Month-Year of discharge", 
+  y="Number of patients",
+  title="Patients presenting to Wythenshawe with #NOF", 
+  subtitle ="Data courtesy of the NFHD")
 p
 
-fable_1 <- ts_vol %>% model(  
+fable_1 <- ts_vol %>% 
+  model(  
     ets = ETS(ptnum),
     arima = ARIMA(ptnum),
     snaive = SNAIVE(ptnum)
   )
-forecast_1 <- forecast(fable_1, h = "3 years")
-autoplot(forecast_1, data=vol, level=NULL) +
+forecast_1 <- forecast(fable_1, 
+                       h = "3 years") 
+autoplot(forecast_1, 
+         data=vol, 
+         level = c(80, 95)) +
   labs(x="Month-Year of discharge",
-       title="ARIMA/ETS/SNAIVE models predicting patients presenting to  
-              Wythenshawe with #NOF",
-       subtitle = "Data courtesy of the National Hip Fracture Database",
-       y="Number of patients")
-forecast_1$.model
+  title="ARIMA/ETS/SNAIVE models predicting pts presenting to  
+  Wythenshawe with #NOF",
+  subtitle = "Data courtesy of the NFHD",
+  y="Number of patients")
 
-arima_means <- forecast_1 %>% filter(.model=='arima')
+arima_means <- forecast_1 %>%
+  filter(.model=='arima')
 arima_mean <- mean(arima_means$.mean)
-ets_means <- forecast_1 %>% filter(.model=='ets')
+ets_means <- forecast_1 %>% 
+  filter(.model=='ets')
 ets_mean <- mean(ets_means$.mean)
-snaive_means <- forecast_1 %>% filter(.model=='snaive')
+snaive_means <- forecast_1 %>% 
+  filter(.model=='snaive')
 snaive_mean <- mean(snaive_means$.mean)
-print_mean <- mean(c(snaive_mean, ets_mean, arima_mean)) |> round(2)
+print_mean <- mean(c(snaive_mean, 
+                     ets_mean, 
+                     arima_mean)) |> 
+  round(2)
+
 ```
-We conducted a time series forecast (ARIMA, ETS and Naive (SNAIVE)) based on discharges from Wythenshawe over the period 2011 - 2022. This suggests an expected mean number of presentations per month (simple average of 3 model estimates) of `r print_mean`. At this rate, we would expect ~40 x 24 = `r print_mean*24` patients to have surgical repair of fractured neck of femur over the 2-year recruitment course of the trial.
+```{r echo=FALSE, results='show', message=TRUE}
+los %>%
+  download_this(
+    output_name = "presenting_population",
+    output_extension = ".csv",
+    button_label = "Download data",
+    button_type = "warning",
+    has_icon = TRUE,
+    icon = "fa fa-save"
+  )
+```
 
 
-```{r echo=TRUE, results='hide', message=FALSE}
+We conducted a time series forecast (ARIMA, ETS and Naive (SNAIVE)) based on discharges from Wythenshawe over the period 2011 - 2022. This suggests an expected mean number of presentations per month (simple average of 3 model estimates) of `r print_mean`. At this rate, we would expect ~`r print_mean` x 24 = `r print_mean*24` patients to have surgical repair of fractured neck of femur over the 24 month recruitment course of the trial. `r print(confint_f1)`. 
+
+
+```{r echo=TRUE, results='show', message=FALSE}
 #| column: screen-inset-shaded
 #| layout-nrow: 1
 los <- read.csv("./NHFD_Data/los_apr_22.csv")
@@ -129,7 +161,7 @@ fable_2 <- ts_acute_los %>% model(
   snaive = SNAIVE(acutelos)
 )
 forecast_2 <- forecast(fable_2, h = "3 years")
-autoplot(forecast_2, data=acute_los, level=NULL) +
+autoplot(forecast_2, data=acute_los, level=c(80,95)) +
   labs(x="Month-Year of discharge",
        title="ARIMA/ETS/SNAIVE models predicting LOS of patients presenting to  
               Wythenshawe Hospital with #NOF",
@@ -144,6 +176,7 @@ ets_mean <- mean(ets_means$.mean)
 snaive_means <- forecast_2 %>% filter(.model=='snaive')
 snaive_mean <- mean(snaive_means$.mean)
 print_mean_2 <- mean(c(snaive_mean, ets_mean, arima_mean)) |> round(2)
+
 ```
 We conducted a further time series forecast (ARIMA, ETS and Naive (SNAIVE)) based on discharges from Wythenshawe over the period 2011 - 2022. This suggests an expected mean length of stay per patient (simple average of 3 model estimates of LOS in days) of `r print_mean_2`. This means that while it is unlikely for patients to be in hospital longer than 2 weeks, we will have adequate time to give Anakinra for up to 72 hours post treatment, even if surgery is delayed.
 
