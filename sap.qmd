@@ -122,6 +122,7 @@ print_mean <- mean(c(snaive_mean,
   round(2)
 
 ```
+
 ```{r echo=FALSE, results='show', message=TRUE}
 los <- read.csv("./NHFD_Data/los_apr_22.csv")
 los %>%
@@ -138,7 +139,7 @@ los %>%
 
 We conducted a time series forecast (ARIMA, ETS and Naive (SNAIVE)) based on discharges from Wythenshawe over the period 2011 - 2022. This suggests an expected mean number of presentations per month (simple average of 3 model estimates) of `r print_mean`. At this rate, we would expect ~`r print_mean` x 24 = `r print_mean*24` patients to have surgical repair of fractured neck of femur over the 24 month recruitment course of the trial.  
 
-
+### Length of stay
 ```{r echo=TRUE, results='show', message=FALSE}
 #| column: screen-inset-shaded
 #| layout-nrow: 1
@@ -180,6 +181,7 @@ print_mean_2 <- mean(c(snaive_mean, ets_mean, arima_mean)) |> round(2)
 ```
 We conducted a further time series forecast (ARIMA, ETS and Naive (SNAIVE)) based on discharges from Wythenshawe over the period 2011 - 2022. This suggests an expected mean length of stay per patient (simple average of 3 model estimates of LOS in days) of `r print_mean_2`. This means that while it is unlikely for patients to be in hospital longer than 2 weeks, we will have adequate time to give Anakinra for up to 72 hours post treatment, even if surgery is delayed.
 
+### General Anaesthetic
 ```{r echo=TRUE, results='hide', message=FALSE}
 #| column: screen-inset-shaded
 #| layout-nrow: 1
@@ -226,10 +228,21 @@ snaive_means <- forecast_3 %>% filter(.model=='snaive')
 snaive_mean <- mean(snaive_means$.mean)
 print_mean_3 <- mean(c(snaive_mean, ets_mean, arima_mean)) |> round(2)
 ```
-
+```{r echo=FALSE, results='show', message=TRUE}
+ana <- read.csv("./NHFD_Data/ana_apr_22.csv")
+ana %>%
+  download_this(
+    output_name = "anaesthetic_data",
+    output_extension = ".csv",
+    button_label = "Download data",
+    button_type = "warning",
+    has_icon = TRUE,
+    icon = "fa fa-save"
+  )
+```
 A forecast based on the percentage of patients discharged from Wythenshawe who had a General Anaesthetic over the period 2011 - 2022. This suggests an expected mean percentage GA recipients (simple average of 3 model estimates of %GA) of `r print_mean_3`%. 
 
-
+### Spinal Anaesthetic
 
 ```{r echo=TRUE, results='hide', message=FALSE}
 #| column: screen-inset-shaded
@@ -301,6 +314,7 @@ A forecast based on the percentage of patients discharged from Wythenshawe who h
 : OSLA Items
 
 ```{r, echo=TRUE, warning=FALSE, message=FALSE}
+# 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
 #| column: screen-inset-shaded
 #| layout-nrow: 1
 OSLA <- function(severity="None", return_format = "df"){
