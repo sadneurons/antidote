@@ -33,13 +33,16 @@ fable_2 <- ts_acute_los %>% model(
   snaive = SNAIVE(acutelos)
 )
 forecast_2 <- forecast(fable_2, h = "3 years")
-autoplot(forecast_2, data=acute_los, level=NULL) +
+autoplot(forecast_2, data=acute_los, level=c(80,95)) +
   labs(x="Month-Year of discharge",
        title="ARIMA/ETS/SNAIVE models predicting LOS of patients presenting to
               Wythenshawe Hospital with #NOF",
        subtitle = "Data courtesy of the National Hip Fracture Database",
        y="Number of patients")
 
+confint_f1 <- tapply(forecast_2 , FUN=hilo())
+
+hilo(forecast_2[[3]][[1]], 80)
 
 arima_means <- forecast_2 %>% filter(.model=='arima')
 arima_mean <- mean(arima_means$.mean)

@@ -188,6 +188,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#descriptive-statistics" id="toc-descriptive-statistics" class="nav-link" data-scroll-target="#descriptive-statistics">Descriptive statistics</a>
   <ul class="collapse">
   <li><a href="#number-of-patients" id="toc-number-of-patients" class="nav-link" data-scroll-target="#number-of-patients">Number of patients</a></li>
+  </ul></li>
+  <li><a href="#outcome-measures" id="toc-outcome-measures" class="nav-link" data-scroll-target="#outcome-measures">Outcome measures</a>
+  <ul class="collapse">
   <li><a href="#osla-scale" id="toc-osla-scale" class="nav-link" data-scroll-target="#osla-scale">OSLA scale</a></li>
   </ul></li>
   <li><a href="#frequentist-simulation" id="toc-frequentist-simulation" class="nav-link" data-scroll-target="#frequentist-simulation">Frequentist simulation</a></li>
@@ -289,7 +292,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>p</span>
 <span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>fable_1 <span class="ot">&lt;-</span> ts_vol <span class="sc">%&gt;%</span> </span>
 <span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">model</span>(  </span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">ets =</span> <span class="fu">ETS</span>(ptnum),</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">ets =</span> <span class="fu">ETS</span>(ptnum <span class="sc">~</span> <span class="fu">error</span>(<span class="st">"M"</span>) <span class="sc">+</span> <span class="fu">trend</span>(<span class="st">"M"</span>) <span class="sc">+</span> <span class="fu">season</span>(<span class="st">"M"</span>)),</span>
 <span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>    <span class="at">arima =</span> <span class="fu">ARIMA</span>(ptnum),</span>
 <span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">snaive =</span> <span class="fu">SNAIVE</span>(ptnum)</span>
 <span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>  )</span>
@@ -303,21 +306,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="st">  Wythenshawe with #NOF"</span>,</span>
 <span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>  <span class="at">subtitle =</span> <span class="st">"Data courtesy of the NFHD"</span>,</span>
 <span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>  <span class="at">y=</span><span class="st">"Number of patients"</span>)</span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>forecast_1<span class="sc">$</span>.model</span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>confint_f1 <span class="ot">&lt;-</span> fabletools<span class="sc">::</span><span class="fu">hilo</span>(forecast_1)</span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>arima_means <span class="ot">&lt;-</span> forecast_1 <span class="sc">%&gt;%</span></span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(.model<span class="sc">==</span><span class="st">'arima'</span>)</span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>arima_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(arima_means<span class="sc">$</span>.mean)</span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>ets_means <span class="ot">&lt;-</span> forecast_1 <span class="sc">%&gt;%</span> </span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(.model<span class="sc">==</span><span class="st">'ets'</span>)</span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>ets_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(ets_means<span class="sc">$</span>.mean)</span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>snaive_means <span class="ot">&lt;-</span> forecast_1 <span class="sc">%&gt;%</span> </span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(.model<span class="sc">==</span><span class="st">'snaive'</span>)</span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>snaive_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(snaive_means<span class="sc">$</span>.mean)</span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>print_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">c</span>(snaive_mean, </span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>                     ets_mean, </span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>                     arima_mean)) <span class="sc">|&gt;</span> </span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>  <span class="fu">round</span>(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>arima_means <span class="ot">&lt;-</span> forecast_1 <span class="sc">%&gt;%</span></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(.model<span class="sc">==</span><span class="st">'arima'</span>)</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>arima_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(arima_means<span class="sc">$</span>.mean)</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>ets_means <span class="ot">&lt;-</span> forecast_1 <span class="sc">%&gt;%</span> </span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(.model<span class="sc">==</span><span class="st">'ets'</span>)</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>ets_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(ets_means<span class="sc">$</span>.mean)</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>snaive_means <span class="ot">&lt;-</span> forecast_1 <span class="sc">%&gt;%</span> </span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(.model<span class="sc">==</span><span class="st">'snaive'</span>)</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>snaive_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(snaive_means<span class="sc">$</span>.mean)</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>print_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">c</span>(snaive_mean, </span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>                     ets_mean, </span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>                     arima_mean)) <span class="sc">|&gt;</span> </span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>  <span class="fu">round</span>(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell column-screen-inset-shaded quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
@@ -332,7 +333,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<a onclick="fetch('data:text/csv;base64,bXk7cHRudW07YWN1dGVsb3M7YWN1dGVsb3Nhbm51YWw7dHJ1c3Rsb3M7dHJ1c3Rsb3Nhbm51YWwKQXByIDIwMTE7OTs5LDU3O05BOzksMzc7TkEKTWF5IDIwMTE7MjU7MTMsMTQ7TkE7MjAsMDg7TkEKSnVuIDIwMTE7MjE7MTYsMDY7TkE7MjMsNjI7TkEKSnVsIDIwMTE7Mjk7MTcsMjM7TkE7MjgsNTE7TkEKQXVnIDIwMTE7MjI7MTcsNTA7TkE7MjMsNTM7TkEKU2VwIDIwMTE7MjQ7MjAsNTI7TkE7MzAsMzA7TkEKT2N0IDIwMTE7MjE7MjIsNjA7TkE7MjksMjU7TkEKTm92IDIwMTE7MTc7MTgsNzk7TkE7MjYsMDM7TkEKRGVjIDIwMTE7MzU7MjUsMjU7TkE7MjYsNTY7TkEKSmFuIDIwMTI7MjA7MTcsOTU7TkE7MjMsNjk7TkEKRmViIDIwMTI7MjQ7MTksMjI7TkE7MjYsNzc7TkEKTWFyIDIwMTI7MTM7MjksMTg7MTksMjU7MzMsNDA7MjUsNzMKQXByIDIwMTI7MTM7MzEsNTA7MjAsMDc7MzEsMTA7MjYsNTYKTWF5IDIwMTI7MjU7MTYsMTc7MjAsMzE7MjQsMTc7MjYsOTQKSnVuIDIwMTI7Mjg7MjIsMDA7MjAsODA7MjksMjc7MjcsNDQKSnVsIDIwMTI7MjE7MTksNDI7MjEsMDg7MjYsNDc7MjcsMjUKQXVnIDIwMTI7MTc7MTgsMjA7MjEsMjE7MjcsMDU7MjcsNTUKU2VwIDIwMTI7MjM7MjAsNTM7MjEsMjE7MzEsODM7MjcsNjgKT2N0IDIwMTI7MjI7MTYsNTM7MjAsNzA7MjYsMzY7MjcsNDQKTm92IDIwMTI7MjY7MTYsMjk7MjAsMzc7MjIsMDY7MjcsMDAKRGVjIDIwMTI7Mjc7MjEsNjI7MTksOTI7MjQsMjA7MjYsNzcKSmFuIDIwMTM7MzM7MjMsOTA7MjAsNTU7MjksODk7MjcsMzgKRmViIDIwMTM7MzE7MjQsMzE7MjEsMTE7MzYsMTI7MjgsNDAKTWFyIDIwMTM7MjA7MjYsNjU7MjEsMjA7MzgsNDM7MjgsODcKQXByIDIwMTM7Mjc7MTksODg7MjAsNzA7MzYsMDQ7MjksNDIKTWF5IDIwMTM7MjA7MTMsNjA7MjAsNTY7MTgsMzM7MjksMTIKSnVuIDIwMTM7MjI7MTQsODE7MTksOTU7MjAsNDI7MjgsNDQKSnVsIDIwMTM7MjQ7MTgsNjc7MTksODc7MjUsNzQ7MjgsMzYKQXVnIDIwMTM7MTg7MjgsMDA7MjAsNTA7MzIsMTc7MjgsNjcKU2VwIDIwMTM7Mjg7MjMsMjM7MjAsNzY7MjgsOTI7MjgsNDUKT2N0IDIwMTM7MjE7MjIsNTA7MjEsMTc7MzAsNzQ7MjgsNzYKTm92IDIwMTM7MjQ7MTcsNTk7MjEsMzE7MjAsMDI7MjgsNjQKRGVjIDIwMTM7Mjk7MTksMDQ7MjEsMDg7MjIsNDM7MjgsNDQKSmFuIDIwMTQ7MzM7MjQsMjk7MjEsMTQ7MzIsNDg7MjgsNzMKRmViIDIwMTQ7MjI7MjYsOTU7MjEsMjU7MzgsMjY7MjgsNjYKTWFyIDIwMTQ7MzI7MjIsNTI7MjEsMDE7MzgsMTI7MjksMDIKQXByIDIwMTQ7MjQ7MTgsMzU7MjAsODk7MjUsMjI7MjgsMDcKTWF5IDIwMTQ7MjM7MTUsNDM7MjAsOTY7MjIsMDc7MjgsMjYKSnVuIDIwMTQ7Mjc7MjcsNTY7MjIsMDI7MzMsOTQ7MjksMzMKSnVsIDIwMTQ7Mjg7MjAsNzU7MjIsMTc7MjcsODc7MjksNDgKQXVnIDIwMTQ7MjQ7MjAsMjA7MjEsNjg7MjUsNzg7MjksMDQKU2VwIDIwMTQ7Mjk7MjQsNjU7MjEsODE7MjYsMzA7MjgsODAKT2N0IDIwMTQ7MzE7MjYsMzc7MjIsMjE7MzQsNDQ7MjksMjEKTm92IDIwMTQ7MjU7MjAsOTI7MjIsNDM7MjQsNzY7MjksNTUKRGVjIDIwMTQ7NDA7MjgsMTc7MjMsNDA7MzMsNzI7MzAsNjUKSmFuIDIwMTU7MzM7MTgsODA7MjIsODk7MjQsNjE7MjksODgKRmViIDIwMTU7MzE7MjMsNzY7MjIsNzE7MjcsMjY7MjksMTIKTWFyIDIwMTU7MzE7MTcsMTk7MjIsMjE7MjQsNzQ7MjcsODkKQXByIDIwMTU7MzE7MTcsOTc7MjIsMTA7MjcsMDE7MjgsMDAKTWF5IDIwMTU7MjY7MTgsMDA7MjIsMjU7MjEsODY7MjcsOTMKSnVuIDIwMTU7MzY7MTcsODI7MjEsNDA7MjgsODY7MjcsNTgKSnVsIDIwMTU7MzE7MjMsMTc7MjEsNjA7MjgsMTc7MjcsNjEKQXVnIDIwMTU7MjI7MjEsMTQ7MjEsNjU7MjQsMTg7MjcsNTIKU2VwIDIwMTU7Mjk7MjIsMDg7MjEsNDY7MjEsOTk7MjcsMTgKT2N0IDIwMTU7Mjc7MTksMzg7MjAsODg7MTksNjg7MjYsMDAKTm92IDIwMTU7MjA7MTQsNzg7MjAsNTY7MTYsNjg7MjUsNTYKRGVjIDIwMTU7MzY7MjYsMzk7MjAsMjI7MjYsMDA7MjQsNjgKSmFuIDIwMTY7MzA7MjIsMTc7MjAsNTI7MjIsNjQ7MjQsNTEKRmViIDIwMTY7MTc7MjQsMjU7MjAsNDI7MjMsNzM7MjQsMjIKTWFyIDIwMTY7MzI7MTgsMjU7MjAsNTE7MjAsMTY7MjMsNzkKQXByIDIwMTY7MTY7MTYsOTQ7MjAsNTc7MjIsNjI7MjMsNDIKTWF5IDIwMTY7MzQ7MjUsMDA7MjEsMjU7MjcsNTU7MjMsOTYKSnVuIDIwMTY7NDA7MjMsNzE7MjEsOTE7MjUsNDA7MjMsNjAKSnVsIDIwMTY7MjY7MjQsMzI7MjEsOTg7MjMsNjI7MjMsMTcKQXVnIDIwMTY7MzE7MjcsMzA7MjIsNTM7MjcsMzA7MjMsNDcKU2VwIDIwMTY7MjA7MjgsMDU7MjIsOTA7MjcsMjU7MjMsODMKT2N0IDIwMTY7MjI7MjUsMjM7MjMsMzY7MjUsNzc7MjQsMzEKTm92IDIwMTY7Mzc7MjgsMDY7MjQsMzQ7MjcsNzA7MjUsMTMKRGVjIDIwMTY7MjQ7MjcsNjc7MjQsMzc7MjksOTI7MjUsMzkKSmFuIDIwMTc7MzE7MjMsOTA7MjQsNTM7MjcsOTc7MjUsODkKRmViIDIwMTc7MjY7MjIsNjA7MjQsNDA7MjIsMTI7MjUsNzAKTWFyIDIwMTc7Mzc7MjksMzc7MjUsNTE7MzAsNjU7MjYsNzYKQXByIDIwMTc7Mjc7MjcsMjM7MjYsMDM7MjksNTY7MjcsMTYKTWF5IDIwMTc7MzE7MjksMjg7MjYsNDE7MzIsNjU7MjcsNjEKSnVuIDIwMTc7Mjg7MjcsNDM7MjYsODE7MjcsNjQ7MjcsODcKSnVsIDIwMTc7MjQ7MjQsNjI7MjYsODQ7MzAsMjU7MjgsMzcKQXVnIDIwMTc7MzU7MjUsODg7MjYsNzA7MzIsMTQ7MjgsODUKU2VwIDIwMTc7MjM7MjYsOTU7MjYsNjQ7MzMsODc7MjksMjgKT2N0IDIwMTc7MzQ7MjIsOTc7MjYsMzg7MjYsNzk7MjksMjUKTm92IDIwMTc7MzQ7MjEsMTU7MjUsNjk7MjQsNTA7MjgsOTYKRGVjIDIwMTc7NDM7MjAsMTA7MjQsOTE7MjIsNzA7MjgsMTgKSmFuIDIwMTg7MzM7MTMsOTQ7MjQsMDU7MTksMTU7MjcsNDAKRmViIDIwMTg7Mjc7MjQsMzc7MjQsMTc7MjQsMzc7MjcsNTUKTWFyIDIwMTg7MzM7MTcsMjg7MjMsMDY7MjQsNzM7MjYsOTkKQXByIDIwMTg7MzA7MjEsNTQ7MjIsNjQ7MjMsNzc7MjYsNTUKTWF5IDIwMTg7MzQ7MjksNTk7MjIsNzY7MzQsMzg7MjYsNzUKSnVuIDIwMTg7MzA7MjIsNzA7MjIsNDA7MjIsNzA7MjYsMzcKSnVsIDIwMTg7Mjg7MjIsMzk7MjIsMjU7MjMsMDQ7MjUsODgKQXVnIDIwMTg7Mzc7MTksMzg7MjEsNjY7MjAsNDY7MjQsNzkKU2VwIDIwMTg7Mjk7MTgsODM7MjEsMTU7MjAsMDA7MjMsOTEKT2N0IDIwMTg7Mjk7MjEsMTQ7MjAsOTk7MjEsMTQ7MjMsNDQKTm92IDIwMTg7MzQ7MjQsMjY7MjEsMjc7MjQsMjY7MjMsNDIKRGVjIDIwMTg7MjA7MTQsNjU7MjEsMDQ7MTUsNzU7MjMsMDkKSmFuIDIwMTk7MzQ7MTgsMzU7MjEsNDA7MjAsNTY7MjMsMjEKRmViIDIwMTk7MjI7MTUsODI7MjAsODM7MjAsMjc7MjIsOTQKTWFyIDIwMTk7MjE7MTksMTA7MjEsMDU7MzAsOTA7MjMsMjUKQXByIDIwMTk7MzQ7MTcsMzU7MjAsNjY7MjIsNDQ7MjMsMTMKTWF5IDIwMTk7MzY7MjIsMDA7MTksOTQ7MjYsNTg7MjIsNDAKSnVuIDIwMTk7MzI7MTcsMDM7MTksNDQ7MjYsMTI7MjIsNzEKSnVsIDIwMTk7MzQ7MTUsMjQ7MTgsODI7MjMsMDk7MjIsNzIKQXVnIDIwMTk7Mjg7MTYsMzI7MTgsNTY7MjUsMTE7MjMsMTUKU2VwIDIwMTk7Mjg7MTYsOTY7MTgsNDE7MjgsMzM7MjMsODEKT2N0IDIwMTk7MzI7MjIsNDQ7MTgsNTU7MjksMjI7MjQsNTEKTm92IDIwMTk7MzU7MTgsNjM7MTgsMDE7MjYsNjA7MjQsNzQKRGVjIDIwMTk7MzU7MTcsNDE7MTgsMTQ7MjksNzk7MjUsNzAKSmFuIDIwMjA7Mzc7MTcsNzA7MTgsMDg7MzUsODQ7MjcsMTcKRmViIDIwMjA7MjU7MTksNTI7MTgsMzE7MzgsMzI7MjgsMzIKTWFyIDIwMjA7NDE7MTksOTM7MTgsNDM7MzksNzE7MjksMzcKQXByIDIwMjA7MzQ7MTYsNjY7MTgsMzg7MjksMDY7MjksOTQKTWF5IDIwMjA7MjY7MTUsNjE7MTcsODc7MjUsOTY7MjksOTgKSnVuIDIwMjA7MjY7MTMsNDg7MTcsNjU7MjEsODE7MjksNzUKSnVsIDIwMjA7MjA7OSwzNzsxNyw0NDsxNSwwNTsyOSw1NgpBdWcgMjAyMDsyNjsxNCwxMjsxNywyOTsyNyw4MTsyOSw3OApTZXAgMjAyMDsxNDsxMywzODsxNywxNzsyNiw4NjsyOSw3NwpPY3QgMjAyMDsyODsxNiw4NTsxNiw2NTsyNCw5MzsyOSw0MwpOb3YgMjAyMDszNDsxMSwzNTsxNSw5MDsyNCwyNjsyOSwyMQpEZWMgMjAyMDs0MjsxMSwxMjsxNSwxNzsyMywxNzsyOCw0NApKYW4gMjAyMTs1MjsxMSw2NTsxNCw0MjsyNiw5MjsyNyw0OApGZWIgMjAyMTsyOTsxMCw0MjsxMyw3NzsyNyw2OTsyNiw3NwpNYXIgMjAyMTs0NDs5LDYzOzEyLDU3OzIxLDc1OzI0LDc2CkFwciAyMDIxOzM4OzE1LDQyOzEyLDUwOzMyLDUwOzI1LDE1Ck1heSAyMDIxOzM0OzEwLDUzOzEyLDEzOzMxLDkxOzI1LDY5Ckp1biAyMDIxOzMxOzExLDk3OzEyLDAzOzI4LDgxOzI2LDIwCkp1bCAyMDIxOzQ5OzEyLDAyOzEyLDE1OzMwLDE2OzI3LDE5CkF1ZyAyMDIxOzMyOzEwLDk0OzExLDk0OzMwLDk3OzI3LDQzClNlcCAyMDIxOzMyOzExLDEzOzExLDg0OzI0LDUwOzI3LDI0Ck9jdCAyMDIxOzMyOzksMjg7MTEsMzQ7MjEsODc7MjcsMDAKTm92IDIwMjE7NTI7OSw2NzsxMSwxNjszMiwzMTsyNyw3OQpEZWMgMjAyMTs0NzsxMCw0OTsxMSwwOTsyNSwzNjsyNyw5NgpKYW4gMjAyMjs0ODsxMSw1NjsxMSwwODsyOSwyMTsyOCwyMQpGZWIgMjAyMjs0MDsxMSw4MjsxMSwxNzszMiwxNTsyOCw1NwpNYXIgMjAyMjszMjsxMSwyODsxMSwzMzsyNyw0NzsyOSwxMwpBcHIgMjAyMjs0MjsxMCw5ODsxMCw5NjsyOCw2MjsyOCw4MgpNYXkgMjAyMjszOTsxMyw2MjsxMSwyMDsyOSw4NzsyOCw2OAo=').then(res => res.blob()).then(blob => {
+<a onclick="fetch('data:text/csv;base64,VHJ1c3QuRGlzY2hhcmdlLlllYXIuLi5Nb250aDtQYXRpZW50cy4ubnVtYmVyLnBlci5tb250aC47QWN1dGUuaG9zcGl0YWwubGVuZ3RoLm9mLnN0YXkuLmRheXMuO0FjdXRlLmhvc3BpdGFsLmxlbmd0aC5vZi5zdGF5Li5kYXlzLi5hbm51YWwuO092ZXJhbGwuVHJ1c3QubGVuZ3RoLm9mLnN0YXkuLmRheXMuO092ZXJhbGwuVHJ1c3QubGVuZ3RoLm9mLnN0YXkuLmRheXMuLmFubnVhbC4KQXByIDIwMTE7OTs5LDU3O05BOzksMzc7TkEKTWF5IDIwMTE7MjU7MTMsMTQ7TkE7MjAsMDg7TkEKSnVuIDIwMTE7MjE7MTYsMDY7TkE7MjMsNjI7TkEKSnVsIDIwMTE7Mjk7MTcsMjM7TkE7MjgsNTE7TkEKQXVnIDIwMTE7MjI7MTcsNTA7TkE7MjMsNTM7TkEKU2VwIDIwMTE7MjQ7MjAsNTI7TkE7MzAsMzA7TkEKT2N0IDIwMTE7MjE7MjIsNjA7TkE7MjksMjU7TkEKTm92IDIwMTE7MTc7MTgsNzk7TkE7MjYsMDM7TkEKRGVjIDIwMTE7MzU7MjUsMjU7TkE7MjYsNTY7TkEKSmFuIDIwMTI7MjA7MTcsOTU7TkE7MjMsNjk7TkEKRmViIDIwMTI7MjQ7MTksMjI7TkE7MjYsNzc7TkEKTWFyIDIwMTI7MTM7MjksMTg7MTksMjU7MzMsNDA7MjUsNzMKQXByIDIwMTI7MTM7MzEsNTA7MjAsMDc7MzEsMTA7MjYsNTYKTWF5IDIwMTI7MjU7MTYsMTc7MjAsMzE7MjQsMTc7MjYsOTQKSnVuIDIwMTI7Mjg7MjIsMDA7MjAsODA7MjksMjc7MjcsNDQKSnVsIDIwMTI7MjE7MTksNDI7MjEsMDg7MjYsNDc7MjcsMjUKQXVnIDIwMTI7MTc7MTgsMjA7MjEsMjE7MjcsMDU7MjcsNTUKU2VwIDIwMTI7MjM7MjAsNTM7MjEsMjE7MzEsODM7MjcsNjgKT2N0IDIwMTI7MjI7MTYsNTM7MjAsNzA7MjYsMzY7MjcsNDQKTm92IDIwMTI7MjY7MTYsMjk7MjAsMzc7MjIsMDY7MjcsMDAKRGVjIDIwMTI7Mjc7MjEsNjI7MTksOTI7MjQsMjA7MjYsNzcKSmFuIDIwMTM7MzM7MjMsOTA7MjAsNTU7MjksODk7MjcsMzgKRmViIDIwMTM7MzE7MjQsMzE7MjEsMTE7MzYsMTI7MjgsNDAKTWFyIDIwMTM7MjA7MjYsNjU7MjEsMjA7MzgsNDM7MjgsODcKQXByIDIwMTM7Mjc7MTksODg7MjAsNzA7MzYsMDQ7MjksNDIKTWF5IDIwMTM7MjA7MTMsNjA7MjAsNTY7MTgsMzM7MjksMTIKSnVuIDIwMTM7MjI7MTQsODE7MTksOTU7MjAsNDI7MjgsNDQKSnVsIDIwMTM7MjQ7MTgsNjc7MTksODc7MjUsNzQ7MjgsMzYKQXVnIDIwMTM7MTg7MjgsMDA7MjAsNTA7MzIsMTc7MjgsNjcKU2VwIDIwMTM7Mjg7MjMsMjM7MjAsNzY7MjgsOTI7MjgsNDUKT2N0IDIwMTM7MjE7MjIsNTA7MjEsMTc7MzAsNzQ7MjgsNzYKTm92IDIwMTM7MjQ7MTcsNTk7MjEsMzE7MjAsMDI7MjgsNjQKRGVjIDIwMTM7Mjk7MTksMDQ7MjEsMDg7MjIsNDM7MjgsNDQKSmFuIDIwMTQ7MzM7MjQsMjk7MjEsMTQ7MzIsNDg7MjgsNzMKRmViIDIwMTQ7MjI7MjYsOTU7MjEsMjU7MzgsMjY7MjgsNjYKTWFyIDIwMTQ7MzI7MjIsNTI7MjEsMDE7MzgsMTI7MjksMDIKQXByIDIwMTQ7MjQ7MTgsMzU7MjAsODk7MjUsMjI7MjgsMDcKTWF5IDIwMTQ7MjM7MTUsNDM7MjAsOTY7MjIsMDc7MjgsMjYKSnVuIDIwMTQ7Mjc7MjcsNTY7MjIsMDI7MzMsOTQ7MjksMzMKSnVsIDIwMTQ7Mjg7MjAsNzU7MjIsMTc7MjcsODc7MjksNDgKQXVnIDIwMTQ7MjQ7MjAsMjA7MjEsNjg7MjUsNzg7MjksMDQKU2VwIDIwMTQ7Mjk7MjQsNjU7MjEsODE7MjYsMzA7MjgsODAKT2N0IDIwMTQ7MzE7MjYsMzc7MjIsMjE7MzQsNDQ7MjksMjEKTm92IDIwMTQ7MjU7MjAsOTI7MjIsNDM7MjQsNzY7MjksNTUKRGVjIDIwMTQ7NDA7MjgsMTc7MjMsNDA7MzMsNzI7MzAsNjUKSmFuIDIwMTU7MzM7MTgsODA7MjIsODk7MjQsNjE7MjksODgKRmViIDIwMTU7MzE7MjMsNzY7MjIsNzE7MjcsMjY7MjksMTIKTWFyIDIwMTU7MzE7MTcsMTk7MjIsMjE7MjQsNzQ7MjcsODkKQXByIDIwMTU7MzE7MTcsOTc7MjIsMTA7MjcsMDE7MjgsMDAKTWF5IDIwMTU7MjY7MTgsMDA7MjIsMjU7MjEsODY7MjcsOTMKSnVuIDIwMTU7MzY7MTcsODI7MjEsNDA7MjgsODY7MjcsNTgKSnVsIDIwMTU7MzE7MjMsMTc7MjEsNjA7MjgsMTc7MjcsNjEKQXVnIDIwMTU7MjI7MjEsMTQ7MjEsNjU7MjQsMTg7MjcsNTIKU2VwIDIwMTU7Mjk7MjIsMDg7MjEsNDY7MjEsOTk7MjcsMTgKT2N0IDIwMTU7Mjc7MTksMzg7MjAsODg7MTksNjg7MjYsMDAKTm92IDIwMTU7MjA7MTQsNzg7MjAsNTY7MTYsNjg7MjUsNTYKRGVjIDIwMTU7MzY7MjYsMzk7MjAsMjI7MjYsMDA7MjQsNjgKSmFuIDIwMTY7MzA7MjIsMTc7MjAsNTI7MjIsNjQ7MjQsNTEKRmViIDIwMTY7MTc7MjQsMjU7MjAsNDI7MjMsNzM7MjQsMjIKTWFyIDIwMTY7MzI7MTgsMjU7MjAsNTE7MjAsMTY7MjMsNzkKQXByIDIwMTY7MTY7MTYsOTQ7MjAsNTc7MjIsNjI7MjMsNDIKTWF5IDIwMTY7MzQ7MjUsMDA7MjEsMjU7MjcsNTU7MjMsOTYKSnVuIDIwMTY7NDA7MjMsNzE7MjEsOTE7MjUsNDA7MjMsNjAKSnVsIDIwMTY7MjY7MjQsMzI7MjEsOTg7MjMsNjI7MjMsMTcKQXVnIDIwMTY7MzE7MjcsMzA7MjIsNTM7MjcsMzA7MjMsNDcKU2VwIDIwMTY7MjA7MjgsMDU7MjIsOTA7MjcsMjU7MjMsODMKT2N0IDIwMTY7MjI7MjUsMjM7MjMsMzY7MjUsNzc7MjQsMzEKTm92IDIwMTY7Mzc7MjgsMDY7MjQsMzQ7MjcsNzA7MjUsMTMKRGVjIDIwMTY7MjQ7MjcsNjc7MjQsMzc7MjksOTI7MjUsMzkKSmFuIDIwMTc7MzE7MjMsOTA7MjQsNTM7MjcsOTc7MjUsODkKRmViIDIwMTc7MjY7MjIsNjA7MjQsNDA7MjIsMTI7MjUsNzAKTWFyIDIwMTc7Mzc7MjksMzc7MjUsNTE7MzAsNjU7MjYsNzYKQXByIDIwMTc7Mjc7MjcsMjM7MjYsMDM7MjksNTY7MjcsMTYKTWF5IDIwMTc7MzE7MjksMjg7MjYsNDE7MzIsNjU7MjcsNjEKSnVuIDIwMTc7Mjg7MjcsNDM7MjYsODE7MjcsNjQ7MjcsODcKSnVsIDIwMTc7MjQ7MjQsNjI7MjYsODQ7MzAsMjU7MjgsMzcKQXVnIDIwMTc7MzU7MjUsODg7MjYsNzA7MzIsMTQ7MjgsODUKU2VwIDIwMTc7MjM7MjYsOTU7MjYsNjQ7MzMsODc7MjksMjgKT2N0IDIwMTc7MzQ7MjIsOTc7MjYsMzg7MjYsNzk7MjksMjUKTm92IDIwMTc7MzQ7MjEsMTU7MjUsNjk7MjQsNTA7MjgsOTYKRGVjIDIwMTc7NDM7MjAsMTA7MjQsOTE7MjIsNzA7MjgsMTgKSmFuIDIwMTg7MzM7MTMsOTQ7MjQsMDU7MTksMTU7MjcsNDAKRmViIDIwMTg7Mjc7MjQsMzc7MjQsMTc7MjQsMzc7MjcsNTUKTWFyIDIwMTg7MzM7MTcsMjg7MjMsMDY7MjQsNzM7MjYsOTkKQXByIDIwMTg7MzA7MjEsNTQ7MjIsNjQ7MjMsNzc7MjYsNTUKTWF5IDIwMTg7MzQ7MjksNTk7MjIsNzY7MzQsMzg7MjYsNzUKSnVuIDIwMTg7MzA7MjIsNzA7MjIsNDA7MjIsNzA7MjYsMzcKSnVsIDIwMTg7Mjg7MjIsMzk7MjIsMjU7MjMsMDQ7MjUsODgKQXVnIDIwMTg7Mzc7MTksMzg7MjEsNjY7MjAsNDY7MjQsNzkKU2VwIDIwMTg7Mjk7MTgsODM7MjEsMTU7MjAsMDA7MjMsOTEKT2N0IDIwMTg7Mjk7MjEsMTQ7MjAsOTk7MjEsMTQ7MjMsNDQKTm92IDIwMTg7MzQ7MjQsMjY7MjEsMjc7MjQsMjY7MjMsNDIKRGVjIDIwMTg7MjA7MTQsNjU7MjEsMDQ7MTUsNzU7MjMsMDkKSmFuIDIwMTk7MzQ7MTgsMzU7MjEsNDA7MjAsNTY7MjMsMjEKRmViIDIwMTk7MjI7MTUsODI7MjAsODM7MjAsMjc7MjIsOTQKTWFyIDIwMTk7MjE7MTksMTA7MjEsMDU7MzAsOTA7MjMsMjUKQXByIDIwMTk7MzQ7MTcsMzU7MjAsNjY7MjIsNDQ7MjMsMTMKTWF5IDIwMTk7MzY7MjIsMDA7MTksOTQ7MjYsNTg7MjIsNDAKSnVuIDIwMTk7MzI7MTcsMDM7MTksNDQ7MjYsMTI7MjIsNzEKSnVsIDIwMTk7MzQ7MTUsMjQ7MTgsODI7MjMsMDk7MjIsNzIKQXVnIDIwMTk7Mjg7MTYsMzI7MTgsNTY7MjUsMTE7MjMsMTUKU2VwIDIwMTk7Mjg7MTYsOTY7MTgsNDE7MjgsMzM7MjMsODEKT2N0IDIwMTk7MzI7MjIsNDQ7MTgsNTU7MjksMjI7MjQsNTEKTm92IDIwMTk7MzU7MTgsNjM7MTgsMDE7MjYsNjA7MjQsNzQKRGVjIDIwMTk7MzU7MTcsNDE7MTgsMTQ7MjksNzk7MjUsNzAKSmFuIDIwMjA7Mzc7MTcsNzA7MTgsMDg7MzUsODQ7MjcsMTcKRmViIDIwMjA7MjU7MTksNTI7MTgsMzE7MzgsMzI7MjgsMzIKTWFyIDIwMjA7NDE7MTksOTM7MTgsNDM7MzksNzE7MjksMzcKQXByIDIwMjA7MzQ7MTYsNjY7MTgsMzg7MjksMDY7MjksOTQKTWF5IDIwMjA7MjY7MTUsNjE7MTcsODc7MjUsOTY7MjksOTgKSnVuIDIwMjA7MjY7MTMsNDg7MTcsNjU7MjEsODE7MjksNzUKSnVsIDIwMjA7MjA7OSwzNzsxNyw0NDsxNSwwNTsyOSw1NgpBdWcgMjAyMDsyNjsxNCwxMjsxNywyOTsyNyw4MTsyOSw3OApTZXAgMjAyMDsxNDsxMywzODsxNywxNzsyNiw4NjsyOSw3NwpPY3QgMjAyMDsyODsxNiw4NTsxNiw2NTsyNCw5MzsyOSw0MwpOb3YgMjAyMDszNDsxMSwzNTsxNSw5MDsyNCwyNjsyOSwyMQpEZWMgMjAyMDs0MjsxMSwxMjsxNSwxNzsyMywxNzsyOCw0NApKYW4gMjAyMTs1MjsxMSw2NTsxNCw0MjsyNiw5MjsyNyw0OApGZWIgMjAyMTsyOTsxMCw0MjsxMyw3NzsyNyw2OTsyNiw3NwpNYXIgMjAyMTs0NDs5LDYzOzEyLDU3OzIxLDc1OzI0LDc2CkFwciAyMDIxOzM4OzE1LDQyOzEyLDUwOzMyLDUwOzI1LDE1Ck1heSAyMDIxOzM0OzEwLDUzOzEyLDEzOzMxLDkxOzI1LDY5Ckp1biAyMDIxOzMxOzExLDk3OzEyLDAzOzI4LDgxOzI2LDIwCkp1bCAyMDIxOzQ5OzEyLDAyOzEyLDE1OzMwLDE2OzI3LDE5CkF1ZyAyMDIxOzMyOzEwLDk0OzExLDk0OzMwLDk3OzI3LDQzClNlcCAyMDIxOzMyOzExLDEzOzExLDg0OzI0LDUwOzI3LDI0Ck9jdCAyMDIxOzMyOzksMjg7MTEsMzQ7MjEsODc7MjcsMDAKTm92IDIwMjE7NTI7OSw2NzsxMSwxNjszMiwzMTsyNyw3OQpEZWMgMjAyMTs0NzsxMCw0OTsxMSwwOTsyNSwzNjsyNyw5NgpKYW4gMjAyMjs0ODsxMSw1NjsxMSwwODsyOSwyMTsyOCwyMQpGZWIgMjAyMjs0MDsxMSw4MjsxMSwxNzszMiwxNTsyOCw1NwpNYXIgMjAyMjszMjsxMSwyODsxMSwzMzsyNyw0NzsyOSwxMwpBcHIgMjAyMjs0MjsxMCw5ODsxMCw5NjsyOCw2MjsyOCw4MgpNYXkgMjAyMjszOTsxMyw2MjsxMSwyMDsyOSw4NzsyOCw2OAo=').then(res => res.blob()).then(blob => {
       const downloadURL = window.URL.createObjectURL(blob);
       const a = document.createElement('a');
       document.body.appendChild(a);
@@ -345,42 +346,41 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </a>
 </div>
 </div>
-<p>We conducted a time series forecast (ARIMA, ETS and Naive (SNAIVE)) based on discharges from Wythenshawe over the period 2011 - 2022. This suggests an expected mean number of presentations per month (simple average of 3 model estimates) of 40.47. At this rate, we would expect ~40.47 x 24 = 971.28 patients to have surgical repair of fractured neck of femur over the 24 month recruitment course of the trial. .</p>
+<p>We conducted a time series forecast (ARIMA, ETS and Naive (SNAIVE)) based on discharges from Wythenshawe over the period 2011 - 2022. This suggests an expected mean number of presentations per month (simple average of 3 model estimates) of 40.78. At this rate, we would expect ~40.78 x 24 = 978.72 patients to have surgical repair of fractured neck of femur over the 24 month recruitment course of the trial.</p>
 <div class="page-columns page-full">
 <details>
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>los <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"./NHFD_Data/los_apr_22.csv"</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(los) <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">"my"</span>, <span class="st">"ptnum"</span>, </span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>               <span class="st">"acutelos"</span>, <span class="st">"acutelosannual"</span>, </span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>               <span class="st">"trustlos"</span>, <span class="st">"trustlosannual"</span> )</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>acute_los <span class="ot">&lt;-</span> los <span class="sc">%&gt;%</span> <span class="fu">select</span>(my, acutelos)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>acute_los<span class="sc">$</span>my <span class="ot">&lt;-</span> lubridate<span class="sc">::</span><span class="fu">my</span>(acute_los<span class="sc">$</span>my) </span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>ts_acute_los <span class="ot">&lt;-</span> acute_los <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">my =</span> tsibble<span class="sc">::</span><span class="fu">yearmonth</span>(my)) <span class="sc">%&gt;%</span> <span class="fu">tsibble</span>()</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> acute_los <span class="sc">|&gt;</span> <span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x=</span>my, <span class="at">y=</span>acutelos)) <span class="sc">+</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Month-Year of discharge"</span>, </span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">title=</span><span class="st">"Length-of-stay (LOS) of patients presenting to Wythenshawe Hospital with #NOF by month"</span>, </span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Data courtesy of the National Hip Fracture Database"</span>, <span class="at">y=</span><span class="st">"Length of stay"</span>)</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>p</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>fable_2 <span class="ot">&lt;-</span> ts_acute_los <span class="sc">%&gt;%</span> <span class="fu">model</span>(  </span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">ets =</span> <span class="fu">ETS</span>(acutelos),</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">arima =</span> <span class="fu">ARIMA</span>(acutelos),</span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">snaive =</span> <span class="fu">SNAIVE</span>(acutelos)</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>forecast_2 <span class="ot">&lt;-</span> <span class="fu">forecast</span>(fable_2, <span class="at">h =</span> <span class="st">"3 years"</span>)</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(forecast_2, <span class="at">data=</span>acute_los, <span class="at">level=</span><span class="fu">c</span>(<span class="dv">80</span>,<span class="dv">95</span>)) <span class="sc">+</span></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Month-Year of discharge"</span>,</span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>       <span class="at">title=</span><span class="st">"ARIMA/ETS/SNAIVE models predicting LOS of patients presenting to  </span></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="st">              Wythenshawe Hospital with #NOF"</span>,</span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Data courtesy of the National Hip Fracture Database"</span>,</span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>       <span class="at">y=</span><span class="st">"Number of patients"</span>)</span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>arima_means <span class="ot">&lt;-</span> forecast_2 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(.model<span class="sc">==</span><span class="st">'arima'</span>)</span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>arima_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(arima_means<span class="sc">$</span>.mean)</span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>ets_means <span class="ot">&lt;-</span> forecast_2 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(.model<span class="sc">==</span><span class="st">'ets'</span>)</span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>ets_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(ets_means<span class="sc">$</span>.mean)</span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>snaive_means <span class="ot">&lt;-</span> forecast_2 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(.model<span class="sc">==</span><span class="st">'snaive'</span>)</span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>snaive_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(snaive_means<span class="sc">$</span>.mean)</span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>print_mean_2 <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">c</span>(snaive_mean, ets_mean, arima_mean)) <span class="sc">|&gt;</span> <span class="fu">round</span>(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(los) <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">"my"</span>, <span class="st">"ptnum"</span>, </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>               <span class="st">"acutelos"</span>, <span class="st">"acutelosannual"</span>, </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>               <span class="st">"trustlos"</span>, <span class="st">"trustlosannual"</span> )</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>acute_los <span class="ot">&lt;-</span> los <span class="sc">%&gt;%</span> <span class="fu">select</span>(my, acutelos)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>acute_los<span class="sc">$</span>my <span class="ot">&lt;-</span> lubridate<span class="sc">::</span><span class="fu">my</span>(acute_los<span class="sc">$</span>my) </span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>ts_acute_los <span class="ot">&lt;-</span> acute_los <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">my =</span> tsibble<span class="sc">::</span><span class="fu">yearmonth</span>(my)) <span class="sc">%&gt;%</span> <span class="fu">tsibble</span>()</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> acute_los <span class="sc">|&gt;</span> <span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x=</span>my, <span class="at">y=</span>acutelos)) <span class="sc">+</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Month-Year of discharge"</span>, </span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">title=</span><span class="st">"Length-of-stay (LOS) of pts presenting to Wythenshawe with #NOF by month"</span>, </span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Data courtesy of the NHFD"</span>, <span class="at">y=</span><span class="st">"Length of stay"</span>)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>p</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>fable_2 <span class="ot">&lt;-</span> ts_acute_los <span class="sc">%&gt;%</span> <span class="fu">model</span>(  </span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">ets =</span> <span class="fu">ETS</span>(acutelos <span class="sc">~</span>  <span class="fu">error</span>(<span class="st">"M"</span>) <span class="sc">+</span> <span class="fu">trend</span>(<span class="st">"M"</span>) <span class="sc">+</span> <span class="fu">season</span>(<span class="st">"M"</span>)),</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">arima =</span> <span class="fu">ARIMA</span>(acutelos),</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">snaive =</span> <span class="fu">SNAIVE</span>(acutelos)</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>forecast_2 <span class="ot">&lt;-</span> <span class="fu">forecast</span>(fable_2, <span class="at">h =</span> <span class="st">"3 years"</span>)</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(forecast_2, <span class="at">data=</span>acute_los, <span class="at">level=</span><span class="fu">c</span>(<span class="dv">80</span>,<span class="dv">95</span>)) <span class="sc">+</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Month-Year of discharge"</span>,</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>       <span class="at">title=</span><span class="st">"ARIMA/ETS/SNAIVE models predicting LOS of pts presenting to  </span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="st">              Wythenshawe  with #NOF"</span>,</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Data courtesy of the NHFD"</span>,</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>       <span class="at">y=</span><span class="st">"Number of patients"</span>)</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>arima_means <span class="ot">&lt;-</span> forecast_2 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(.model<span class="sc">==</span><span class="st">'arima'</span>)</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>arima_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(arima_means<span class="sc">$</span>.mean)</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>ets_means <span class="ot">&lt;-</span> forecast_2 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(.model<span class="sc">==</span><span class="st">'ets'</span>)</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>ets_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(ets_means<span class="sc">$</span>.mean)</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>snaive_means <span class="ot">&lt;-</span> forecast_2 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(.model<span class="sc">==</span><span class="st">'snaive'</span>)</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>snaive_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(snaive_means<span class="sc">$</span>.mean)</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>print_mean_2 <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">c</span>(snaive_mean, ets_mean, arima_mean)) <span class="sc">|&gt;</span> <span class="fu">round</span>(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell column-screen-inset-shaded quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
@@ -393,11 +393,121 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </div>
-<p>We conducted a further time series forecast (ARIMA, ETS and Naive (SNAIVE)) based on discharges from Wythenshawe over the period 2011 - 2022. This suggests an expected mean length of stay per patient (simple average of 3 model estimates of LOS in days) of 11.55. This means that while it is unlikely for patients to be in hospital longer than 2 weeks, we will have adequate time to give Anakinra for up to 72 hours post treatment, even if surgery is delayed.</p>
+<p>We conducted a further time series forecast (ARIMA, ETS and Naive (SNAIVE)) based on discharges from Wythenshawe over the period 2011 - 2022. This suggests an expected mean length of stay per patient (simple average of 3 model estimates of LOS in days) of 10.87. This means that while it is unlikely for patients to be in hospital longer than 2 weeks, we will have adequate time to give Anakinra for up to 72 hours post treatment, even if surgery is delayed.</p>
+<div class="page-columns page-full">
+<details>
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>ana <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"./NHFD_Data/ana_apr_22.csv"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(ana)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(ana) <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">"my"</span>, </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>               <span class="st">"ga"</span>, </span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>               <span class="st">"ga_ann"</span>, </span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>               <span class="st">"nblock"</span>, </span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>               <span class="st">"nblockann"</span>, </span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>               <span class="st">"spinal"</span>,</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>               <span class="st">"spinalann"</span>,</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>               <span class="st">"blockpre"</span>,</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>               <span class="st">"allNFHDnerveblock"</span>)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>ana <span class="ot">&lt;-</span> ana <span class="sc">%&gt;%</span> <span class="fu">select</span>(my, ga)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>ana<span class="sc">$</span>my <span class="ot">&lt;-</span> lubridate<span class="sc">::</span><span class="fu">my</span>(ana<span class="sc">$</span>my) </span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>ts_ana <span class="ot">&lt;-</span> ana <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">my =</span> tsibble<span class="sc">::</span><span class="fu">yearmonth</span>(my)) <span class="sc">%&gt;%</span> <span class="fu">tsibble</span>()</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> ana <span class="sc">|&gt;</span> <span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x=</span>my, <span class="at">y=</span>ga)) <span class="sc">+</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Month-Year of discharge"</span>, </span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>       <span class="at">title=</span><span class="st">"#NOF pts discharged from Wythenshawe after GA"</span>, </span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Data courtesy of the NHFD"</span>, <span class="at">y=</span><span class="st">"General Anaesthetic (%)"</span>)</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>p</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>fable_3 <span class="ot">&lt;-</span> ts_ana <span class="sc">%&gt;%</span> <span class="fu">model</span>(  </span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>  <span class="at">ets =</span> <span class="fu">ETS</span>(ga <span class="sc">~</span> <span class="fu">error</span>(<span class="st">"M"</span>) <span class="sc">+</span> <span class="fu">trend</span>(<span class="st">"M"</span>) <span class="sc">+</span> <span class="fu">season</span>(<span class="st">"M"</span>)),</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>  <span class="at">arima =</span> <span class="fu">ARIMA</span>(ga),</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">snaive =</span> <span class="fu">SNAIVE</span>(ga)</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>forecast_3 <span class="ot">&lt;-</span> <span class="fu">forecast</span>(fable_3, <span class="at">h =</span> <span class="st">"3 years"</span>)</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(forecast_3, <span class="at">data=</span>ana, <span class="at">level=</span><span class="fu">c</span>(<span class="dv">80</span>,<span class="dv">95</span>)) <span class="sc">+</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Month-Year of discharge"</span>,</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>       <span class="at">title=</span><span class="st">"ARIMA/ETS/SNAIVE models predicting percentage pts discharged from</span></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="st">              Wythenshawe after GA"</span>,</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Data courtesy of the NHFD"</span>,</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>       <span class="at">y=</span><span class="st">"Number of patients"</span>)</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>arima_means <span class="ot">&lt;-</span> forecast_3 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(.model<span class="sc">==</span><span class="st">'arima'</span>)</span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>arima_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(arima_means<span class="sc">$</span>.mean)</span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>ets_means <span class="ot">&lt;-</span> forecast_3 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(.model<span class="sc">==</span><span class="st">'ets'</span>)</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>ets_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(ets_means<span class="sc">$</span>.mean)</span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>snaive_means <span class="ot">&lt;-</span> forecast_3 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(.model<span class="sc">==</span><span class="st">'snaive'</span>)</span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>snaive_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(snaive_means<span class="sc">$</span>.mean)</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>print_mean_3 <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">c</span>(snaive_mean, ets_mean, arima_mean)) <span class="sc">|&gt;</span> <span class="fu">round</span>(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell column-screen-inset-shaded quarto-layout-panel">
-
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="sap_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
 </div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="sap_files/figure-html/unnamed-chunk-8-2.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</div>
+</div>
+<p>A forecast based on the percentage of patients discharged from Wythenshawe who had a General Anaesthetic over the period 2011 - 2022. This suggests an expected mean percentage GA recipients (simple average of 3 model estimates of %GA) of 51.58%.</p>
+<div class="page-columns page-full">
+<details>
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>ana <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"./NHFD_Data/ana_apr_22.csv"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(ana)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(ana) <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">"my"</span>, </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>               <span class="st">"ga"</span>, </span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>               <span class="st">"ga_ann"</span>, </span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>               <span class="st">"nblock"</span>, </span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>               <span class="st">"nblockann"</span>, </span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>               <span class="st">"spinal"</span>,</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>               <span class="st">"spinalann"</span>,</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>               <span class="st">"blockpre"</span>,</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>               <span class="st">"allNFHDnerveblock"</span>)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>spinal <span class="ot">&lt;-</span> ana <span class="sc">%&gt;%</span> <span class="fu">select</span>(my, spinal)</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>spinal<span class="sc">$</span>my <span class="ot">&lt;-</span> lubridate<span class="sc">::</span><span class="fu">my</span>(spinal<span class="sc">$</span>my) </span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>ts_spinal <span class="ot">&lt;-</span> spinal <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">my =</span> tsibble<span class="sc">::</span><span class="fu">yearmonth</span>(my)) <span class="sc">%&gt;%</span> <span class="fu">tsibble</span>()</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> spinal <span class="sc">|&gt;</span> <span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x=</span>my, <span class="at">y=</span>spinal)) <span class="sc">+</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Month-Year of discharge"</span>, </span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>       <span class="at">title=</span><span class="st">"#NOF pts discharged from Wythenshawe after spinal"</span>, </span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Data courtesy of the NHFD"</span>, <span class="at">y=</span><span class="st">"Spinal Anaesthetic (%)"</span>)</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>p</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>fable_4 <span class="ot">&lt;-</span> ts_spinal<span class="sc">%&gt;%</span> <span class="fu">model</span>(  </span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>  <span class="at">ets =</span> <span class="fu">ETS</span>(spinal <span class="sc">~</span> <span class="fu">error</span>(<span class="st">"M"</span>) <span class="sc">+</span> <span class="fu">trend</span>(<span class="st">"M"</span>) <span class="sc">+</span> <span class="fu">season</span>(<span class="st">"M"</span>)),</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>  <span class="at">arima =</span> <span class="fu">ARIMA</span>(spinal),</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">snaive =</span> <span class="fu">SNAIVE</span>(spinal)</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>forecast_4 <span class="ot">&lt;-</span> <span class="fu">forecast</span>(fable_4, <span class="at">h =</span> <span class="st">"3 years"</span>)</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(forecast_4, <span class="at">data=</span>spinal, <span class="at">level=</span><span class="fu">c</span>(<span class="dv">80</span>,<span class="dv">95</span>)) <span class="sc">+</span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Month-Year of discharge"</span>,</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>       <span class="at">title=</span><span class="st">"ARIMA/ETS/SNAIVE models predicting percentage pts discharged from</span></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a><span class="st">              Wythenshawe after spinal"</span>,</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Data courtesy of the NHFD"</span>,</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>       <span class="at">y=</span><span class="st">"Spinal Anaesthetic (%)"</span>)</span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>arima_means <span class="ot">&lt;-</span> forecast_4 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(.model<span class="sc">==</span><span class="st">'arima'</span>)</span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>arima_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(arima_means<span class="sc">$</span>.mean)</span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>ets_means <span class="ot">&lt;-</span> forecast_4 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(.model<span class="sc">==</span><span class="st">'ets'</span>)</span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>ets_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(ets_means<span class="sc">$</span>.mean)</span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>snaive_means <span class="ot">&lt;-</span> forecast_4 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(.model<span class="sc">==</span><span class="st">'snaive'</span>)</span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>snaive_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(snaive_means<span class="sc">$</span>.mean)</span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>print_mean_4 <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">c</span>(snaive_mean, ets_mean, arima_mean)) <span class="sc">|&gt;</span> <span class="fu">round</span>(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell column-screen-inset-shaded quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="sap_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="sap_files/figure-html/unnamed-chunk-10-2.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</div>
+</div>
+<p>A forecast based on the percentage of patients discharged from Wythenshawe who had a Spinal Anaesthetic over the period 2011 - 2022. This suggests an expected mean percentage Spinal recipients (simple average of 3 model estimates of %Spinal) of 46.07%.</p>
 </section>
+</section>
+<section id="outcome-measures" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="outcome-measures">Outcome measures</h2>
 <section id="osla-scale" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="osla-scale">OSLA scale</h3>
 <p><img src="Delirium-assessment-tool-OSLA.png" class="img-fluid" data-fig-align="center" alt="OSLA"> The OSLA scale is a 4-item scale with a minimum score of 0 and a maximum score of 15. Items respectively have a range of :</p>
@@ -436,87 +546,87 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="page-columns page-full">
 <details>
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>OSLA <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">severity=</span><span class="st">"None"</span>, <span class="at">return_format =</span> <span class="st">"df"</span>){</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># generate an OSLA score vector depending on severity</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># return as dataframe if return_format = df</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># return as vector if return_format = vector</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># return as integer sum if return_format = sum</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (severity <span class="sc">==</span> <span class="st">"Severe"</span>){</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    probability <span class="ot">&lt;-</span> <span class="fl">0.85</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> <span class="cf">if</span> (severity <span class="sc">==</span> <span class="st">"Moderate"</span>){</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    probability <span class="ot">&lt;-</span> <span class="fl">0.5</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> <span class="cf">if</span> (severity <span class="sc">==</span> <span class="st">"Mild"</span>){</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    probability <span class="ot">&lt;-</span> <span class="fl">0.3</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> <span class="cf">if</span> (severity <span class="sc">==</span> <span class="st">"None"</span>){</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    probability <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>  EO <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1</span>, <span class="dv">5</span>, <span class="at">prob=</span>probability) <span class="co"># eye opening</span></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  EC <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="at">prob=</span>probability) <span class="co"># eye contact</span></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>  P <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="at">prob=</span>probability) <span class="co"># posture</span></span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>  M <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="at">prob=</span>probability) <span class="co"># movement</span></span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(return_format <span class="sc">==</span> <span class="st">"df"</span>){</span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>    returned_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">cbind</span>(EO, EC, P, M))</span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(returned_df)</span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> <span class="cf">if</span>(return_format <span class="sc">==</span> <span class="st">"vector"</span>){</span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>    returned_vec <span class="ot">&lt;-</span> <span class="fu">c</span>(EO, EC, P, M)</span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(returned_vec)</span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> <span class="cf">if</span>(return_format <span class="sc">==</span> <span class="st">"sum"</span>){</span>
-<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>    returned_sum <span class="ot">&lt;-</span> <span class="fu">sum</span>(EO, EC, P, M)</span>
-<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(returned_sum)</span>
-<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> {</span>
-<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">"Unknown value for returned_format"</span>)</span>
-<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="cn">NULL</span>)</span>
-<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a><span class="co"># make a **population** of mixed severity N= 100,000</span></span>
-<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a><span class="co"># at baseline from which to sample</span></span>
-<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>severe_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">10000</span>, <span class="fu">OSLA</span>(<span class="st">"Severe"</span>, <span class="st">"sum"</span>))</span>
-<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>moderate_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">15000</span>, <span class="fu">OSLA</span>(<span class="st">"Moderate"</span>, <span class="st">"sum"</span>))</span>
-<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>mild_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">15000</span>, <span class="fu">OSLA</span>(<span class="st">"Mild"</span>, <span class="st">"sum"</span>))</span>
-<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>none_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">60000</span>, <span class="fu">OSLA</span>(<span class="st">"None"</span>, <span class="st">"sum"</span>))</span>
-<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>total_pop_1 <span class="ot">&lt;-</span> <span class="fu">c</span>(severe_pop, moderate_pop, mild_pop, none_pop)</span>
-<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>total_pop_1 <span class="sc">|&gt;</span><span class="fu">hist</span>(<span class="at">main=</span><span class="st">"Histogram I of OSLA scores (zero inflated)"</span>, <span class="at">xlab=</span><span class="st">"OSLA score"</span>)</span>
-<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>severe_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">60000</span>, <span class="fu">OSLA</span>(<span class="st">"Severe"</span>, <span class="st">"sum"</span>))</span>
-<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>moderate_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">15000</span>, <span class="fu">OSLA</span>(<span class="st">"Moderate"</span>, <span class="st">"sum"</span>))</span>
-<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>mild_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">15000</span>, <span class="fu">OSLA</span>(<span class="st">"Mild"</span>, <span class="st">"sum"</span>))</span>
-<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>none_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">10000</span>, <span class="fu">OSLA</span>(<span class="st">"None"</span>, <span class="st">"sum"</span>))</span>
-<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>total_pop_2 <span class="ot">&lt;-</span> <span class="fu">c</span>(severe_pop, moderate_pop, mild_pop, none_pop)</span>
-<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>total_pop_2<span class="sc">|&gt;</span><span class="fu">hist</span>(<span class="at">main=</span><span class="st">"Histogram II of OSLA scores (severe)"</span>, <span class="at">xlab=</span><span class="st">"OSLA score"</span>)</span>
-<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a>severe_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">30000</span>, <span class="fu">OSLA</span>(<span class="st">"Severe"</span>, <span class="st">"sum"</span>))</span>
-<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>moderate_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">25000</span>, <span class="fu">OSLA</span>(<span class="st">"Moderate"</span>, <span class="st">"sum"</span>))</span>
-<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a>mild_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">30000</span>, <span class="fu">OSLA</span>(<span class="st">"Mild"</span>, <span class="st">"sum"</span>))</span>
-<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a>none_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">15000</span>, <span class="fu">OSLA</span>(<span class="st">"None"</span>, <span class="st">"sum"</span>))</span>
-<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a>total_pop_3 <span class="ot">&lt;-</span> <span class="fu">c</span>(severe_pop, moderate_pop, mild_pop, none_pop)</span>
-<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a>total_pop_3 <span class="sc">|&gt;</span><span class="fu">hist</span>(<span class="at">main=</span><span class="st">"Histogram III of OSLA scores (mild/severe)"</span>, <span class="at">xlab=</span><span class="st">"OSLA score"</span>)</span>
-<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a>severe_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">10000</span>, <span class="fu">OSLA</span>(<span class="st">"Severe"</span>, <span class="st">"sum"</span>))</span>
-<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a>moderate_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">60000</span>, <span class="fu">OSLA</span>(<span class="st">"Moderate"</span>, <span class="st">"sum"</span>))</span>
-<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a>mild_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">20000</span>, <span class="fu">OSLA</span>(<span class="st">"Mild"</span>, <span class="st">"sum"</span>))</span>
-<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a>none_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">10000</span>, <span class="fu">OSLA</span>(<span class="st">"None"</span>, <span class="st">"sum"</span>))</span>
-<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a>total_pop_4 <span class="ot">&lt;-</span> <span class="fu">c</span>(severe_pop, moderate_pop, mild_pop, none_pop)</span>
-<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a>total_pop_4 <span class="sc">|&gt;</span><span class="fu">hist</span>(<span class="at">main=</span><span class="st">"Histogram IV of OSLA scores (moderate)"</span>, <span class="at">xlab=</span><span class="st">"OSLA score"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>OSLA <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">severity=</span><span class="st">"None"</span>, <span class="at">return_format =</span> <span class="st">"df"</span>){</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># generate an OSLA score vector depending on severity</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># return as dataframe if return_format = df</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># return as vector if return_format = vector</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># return as integer sum if return_format = sum</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (severity <span class="sc">==</span> <span class="st">"Severe"</span>){</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    probability <span class="ot">&lt;-</span> <span class="fl">0.85</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> <span class="cf">if</span> (severity <span class="sc">==</span> <span class="st">"Moderate"</span>){</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    probability <span class="ot">&lt;-</span> <span class="fl">0.5</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> <span class="cf">if</span> (severity <span class="sc">==</span> <span class="st">"Mild"</span>){</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    probability <span class="ot">&lt;-</span> <span class="fl">0.3</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> <span class="cf">if</span> (severity <span class="sc">==</span> <span class="st">"None"</span>){</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    probability <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>  EO <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1</span>, <span class="dv">5</span>, <span class="at">prob=</span>probability) <span class="co"># eye opening</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>  EC <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="at">prob=</span>probability) <span class="co"># eye contact</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>  P <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="at">prob=</span>probability) <span class="co"># posture</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>  M <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="at">prob=</span>probability) <span class="co"># movement</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(return_format <span class="sc">==</span> <span class="st">"df"</span>){</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>    returned_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">cbind</span>(EO, EC, P, M))</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(returned_df)</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> <span class="cf">if</span>(return_format <span class="sc">==</span> <span class="st">"vector"</span>){</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>    returned_vec <span class="ot">&lt;-</span> <span class="fu">c</span>(EO, EC, P, M)</span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(returned_vec)</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> <span class="cf">if</span>(return_format <span class="sc">==</span> <span class="st">"sum"</span>){</span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>    returned_sum <span class="ot">&lt;-</span> <span class="fu">sum</span>(EO, EC, P, M)</span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(returned_sum)</span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> {</span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">"Unknown value for returned_format"</span>)</span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="cn">NULL</span>)</span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a><span class="co"># make a **population** of mixed severity N= 100,000</span></span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a><span class="co"># at baseline from which to sample</span></span>
+<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a>severe_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">10000</span>, <span class="fu">OSLA</span>(<span class="st">"Severe"</span>, <span class="st">"sum"</span>))</span>
+<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a>moderate_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">15000</span>, <span class="fu">OSLA</span>(<span class="st">"Moderate"</span>, <span class="st">"sum"</span>))</span>
+<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a>mild_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">15000</span>, <span class="fu">OSLA</span>(<span class="st">"Mild"</span>, <span class="st">"sum"</span>))</span>
+<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a>none_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">60000</span>, <span class="fu">OSLA</span>(<span class="st">"None"</span>, <span class="st">"sum"</span>))</span>
+<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a>total_pop_1 <span class="ot">&lt;-</span> <span class="fu">c</span>(severe_pop, moderate_pop, mild_pop, none_pop)</span>
+<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a>total_pop_1 <span class="sc">|&gt;</span><span class="fu">hist</span>(<span class="at">main=</span><span class="st">"Histogram I of OSLA scores (zero inflated)"</span>, <span class="at">xlab=</span><span class="st">"OSLA score"</span>)</span>
+<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a>severe_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">60000</span>, <span class="fu">OSLA</span>(<span class="st">"Severe"</span>, <span class="st">"sum"</span>))</span>
+<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a>moderate_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">15000</span>, <span class="fu">OSLA</span>(<span class="st">"Moderate"</span>, <span class="st">"sum"</span>))</span>
+<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a>mild_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">15000</span>, <span class="fu">OSLA</span>(<span class="st">"Mild"</span>, <span class="st">"sum"</span>))</span>
+<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a>none_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">10000</span>, <span class="fu">OSLA</span>(<span class="st">"None"</span>, <span class="st">"sum"</span>))</span>
+<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a>total_pop_2 <span class="ot">&lt;-</span> <span class="fu">c</span>(severe_pop, moderate_pop, mild_pop, none_pop)</span>
+<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a>total_pop_2<span class="sc">|&gt;</span><span class="fu">hist</span>(<span class="at">main=</span><span class="st">"Histogram II of OSLA scores (severe)"</span>, <span class="at">xlab=</span><span class="st">"OSLA score"</span>)</span>
+<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a>severe_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">30000</span>, <span class="fu">OSLA</span>(<span class="st">"Severe"</span>, <span class="st">"sum"</span>))</span>
+<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a>moderate_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">25000</span>, <span class="fu">OSLA</span>(<span class="st">"Moderate"</span>, <span class="st">"sum"</span>))</span>
+<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a>mild_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">30000</span>, <span class="fu">OSLA</span>(<span class="st">"Mild"</span>, <span class="st">"sum"</span>))</span>
+<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a>none_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">15000</span>, <span class="fu">OSLA</span>(<span class="st">"None"</span>, <span class="st">"sum"</span>))</span>
+<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a>total_pop_3 <span class="ot">&lt;-</span> <span class="fu">c</span>(severe_pop, moderate_pop, mild_pop, none_pop)</span>
+<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a>total_pop_3 <span class="sc">|&gt;</span><span class="fu">hist</span>(<span class="at">main=</span><span class="st">"Histogram III of OSLA scores (mild/severe)"</span>, <span class="at">xlab=</span><span class="st">"OSLA score"</span>)</span>
+<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a>severe_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">10000</span>, <span class="fu">OSLA</span>(<span class="st">"Severe"</span>, <span class="st">"sum"</span>))</span>
+<span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a>moderate_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">60000</span>, <span class="fu">OSLA</span>(<span class="st">"Moderate"</span>, <span class="st">"sum"</span>))</span>
+<span id="cb5-64"><a href="#cb5-64" aria-hidden="true" tabindex="-1"></a>mild_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">20000</span>, <span class="fu">OSLA</span>(<span class="st">"Mild"</span>, <span class="st">"sum"</span>))</span>
+<span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a>none_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">10000</span>, <span class="fu">OSLA</span>(<span class="st">"None"</span>, <span class="st">"sum"</span>))</span>
+<span id="cb5-66"><a href="#cb5-66" aria-hidden="true" tabindex="-1"></a>total_pop_4 <span class="ot">&lt;-</span> <span class="fu">c</span>(severe_pop, moderate_pop, mild_pop, none_pop)</span>
+<span id="cb5-67"><a href="#cb5-67" aria-hidden="true" tabindex="-1"></a>total_pop_4 <span class="sc">|&gt;</span><span class="fu">hist</span>(<span class="at">main=</span><span class="st">"Histogram IV of OSLA scores (moderate)"</span>, <span class="at">xlab=</span><span class="st">"OSLA score"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell column-screen-inset-shaded quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="cell-output-display quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
-<p><img src="sap_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
+<p><img src="sap_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="672"></p>
 </div>
 <div class="cell-output-display quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
-<p><img src="sap_files/figure-html/unnamed-chunk-10-2.png" class="img-fluid" width="672"></p>
+<p><img src="sap_files/figure-html/unnamed-chunk-12-2.png" class="img-fluid" width="672"></p>
 </div>
 <div class="cell-output-display quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
-<p><img src="sap_files/figure-html/unnamed-chunk-10-3.png" class="img-fluid" width="672"></p>
+<p><img src="sap_files/figure-html/unnamed-chunk-12-3.png" class="img-fluid" width="672"></p>
 </div>
 <div class="cell-output-display quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
-<p><img src="sap_files/figure-html/unnamed-chunk-10-4.png" class="img-fluid" width="672"></p>
+<p><img src="sap_files/figure-html/unnamed-chunk-12-4.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </div>

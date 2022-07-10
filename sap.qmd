@@ -92,7 +92,7 @@ p
 
 fable_1 <- ts_vol %>% 
   model(  
-    ets = ETS(ptnum),
+    ets = ETS(ptnum ~ error("M") + trend("M") + season("M")),
     arima = ARIMA(ptnum),
     snaive = SNAIVE(ptnum)
   )
@@ -123,6 +123,7 @@ print_mean <- mean(c(snaive_mean,
 
 ```
 ```{r echo=FALSE, results='show', message=TRUE}
+los <- read.csv("./NHFD_Data/los_apr_22.csv")
 los %>%
   download_this(
     output_name = "presenting_population",
@@ -135,13 +136,12 @@ los %>%
 ```
 
 
-We conducted a time series forecast (ARIMA, ETS and Naive (SNAIVE)) based on discharges from Wythenshawe over the period 2011 - 2022. This suggests an expected mean number of presentations per month (simple average of 3 model estimates) of `r print_mean`. At this rate, we would expect ~`r print_mean` x 24 = `r print_mean*24` patients to have surgical repair of fractured neck of femur over the 24 month recruitment course of the trial. `r print(confint_f1)`. 
+We conducted a time series forecast (ARIMA, ETS and Naive (SNAIVE)) based on discharges from Wythenshawe over the period 2011 - 2022. This suggests an expected mean number of presentations per month (simple average of 3 model estimates) of `r print_mean`. At this rate, we would expect ~`r print_mean` x 24 = `r print_mean*24` patients to have surgical repair of fractured neck of femur over the 24 month recruitment course of the trial.  
 
 
 ```{r echo=TRUE, results='show', message=FALSE}
 #| column: screen-inset-shaded
 #| layout-nrow: 1
-los <- read.csv("./NHFD_Data/los_apr_22.csv")
 names(los) <-c("my", "ptnum", 
                "acutelos", "acutelosannual", 
                "trustlos", "trustlosannual" )
@@ -151,21 +151,21 @@ ts_acute_los <- acute_los %>% mutate(my = tsibble::yearmonth(my)) %>% tsibble()
 
 p <- acute_los |> ggplot() + geom_line(aes(x=my, y=acutelos)) +
   labs(x="Month-Year of discharge", 
-       title="Length-of-stay (LOS) of patients presenting to Wythenshawe Hospital with #NOF by month", 
-       subtitle = "Data courtesy of the National Hip Fracture Database", y="Length of stay")
+       title="Length-of-stay (LOS) of pts presenting to Wythenshawe with #NOF by month", 
+       subtitle = "Data courtesy of the NHFD", y="Length of stay")
 p
 
 fable_2 <- ts_acute_los %>% model(  
-  ets = ETS(acutelos),
+  ets = ETS(acutelos ~  error("M") + trend("M") + season("M")),
   arima = ARIMA(acutelos),
   snaive = SNAIVE(acutelos)
 )
 forecast_2 <- forecast(fable_2, h = "3 years")
 autoplot(forecast_2, data=acute_los, level=c(80,95)) +
   labs(x="Month-Year of discharge",
-       title="ARIMA/ETS/SNAIVE models predicting LOS of patients presenting to  
-              Wythenshawe Hospital with #NOF",
-       subtitle = "Data courtesy of the National Hip Fracture Database",
+       title="ARIMA/ETS/SNAIVE models predicting LOS of pts presenting to  
+              Wythenshawe  with #NOF",
+       subtitle = "Data courtesy of the NHFD",
        y="Number of patients")
 
 
@@ -183,9 +183,110 @@ We conducted a further time series forecast (ARIMA, ETS and Naive (SNAIVE)) base
 ```{r echo=TRUE, results='hide', message=FALSE}
 #| column: screen-inset-shaded
 #| layout-nrow: 1
+ana <- read.csv("./NHFD_Data/ana_apr_22.csv")
+names(ana)
+names(ana) <-c("my", 
+               "ga", 
+               "ga_ann", 
+               "nblock", 
+               "nblockann", 
+               "spinal",
+               "spinalann",
+               "blockpre",
+               "allNFHDnerveblock")
+ana <- ana %>% select(my, ga)
+ana$my <- lubridate::my(ana$my) 
+ts_ana <- ana %>% mutate(my = tsibble::yearmonth(my)) %>% tsibble()
 
+p <- ana |> ggplot() + geom_line(aes(x=my, y=ga)) +
+  labs(x="Month-Year of discharge", 
+       title="#NOF pts discharged from Wythenshawe after GA", 
+       subtitle = "Data courtesy of the NHFD", y="General Anaesthetic (%)")
+p
+
+fable_3 <- ts_ana %>% model(  
+  ets = ETS(ga ~ error("M") + trend("M") + season("M")),
+  arima = ARIMA(ga),
+  snaive = SNAIVE(ga)
+)
+forecast_3 <- forecast(fable_3, h = "3 years")
+autoplot(forecast_3, data=ana, level=c(80,95)) +
+  labs(x="Month-Year of discharge",
+       title="ARIMA/ETS/SNAIVE models predicting percentage pts discharged from
+              Wythenshawe after GA",
+       subtitle = "Data courtesy of the NHFD",
+       y="Number of patients")
+
+
+arima_means <- forecast_3 %>% filter(.model=='arima')
+arima_mean <- mean(arima_means$.mean)
+ets_means <- forecast_3 %>% filter(.model=='ets')
+ets_mean <- mean(ets_means$.mean)
+snaive_means <- forecast_3 %>% filter(.model=='snaive')
+snaive_mean <- mean(snaive_means$.mean)
+print_mean_3 <- mean(c(snaive_mean, ets_mean, arima_mean)) |> round(2)
 ```
 
+A forecast based on the percentage of patients discharged from Wythenshawe who had a General Anaesthetic over the period 2011 - 2022. This suggests an expected mean percentage GA recipients (simple average of 3 model estimates of %GA) of `r print_mean_3`%. 
+
+
+
+```{r echo=TRUE, results='hide', message=FALSE}
+#| column: screen-inset-shaded
+#| layout-nrow: 1
+ana <- read.csv("./NHFD_Data/ana_apr_22.csv")
+names(ana)
+names(ana) <-c("my", 
+               "ga", 
+               "ga_ann", 
+               "nblock", 
+               "nblockann", 
+               "spinal",
+               "spinalann",
+               "blockpre",
+               "allNFHDnerveblock")
+spinal <- ana %>% select(my, spinal)
+spinal$my <- lubridate::my(spinal$my) 
+ts_spinal <- spinal %>% mutate(my = tsibble::yearmonth(my)) %>% tsibble()
+
+p <- spinal |> ggplot() + geom_line(aes(x=my, y=spinal)) +
+  labs(x="Month-Year of discharge", 
+       title="#NOF pts discharged from Wythenshawe after spinal", 
+       subtitle = "Data courtesy of the NHFD", y="Spinal Anaesthetic (%)")
+p
+
+fable_4 <- ts_spinal%>% model(  
+  ets = ETS(spinal ~ error("M") + trend("M") + season("M")),
+  arima = ARIMA(spinal),
+  snaive = SNAIVE(spinal)
+)
+forecast_4 <- forecast(fable_4, h = "3 years")
+autoplot(forecast_4, data=spinal, level=c(80,95)) +
+  labs(x="Month-Year of discharge",
+       title="ARIMA/ETS/SNAIVE models predicting percentage pts discharged from
+              Wythenshawe after spinal",
+       subtitle = "Data courtesy of the NHFD",
+       y="Spinal Anaesthetic (%)")
+
+
+arima_means <- forecast_4 %>% filter(.model=='arima')
+arima_mean <- mean(arima_means$.mean)
+ets_means <- forecast_4 %>% filter(.model=='ets')
+ets_mean <- mean(ets_means$.mean)
+snaive_means <- forecast_4 %>% filter(.model=='snaive')
+snaive_mean <- mean(snaive_means$.mean)
+print_mean_4 <- mean(c(snaive_mean, ets_mean, arima_mean)) |> round(2)
+```
+
+A forecast based on the percentage of patients discharged from Wythenshawe who had a Spinal Anaesthetic over the period 2011 - 2022. This suggests an expected mean percentage Spinal recipients (simple average of 3 model estimates of %Spinal) of `r print_mean_4`%. 
+
+
+
+
+
+
+
+## Outcome measures
 ### OSLA scale
 
 ![OSLA](Delirium-assessment-tool-OSLA.png){fig-align="center"} The OSLA scale is a 4-item scale with a minimum score of 0 and a maximum score of 15. Items respectively have a range of :
