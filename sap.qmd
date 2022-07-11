@@ -43,16 +43,36 @@ body-footer: "Copyright (c) 2022"
 
 9) Neutropenia of any cause.
 
-**(I)** -- Anakinra given subcutaneously at time 0 \[presentation to ED\] then bd for 48 hours during the perioperative period.
+**(I)** -- Anakinra 100mg in given subcutaneously at time 0 \[presentation to ED\] then once daily for 72 hours during the perioperative period.
 
-**(C)** -- Normal saline given subcutaneously at time 0 \[presentation to ED\] then bd for 48 hours during the perioperative period.
+**(C)** -- Normal saline given subcutaneously at time 0 \[presentation to ED\] then once daily for 72 hours during the perioperative period.
 
 **(O)** -- 1°) Severity of delirium postoperatively as measured by the XXXXXXXX 2) (2°) Time to first weight bearing postoperatively 3) (3°) Time until medically fit for discharge postoperatively 4) (3°) Safety of Anakinra during the perioperative period and in wound healing 5) (3°) Tolerability of Anakinra versus placebo in terms of common side effects 6) (3°) Effect of Anakinra on 30-day mortality
 
-**(T)** -- Recruitment period: 24 months; Treatment/assessment period: to 48hrs postop, measured from surgical wound closure.
+**(T)** -- Recruitment period: 24 months; Treatment/assessment period: to 72hrs postop, measured from entering the recovery area after surgical repair.
 
 ## Descriptive statistics
+In order to determine the minimum recruitment rate for the clinical trial, the number of people receiving various types of anaesthetic, the surgical modalities involved etc., we conducted a number of time series analyses and forecasts using Autoregressive (ARIMA), exponential state-space smoothing (ETS) and Facebook's ["Prophet" model](https://facebook.github.io/prophet/). Final expected values were based on simple unweighted averages of the three estimates. 80% and 95% confidence intervals for each prediction are shown in the relevant plot(s).
+
+The [NICE guidance on management of hip fracture](https://www.nice.org.uk/guidance/cg124) recommends:
+
+> "*1.2.1* Perform surgery on the day of, or the day after, admission."
+
+> "*1.2.2* Identify and treat correctable comorbidities immediately so that surgery is not delayed by:\
+-  anaemia\
+-  anticoagulation\ 
+-  volume depletion\
+-  electrolyte imbalance\  
+-  uncontrolled diabetes\
+-  uncontrolled heart failure\
+-  correctable cardiac arrhythmia or ischaemia\
+-  acute chest infection\
+-  exacerbation of chronic chest conditions"\
+
+
+
 ### Number of patients 
+
 
 ```{r echo=TRUE, results='hide', message=FALSE}
 #| column: screen-inset-shaded
@@ -103,7 +123,7 @@ autoplot(forecast_1,
          data=vol, 
          level = c(80, 95)) +
   labs(x="Month-Year of discharge",
-  title="ARIMA/ETS/SNAIVE models predicting pts presenting to  
+  title="ARIMA/ETS/Prophet models predicting pts presenting to  
   Wythenshawe with #NOF",
   subtitle = "Data courtesy of the NHFD",
   y="Number of patients")
@@ -138,9 +158,7 @@ los %>%
 ```
 
 
-We conducted a number of time series forecasts using Autogregressive (ARIMA), exponential state-space smoothing (ETS) and Facebook's "Prophet" model (Prophet). Final expected values were based on simple unweighted averages of the 3 estimates. 80% and 95% confidence intervals for each prediction are shown in the relevant plot.
-
-Forecasts based on discharges from Wythenshawe over the period 2011 - 2022. This suggests an expected mean number of presentations per month of `r print_mean`. At this rate, we would expect ~`r print_mean` x 24 = `r print_mean*24` patients to have surgical repair of fractured neck of femur over the 24 month recruitment course of the trial.  
+Forecasts are based on discharges from Wythenshawe over the period 2011 - 2022. This suggests an expected mean number of presentations per month of `r print_mean`. At this rate, we would expect ~`r print_mean` x 24 = `r print_mean*24` patients to have surgical repair of fractured neck of femur over the 24 month recruitment course of the trial, or `r print_mean*24/40 |> round(1)` per month.  
 
 ### Length of stay
 ```{r echo=TRUE, results='show', message=FALSE}
@@ -169,7 +187,7 @@ fable_2 <- ts_acute_los %>% model(
 forecast_2 <- forecast(fable_2, h = "3 years")
 autoplot(forecast_2, data=acute_los, level=c(80,95)) +
   labs(x="Month-Year of discharge",
-       title="ARIMA/ETS/SNAIVE models predicting LOS of pts presenting to  
+       title="ARIMA/ETS/Prophet models predicting LOS of pts presenting to  
               Wythenshawe  with #NOF",
        subtitle = "Data courtesy of the NHFD",
        y="Number of patients")
@@ -191,7 +209,16 @@ print_mean_2 <- mean(c(ets_mean,
 ```
 Forecast modelling of length of stay (LOS) suggests an expected mean length of stay per patient of `r print_mean_2`. This means that while it is unlikely for patients to be in hospital longer than 2 weeks, we will have adequate time to give Anakinra for up to 72 hours post treatment, even if surgery is delayed.
 
-### General Anaesthetic
+### Anaesthesia
+:::{.callout-note}
+NICE recommends: 
+1.4.1 Offer patients a choice of spinal or general anaesthesia after discussing the risks and benefits. [2011]
+1.4.2 Consider intraoperative nerve blocks for all patients undergoing surgery.
+:::
+
+
+
+
 ```{r echo=TRUE, results='hide', message=FALSE}
 #| column: screen-inset-shaded
 #| layout-nrow: 1
@@ -226,7 +253,7 @@ fable_3 <- ts_ana %>% model(
 forecast_3 <- forecast(fable_3, h = "3 years")
 autoplot(forecast_3, data=ana, level=c(80,95)) +
   labs(x="Month-Year of discharge",
-       title="ARIMA/ETS/SNAIVE models predicting percentage pts discharged from
+       title="ARIMA/ETS/Prophet models predicting percentage pts discharged from
               Wythenshawe after GA",
        subtitle = "Data courtesy of the NHFD",
        y="Number of patients")
@@ -294,7 +321,7 @@ fable_4 <- ts_spinal%>% model(
 forecast_4 <- forecast(fable_4, h = "3 years")
 autoplot(forecast_4, data=spinal, level=c(80,95)) +
   labs(x="Month-Year of discharge",
-       title="ARIMA/ETS/SNAIVE models predicting percentage pts discharged from
+       title="ARIMA/ETS/Prophet models predicting percentage pts discharged from
               Wythenshawe after spinal",
        subtitle = "Data courtesy of the NHFD",
        y="Spinal Anaesthetic (%)")
@@ -323,7 +350,7 @@ A forecast based on the percentage of patients discharged from Wythenshawe who h
 ## Outcome measures
 ### OSLA scale
 
-![OSLA](Delirium-assessment-tool-OSLA.png){fig-align="center"} The OSLA scale is a 4-item scale with a minimum score of 0 and a maximum score of 15. Items respectively have a range of :
+![OSLA](images/Delirium-assessment-tool-OSLA.png){fig-align="center"} The OSLA scale is a 4-item scale with a minimum score of 0 and a maximum score of 15. Items respectively have a range of :
 
 | Item        | Min | Max |
 |-------------|-----|-----|

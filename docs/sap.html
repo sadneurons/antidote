@@ -188,7 +188,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <ul class="collapse">
   <li><a href="#number-of-patients" id="toc-number-of-patients" class="nav-link" data-scroll-target="#number-of-patients">Number of patients</a></li>
   <li><a href="#length-of-stay" id="toc-length-of-stay" class="nav-link" data-scroll-target="#length-of-stay">Length of stay</a></li>
-  <li><a href="#general-anaesthetic" id="toc-general-anaesthetic" class="nav-link" data-scroll-target="#general-anaesthetic">General Anaesthetic</a></li>
+  <li><a href="#anaesthesia" id="toc-anaesthesia" class="nav-link" data-scroll-target="#anaesthesia">Anaesthesia</a></li>
   <li><a href="#spinal-anaesthetic" id="toc-spinal-anaesthetic" class="nav-link" data-scroll-target="#spinal-anaesthetic">Spinal Anaesthetic</a></li>
   </ul></li>
   <li><a href="#outcome-measures" id="toc-outcome-measures" class="nav-link" data-scroll-target="#outcome-measures">Outcome measures</a>
@@ -253,10 +253,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>(I)</strong> – Anakinra given subcutaneously at time 0 [presentation to ED] then bd for 48 hours during the perioperative period.</p>
 <p><strong>(C)</strong> – Normal saline given subcutaneously at time 0 [presentation to ED] then bd for 48 hours during the perioperative period.</p>
 <p><strong>(O)</strong> – 1°) Severity of delirium postoperatively as measured by the XXXXXXXX 2) (2°) Time to first weight bearing postoperatively 3) (3°) Time until medically fit for discharge postoperatively 4) (3°) Safety of Anakinra during the perioperative period and in wound healing 5) (3°) Tolerability of Anakinra versus placebo in terms of common side effects 6) (3°) Effect of Anakinra on 30-day mortality</p>
-<p><strong>(T)</strong> – Recruitment period: 24 months; Treatment/assessment period: to 48hrs postop, measured from surgical wound closure.</p>
+<p><strong>(T)</strong> – Recruitment period: 24 months; Treatment/assessment period: to 72hrs postop, measured from entering the recovery area after surgical repair.</p>
 </section>
 <section id="descriptive-statistics" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="descriptive-statistics">Descriptive statistics</h2>
+<p>In order to determine the minimum recruitment rate for the clinical trial, the number of people receiving various types of anaesthetic, the surgical modalities involved etc., we conducted a number of time series analyses and forecasts using Autoregressive (ARIMA), exponential state-space smoothing (ETS) and Facebook’s <a href="https://facebook.github.io/prophet/">“Prophet” model</a>. Final expected values were based on simple unweighted averages of the three estimates. 80% and 95% confidence intervals for each prediction are shown in the relevant plot(s).</p>
+<p>The <a href="https://www.nice.org.uk/guidance/cg124">NICE guidance on management of hip fracture</a> recommends:</p>
+<blockquote class="blockquote">
+<p>“<em>1.2.1</em> Perform surgery on the day of, or the day after, admission.”</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>“<em>1.2.2</em> Identify and treat correctable comorbidities immediately so that surgery is not delayed by: - anaemia&nbsp; - anticoagulation&nbsp; - volume depletion&nbsp; - electrolyte imbalance&nbsp; - uncontrolled diabetes&nbsp; - uncontrolled heart failure&nbsp; - correctable cardiac arrhythmia or ischaemia<br>
+- acute chest infection&nbsp; - exacerbation of chronic chest conditions”&nbsp;</p>
+</blockquote>
 <section id="number-of-patients" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="number-of-patients">Number of patients</h3>
 <div class="page-columns page-full">
@@ -298,32 +307,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">model</span>(  </span>
 <span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">ets =</span> <span class="fu">ETS</span>(ptnum <span class="sc">~</span> <span class="fu">error</span>(<span class="st">"M"</span>) <span class="sc">+</span> <span class="fu">trend</span>(<span class="st">"M"</span>) <span class="sc">+</span> <span class="fu">season</span>(<span class="st">"M"</span>)),</span>
 <span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>    <span class="at">arima =</span> <span class="fu">ARIMA</span>(ptnum <span class="sc">~</span> <span class="dv">0</span> <span class="sc">+</span> <span class="fu">pdq</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>) <span class="sc">+</span> <span class="fu">PDQ</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>)),</span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">prophet =</span> <span class="fu">prophet</span>(ptnum <span class="sc">~</span> <span class="fu">growth</span>(<span class="st">"linear"</span>) <span class="sc">+</span> <span class="fu">season</span>(<span class="st">"year"</span>, <span class="at">type =</span> <span class="st">"multiplicative"</span>))</span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>forecast_1 <span class="ot">&lt;-</span> <span class="fu">forecast</span>(fable_1, </span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>                       <span class="at">h =</span> <span class="st">"3 years"</span>) </span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(forecast_1, </span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>         <span class="at">data=</span>vol, </span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>         <span class="at">level =</span> <span class="fu">c</span>(<span class="dv">80</span>, <span class="dv">95</span>)) <span class="sc">+</span></span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Month-Year of discharge"</span>,</span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>  <span class="at">title=</span><span class="st">"ARIMA/ETS/SNAIVE models predicting pts presenting to  </span></span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="st">  Wythenshawe with #NOF"</span>,</span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>  <span class="at">subtitle =</span> <span class="st">"Data courtesy of the NHFD"</span>,</span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>  <span class="at">y=</span><span class="st">"Number of patients"</span>)</span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>arima_means <span class="ot">&lt;-</span> forecast_1 <span class="sc">%&gt;%</span></span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(.model<span class="sc">==</span><span class="st">'arima'</span>)</span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>arima_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(arima_means<span class="sc">$</span>.mean)</span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>ets_means <span class="ot">&lt;-</span> forecast_1 <span class="sc">%&gt;%</span> </span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(.model<span class="sc">==</span><span class="st">'ets'</span>)</span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>ets_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(ets_means<span class="sc">$</span>.mean)</span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>prophet_means <span class="ot">&lt;-</span> forecast_1 <span class="sc">%&gt;%</span> </span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(.model<span class="sc">==</span><span class="st">'prophet'</span>)</span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>prophet_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(prophet_means<span class="sc">$</span>.mean)</span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>print_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">c</span>(ets_mean, </span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>                     arima_mean,</span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>                     prophet_mean)) <span class="sc">|&gt;</span> </span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>  <span class="fu">round</span>(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">prophet =</span> <span class="fu">prophet</span>(ptnum <span class="sc">~</span> <span class="fu">growth</span>(<span class="st">"linear"</span>) <span class="sc">+</span> </span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">season</span>(<span class="st">"year"</span>, </span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>                               <span class="at">type =</span> <span class="st">"multiplicative"</span>))</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>forecast_1 <span class="ot">&lt;-</span> <span class="fu">forecast</span>(fable_1, </span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>                       <span class="at">h =</span> <span class="st">"3 years"</span>) </span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(forecast_1, </span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>         <span class="at">data=</span>vol, </span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>         <span class="at">level =</span> <span class="fu">c</span>(<span class="dv">80</span>, <span class="dv">95</span>)) <span class="sc">+</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Month-Year of discharge"</span>,</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>  <span class="at">title=</span><span class="st">"ARIMA/ETS/Prophet models predicting pts presenting to  </span></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="st">  Wythenshawe with #NOF"</span>,</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>  <span class="at">subtitle =</span> <span class="st">"Data courtesy of the NHFD"</span>,</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>  <span class="at">y=</span><span class="st">"Number of patients"</span>)</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>arima_means <span class="ot">&lt;-</span> forecast_1 <span class="sc">%&gt;%</span></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(.model<span class="sc">==</span><span class="st">'arima'</span>)</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>arima_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(arima_means<span class="sc">$</span>.mean)</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>ets_means <span class="ot">&lt;-</span> forecast_1 <span class="sc">%&gt;%</span> </span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(.model<span class="sc">==</span><span class="st">'ets'</span>)</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>ets_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(ets_means<span class="sc">$</span>.mean)</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>prophet_means <span class="ot">&lt;-</span> forecast_1 <span class="sc">%&gt;%</span> </span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(.model<span class="sc">==</span><span class="st">'prophet'</span>)</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>prophet_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(prophet_means<span class="sc">$</span>.mean)</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>print_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">c</span>(ets_mean, </span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>                     arima_mean,</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>                     prophet_mean)) <span class="sc">|&gt;</span> </span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>  <span class="fu">round</span>(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell column-screen-inset-shaded quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
@@ -351,8 +362,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </a>
 </div>
 </div>
-<p>We conducted a number of time series forecasts using Autogregressive (ARIMA), exponential state-space smoothing (ETS) and Facebook’s “Prophet” model (Prophet). Final expected values were based on simple unweighted averages of the 3 estimates. 80% and 95% confidence intervals for each prediction are shown in the relevant plot.</p>
-<p>Forecasts based on discharges from Wythenshawe over the period 2011 - 2022. This suggests an expected mean number of presentations per month of 41.09. At this rate, we would expect ~41.09 x 24 = 986.16 patients to have surgical repair of fractured neck of femur over the 24 month recruitment course of the trial.</p>
+<p>Forecasts are based on discharges from Wythenshawe over the period 2011 - 2022. This suggests an expected mean number of presentations per month of 41.11. At this rate, we would expect ~41.11 x 24 = 986.64 patients to have surgical repair of fractured neck of femur over the 24 month recruitment course of the trial, or 24.666 per month.</p>
 </section>
 <section id="length-of-stay" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="length-of-stay">Length of stay</h3>
@@ -375,28 +385,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>fable_2 <span class="ot">&lt;-</span> ts_acute_los <span class="sc">%&gt;%</span> <span class="fu">model</span>(  </span>
 <span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">ets =</span> <span class="fu">ETS</span>(acutelos <span class="sc">~</span>  <span class="fu">error</span>(<span class="st">"M"</span>) <span class="sc">+</span> <span class="fu">trend</span>(<span class="st">"M"</span>) <span class="sc">+</span> <span class="fu">season</span>(<span class="st">"M"</span>)),</span>
 <span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">arima =</span> <span class="fu">ARIMA</span>(acutelos <span class="sc">~</span> <span class="dv">0</span> <span class="sc">+</span> <span class="fu">pdq</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>) <span class="sc">+</span> <span class="fu">PDQ</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>)),</span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">prophet =</span> <span class="fu">prophet</span>(acutelos <span class="sc">~</span> <span class="fu">growth</span>(<span class="st">"linear"</span>) <span class="sc">+</span> <span class="fu">season</span>(<span class="st">"year"</span>, <span class="at">type =</span> <span class="st">"multiplicative"</span>))</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>forecast_2 <span class="ot">&lt;-</span> <span class="fu">forecast</span>(fable_2, <span class="at">h =</span> <span class="st">"3 years"</span>)</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(forecast_2, <span class="at">data=</span>acute_los, <span class="at">level=</span><span class="fu">c</span>(<span class="dv">80</span>,<span class="dv">95</span>)) <span class="sc">+</span></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Month-Year of discharge"</span>,</span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>       <span class="at">title=</span><span class="st">"ARIMA/ETS/SNAIVE models predicting LOS of pts presenting to  </span></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="st">              Wythenshawe  with #NOF"</span>,</span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Data courtesy of the NHFD"</span>,</span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>       <span class="at">y=</span><span class="st">"Number of patients"</span>)</span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>arima_means <span class="ot">&lt;-</span> forecast_2 <span class="sc">%&gt;%</span> </span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(.model<span class="sc">==</span><span class="st">'arima'</span>)</span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>arima_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(arima_means<span class="sc">$</span>.mean)</span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>ets_means <span class="ot">&lt;-</span> forecast_2 <span class="sc">%&gt;%</span> </span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(.model<span class="sc">==</span><span class="st">'ets'</span>)</span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>ets_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(ets_means<span class="sc">$</span>.mean)</span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>prophet_means <span class="ot">&lt;-</span> forecast_2 <span class="sc">%&gt;%</span> </span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(.model<span class="sc">==</span><span class="st">'prophet'</span>)</span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>prophet_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(prophet_means<span class="sc">$</span>.mean)</span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>print_mean_2 <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">c</span>(ets_mean, </span>
-<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>                       arima_mean,</span>
-<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>                       prophet_mean)) <span class="sc">|&gt;</span> <span class="fu">round</span>(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">prophet =</span> <span class="fu">prophet</span>(acutelos <span class="sc">~</span> <span class="fu">growth</span>(<span class="st">"linear"</span>) <span class="sc">+</span> </span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>                      <span class="fu">season</span>(<span class="st">"year"</span>, </span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>                             <span class="at">type =</span> <span class="st">"multiplicative"</span>))</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>forecast_2 <span class="ot">&lt;-</span> <span class="fu">forecast</span>(fable_2, <span class="at">h =</span> <span class="st">"3 years"</span>)</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(forecast_2, <span class="at">data=</span>acute_los, <span class="at">level=</span><span class="fu">c</span>(<span class="dv">80</span>,<span class="dv">95</span>)) <span class="sc">+</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Month-Year of discharge"</span>,</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>       <span class="at">title=</span><span class="st">"ARIMA/ETS/Prophet models predicting LOS of pts presenting to  </span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="st">              Wythenshawe  with #NOF"</span>,</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Data courtesy of the NHFD"</span>,</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>       <span class="at">y=</span><span class="st">"Number of patients"</span>)</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>arima_means <span class="ot">&lt;-</span> forecast_2 <span class="sc">%&gt;%</span> </span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(.model<span class="sc">==</span><span class="st">'arima'</span>)</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>arima_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(arima_means<span class="sc">$</span>.mean)</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>ets_means <span class="ot">&lt;-</span> forecast_2 <span class="sc">%&gt;%</span> </span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(.model<span class="sc">==</span><span class="st">'ets'</span>)</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>ets_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(ets_means<span class="sc">$</span>.mean)</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>prophet_means <span class="ot">&lt;-</span> forecast_2 <span class="sc">%&gt;%</span> </span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(.model<span class="sc">==</span><span class="st">'prophet'</span>)</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>prophet_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(prophet_means<span class="sc">$</span>.mean)</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>print_mean_2 <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">c</span>(ets_mean, </span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>                       arima_mean,</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>                       prophet_mean)) <span class="sc">|&gt;</span> <span class="fu">round</span>(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell column-screen-inset-shaded quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
@@ -409,10 +421,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </div>
-<p>Forecast modelling of length of stay (LOS) suggests an expected mean length of stay per patient of 8.65. This means that while it is unlikely for patients to be in hospital longer than 2 weeks, we will have adequate time to give Anakinra for up to 72 hours post treatment, even if surgery is delayed.</p>
+<p>Forecast modelling of length of stay (LOS) suggests an expected mean length of stay per patient of 8.64. This means that while it is unlikely for patients to be in hospital longer than 2 weeks, we will have adequate time to give Anakinra for up to 72 hours post treatment, even if surgery is delayed.</p>
 </section>
-<section id="general-anaesthetic" class="level3 page-columns page-full">
-<h3 class="anchored" data-anchor-id="general-anaesthetic">General Anaesthetic</h3>
+<section id="anaesthesia" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="anaesthesia">Anaesthesia</h3>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>NICE recommends: 1.4.1 Offer patients a choice of spinal or general anaesthesia after discussing the risks and benefits. [2011] 1.4.2 Consider intraoperative nerve blocks for all patients undergoing surgery.</p>
+</div>
+</div>
 <div class="page-columns page-full">
 <details>
 <summary>Show the code</summary>
@@ -440,27 +465,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>fable_3 <span class="ot">&lt;-</span> ts_ana <span class="sc">%&gt;%</span> <span class="fu">model</span>(  </span>
 <span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>  <span class="at">ets =</span> <span class="fu">ETS</span>(ga <span class="sc">~</span> <span class="fu">error</span>(<span class="st">"M"</span>) <span class="sc">+</span> <span class="fu">trend</span>(<span class="st">"M"</span>) <span class="sc">+</span> <span class="fu">season</span>(<span class="st">"M"</span>)),</span>
 <span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">arima =</span> <span class="fu">ARIMA</span>(ga <span class="sc">~</span> <span class="dv">0</span> <span class="sc">+</span> <span class="fu">pdq</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>) <span class="sc">+</span> <span class="fu">PDQ</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>)),</span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>  <span class="at">prophet =</span> <span class="fu">prophet</span>(ga <span class="sc">~</span> <span class="fu">growth</span>(<span class="st">"linear"</span>) <span class="sc">+</span> <span class="fu">season</span>(<span class="st">"year"</span>, <span class="at">type =</span> <span class="st">"multiplicative"</span>))</span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>forecast_3 <span class="ot">&lt;-</span> <span class="fu">forecast</span>(fable_3, <span class="at">h =</span> <span class="st">"3 years"</span>)</span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(forecast_3, <span class="at">data=</span>ana, <span class="at">level=</span><span class="fu">c</span>(<span class="dv">80</span>,<span class="dv">95</span>)) <span class="sc">+</span></span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Month-Year of discharge"</span>,</span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>       <span class="at">title=</span><span class="st">"ARIMA/ETS/SNAIVE models predicting percentage pts discharged from</span></span>
-<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a><span class="st">              Wythenshawe after GA"</span>,</span>
-<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Data courtesy of the NHFD"</span>,</span>
-<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>       <span class="at">y=</span><span class="st">"Number of patients"</span>)</span>
-<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>arima_means <span class="ot">&lt;-</span> forecast_3 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(.model<span class="sc">==</span><span class="st">'arima'</span>)</span>
-<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>arima_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(arima_means<span class="sc">$</span>.mean)</span>
-<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>ets_means <span class="ot">&lt;-</span> forecast_3 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(.model<span class="sc">==</span><span class="st">'ets'</span>)</span>
-<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>ets_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(ets_means<span class="sc">$</span>.mean)</span>
-<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>prophet_means <span class="ot">&lt;-</span> forecast_3 <span class="sc">%&gt;%</span> </span>
-<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(.model<span class="sc">==</span><span class="st">'prophet'</span>)</span>
-<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>prophet_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(prophet_means<span class="sc">$</span>.mean)</span>
-<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>print_mean_3 <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">c</span>(ets_mean, </span>
-<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>                       arima_mean,</span>
-<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>                       prophet_mean)) <span class="sc">|&gt;</span> </span>
-<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>  <span class="fu">round</span>(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>  <span class="at">prophet =</span> <span class="fu">prophet</span>(ga <span class="sc">~</span> <span class="fu">growth</span>(<span class="st">"linear"</span>) <span class="sc">+</span> </span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>                      <span class="fu">season</span>(<span class="st">"year"</span>, </span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>                             <span class="at">type =</span> <span class="st">"multiplicative"</span>))</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>forecast_3 <span class="ot">&lt;-</span> <span class="fu">forecast</span>(fable_3, <span class="at">h =</span> <span class="st">"3 years"</span>)</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(forecast_3, <span class="at">data=</span>ana, <span class="at">level=</span><span class="fu">c</span>(<span class="dv">80</span>,<span class="dv">95</span>)) <span class="sc">+</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Month-Year of discharge"</span>,</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>       <span class="at">title=</span><span class="st">"ARIMA/ETS/Prophet models predicting percentage pts discharged from</span></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a><span class="st">              Wythenshawe after GA"</span>,</span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Data courtesy of the NHFD"</span>,</span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>       <span class="at">y=</span><span class="st">"Number of patients"</span>)</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>arima_means <span class="ot">&lt;-</span> forecast_3 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(.model<span class="sc">==</span><span class="st">'arima'</span>)</span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>arima_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(arima_means<span class="sc">$</span>.mean)</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>ets_means <span class="ot">&lt;-</span> forecast_3 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(.model<span class="sc">==</span><span class="st">'ets'</span>)</span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>ets_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(ets_means<span class="sc">$</span>.mean)</span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>prophet_means <span class="ot">&lt;-</span> forecast_3 <span class="sc">%&gt;%</span> </span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(.model<span class="sc">==</span><span class="st">'prophet'</span>)</span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>prophet_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(prophet_means<span class="sc">$</span>.mean)</span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>print_mean_3 <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">c</span>(ets_mean, </span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>                       arima_mean,</span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>                       prophet_mean)) <span class="sc">|&gt;</span> </span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>  <span class="fu">round</span>(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell column-screen-inset-shaded quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
@@ -519,26 +546,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>fable_4 <span class="ot">&lt;-</span> ts_spinal<span class="sc">%&gt;%</span> <span class="fu">model</span>(  </span>
 <span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>  <span class="at">ets =</span> <span class="fu">ETS</span>(spinal <span class="sc">~</span> <span class="fu">error</span>(<span class="st">"M"</span>) <span class="sc">+</span> <span class="fu">trend</span>(<span class="st">"M"</span>) <span class="sc">+</span> <span class="fu">season</span>(<span class="st">"M"</span>)),</span>
 <span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">arima =</span> <span class="fu">ARIMA</span>(spinal <span class="sc">~</span> <span class="dv">0</span> <span class="sc">+</span> <span class="fu">pdq</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>) <span class="sc">+</span> <span class="fu">PDQ</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>)),</span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>  <span class="at">prophet =</span> <span class="fu">prophet</span>(spinal <span class="sc">~</span> <span class="fu">growth</span>(<span class="st">"linear"</span>) <span class="sc">+</span> <span class="fu">season</span>(<span class="st">"year"</span>, <span class="at">type =</span> <span class="st">"multiplicative"</span>))</span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>forecast_4 <span class="ot">&lt;-</span> <span class="fu">forecast</span>(fable_4, <span class="at">h =</span> <span class="st">"3 years"</span>)</span>
-<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(forecast_4, <span class="at">data=</span>spinal, <span class="at">level=</span><span class="fu">c</span>(<span class="dv">80</span>,<span class="dv">95</span>)) <span class="sc">+</span></span>
-<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Month-Year of discharge"</span>,</span>
-<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>       <span class="at">title=</span><span class="st">"ARIMA/ETS/SNAIVE models predicting percentage pts discharged from</span></span>
-<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a><span class="st">              Wythenshawe after spinal"</span>,</span>
-<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Data courtesy of the NHFD"</span>,</span>
-<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>       <span class="at">y=</span><span class="st">"Spinal Anaesthetic (%)"</span>)</span>
-<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>arima_means <span class="ot">&lt;-</span> forecast_4 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(.model<span class="sc">==</span><span class="st">'arima'</span>)</span>
-<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>arima_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(arima_means<span class="sc">$</span>.mean)</span>
-<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>ets_means <span class="ot">&lt;-</span> forecast_4 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(.model<span class="sc">==</span><span class="st">'ets'</span>)</span>
-<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>ets_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(ets_means<span class="sc">$</span>.mean)</span>
-<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>prophet_means <span class="ot">&lt;-</span> forecast_4 <span class="sc">%&gt;%</span> </span>
-<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(.model<span class="sc">==</span><span class="st">'prophet'</span>)</span>
-<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a>prophet_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(prophet_means<span class="sc">$</span>.mean)</span>
-<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a>print_mean_4 <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">c</span>(ets_mean, </span>
-<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a>                       arima_mean,</span>
-<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a>                       prophet_mean)) <span class="sc">|&gt;</span> <span class="fu">round</span>(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>  <span class="at">prophet =</span> <span class="fu">prophet</span>(spinal <span class="sc">~</span> <span class="fu">growth</span>(<span class="st">"linear"</span>) <span class="sc">+</span> </span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>                      <span class="fu">season</span>(<span class="st">"year"</span>, </span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>                             <span class="at">type =</span> <span class="st">"multiplicative"</span>))</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>forecast_4 <span class="ot">&lt;-</span> <span class="fu">forecast</span>(fable_4, <span class="at">h =</span> <span class="st">"3 years"</span>)</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(forecast_4, <span class="at">data=</span>spinal, <span class="at">level=</span><span class="fu">c</span>(<span class="dv">80</span>,<span class="dv">95</span>)) <span class="sc">+</span></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Month-Year of discharge"</span>,</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>       <span class="at">title=</span><span class="st">"ARIMA/ETS/Prophet models predicting percentage pts discharged from</span></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a><span class="st">              Wythenshawe after spinal"</span>,</span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Data courtesy of the NHFD"</span>,</span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>       <span class="at">y=</span><span class="st">"Spinal Anaesthetic (%)"</span>)</span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>arima_means <span class="ot">&lt;-</span> forecast_4 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(.model<span class="sc">==</span><span class="st">'arima'</span>)</span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>arima_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(arima_means<span class="sc">$</span>.mean)</span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>ets_means <span class="ot">&lt;-</span> forecast_4 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(.model<span class="sc">==</span><span class="st">'ets'</span>)</span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a>ets_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(ets_means<span class="sc">$</span>.mean)</span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a>prophet_means <span class="ot">&lt;-</span> forecast_4 <span class="sc">%&gt;%</span> </span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(.model<span class="sc">==</span><span class="st">'prophet'</span>)</span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a>prophet_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(prophet_means<span class="sc">$</span>.mean)</span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a>print_mean_4 <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">c</span>(ets_mean, </span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a>                       arima_mean,</span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a>                       prophet_mean)) <span class="sc">|&gt;</span> <span class="fu">round</span>(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell column-screen-inset-shaded quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
@@ -551,14 +580,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </div>
-<p>A forecast based on the percentage of patients discharged from Wythenshawe who had a Spinal Anaesthetic over the period 2011 - 2022. This suggests an expected mean percentage Spinal recipients (simple average of 3 model estimates of %Spinal) of 47.59%.</p>
+<p>A forecast based on the percentage of patients discharged from Wythenshawe who had a Spinal Anaesthetic over the period 2011 - 2022. This suggests an expected mean percentage Spinal recipients (simple average of 3 model estimates of %Spinal) of 47.52%.</p>
 </section>
 </section>
 <section id="outcome-measures" class="level2">
 <h2 class="anchored" data-anchor-id="outcome-measures">Outcome measures</h2>
 <section id="osla-scale" class="level3">
 <h3 class="anchored" data-anchor-id="osla-scale">OSLA scale</h3>
-<p><img src="Delirium-assessment-tool-OSLA.png" class="img-fluid" data-fig-align="center" alt="OSLA"> The OSLA scale is a 4-item scale with a minimum score of 0 and a maximum score of 15. Items respectively have a range of :</p>
+<p><img src="images/Delirium-assessment-tool-OSLA.png" class="img-fluid" data-fig-align="center" alt="OSLA"> The OSLA scale is a 4-item scale with a minimum score of 0 and a maximum score of 15. Items respectively have a range of :</p>
 <table class="table">
 <caption>OSLA Items</caption>
 <thead>

@@ -12,7 +12,7 @@ format:
 # Set values
 SPONSOR_NUMBER <- FALSE
 FUNDER_NUMBER <- FALSE
-IRAS_NUMBER <- FALSE
+IRAS_NUMBER <- 318609
 EUDRACT_NUMBER <- FALSE
 CLINICAL_TRIALS.GOV_NUMBER <- FALSE
 ISRCTN_NUMBER <- FALSE
@@ -46,7 +46,7 @@ Anakinra in the Treatment of Inflammation and Delirium after Orthopaedic Trauma 
 
 | Organisation             | Number |
 |--------------------------|--------|
-| IRAS                     |        |
+| IRAS                     |`r IRAS_NUMBER`| 
 | EUDRACT                  |        |
 | ClinicalTrials.gov       |        |
 | ISCRTN                   |        |
@@ -148,9 +148,9 @@ I also confirm that I will make the findings of the trial publically available t
 
 **For and on behalf of the Trial Sponsor:**
 
-Signature: Date: ..07..../...08.../..2022... Name (please print): Position:
+Signature: Date: ..07..../...08.../..2022... Name (please print): **Dr. Ross A. Dunne** Position: **Honorary Senior Lecturer**
 
-**Chief Investigator:** Signature:\
+**Chief Investigator:** Signature:\ []
 Date: ....../....../...... Name: (please print):
 
 (Optional)
@@ -312,7 +312,7 @@ Name: (please print): Position:\
 +============================================+=============================================================================================================================================================================+
 | Internal Ref. no. (or short title)         | AmTIDOTe                                                                                                                                                                    |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Clinical Phase                             | III                                                                                                                                                                         |
+| Clinical Phase                             | IIa                                                                                                                                                                         |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Trial Design                               | Randomised Controlled Rater Blind                                                                                                                                           |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -344,7 +344,7 @@ Name: (please print): Position:\
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Investigational Medicinal Products         | Anakinra                                                                                                                                                                    |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Formulation, Dose, Route of Administration | 100mg Subcutaneous twice daily until 72 hours post surgical repair of fractured neck of femur                                                                               |
+| Formulation, Dose, Route of Administration | 100mg Subcutaneous once daily until 72 hours post surgical repair of fractured neck of femur                                                                               |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 : Trial Summary
@@ -524,7 +524,7 @@ The minmum clinically significant difference in any of the candidate delirium sc
 
 <!-- •  a clear explanation of the research question/hypothesis and the justification of the trial i.e. why the question is worth asking and, through consultation with public and patient groups, why this is worthwhile to patients. Replication to check the validity of previous research is justified, but unnecessary duplication is unethical. -->
 
-Our hypothesis is the reduction in CNS IL-1 levels caused by the administration of Anakinra in the period before and after surgical repair of the fractured neck of femur will result in reduced severity of delirium in those with <!-- •  the currently available treatment(s) and their limitations, why you think the IMP(s) might be an improvement on those treatments, why the treatment difference is clinically important to patients and if it is  realistic. (The treatment difference is often referred to as the minimum clinically important difference or the difference we should not want to miss. A drug which reduces everyone’s systolic blood pressure by 2 mm of mercury may be genuinely effective, but the effect would not form the basis of a routine intervention) -->
+Our hypothesis is the reduction in CNS IL-1 levels caused by the administration of once daily Anakinra in the period before and after surgical repair of the fractured neck of femur will result in reduced severity of delirium in those with <!-- •  the currently available treatment(s) and their limitations, why you think the IMP(s) might be an improvement on those treatments, why the treatment difference is clinically important to patients and if it is  realistic. (The treatment difference is often referred to as the minimum clinically important difference or the difference we should not want to miss. A drug which reduces everyone’s systolic blood pressure by 2 mm of mercury may be genuinely effective, but the effect would not form the basis of a routine intervention) -->
 
 <!-- •  this justification is particularly important if the trial proposes to use the IMP: -->
 
@@ -768,18 +768,30 @@ documented in the protocol. -->
 <!-- Aim: To define the trial population -->
 
 <!-- This section should set out precise definitions of which participants are eligible for the trial, defining both inclusion and exclusion criteria. Inclusion criteria should define the population the trial is aiming to include and indicate the generalisability of the trial findings. Exclusion criteria should exclude sub-groups of the population due to, for example, safety and other clinical risks or burden to the participant.  -->
-
+Participation criteria have been chosen to be clear so that they can be applied consistently through the trial. Definitions for the timelines and flexibility of each eligibility criterion have been carefully considered to ensure that arbitrary or un-workable definitions have not been used.
 <!-- The eligibility criteria should be clear so they can be applied consistently through the trial and definitions for the timelines and flexibility of each eligibility criterion must be carefully considered to ensure that arbitrary or un-workable definitions are not used. Such definitions can affect eligibility due to the fact that eligibility waivers are usually not permitted by Regulatory Authorities. The choice of criteria can affect recruitment and attrition to the trial as well as it generalisability. -->
 
 ### Inclusion criteria
 
 <!-- • participants capable of giving informed consent, or if appropriate, participants having an acceptable individual lcapable of giving consent on the participant’s behalf (e.g. parent or guardian of a child under 16 years of age) -->
-
+Participants capable of giving informed consent, or if appropriate, participants having an acceptable individual capable of giving consent on the participant’s behalf.
 <!-- • gender -->
-
+People of any gender are eligible
 <!-- • Age -->
-
+People over 64 years of age at the date and time of presentation to the Emergency Department are eligible
 <!-- • clinical parameters, compliance with EACH parameter for each participant will need to be clearly documented -->
+Radiologically confirmed femoral neck fracture as defined by the [AO/OTA classification](https://journals.lww.com/jorthotrauma/Fulltext/2018/01001/Fracture_and_Dislocation_Classification.1.aspx):
+
+- A1: Simple pertrochanteric fracture
+- A2: Multifragmentary pertrochanteric fracture/incompetence of the lateral wall 
+- A3: Intertrochanteric or reverse oblique fracture
+- B1: Subcapital fracture
+- B2: Transcervical fracture
+- B3: Basicervical fracture
+- C1: Split fracture
+- C2: Depression fracture
+
+
 
 ### Exclusion criteria
 

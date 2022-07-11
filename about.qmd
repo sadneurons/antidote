@@ -14,7 +14,7 @@ This website has been constructed using R, RStudio, Git, Github and Github Pages
 
 ## What is R?
 
-R is a programming language and programming environment for statisitcs, simulation, and reproducible research. Reproducible research means that every step in every analysis is transparent, and that the researchers' intentions are clear, set out beforehand and often, that analyses are pre-registered in order to prevent hypothesising after the results are known. R helps researchers to do reproducible research by making sure every step of every analysis is stored.
+R is a programming language and programming environment for statistics, simulation, and reproducible research. Reproducible research means that every step in every analysis is transparent, and that the researchers' intentions are clear, set out beforehand and often, that analyses are pre-registered in order to prevent hypothesising after the results are known. R helps researchers to do reproducible research by making sure every step of every analysis is stored.
 
 [Learn more here](https://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf)
 
@@ -26,7 +26,7 @@ Git is software for version control. The three core actions involved in using Gi
 
 ## What is Github?
 
-Github is an online repository which stores version-controlled software. It is be far the most popular warehouse of such repositories or (repos).  The repo can be archived and re-used for other projects. It can be downloaded and the code re-run by interested parties. All the contents are licensed under an [MIT Open Source license](https://opensource.org/licenses/MIT). 
+Github is an online repository which stores version-controlled software. It is by far the most popular warehouse of such repositories or (repos).  The repo can be archived and re-used for other projects. It can be downloaded and the code re-run by interested parties. All the contents of this repository and therefore this website are licensed under an [MIT Open Source license](https://opensource.org/licenses/MIT). 
 
 [Learn more here](https://lab.github.com/githubtraining/introduction-to-github)
 
