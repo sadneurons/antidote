@@ -93,7 +93,9 @@ fable_1 <- ts_vol %>%
   model(  
     ets = ETS(ptnum ~ error("M") + trend("M") + season("M")),
     arima = ARIMA(ptnum ~ 0 + pdq(1, 1, 1) + PDQ(1, 1, 1)),
-    prophet = prophet(ptnum ~ growth("linear") + season("year", type = "multiplicative"))
+    prophet = prophet(ptnum ~ growth("linear") + 
+                        season("year", 
+                               type = "multiplicative"))
   )
 forecast_1 <- forecast(fable_1, 
                        h = "3 years") 
@@ -160,7 +162,9 @@ p
 fable_2 <- ts_acute_los %>% model(  
   ets = ETS(acutelos ~  error("M") + trend("M") + season("M")),
   arima = ARIMA(acutelos ~ 0 + pdq(1, 1, 1) + PDQ(1, 1, 1)),
-  prophet = prophet(acutelos ~ growth("linear") + season("year", type = "multiplicative"))
+  prophet = prophet(acutelos ~ growth("linear") + 
+                      season("year", 
+                             type = "multiplicative"))
 )
 forecast_2 <- forecast(fable_2, h = "3 years")
 autoplot(forecast_2, data=acute_los, level=c(80,95)) +
@@ -215,7 +219,9 @@ p
 fable_3 <- ts_ana %>% model(  
   ets = ETS(ga ~ error("M") + trend("M") + season("M")),
   arima = ARIMA(ga ~ 0 + pdq(1, 1, 1) + PDQ(1, 1, 1)),
-  prophet = prophet(ga ~ growth("linear") + season("year", type = "multiplicative"))
+  prophet = prophet(ga ~ growth("linear") + 
+                      season("year", 
+                             type = "multiplicative"))
 )
 forecast_3 <- forecast(fable_3, h = "3 years")
 autoplot(forecast_3, data=ana, level=c(80,95)) +
@@ -281,7 +287,9 @@ p
 fable_4 <- ts_spinal%>% model(  
   ets = ETS(spinal ~ error("M") + trend("M") + season("M")),
   arima = ARIMA(spinal ~ 0 + pdq(1, 1, 1) + PDQ(1, 1, 1)),
-  prophet = prophet(spinal ~ growth("linear") + season("year", type = "multiplicative"))
+  prophet = prophet(spinal ~ growth("linear") + 
+                      season("year", 
+                             type = "multiplicative"))
 )
 forecast_4 <- forecast(fable_4, h = "3 years")
 autoplot(forecast_4, data=spinal, level=c(80,95)) +
