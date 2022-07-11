@@ -61,10 +61,8 @@ body-footer: "Copyright (c) 2022"
 # for the Hip fracture population
 library(tidyverse)
 library(rms)
-library(plotly)
 library(fable)
 library(tsibble)
-library(tsibbledata)
 library(feasts)
 library(urca)
 library(downloadthis)
@@ -93,7 +91,7 @@ p
 fable_1 <- ts_vol %>% 
   model(  
     ets = ETS(ptnum ~ error("M") + trend("M") + season("M")),
-    arima = ARIMA(ptnum),
+    arima = ARIMA(ptnum ~ 0 + pdq(1, 1, 1) + PDQ(1, 1, 1)),
     snaive = SNAIVE(ptnum)
   )
 forecast_1 <- forecast(fable_1, 
@@ -104,7 +102,7 @@ autoplot(forecast_1,
   labs(x="Month-Year of discharge",
   title="ARIMA/ETS/SNAIVE models predicting pts presenting to  
   Wythenshawe with #NOF",
-  subtitle = "Data courtesy of the NFHD",
+  subtitle = "Data courtesy of the NHFD",
   y="Number of patients")
 
 arima_means <- forecast_1 %>%
@@ -158,7 +156,7 @@ p
 
 fable_2 <- ts_acute_los %>% model(  
   ets = ETS(acutelos ~  error("M") + trend("M") + season("M")),
-  arima = ARIMA(acutelos),
+  arima = ARIMA(acutelos ~ 0 + pdq(1, 1, 1) + PDQ(1, 1, 1)),
   snaive = SNAIVE(acutelos)
 )
 forecast_2 <- forecast(fable_2, h = "3 years")
@@ -208,7 +206,7 @@ p
 
 fable_3 <- ts_ana %>% model(  
   ets = ETS(ga ~ error("M") + trend("M") + season("M")),
-  arima = ARIMA(ga),
+  arima = ARIMA(ga ~ 0 + pdq(1, 1, 1) + PDQ(1, 1, 1)),
   snaive = SNAIVE(ga)
 )
 forecast_3 <- forecast(fable_3, h = "3 years")
@@ -270,7 +268,7 @@ p
 
 fable_4 <- ts_spinal%>% model(  
   ets = ETS(spinal ~ error("M") + trend("M") + season("M")),
-  arima = ARIMA(spinal),
+  arima = ARIMA(spinal ~ 0 + pdq(1, 1, 1) + PDQ(1, 1, 1)),
   snaive = SNAIVE(spinal)
 )
 forecast_4 <- forecast(fable_4, h = "3 years")

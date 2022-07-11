@@ -6,7 +6,6 @@ format:
   html:
     toc: true
     number-sections: true
-    linestretch: 2
 ---
 <!--  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 -->
 ```{r echo=FALSE}
