@@ -20,7 +20,11 @@ ISRCTN_NUMBER <- FALSE
 
 \newpage
 
-**This protocol has regard for the HRA guidance and order of content** <!-- We would also appreciate self-declaration of how you've used this template so we are able to measure its uptake. -->
+[**This protocol has regard for the HRA guidance and order of content**](https://www.hra.nhs.uk/planning-and-improving-research/research-planning/protocol/) 
+
+
+[**This protocol has regard to ICH E9 statistical principles for clinical trials**](https://www.ema.europa.eu/en/ich-e9-statistical-principles-clinical-trials)
+<!-- We would also appreciate self-declaration of how you've used this template so we are able to measure its uptake. -->
 
 <!-- On the following page, please indicate the compatibility of this template with any existing templates you already use by stating one of the following on the front of each submitted protocol: -->
 
