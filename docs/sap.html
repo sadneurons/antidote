@@ -388,7 +388,7 @@ Note
 </a>
 </div>
 </div>
-<p>Forecasts are based on discharges from Wythenshawe over the period 2011 - 2022. This suggests an expected mean number of presentations per month of 41.08. At this rate, we would expect ~41.08 x 24 = 985.92 patients to have surgical repair of fractured neck of femur over the 24 month recruitment course of the trial, or 24.648 per month.</p>
+<p>Forecasts are based on discharges from Wythenshawe over the period 2011 - 2022. This suggests an expected mean number of presentations per month of 41.09. At this rate, we would expect ~41.09 x 24 = 986.16 patients to have surgical repair of fractured neck of femur over the 24 month recruitment course of the trial, or 24.654 per month.</p>
 </section>
 <section id="length-of-stay" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="length-of-stay">Length of stay</h3>
@@ -555,7 +555,7 @@ Note
 </a>
 </div>
 </div>
-<p>A forecast based on the percentage of patients discharged from Wythenshawe who had a General Anaesthetic over the period 2011 - 2022. This suggests an expected mean percentage GA recipients (simple average of 3 model estimates of %GA) of 50.81%.</p>
+<p>A forecast based on the percentage of patients discharged from Wythenshawe who had a General Anaesthetic over the period 2011 - 2022. This suggests an expected mean percentage GA recipients (simple average of 3 model estimates of %GA) of 50.82%.</p>
 </section>
 <section id="spinal-anaesthetic" class="level4 page-columns page-full">
 <h4 class="anchored" data-anchor-id="spinal-anaesthetic">Spinal Anaesthetic</h4>
@@ -618,7 +618,7 @@ Note
 </div>
 </div>
 </div>
-<p>A forecast based on the percentage of patients discharged from Wythenshawe who had a Spinal Anaesthetic over the period 2011 - 2022. This suggests an expected mean percentage Spinal recipients (simple average of 3 model estimates of %Spinal) of 47.56%.</p>
+<p>A forecast based on the percentage of patients discharged from Wythenshawe who had a Spinal Anaesthetic over the period 2011 - 2022. This suggests an expected mean percentage Spinal recipients (simple average of 3 model estimates of %Spinal) of 47.55%.</p>
 </section>
 </section>
 </section>
@@ -659,7 +659,10 @@ Note
 </tr>
 </tbody>
 </table>
-<div class="cell">
+<div id="fig-populations" class="quarto-layout-panel">
+<figure class="figure">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
 <details>
 <summary>Show the code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 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</span></span>
@@ -716,7 +719,7 @@ Note
 <span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a>total_pop_1 <span class="sc">|&gt;</span><span class="fu">hist</span>(<span class="at">main=</span><span class="st">"Histogram I of OSLA scores (zero inflated)"</span>, <span class="at">xlab=</span><span class="st">"OSLA score"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="sap_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid" width="672"></p>
+<p><img src="sap_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
 </div>
 <details>
 <summary>Show the code</summary>
@@ -728,7 +731,7 @@ Note
 <span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>total_pop_2<span class="sc">|&gt;</span><span class="fu">hist</span>(<span class="at">main=</span><span class="st">"Histogram II of OSLA scores (severe)"</span>, <span class="at">xlab=</span><span class="st">"OSLA score"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="sap_files/figure-html/unnamed-chunk-14-2.png" class="img-fluid" width="672"></p>
+<p><img src="sap_files/figure-html/unnamed-chunk-14-2.png" class="img-fluid figure-img" width="672"></p>
 </div>
 <details>
 <summary>Show the code</summary>
@@ -740,7 +743,7 @@ Note
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>total_pop_3 <span class="sc">|&gt;</span><span class="fu">hist</span>(<span class="at">main=</span><span class="st">"Histogram III of OSLA scores (mild/severe)"</span>, <span class="at">xlab=</span><span class="st">"OSLA score"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="sap_files/figure-html/unnamed-chunk-14-3.png" class="img-fluid" width="672"></p>
+<p><img src="sap_files/figure-html/unnamed-chunk-14-3.png" class="img-fluid figure-img" width="672"></p>
 </div>
 <details>
 <summary>Show the code</summary>
@@ -752,8 +755,12 @@ Note
 <span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>total_pop_4 <span class="sc">|&gt;</span><span class="fu">hist</span>(<span class="at">main=</span><span class="st">"Histogram IV of OSLA scores (moderate)"</span>, <span class="at">xlab=</span><span class="st">"OSLA score"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="sap_files/figure-html/unnamed-chunk-14-4.png" class="img-fluid" width="672"></p>
+<p><img src="sap_files/figure-html/unnamed-chunk-14-4.png" class="img-fluid figure-img" width="672"></p>
 </div>
+</div>
+</div>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 1: <strong>?(caption)</strong></figcaption><p></p>
+</figure>
 </div>
 </section>
 </section>
@@ -763,8 +770,8 @@ Note
 <p><strong>Solution</strong>: Ordinal logistic regression does not assume interval scales, nor normal distributions of the scores. It does make a proportional-odds assumption testable using the parallel test. The coefficients can be interpreted as the log-odds of a one point increase in the scale score, <span class="math inline">\(y\)</span>, with a one point (or one unit) increase in the predictor variable <span class="math inline">\(x\)</span>.</p>
 <p><strong>Assumption</strong>: While delirium is by its nature a fluctuating condition, we assume there will be correlation within participants in delirium scale scores over time.</p>
 <p><strong>Solution</strong>: Mixed effects models will allow for an autoregressive correlation structure and regularisation of the model. Frequentist ordinal logistic mixed models are facilitated by R packages ‘ordinal’ and ‘rms’ and Bayesian mixed effects ordinal regression models are facilitated by packages ‘brms’ (with cumulative log-odds link function) and ‘rmsb’. These have been used in simulation below.</p>
-<p><strong>Assumption</strong>: There may be significant anaesthetic methods (spinal/GA) in those presenting to the ED with hip fractures. The descriptive statistics for Wythenshawe hospital can be found below.</p>
-<p><strong>Solution</strong> Because the nature of the anaesthetic (spinal versus general) may relate to the nature of the participants’ comorbidities and the presence or absence of preoperative delirium, we will use a minimisation strategy to ensure equal numbers of spinal and general anaesthetic procedures in each trial arm. The numbers of participants having GA will vary month-month.</p>
+<p><strong>Assumption</strong>: There may be significant difference in the “deliriogenic” potential of different anaesthetic methods (spinal/GA) in those presenting to the ED with hip fractures. The descriptive statistics for Wythenshawe hospital can be found above</p>
+<p><strong>Solution</strong> Because the nature of the anaesthetic (spinal versus general) may relate to the nature of the participants’ comorbidities and the presence or absence of preoperative delirium, we will use a minimisation strategy to ensure equal numbers of spinal and general anaesthetic procedures in each trial arm. The numbers of participants having GA will vary month-month, but in the forecast above the split is approximately 50/50.</p>
 
 
 </section>
