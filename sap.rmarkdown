@@ -17,6 +17,7 @@ citation-location: margin
 body-footer: "Copyright (c) 2022"
 ---
 
+
 ## Part I: Sample size calculations for a randomised controlled trial in delirium {.unnumbered .unlisted}
 
 ## Project Title: ANakinra for the Treatment of Inflammation and Delirium after Orthopaedic Trauma and rEpair (ANTIDOTE) -- Randomised Controlled Trial. {.unnumbered .unlisted}
@@ -71,6 +72,7 @@ The [NICE guidance on management of hip fracture](https://www.nice.org.uk/guidan
 
 
 ### Number of patients 
+
 
 
 ```{r echo=TRUE, results='hide', message=FALSE}
@@ -167,9 +169,11 @@ download_file(
 ```
 
 
+
 Forecasts are based on discharges from Wythenshawe over the period 2011 - 2022. This suggests an expected mean number of presentations per month of `r print_mean`. At this rate, we would expect ~`r print_mean` x 24 = `r print_mean*24` patients to have surgical repair of fractured neck of femur over the 24 month recruitment course of the trial, or `r print_mean*24/40 |> round(1)` per month.  
 
 ### Length of stay
+
 ```{r echo=TRUE, results='show', message=FALSE}
 #| column: screen-inset-shaded
 #| layout-nrow: 1
@@ -216,6 +220,7 @@ print_mean_2 <- mean(c(ets_mean,
                        prophet_mean)) |> round(2)
 
 ```
+
 Forecast modelling of length of stay (LOS) suggests an expected mean length of stay per patient of `r print_mean_2`. This means that while it is unlikely for patients to be in hospital longer than 2 weeks, we will have adequate time to give Anakinra for up to 72 hours post treatment, even if surgery is delayed.
 
 ### Anaesthesia
@@ -228,6 +233,7 @@ Forecast modelling of length of stay (LOS) suggests an expected mean length of s
 
 
 #### General Anaesthetic
+
 
 
 ```{r echo=TRUE, results='hide', message=FALSE}
@@ -282,6 +288,7 @@ print_mean_3 <- mean(c(ets_mean,
                        prophet_mean)) |> 
   round(2)
 ```
+
 ```{r echo=FALSE, results='show', message=TRUE}
 ana <- read.csv("./NHFD_Data/ana_apr_22.csv")
 ana %>%
@@ -305,9 +312,11 @@ download_file(
   self_contained = FALSE
 )
 ```
+
 A forecast based on the percentage of patients discharged from Wythenshawe who had a General Anaesthetic over the period 2011 - 2022. This suggests an expected mean percentage GA recipients (simple average of 3 model estimates of %GA) of `r print_mean_3`%. 
 
 #### Spinal Anaesthetic
+
 
 ```{r echo=TRUE, results='hide', message=FALSE}
 #| column: screen-inset-shaded
@@ -361,6 +370,7 @@ print_mean_4 <- mean(c(ets_mean,
                        prophet_mean)) |> round(2)
 ```
 
+
 A forecast based on the percentage of patients discharged from Wythenshawe who had a Spinal Anaesthetic over the period 2011 - 2022. This suggests an expected mean percentage Spinal recipients (simple average of 3 model estimates of %Spinal) of `r print_mean_4`%. 
 
 
@@ -384,7 +394,9 @@ A forecast based on the percentage of patients discharged from Wythenshawe who h
 : OSLA Items
 
 ::: {#fig-populations layout-ncol=4}
+
 ```{r, echo=TRUE, warning=FALSE, message=FALSE}
+# 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
 #| column: screen-inset-shaded
 #| layout-nrow: 1
 OSLA <- function(severity="None", return_format = "df"){
@@ -460,6 +472,7 @@ total_pop_4 <- c(severe_pop, moderate_pop, mild_pop, none_pop)
 total_pop_4 |>hist(main="Histogram IV of OSLA scores (moderate)", xlab="OSLA score")
 
 ```
+
 :::
 
 ## Frequentist simulation
@@ -475,3 +488,4 @@ total_pop_4 |>hist(main="Histogram IV of OSLA scores (moderate)", xlab="OSLA sco
 **Assumption**: There may be significant difference in the "deliriogenic" potential of different anaesthetic methods (spinal/GA) in those presenting to the ED with hip fractures. The descriptive statistics for Wythenshawe hospital can be found above
 
 **Solution** Because the nature of the anaesthetic (spinal versus general) may relate to the nature of the participants' comorbidities and the presence or absence of preoperative delirium, we will use a minimisation strategy to ensure equal numbers of spinal and general anaesthetic procedures in each trial arm. The numbers of participants having GA will vary month-month, but in the forecast above the split is approximately 50/50.
+
