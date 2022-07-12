@@ -1,0 +1,307 @@
+---
+title: "AnTIDOTe RfPB application"
+subtitle: " DRAFT 0.01"
+highlight-style: github
+format:
+  docx:
+    toc: true
+    number-sections: true
+---
+
+\newpage
+
+![NIHR](nihrlogo.png){width=400}
+
+# Template stage 1 standard application form
+This Markdown template of the NIHR standard application form can be used to assist applicants in completing the online application form for NIHR funding; it cannot be submitted as an application. Only applications submitted online via the NIHR Central Commissioning Facility (CCF) Research Management System (RMS) will be accepted. However, information can be copied from the Word template into the online application form.
+
+\newpage
+
+## Introduction
+
+This Word template of the NIHR standard application form is intended for applicants submitting stage 1 applications to the following NIHR research programmes:
+
+-  [Invention for Innovation](https://www.nihr.ac.uk/explore-nihr/funding-programmes/invention-for-innovation.htm)
+-  [Policy Research Programme](https://www.nihr.ac.uk/explore-nihr/funding-programmes/policy-research.htm)
+-  [Programme Grants for Applied Research](https://www.nihr.ac.uk/explore-nihr/funding-programmes/programme-grants-for-applied-research.htm)
+-  [Research for Patient Benefit](https://www.nihr.ac.uk/explore-nihr/funding-programmes/research-for-patient-benefit.htm)
+
+This document shows the main fields in the standard application form for these programmes. Small variations by programme may exist in the online form in the CCF RMS. There are a number of guidance prompts available to you throughout the online form to help you when completing an application. It is strongly advised that you also read the relevant [Guidance for Applicants](https://www.nihr.ac.uk/about-us/document-library.htm?custom_in_type=9696) and [Supporting Information for Applicants](https://www.nihr.ac.uk/about-us/document-library.htm?custom_in_type=9729) documents before completing your application.
+
+Stage 1 applications should observe the maximum word limits as indicated throughout the form. **Keep the use of acronyms to a minimum**. Only use acronyms where a term is used frequently throughout the application. If you do choose to use an acronym, do not assume that the reader knows what it means, and be sure to define it when first used.
+ 
+You are strongly advised to structure the longer sections of the application form (particularly the Research Plan) in such a way that they can be read easily by reviewers. Schematics, tables, illustrations, graphs, and other types of graphics can be embedded to clarify the research plan but they should not clutter the central narrative. Images do not count towards the overall word count but inclusion of them to overcome word limits is not permitted. Images may only be included within the 'Research Plan.' Images included in other sections will be removed from the application and not seen by reviewers. **The use of long passages of dense, unstructured text should be avoided.**
+
+Members of the research team will need to be registered through the system via email to participate as co-applicants after which they must confirm their participation. You will not be able to submit the application until co-applicants have confirmed and approved their involvement.
+ 
+**Whilst confirming an application can be done at any time during the submission of an application, you are strongly advised to do this well in advance of the deadline.**
+
+If you have any queries with your application, you can contact NIHR CCF on 020 8843 8000 or ccf@nihr.ac.uk.
+
+\newpage
+
+## Section 1: Application Summary Information
+
+**Programme:**
+
+
+**Call:** 
+
+
+**Host organisation (which will administer any award):**
+Please give details of the organisation that will be responsible if the programme is funded.
+ 
+NOTE: If your organisation does not appear on this list, please contact the Central Commissioning Facility
+
+
+
+**Research title:**
+The programme title should state clearly and concisely the proposed research. Any abbreviations should be spelled out in full.
+
+
+
+Research type:
+Select the appropriate research type. If your proposed programme includes any element of primary research, please select ‘Primary Research’. If you are carrying out new analysis of existing data, select ‘Secondary Research’. If you are not sure which category to select, choose the closest match to your project as this can be adjusted later.
+(Select from drop down list:
+**Primary Research**
+
+
+
+Proposed start date:
+Note this should be from 1st of the month regardless of whether this is a working day or not. Please be realistic about your possible start date taking account of the necessary contracting, and staff recruitment prior to starting your project.
+
+
+
+Research duration:
+Ensure you include sufficient time to complete all aspects of the research including applications for regulatory approvals (where required) and writing the final report.
+
+
+
+End date:
+(Auto populated)
+
+
+
+Estimated research costs:
+Enter the total amount of research costs requested (not including NHS Support & Treatment costs).
+
+
+
+Estimated NHS support & treatment costs or external (not NHS) intervention costs:
+Enter the total amount of NHS support and treatment costs associated with this proposal.
+
+
+
+COI declaration 
+Please declare any conflicts or potential conflicts of interest that you or your co-applicants may have in undertaking this research, including any relevant personal, non-personal and commercial interest that could be perceived as a conflict of interest. Please declare any conflicts or potential conflicts of interest that you or your co-applicants may have, including any facts that, should they come to light at a future date, could lead to a perception of bias. Include any relevant personal, non-personal & commercial interest that could be perceived as a conflict of interest. Examples include (this list is not all encompassing) secondary employment, consultancy, financial or commercial gain (pensions, shareholdings, directorships, voting rights), honoraria, etc. In a case of commercial sector involvement with the application or the study, please state clearly the relationship to ownership of data, access to data, and membership of project oversight groups.
+
+
+Agreement to terms and conditions:
+In ticking this box, you as Lead Applicant confirm that the information given on this form is complete and correct and that you will be actively engaged in this research and responsible for its overall management.
+
+\newpage
+
+## Section 2: Lead Applicant details
+
+Some of the responses required in this section will have been pre-populated, any remaining fields must be completed.
+
+The Lead Applicant may be an NHS or University employee; in the latter case, the individual would need to have an appropriate relationship with the host NHS body to ensure proper governance and accountability. As a minimum, the Lead Applicant must have an honorary contract with the NHS body (or provider of NHS services) submitting the application.
+
+All information on this page is auto-populated from the ‘Manage my Details’ section within the Lead Applicant’s CCF RMS portal account, which should be updated and edited prior to submission.
+
+
+|Lead Applicant details	|Responses                      |
+|-----------------------|-------------------------------|
+|Full Name:	(Auto populated from the ‘Manage my details’ section)| Dr. Ross A. Dunne|
+|Position:	            |                               |
+|ORCID ID:	            |                               |
+|Institution:           |                               |	
+
+Please ensure that your role on this research and the %FTE commitment information is detailed within ‘The research team’ section.
+
+\newpage
+
+## Section 3: The research team
+Add Lead Applicant
+
+**Specify your (lead applicant) role in the research:**
+Explain in addition to your role as Lead Applicant, the role that you will be undertaking in the research, e.g. coordination and project management, analysis, methodological input etc.
+
+
+
+**%FTE commitment:**
+This refers to the percentage of your time that you will commit to this project. If you are funded as part of other NIHR projects that will be running concurrently, your time must not exceed 100% overall.
+
+
+
+**Please select if there is more than one Lead Applicant:**
+Where appropriate and justified, it is acceptable for the application to be led by joint Lead Applicants.
+
+In exceptional circumstances, applications may be led by joint Lead Applicants. Justification should be given to demonstrate why more than one person would be required to lead this research (and how this brings added value to the application.
+
+NOTE: For application/contracting purposes, the joint lead applicant will be regarded as a co-applicant.
+
+**Add Joint Lead Applicant and %FTE commitment**
+
+Use the fields below to search for a contact
+
+|Joint Lead Applicant	|Responses|
+|-|-|
+|Full Name:	(Auto populated from the ‘Manage my details’ section)||
+|Position:	| |
+|ORCID ID:  | |	
+|Institution:	| |
+
+**Justification for joint Lead Applicant and role in research:**
+Justification should be given to demonstrate why more than one person would be required to lead this research and how this brings added value to the application. Please also provide a brief overview of their role in the research.
+
+
+
+**%FTE commitment:**
+Please include the percentage of time that you will devote to the research.
+NOTE: Full-Time Equivalent (FTE): percentage of full-time hours per week.
+
+
+
+**Co-applicant role and %FTE commitment:**
+Add details of all co-applicants and their specific role in the project. Do not include collaborators, who should be mentioned (if necessary) in the Research Plan section of the on-line application form.
+
+We encourage the inclusion of public co-applicants, where appropriate. Please include a clear description of their role and the reasons why a public co-applicant is joining the team. For further information please access the [Public Co-applicants in Research guidance]().
+
+Co-applicants are those individuals with responsibility for the day to day management and delivery of the project. Co-applicants, including public co-applicants, are considered part of the project team and are expected to share responsibility for its successful delivery. In contrast, collaborators normally provide specific expertise on particular aspects of the project but who do not share in the responsibility for the delivery of the project.
+
+**PPI Lead**
+There should be a named person with appropriate skills and experience who is responsible for leading the PPI element within the project. This role should be an adequately costed and resourced research team member who is able to manage the PPI plans and related activities. More information and examples of the activities a PPI lead might undertake can be found in our guidance on the NIHR website.
+
+IMPORTANT: Colleagues will need to register to participate as co-applicants after which they must both confirm and approve their participation; the application cannot be submitted without doing so.
+
+
+**Add co-applicant role and %FTE commitment**
+
+Co-applicant details are auto-populated from the co-applicant’s ‘Manage my Details’ section, which should be updated prior to submission.
+
+Use the fields below to search for a contact
+
+**Name of co-applicant:**
+Please note a colleague should first be 'invited', once this has been completed their details will automatically appear in the field below.
+
+
+**Specify role in research:**
+Each co-applicant should provide a brief overview of their role in the proposed research. You have the opportunity to elaborate upon this further in the ‘Research Plan’ section.
+
+
+
+**%FTE Commitment:**
+This refers to the percentage of your time that you will commit to this project.
+
+\newpage
+
+## Section 4: Plain English summary of research
+
+A plain English summary is a clear explanation of your research.
+
+Many reviewers use this summary to inform their review of your funding application. They include clinicians, other practitioners and researchers who do not have specialist knowledge of your field as well as members of the public. If your application for funding is successful, the summary will be used on the National Institute for Health Research (NIHR) and other websites.
+
+A good quality plain English summary providing an easy to read overview of your whole study will help:
+
+1.	those carrying out the review (reviewers and committee members) to have a better understanding of your research proposal
+2.	inform others of about your research such as members of the public, health and social care professionals, policy makers and the media
+3.	the research funders to publicise the research that they fund
+
+If it is felt that your plain English summary is not clear and of good quality, then you may be required to amend it prior to final funding approval.
+
+It is helpful to involve patients/carers/service users/practitioners and members of the public in developing a plain English summary.
+
+**Content**
+
+When writing your summary consider including the following information where appropriate:
+
+1.	aim(s) of the research
+2.	background to the research
+3.	design and methods used
+4.	patient and public involvement
+5.	dissemination
+
+The plain English summary is not the same as a scientific abstract - please do not cut and paste this or other sections of your application form to create the plain English summary. 
+
+Further guidance on writing in plain English is available online at [NIHR Plain English summaries](https://www.nihr.ac.uk/documents/plain-english-summaries/27363).
+
+For further support and advice on writing a plain English summary, please contact your local [Research Design Service](https://www.nihr.ac.uk/explore-nihr/support/research-design-service.htm) (where applicable).
+
+\newpage
+
+## Section 5: Research plan
+
+### Research Plan
+Using all of the headings in the order presented below, please use this section to clearly explain your proposed research. Schematics, tables, illustrations, graphs, and other types of graphics can be embedded to clarify the research plan but they should not clutter the central narrative. Images do not count towards the overall word count but inclusion of them to overcome word limits is not permitted. Images may only be included within the ‘Research Plan’. Images included in other sections will be removed from the application and not seen by reviewers.
+
+For further information about what is required under each heading, please refer to the guidance for applicants.
+
+As this is the main part of your application which will be considered by the reviewing committee, you should ensure that the information is accurate, succinct, clearly laid out and provides sufficient methodological detail.
+
+NOTE: Applicants should aim to reserve a significant proportion of the word count for the project plan to enable methodological approaches to be fully specified.
+
+1.	What is the problem being addressed?
+2.	Why is this research important in terms of improving the health and/or wellbeing of the public and/or to patients and health care services?
+3.	Review of existing evidence – How does the existing literature support this proposal?
+4.	What is the research question / aims and objectives?
+5.	Project plan
+6.	(Intellectual Property and commercialisation)
+
+\newpage
+
+## Section 6: Uploads
+
+### Mandatory 
+Attach one single-side A4 page listing references used throughout your proposal.
+
+
+
+### Non-mandatory 
+If required, an additional supporting (single side of A4) document can be submitted with your application form (e.g., a flow diagram illustrating the study design and the flow of participants, Gantt chart, response to feedback from a previous submission, letter of support etc.). If submitting a flow diagram, applicants should also describe complex interventions and controls as accurately and fully as possible within their diagram. If proposing an RCT, we advise you refer to the CONSORT statement and website for guidance. Alternatively, you may find the EQUATOR Network website useful. The PDF file should be submitted along with your application form.
+
+
+NOTE: Uploads MUST be provided as a Word or PDF document or you may not be able to submit your application or it may be difficult for the committee to view the required information in order to assess your application.
+
+Please ensure that the document uploaded containing the list of references does not contain its own page numbering.
+
+\newpage
+
+## Section 7: Administrative contact details
+
+|Administrative contact details	|Responses|
+|-|-|
+|Administrative contact name (Applicant response pulled through from Stage 1 application)| |
+|Administrative contact job title:	 | |
+|Administrative contact telephone number | |	
+|Administrative contact email address:	| | 
+
+\newpage 
+
+## Section 8: Research and Development office contact details
+
+
+|R&D office contact details	|Responses|
+|-|-|
+|R&D contact name:	| |
+|R&D contact job title:	 | |
+|R&D contact telephone number	| |
+|R&D contact email address:	 | |
+
+\newpage 
+
+## Section 9: Validation Summary
+
+Please follow the next steps in order to complete your application submission process:
+-  Validate all mandatory/required fields listed below (that are required to be completed/amended before submitting)
+-  Check all co-applicants have completed their CV details as appropriate and review the PDF final version for any formatting issues
+-  Click 'Save and Close'
+-  Click the 'Submit' option
+
+You will receive an automated email containing the acknowledgment that we have received your application.
+ 
+If there are no validation requirements above you may be ready to submit the application. To do so 'Save and Close' the application and then click ‘Submit.
+
+Please note that your submission will not be considered complete until all applicants have confirmed the application and the ‘Submit’ button becomes available and is then used. 
+
+
