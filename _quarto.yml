@@ -28,9 +28,7 @@ website:
       - about.qmd
 format:
   html:
-    theme:
-      light: pulse
-      dark: darkly
+    theme: /themes/odin-master
     css: styles.css
 
 editor: source
