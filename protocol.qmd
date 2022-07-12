@@ -3,9 +3,10 @@ title: "Anakinra in the Treatment of Inflammation and Delirium after Orthopaedic
 subtitle: "Protocol version DRAFT 0.01"
 highlight-style: github
 format:
-  html:
+  pdf:
     toc: true
     number-sections: true
+
 ---
 <!--  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 -->
 ```{r echo=FALSE}
@@ -472,11 +473,30 @@ Anakinra, delirium, fracture, neck of femur, hip, prevention
 
 ### BACKGROUND {#sec-bg}
 
-**Delirium**Delirium is a syndrome of disturbed alertness, orientation and arousal, complicated by neuropsychiatric abnormalities like paranoia and hallucinations. A single episode of delirium may permanently damage cognition(1) and increases the risk of dementia 3-fold over the following 3 years(2). Delirium is more common in older people and occurs in 20% of hospital inpatients and 40% of postoperative surgical patients, including those undergoing hip repair(3). Up to 90% of those who fracture their hip have underlying abnormalities in biomarkers for Alzheimer's disease (rising to 98% in those with known mild cognitive problems)(4).
+**Delirium**
 
-**Hip fracture** In the UK, 65,000 people fracture their hip every year(3). On average, 7% of these people will die within a month of their fracture. Postoperative delirium doubles the risk of death in the 12 months after fracture(5), especially if superimposed on pre-existing dementia(6). So, hip fracture is a major public health concern, both hastening dementia onset and causing premature death in those living with dementia. There is currently no treatment that prevents or shortens the duration of delirium, and no promising candidate. Delirium is often treated by addressing the underlying contributors (e.g. infection, pain, sedating medicines) and using sensitive nursing practice and clear communication. This can improve outcomes. However, after hip surgery, delirium impairs the early mobilisation and engagement with physiotherapy vital for good postoperative outcomes in dementia, like mobility and discharge to your own home.
+Delirium is a syndrome of disturbed alertness, orientation and arousal, complicated by neuropsychiatric abnormalities like paranoia and hallucinations. A single episode of delirium may permanently damage cognition(1) and increases the risk of dementia 3-fold over the following 3 years(2). Delirium is more common in older people and occurs in 20% of hospital inpatients and 40% of postoperative surgical patients, including those undergoing hip repair(3). Up to 90% of those who fracture their hip have underlying abnormalities in biomarkers for Alzheimer's disease (rising to 98% in those with known mild cognitive problems)(4).
 
-**Hip fracture types** 
+**Hip fracture** 
+
+In the UK, 65,000 people fracture their hip every year(3). On average, 7% of these people will die within a month of their fracture. Postoperative delirium doubles the risk of death in the 12 months after fracture(5), especially if superimposed on pre-existing dementia(6). So, hip fracture is a major public health concern, both hastening dementia onset and causing premature death in those living with dementia. There is currently no treatment that prevents or shortens the duration of delirium, and no promising candidate. Delirium is often treated by addressing the underlying contributors (e.g. infection, pain, sedating medicines) and using sensitive nursing practice and clear communication. This can improve outcomes. However, after hip surgery, delirium impairs the early mobilisation and engagement with physiotherapy vital for good postoperative outcomes in dementia, like mobility and discharge to your own home.
+
+**Hip fracture types**
+
+Fractures of the hip are divided into intra-capsular and extracapsular. The 
+"capsule" refers to the fibrous tissue containing a rich blood supply to the head of the hip which envelops the hip joint (ball:*femoral head* and socket:*acetabulum*). Intra-capsular fractures have the potential to disrupt the blood flow to the femoral head and cause avascular necrosis, especially if they are *displaced*. This is one of the reasons replacement of the femoral head, and the acetabulum (its socket) is preferred in intracapsular fractures. Extracapsular fractures occur outside the capsule and are less likely to disrupt bloodflow, occuring as they do in very vascular "cancellous" bone. Thesee can be managed using a dynamic (or sliding) hip screw. Extracapsular fractres can also be subdivided into stable and unstable, depending on the radiographic appearance of the lesser trochanter fragment.
+
+Four aspects of compliance with NICE recommendations have been combined into a single key performance indicator, KPI 3 (NHFD Report 2021):
+
+1. Patients with a subtrochanteric femoral fracture should be managed with an intramedullary (IM) nail fixation.
+2. Patients with A1 or A2 trochanteric fractures should receive fixation with an extra-medullary fixation device, such as sliding hip screw (SHS) rather than with an IM nail.
+3. Patients with a displaced intracapsular hip fracture should receive a cemented arthroplasty: either hemiarthroplasty
+or total hip arthroplasty (THA).
+4. Cemented THA rather than hemiarthroplasty should be offered to patients with a displaced intracapsular hip fracture who normally walk independently out of doors with no more than the use of a stick, who are not cognitively impaired and are medically fit for anaesthesia and the procedure.
+
+![Displaced subcapital fracture](images/displaced_subcapital.png){width=500}
+
+![Stable (left) and unstable (right) extracapsular fracture](images/stable_intertrochanteric.jpg){width=500}
 
 #### Review of existing evidence
 
@@ -486,11 +506,7 @@ Anakinra, delirium, fracture, neck of femur, hip, prevention
 
 Anakinra is a specific IL-1 receptor antagonist (IL-1RA) already in use for patients with autoimmune disease including arthritis and those with critical lung disease due to COVID. It is an analogue of the naturally produced human IL1 receptor antagonist.
 
-**Aim** The aim of the research is to examine whether Anakinra can reduce the incidence of delirium post hip repair in older people. Anakinra is an interleukin-1 (IL-1) receptor antagonist licensed for the treatment of rheumatoid arthritis. It is given subcutaneously twice daily, ideal for inpatients with delirium who may not be able to take oral medications. We will conduct a double-blind randomised controlled trial of Anakinra in older people after hip fracture.
 
-**Objectives** The objectives, in priority order, are to compare subcutaneous Anakinra to placebo given twice daily during the perioperative period in terms of: 1. (1°) Severity of delirium postoperatively as measured by the XXXXXXXX 2. (2°) Time to first weight bearing postoperatively 3. (3°) Time until medically fit for discharge postoperatively 4. (3°) Safety of Anakinra during the perioperative period and in wound healing 5. (3°) Tolerability of Anakinra versus placebo in terms of common side effects 6. (3°) Effect of Anakinra on 30-day mortality
-
-**Exclusion criteria:** 1. Lack of a study partner or caregiver 2. Active infection 3. History of hypersensitivity to or unacceptable side effects of Anakinra 4. Current substance misuse 5. Active malignancy 6. Acute stroke or TIA 7. Currently participating in clinical trial of an investigational medicinal product (CTIMP) 8. Women of child-bearing potential 9. Neutropenia of any cause.
 
 ## Choice of outcome measure
 
@@ -498,22 +514,33 @@ Anakinra is a specific IL-1 receptor antagonist (IL-1RA) already in use for pati
 
 #### Minimum clinically significant difference
 
-The minmum clinically significant difference in any of the candidate delirium scales is not well established in the literature. It is clear that preventing cases of delirium will have significant positive economic outcomes for the NHS. Therefore, it would be possible to reason backwards from utilities to a minimum number of prevented cases. However, it is not clear that a reduction in the severity of delirium is associated with a shorter duration of delirium (intuitively appealing as that may be). It is also not clear that a reduction in the severity of delirium is associated with a shorter hospital stay per se, because no treatment has been found which effectively reduces severity. Therefore, we have chosen measures which seek to measure the primary outcome - delirium severity, and measure as secondary outcomes important clinical endpoints such as time-to-stand and time to medical fitness-for-discharge, because there are many confounding postoperative factors apart from delirium which might influence their outcome, significantly lowering the signal-noise ratio. <!-- Aim: To place the trial in the context of available evidence.  -->
+The minmum clinically significant difference in any of the candidate delirium scales is not well established in the literature. It is clear that preventing cases of delirium will have significant positive economic outcomes for the NHS. Therefore, it would be possible to reason backwards from utilities to a minimum number of 'prevented' cases - delirium or "no delirium" as outcome measure. However, it is not clear that a reduction in the severity of delirium is associated with a shorter duration of delirium (intuitively appealing as that may be). It is also not clear that a reduction in the severity of delirium is associated with a shorter hospital stay per se, because no treatment has been found which effectively reduces severity. Therefore, we have chosen measures which seek to measure the primary outcome - delirium severity, and measure as secondary outcomes important clinical endpoints such as time-to-stand and time to medical fitness-for-discharge, because there are many confounding postoperative factors apart from delirium which might influence their outcome, significantly lowering the signal-noise ratio. 
+
+One advantage of the planned use of a Bayesian paradigm in the data analysis is that the research consumer (reader, reviewer, editor or future research groups) can establish from the multivariate posterior probability distribution the probability that Anakinra reduces delirium by a given number of points on th eoutcome scale, without this being pre-specified beforehand. 
+
+However, we have specified a minimum clinicalyl significant difference of 3 points for the purposes of randomisation weighting and allocation within the provisos of the Bayesian adaptive design. <!-- Aim: To place the trial in the context of available evidence.  -->
 
 <!-- The background should be supported by appropriate references to the published literature on the disease or condition, its treatment and the use of the trial drug for the indication and contain: -->
 
 <!-- •  an up-to-date systematic review of relevant studies, new research should build on formal review of prior evidence -->
 
 <!-- •  a brief description of the proposed trial -->
+**Aim** The aim of the research is to examine whether Anakinra can reduce the incidence of delirium post hip repair in older people. Anakinra is an interleukin-1 (IL-1) receptor antagonist licensed for the treatment of rheumatoid arthritis. It is given subcutaneously twice daily, ideal for inpatients with delirium who may not be able to take oral medications. We will conduct a double-blind randomised controlled trial of Anakinra in older people after hip fracture.
 
+**Objectives** The objectives, in priority order, are to compare subcutaneous Anakinra to placebo given twice daily during the perioperative period in terms of: 1. (1°) Severity of delirium postoperatively as measured by the XXXXXXXX 2. (2°) Time to first weight bearing postoperatively 3. (3°) Time until medically fit for discharge postoperatively 4. (3°) Safety of Anakinra during the perioperative period and in wound healing 5. (3°) Tolerability of Anakinra versus placebo in terms of common side effects 6. (3°) Effect of Anakinra on 30-day mortality
+
+**Exclusion criteria:** 1. Lack of a study partner or caregiver 2. Active infection 3. History of hypersensitivity to or unacceptable side effects of Anakinra 4. Current substance misuse 5. Active malignancy 6. Acute stroke or TIA 7. Currently participating in clinical trial of an investigational medicinal product (CTIMP) 8. Women of child-bearing potential 9. Neutropenia of any cause.
 <!-- •  a description of the population to be studied -->
 
+We plan to conduct this research in a sample of people presenting to the Emergency department at Wythenshawe hospital in South Manchester. Since 2017, Wythenshawe Hospital has been the regional orthopaedic trauma centre, and receives over 40 patients per month with hip fractures. The vast majority of these fractures occur in the over 65s, with a median age of 75.  Higher energy injuries (for example, femoral fractures due to road traffic injuries in younger people) are usually triaged to the regional Major Trauma Centre at Manchester Royal Infirmary. Thus, the sample is pre-selected for older people with low-energy injuries, most often due to falls. Approximately 2/3 of hip fractures occur in women due to the increase in risk posed by postmenopausal osteopenia. 
 <!-- •  the investigational product(s) and their mechanism of action -->
+
+Anakinra
 
 <!-- •  relevant data from preclinical/non-clinical studies -->
 
 <!-- •  relevant data from previous clinical trials such as efficacy, safety, tolerability, pharmacokinetics & pharmacodynamics -->
-
+This is the first use of Anakinra or any IL1RA in the treatment or prevention fo delirium in humans. Only one study mentioning a posthoc analysis of the occurence of delirium or not in the treatment of COVID19 in the Intensive Care setting is available. This was a comparison to  
 <!-- •  if no data is available, include a statement that there is no available clinical research data to date on the investigational product -->
 
 <!-- It should be written so it is easy to read and understand by someone with a basic sense of the topic who may not necessarily be an expert in the area. Some explanation of terms and concepts is likely to be beneficial.  -->
