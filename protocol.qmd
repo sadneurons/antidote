@@ -3,12 +3,11 @@ title: "Anakinra in the Treatment of Inflammation and Delirium after Orthopaedic
 subtitle: "Protocol version DRAFT 0.01"
 highlight-style: github
 format:
-  pdf:
+  html:
     toc: true
     number-sections: true
-
 ---
-<!--  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 -->
+
 ```{r echo=FALSE}
 # Set values
 SPONSOR_NUMBER <- FALSE

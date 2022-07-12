@@ -28,7 +28,7 @@ website:
       - about.qmd
 format:
   html:
-    theme: /themes/odin-master
+    theme: darkly
     css: styles.css
 
 editor: source
