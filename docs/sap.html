@@ -192,6 +192,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#outcome-measures" id="toc-outcome-measures" class="nav-link" data-scroll-target="#outcome-measures">Outcome measures</a>
   <ul class="collapse">
   <li><a href="#osla-scale" id="toc-osla-scale" class="nav-link" data-scroll-target="#osla-scale">OSLA scale</a></li>
+  <li><a href="#delirium-rating-scale-revised-98" id="toc-delirium-rating-scale-revised-98" class="nav-link" data-scroll-target="#delirium-rating-scale-revised-98">Delirium Rating Scale Revised (98)</a></li>
+  <li><a href="#memorial-delirium-assessment-scale" id="toc-memorial-delirium-assessment-scale" class="nav-link" data-scroll-target="#memorial-delirium-assessment-scale">Memorial Delirium Assessment Scale</a></li>
   </ul></li>
   <li><a href="#frequentist-simulation" id="toc-frequentist-simulation" class="nav-link" data-scroll-target="#frequentist-simulation">Frequentist simulation</a></li>
   </ul>
@@ -361,7 +363,7 @@ Note
 <span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>                     prophet_mean)) <span class="sc">|&gt;</span> </span>
 <span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>  <span class="fu">round</span>(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell column-screen-inset-shaded quarto-layout-panel">
+<div class="cell column-body-outset quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <p><img src="sap_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
@@ -400,7 +402,7 @@ Note
 </a>
 </div>
 </div>
-<p>Forecasts are based on discharges from Wythenshawe over the period 2011 - 2022. This suggests an expected mean number of presentations per month of 41.11. At this rate, we would expect ~41.11 x 24 = 986.64 patients to have surgical repair of fractured neck of femur over the 24 month recruitment course of the trial, or 24.666 per month.</p>
+<p>Forecasts are based on discharges from Wythenshawe over the period 2011 - 2022. This suggests an expected mean number of presentations per month of 41.07. At this rate, we would expect ~41.07 x 24 = 985.68 patients to have surgical repair of fractured neck of femur over the 24 month recruitment course of the trial, or 24.642 per month.</p>
 </section>
 <section id="length-of-stay" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="length-of-stay">Length of stay</h3>
@@ -448,7 +450,7 @@ Note
 <span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>                       arima_mean,</span>
 <span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>                       prophet_mean)) <span class="sc">|&gt;</span> <span class="fu">round</span>(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell column-screen-inset-shaded quarto-layout-panel">
+<div class="cell column-body-outset quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <p><img src="sap_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
@@ -459,7 +461,7 @@ Note
 </div>
 </div>
 </div>
-<p>Forecast modelling of length of stay (LOS) suggests an expected mean length of stay per patient of 8.64. This means that while it is unlikely for patients to be in hospital longer than 2 weeks, we will have adequate time to give Anakinra for up to 72 hours post treatment, even if surgery is delayed.</p>
+<p>Forecast modelling of length of stay (LOS) suggests an expected mean length of stay per patient of 8.62. This means that while it is unlikely for patients to be in hospital longer than 2 weeks, we will have adequate time to give Anakinra for up to 72 hours post treatment, even if surgery is delayed.</p>
 </section>
 <section id="anaesthesia" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="anaesthesia">Anaesthesia</h3>
@@ -532,7 +534,7 @@ Note
 <span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a>                       prophet_mean)) <span class="sc">|&gt;</span> </span>
 <span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a>  <span class="fu">round</span>(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell column-screen-inset-shaded quarto-layout-panel">
+<div class="cell column-body-outset quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <p><img src="sap_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
@@ -571,7 +573,7 @@ Note
 </a>
 </div>
 </div>
-<p>A forecast based on the percentage of patients discharged from Wythenshawe who had a General Anaesthetic over the period 2011 - 2022. This suggests an expected mean percentage GA recipients (simple average of 3 model estimates of %GA) of 50.86%.</p>
+<p>A forecast based on the percentage of patients discharged from Wythenshawe who had a General Anaesthetic over the period 2011 - 2022. This suggests an expected mean percentage GA recipients (simple average of 3 model estimates of %GA) of 50.75%.</p>
 </section>
 <section id="spinal-anaesthetic" class="level4 page-columns page-full">
 <h4 class="anchored" data-anchor-id="spinal-anaesthetic">Spinal Anaesthetic</h4>
@@ -625,7 +627,7 @@ Note
 <span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a>                       arima_mean,</span>
 <span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a>                       prophet_mean)) <span class="sc">|&gt;</span> <span class="fu">round</span>(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell column-screen-inset-shaded quarto-layout-panel">
+<div class="cell column-body-outset quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <p><img src="sap_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
@@ -636,15 +638,15 @@ Note
 </div>
 </div>
 </div>
-<p>A forecast based on the percentage of patients discharged from Wythenshawe who had a Spinal Anaesthetic over the period 2011 - 2022. This suggests an expected mean percentage Spinal recipients (simple average of 3 model estimates of %Spinal) of 47.74%.</p>
+<p>A forecast based on the percentage of patients discharged from Wythenshawe who had a Spinal Anaesthetic over the period 2011 - 2022. This suggests an expected mean percentage Spinal recipients (simple average of 3 model estimates of %Spinal) of 47.65%.</p>
 </section>
 </section>
 </section>
 <section id="outcome-measures" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="outcome-measures">Outcome measures</h2>
-<section id="osla-scale" class="level3 page-columns page-full">
+<section id="osla-scale" class="level3">
 <h3 class="anchored" data-anchor-id="osla-scale">OSLA scale</h3>
-<p><img src="images/Delirium-assessment-tool-OSLA.png" class="img-fluid" data-fig-align="center" alt="OSLA"> The OSLA scale is a 4-item scale with a minimum score of 0 and a maximum score of 15. Items respectively have a range of :</p>
+<p><img src="images/Delirium-assessment-tool-OSLA.png" class="img-fluid" data-fig-align="center" width="400" alt="OSLA"> The OSLA scale is a 4-item scale with a minimum score of 0 and a maximum score of 15. Items respectively have a range of :</p>
 <table class="table">
 <caption>OSLA Items</caption>
 <thead>
@@ -677,6 +679,24 @@ Note
 </tr>
 </tbody>
 </table>
+</section>
+<section id="delirium-rating-scale-revised-98" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="delirium-rating-scale-revised-98">Delirium Rating Scale Revised (98)</h3>
+<div class="column-page">
+<p><img src="images/DRS-R-98-Form_Page_1.jpg" class="img-fluid" width="300" alt="DRS98 Page 1"> <img src="images/DRS-R-98-Form_Page_2.jpg" class="img-fluid" width="300" alt="DRS98 Page 1"> <img src="images/DRS-R-98-Form_Page_3.jpg" class="img-fluid" width="300" alt="DRS98 Page 1"> <img src="images/DRS-R-98-Form_Page_4.jpg" class="img-fluid" width="300" alt="DRS98 Page 1"></p>
+</div>
+</section>
+<section id="memorial-delirium-assessment-scale" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="memorial-delirium-assessment-scale">Memorial Delirium Assessment Scale</h3>
+<div class="column-page">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/MDAS_Page_1.jpg" class="img-fluid figure-img" width="300"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">MDAS Page 1</figcaption><p></p>
+</figure>
+</div>
+<p><img src="images/MDAS_Page_2.jpg" class="img-fluid" width="300" alt="MDAS Page 2"> <img src="images/MDAS_Page_3.jpg" class="img-fluid" width="300" alt="MDAS Page 3"></p>
+</div>
 <div class="quarto-layout-panel page-columns page-full">
 <figure class="figure page-columns page-full">
 <div class="quarto-layout-row quarto-layout-valign-top page-columns page-full">

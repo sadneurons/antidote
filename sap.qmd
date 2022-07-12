@@ -80,7 +80,7 @@ The [NICE guidance on management of hip fracture](https://www.nice.org.uk/guidan
 
 
 ```{r echo=TRUE, results='hide', message=FALSE}
-#| column: screen-inset-shaded
+#| column: body-outset
 #| layout-nrow: 1
 # Descriptive statistics and forecasting
 # for the Hip fracture population
@@ -177,7 +177,7 @@ Forecasts are based on discharges from Wythenshawe over the period 2011 - 2022. 
 
 ### Length of stay
 ```{r echo=TRUE, results='show', message=FALSE}
-#| column: screen-inset-shaded
+#| column: body-outset
 #| layout-nrow: 1
 names(los) <-c("my", "ptnum", 
                "acutelos", "acutelosannual", 
@@ -237,7 +237,7 @@ Forecast modelling of length of stay (LOS) suggests an expected mean length of s
 
 
 ```{r echo=TRUE, results='hide', message=FALSE}
-#| column: screen-inset-shaded
+#| column: body-outset
 #| layout-nrow: 1
 ana <- read.csv("./NHFD_Data/ana_apr_22.csv")
 names(ana)
@@ -316,7 +316,7 @@ A forecast based on the percentage of patients discharged from Wythenshawe who h
 #### Spinal Anaesthetic
 
 ```{r echo=TRUE, results='hide', message=FALSE}
-#| column: screen-inset-shaded
+#| column: body-outset
 #| layout-nrow: 1
 ana <- read.csv("./NHFD_Data/ana_apr_22.csv")
 names(ana)
@@ -378,7 +378,7 @@ A forecast based on the percentage of patients discharged from Wythenshawe who h
 ## Outcome measures
 ### OSLA scale
 
-![OSLA](images/Delirium-assessment-tool-OSLA.png){fig-align="center"} The OSLA scale is a 4-item scale with a minimum score of 0 and a maximum score of 15. Items respectively have a range of :
+![OSLA](images/Delirium-assessment-tool-OSLA.png){fig-align="center" width=400} The OSLA scale is a 4-item scale with a minimum score of 0 and a maximum score of 15. Items respectively have a range of :
 
 | Item        | Min | Max |
 |-------------|-----|-----|
@@ -388,6 +388,25 @@ A forecast based on the percentage of patients discharged from Wythenshawe who h
 | Movement    | 0   | 4   |
 
 : OSLA Items
+
+### Delirium Rating Scale Revised (98)
+:::{.column-page}
+![DRS98 Page 1](images/DRS-R-98-Form_Page_1.jpg){width=300}
+![DRS98 Page 1](images/DRS-R-98-Form_Page_2.jpg){width=300}
+![DRS98 Page 1](images/DRS-R-98-Form_Page_3.jpg){width=300}
+![DRS98 Page 1](images/DRS-R-98-Form_Page_4.jpg){width=300}
+:::
+
+
+### Memorial Delirium Assessment Scale
+
+
+:::{.column-page}
+![MDAS Page 1](images/MDAS_Page_1.jpg){width=300}
+
+![MDAS Page 2](images/MDAS_Page_2.jpg){width=300}
+![MDAS Page 3](images/MDAS_Page_3.jpg){width=300}
+:::
 
 ::: {#fig-populations layout-ncol=4}
 ```{r, echo=TRUE, warning=FALSE, message=FALSE}
