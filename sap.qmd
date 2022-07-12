@@ -378,7 +378,9 @@ A forecast based on the percentage of patients discharged from Wythenshawe who h
 ## Outcome measures
 ### OSLA scale
 
-![OSLA](images/Delirium-assessment-tool-OSLA.png){fig-align="center" width=400} The OSLA scale is a 4-item scale with a minimum score of 0 and a maximum score of 15. Items respectively have a range of :
+![OSLA](images/Delirium-assessment-tool-OSLA.png){fig-align="center" width=400}
+
+The OSLA scale is a 4-item scale with a minimum score of 0 and a maximum score of 15. Items respectively have a range of :
 
 | Item        | Min | Max |
 |-------------|-----|-----|
@@ -392,9 +394,9 @@ A forecast based on the percentage of patients discharged from Wythenshawe who h
 ### Delirium Rating Scale Revised (98)
 :::{.column-page}
 ![DRS98 Page 1](images/DRS-R-98-Form_Page_1.jpg){width=300}
-![DRS98 Page 1](images/DRS-R-98-Form_Page_2.jpg){width=300}
-![DRS98 Page 1](images/DRS-R-98-Form_Page_3.jpg){width=300}
-![DRS98 Page 1](images/DRS-R-98-Form_Page_4.jpg){width=300}
+![DRS98 Page 2](images/DRS-R-98-Form_Page_2.jpg){width=300}
+![DRS98 Page 3](images/DRS-R-98-Form_Page_3.jpg){width=300}
+![DRS98 Page 4](images/DRS-R-98-Form_Page_4.jpg){width=300}
 :::
 
 
@@ -410,7 +412,7 @@ A forecast based on the percentage of patients discharged from Wythenshawe who h
 
 ::: {#fig-populations layout-ncol=4}
 ```{r, echo=TRUE, warning=FALSE, message=FALSE}
-#| column: screen-inset-shaded
+#| column: body-outset
 #| layout-nrow: 1
 OSLA <- function(severity="None", return_format = "df"){
   # generate an OSLA score vector depending on severity
@@ -460,7 +462,8 @@ moderate_pop <- replicate(15000, OSLA("Moderate", "sum"))
 mild_pop <- replicate(15000, OSLA("Mild", "sum"))
 none_pop <- replicate(60000, OSLA("None", "sum"))
 total_pop_1 <- c(severe_pop, moderate_pop, mild_pop, none_pop)
-total_pop_1 |>hist(main="Histogram I of OSLA scores (zero inflated)", xlab="OSLA score")
+total_pop_1 |>hist(main="Histogram I of OSLA scores (zero inflated)", 
+                   xlab="OSLA score")
 
 
 severe_pop <- replicate(60000, OSLA("Severe", "sum"))
@@ -468,21 +471,24 @@ moderate_pop <- replicate(15000, OSLA("Moderate", "sum"))
 mild_pop <- replicate(15000, OSLA("Mild", "sum"))
 none_pop <- replicate(10000, OSLA("None", "sum"))
 total_pop_2 <- c(severe_pop, moderate_pop, mild_pop, none_pop)
-total_pop_2|>hist(main="Histogram II of OSLA scores (severe)", xlab="OSLA score")
+total_pop_2|>hist(main="Histogram II of OSLA scores (severe)", 
+                  xlab="OSLA score")
 
 severe_pop <- replicate(30000, OSLA("Severe", "sum"))
 moderate_pop <- replicate(25000, OSLA("Moderate", "sum"))
 mild_pop <- replicate(30000, OSLA("Mild", "sum"))
 none_pop <- replicate(15000, OSLA("None", "sum"))
 total_pop_3 <- c(severe_pop, moderate_pop, mild_pop, none_pop)
-total_pop_3 |>hist(main="Histogram III of OSLA scores (mild/severe)", xlab="OSLA score")
+total_pop_3 |>hist(main="Histogram III of OSLA scores (mild/severe)", 
+                   xlab="OSLA score")
 
 severe_pop <- replicate(10000, OSLA("Severe", "sum"))
 moderate_pop <- replicate(60000, OSLA("Moderate", "sum"))
 mild_pop <- replicate(20000, OSLA("Mild", "sum"))
 none_pop <- replicate(10000, OSLA("None", "sum"))
 total_pop_4 <- c(severe_pop, moderate_pop, mild_pop, none_pop)
-total_pop_4 |>hist(main="Histogram IV of OSLA scores (moderate)", xlab="OSLA score")
+total_pop_4 |>hist(main="Histogram IV of OSLA scores (moderate)", 
+                   xlab="OSLA score")
 
 ```
 :::

@@ -402,7 +402,7 @@ Note
 </a>
 </div>
 </div>
-<p>Forecasts are based on discharges from Wythenshawe over the period 2011 - 2022. This suggests an expected mean number of presentations per month of 41.07. At this rate, we would expect ~41.07 x 24 = 985.68 patients to have surgical repair of fractured neck of femur over the 24 month recruitment course of the trial, or 24.642 per month.</p>
+<p>Forecasts are based on discharges from Wythenshawe over the period 2011 - 2022. This suggests an expected mean number of presentations per month of 41.1. At this rate, we would expect ~41.1 x 24 = 986.4 patients to have surgical repair of fractured neck of femur over the 24 month recruitment course of the trial, or 24.66 per month.</p>
 </section>
 <section id="length-of-stay" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="length-of-stay">Length of stay</h3>
@@ -461,7 +461,7 @@ Note
 </div>
 </div>
 </div>
-<p>Forecast modelling of length of stay (LOS) suggests an expected mean length of stay per patient of 8.62. This means that while it is unlikely for patients to be in hospital longer than 2 weeks, we will have adequate time to give Anakinra for up to 72 hours post treatment, even if surgery is delayed.</p>
+<p>Forecast modelling of length of stay (LOS) suggests an expected mean length of stay per patient of 8.63. This means that while it is unlikely for patients to be in hospital longer than 2 weeks, we will have adequate time to give Anakinra for up to 72 hours post treatment, even if surgery is delayed.</p>
 </section>
 <section id="anaesthesia" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="anaesthesia">Anaesthesia</h3>
@@ -573,7 +573,7 @@ Note
 </a>
 </div>
 </div>
-<p>A forecast based on the percentage of patients discharged from Wythenshawe who had a General Anaesthetic over the period 2011 - 2022. This suggests an expected mean percentage GA recipients (simple average of 3 model estimates of %GA) of 50.75%.</p>
+<p>A forecast based on the percentage of patients discharged from Wythenshawe who had a General Anaesthetic over the period 2011 - 2022. This suggests an expected mean percentage GA recipients (simple average of 3 model estimates of %GA) of 50.81%.</p>
 </section>
 <section id="spinal-anaesthetic" class="level4 page-columns page-full">
 <h4 class="anchored" data-anchor-id="spinal-anaesthetic">Spinal Anaesthetic</h4>
@@ -638,7 +638,7 @@ Note
 </div>
 </div>
 </div>
-<p>A forecast based on the percentage of patients discharged from Wythenshawe who had a Spinal Anaesthetic over the period 2011 - 2022. This suggests an expected mean percentage Spinal recipients (simple average of 3 model estimates of %Spinal) of 47.65%.</p>
+<p>A forecast based on the percentage of patients discharged from Wythenshawe who had a Spinal Anaesthetic over the period 2011 - 2022. This suggests an expected mean percentage Spinal recipients (simple average of 3 model estimates of %Spinal) of 47.56%.</p>
 </section>
 </section>
 </section>
@@ -646,7 +646,13 @@ Note
 <h2 class="anchored" data-anchor-id="outcome-measures">Outcome measures</h2>
 <section id="osla-scale" class="level3">
 <h3 class="anchored" data-anchor-id="osla-scale">OSLA scale</h3>
-<p><img src="images/Delirium-assessment-tool-OSLA.png" class="img-fluid" data-fig-align="center" width="400" alt="OSLA"> The OSLA scale is a 4-item scale with a minimum score of 0 and a maximum score of 15. Items respectively have a range of :</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Delirium-assessment-tool-OSLA.png" class="img-fluid figure-img" width="400"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">OSLA</figcaption><p></p>
+</figure>
+</div>
+<p>The OSLA scale is a 4-item scale with a minimum score of 0 and a maximum score of 15. Items respectively have a range of :</p>
 <table class="table">
 <caption>OSLA Items</caption>
 <thead>
@@ -683,7 +689,7 @@ Note
 <section id="delirium-rating-scale-revised-98" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="delirium-rating-scale-revised-98">Delirium Rating Scale Revised (98)</h3>
 <div class="column-page">
-<p><img src="images/DRS-R-98-Form_Page_1.jpg" class="img-fluid" width="300" alt="DRS98 Page 1"> <img src="images/DRS-R-98-Form_Page_2.jpg" class="img-fluid" width="300" alt="DRS98 Page 1"> <img src="images/DRS-R-98-Form_Page_3.jpg" class="img-fluid" width="300" alt="DRS98 Page 1"> <img src="images/DRS-R-98-Form_Page_4.jpg" class="img-fluid" width="300" alt="DRS98 Page 1"></p>
+<p><img src="images/DRS-R-98-Form_Page_1.jpg" class="img-fluid" width="300" alt="DRS98 Page 1"> <img src="images/DRS-R-98-Form_Page_2.jpg" class="img-fluid" width="300" alt="DRS98 Page 2"> <img src="images/DRS-R-98-Form_Page_3.jpg" class="img-fluid" width="300" alt="DRS98 Page 3"> <img src="images/DRS-R-98-Form_Page_4.jpg" class="img-fluid" width="300" alt="DRS98 Page 4"></p>
 </div>
 </section>
 <section id="memorial-delirium-assessment-scale" class="level3 page-columns page-full">
@@ -751,30 +757,34 @@ Note
 <span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a>mild_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">15000</span>, <span class="fu">OSLA</span>(<span class="st">"Mild"</span>, <span class="st">"sum"</span>))</span>
 <span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a>none_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">60000</span>, <span class="fu">OSLA</span>(<span class="st">"None"</span>, <span class="st">"sum"</span>))</span>
 <span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a>total_pop_1 <span class="ot">&lt;-</span> <span class="fu">c</span>(severe_pop, moderate_pop, mild_pop, none_pop)</span>
-<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a>total_pop_1 <span class="sc">|&gt;</span><span class="fu">hist</span>(<span class="at">main=</span><span class="st">"Histogram I of OSLA scores (zero inflated)"</span>, <span class="at">xlab=</span><span class="st">"OSLA score"</span>)</span>
-<span id="cb6-50"><a href="#cb6-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-51"><a href="#cb6-51" aria-hidden="true" tabindex="-1"></a>severe_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">60000</span>, <span class="fu">OSLA</span>(<span class="st">"Severe"</span>, <span class="st">"sum"</span>))</span>
-<span id="cb6-52"><a href="#cb6-52" aria-hidden="true" tabindex="-1"></a>moderate_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">15000</span>, <span class="fu">OSLA</span>(<span class="st">"Moderate"</span>, <span class="st">"sum"</span>))</span>
-<span id="cb6-53"><a href="#cb6-53" aria-hidden="true" tabindex="-1"></a>mild_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">15000</span>, <span class="fu">OSLA</span>(<span class="st">"Mild"</span>, <span class="st">"sum"</span>))</span>
-<span id="cb6-54"><a href="#cb6-54" aria-hidden="true" tabindex="-1"></a>none_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">10000</span>, <span class="fu">OSLA</span>(<span class="st">"None"</span>, <span class="st">"sum"</span>))</span>
-<span id="cb6-55"><a href="#cb6-55" aria-hidden="true" tabindex="-1"></a>total_pop_2 <span class="ot">&lt;-</span> <span class="fu">c</span>(severe_pop, moderate_pop, mild_pop, none_pop)</span>
-<span id="cb6-56"><a href="#cb6-56" aria-hidden="true" tabindex="-1"></a>total_pop_2<span class="sc">|&gt;</span><span class="fu">hist</span>(<span class="at">main=</span><span class="st">"Histogram II of OSLA scores (severe)"</span>, <span class="at">xlab=</span><span class="st">"OSLA score"</span>)</span>
-<span id="cb6-57"><a href="#cb6-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-58"><a href="#cb6-58" aria-hidden="true" tabindex="-1"></a>severe_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">30000</span>, <span class="fu">OSLA</span>(<span class="st">"Severe"</span>, <span class="st">"sum"</span>))</span>
-<span id="cb6-59"><a href="#cb6-59" aria-hidden="true" tabindex="-1"></a>moderate_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">25000</span>, <span class="fu">OSLA</span>(<span class="st">"Moderate"</span>, <span class="st">"sum"</span>))</span>
-<span id="cb6-60"><a href="#cb6-60" aria-hidden="true" tabindex="-1"></a>mild_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">30000</span>, <span class="fu">OSLA</span>(<span class="st">"Mild"</span>, <span class="st">"sum"</span>))</span>
-<span id="cb6-61"><a href="#cb6-61" aria-hidden="true" tabindex="-1"></a>none_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">15000</span>, <span class="fu">OSLA</span>(<span class="st">"None"</span>, <span class="st">"sum"</span>))</span>
-<span id="cb6-62"><a href="#cb6-62" aria-hidden="true" tabindex="-1"></a>total_pop_3 <span class="ot">&lt;-</span> <span class="fu">c</span>(severe_pop, moderate_pop, mild_pop, none_pop)</span>
-<span id="cb6-63"><a href="#cb6-63" aria-hidden="true" tabindex="-1"></a>total_pop_3 <span class="sc">|&gt;</span><span class="fu">hist</span>(<span class="at">main=</span><span class="st">"Histogram III of OSLA scores (mild/severe)"</span>, <span class="at">xlab=</span><span class="st">"OSLA score"</span>)</span>
-<span id="cb6-64"><a href="#cb6-64" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-65"><a href="#cb6-65" aria-hidden="true" tabindex="-1"></a>severe_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">10000</span>, <span class="fu">OSLA</span>(<span class="st">"Severe"</span>, <span class="st">"sum"</span>))</span>
-<span id="cb6-66"><a href="#cb6-66" aria-hidden="true" tabindex="-1"></a>moderate_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">60000</span>, <span class="fu">OSLA</span>(<span class="st">"Moderate"</span>, <span class="st">"sum"</span>))</span>
-<span id="cb6-67"><a href="#cb6-67" aria-hidden="true" tabindex="-1"></a>mild_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">20000</span>, <span class="fu">OSLA</span>(<span class="st">"Mild"</span>, <span class="st">"sum"</span>))</span>
-<span id="cb6-68"><a href="#cb6-68" aria-hidden="true" tabindex="-1"></a>none_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">10000</span>, <span class="fu">OSLA</span>(<span class="st">"None"</span>, <span class="st">"sum"</span>))</span>
-<span id="cb6-69"><a href="#cb6-69" aria-hidden="true" tabindex="-1"></a>total_pop_4 <span class="ot">&lt;-</span> <span class="fu">c</span>(severe_pop, moderate_pop, mild_pop, none_pop)</span>
-<span id="cb6-70"><a href="#cb6-70" aria-hidden="true" tabindex="-1"></a>total_pop_4 <span class="sc">|&gt;</span><span class="fu">hist</span>(<span class="at">main=</span><span class="st">"Histogram IV of OSLA scores (moderate)"</span>, <span class="at">xlab=</span><span class="st">"OSLA score"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a>total_pop_1 <span class="sc">|&gt;</span><span class="fu">hist</span>(<span class="at">main=</span><span class="st">"Histogram I of OSLA scores (zero inflated)"</span>, </span>
+<span id="cb6-50"><a href="#cb6-50" aria-hidden="true" tabindex="-1"></a>                   <span class="at">xlab=</span><span class="st">"OSLA score"</span>)</span>
+<span id="cb6-51"><a href="#cb6-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-52"><a href="#cb6-52" aria-hidden="true" tabindex="-1"></a>severe_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">60000</span>, <span class="fu">OSLA</span>(<span class="st">"Severe"</span>, <span class="st">"sum"</span>))</span>
+<span id="cb6-53"><a href="#cb6-53" aria-hidden="true" tabindex="-1"></a>moderate_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">15000</span>, <span class="fu">OSLA</span>(<span class="st">"Moderate"</span>, <span class="st">"sum"</span>))</span>
+<span id="cb6-54"><a href="#cb6-54" aria-hidden="true" tabindex="-1"></a>mild_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">15000</span>, <span class="fu">OSLA</span>(<span class="st">"Mild"</span>, <span class="st">"sum"</span>))</span>
+<span id="cb6-55"><a href="#cb6-55" aria-hidden="true" tabindex="-1"></a>none_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">10000</span>, <span class="fu">OSLA</span>(<span class="st">"None"</span>, <span class="st">"sum"</span>))</span>
+<span id="cb6-56"><a href="#cb6-56" aria-hidden="true" tabindex="-1"></a>total_pop_2 <span class="ot">&lt;-</span> <span class="fu">c</span>(severe_pop, moderate_pop, mild_pop, none_pop)</span>
+<span id="cb6-57"><a href="#cb6-57" aria-hidden="true" tabindex="-1"></a>total_pop_2<span class="sc">|&gt;</span><span class="fu">hist</span>(<span class="at">main=</span><span class="st">"Histogram II of OSLA scores (severe)"</span>, </span>
+<span id="cb6-58"><a href="#cb6-58" aria-hidden="true" tabindex="-1"></a>                  <span class="at">xlab=</span><span class="st">"OSLA score"</span>)</span>
+<span id="cb6-59"><a href="#cb6-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-60"><a href="#cb6-60" aria-hidden="true" tabindex="-1"></a>severe_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">30000</span>, <span class="fu">OSLA</span>(<span class="st">"Severe"</span>, <span class="st">"sum"</span>))</span>
+<span id="cb6-61"><a href="#cb6-61" aria-hidden="true" tabindex="-1"></a>moderate_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">25000</span>, <span class="fu">OSLA</span>(<span class="st">"Moderate"</span>, <span class="st">"sum"</span>))</span>
+<span id="cb6-62"><a href="#cb6-62" aria-hidden="true" tabindex="-1"></a>mild_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">30000</span>, <span class="fu">OSLA</span>(<span class="st">"Mild"</span>, <span class="st">"sum"</span>))</span>
+<span id="cb6-63"><a href="#cb6-63" aria-hidden="true" tabindex="-1"></a>none_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">15000</span>, <span class="fu">OSLA</span>(<span class="st">"None"</span>, <span class="st">"sum"</span>))</span>
+<span id="cb6-64"><a href="#cb6-64" aria-hidden="true" tabindex="-1"></a>total_pop_3 <span class="ot">&lt;-</span> <span class="fu">c</span>(severe_pop, moderate_pop, mild_pop, none_pop)</span>
+<span id="cb6-65"><a href="#cb6-65" aria-hidden="true" tabindex="-1"></a>total_pop_3 <span class="sc">|&gt;</span><span class="fu">hist</span>(<span class="at">main=</span><span class="st">"Histogram III of OSLA scores (mild/severe)"</span>, </span>
+<span id="cb6-66"><a href="#cb6-66" aria-hidden="true" tabindex="-1"></a>                   <span class="at">xlab=</span><span class="st">"OSLA score"</span>)</span>
+<span id="cb6-67"><a href="#cb6-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-68"><a href="#cb6-68" aria-hidden="true" tabindex="-1"></a>severe_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">10000</span>, <span class="fu">OSLA</span>(<span class="st">"Severe"</span>, <span class="st">"sum"</span>))</span>
+<span id="cb6-69"><a href="#cb6-69" aria-hidden="true" tabindex="-1"></a>moderate_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">60000</span>, <span class="fu">OSLA</span>(<span class="st">"Moderate"</span>, <span class="st">"sum"</span>))</span>
+<span id="cb6-70"><a href="#cb6-70" aria-hidden="true" tabindex="-1"></a>mild_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">20000</span>, <span class="fu">OSLA</span>(<span class="st">"Mild"</span>, <span class="st">"sum"</span>))</span>
+<span id="cb6-71"><a href="#cb6-71" aria-hidden="true" tabindex="-1"></a>none_pop <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">10000</span>, <span class="fu">OSLA</span>(<span class="st">"None"</span>, <span class="st">"sum"</span>))</span>
+<span id="cb6-72"><a href="#cb6-72" aria-hidden="true" tabindex="-1"></a>total_pop_4 <span class="ot">&lt;-</span> <span class="fu">c</span>(severe_pop, moderate_pop, mild_pop, none_pop)</span>
+<span id="cb6-73"><a href="#cb6-73" aria-hidden="true" tabindex="-1"></a>total_pop_4 <span class="sc">|&gt;</span><span class="fu">hist</span>(<span class="at">main=</span><span class="st">"Histogram IV of OSLA scores (moderate)"</span>, </span>
+<span id="cb6-74"><a href="#cb6-74" aria-hidden="true" tabindex="-1"></a>                   <span class="at">xlab=</span><span class="st">"OSLA score"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell column-screen-inset-shaded quarto-layout-panel">
+<div class="cell column-body-outset quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="cell-output-display quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
 <p><img src="sap_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
