@@ -12,6 +12,7 @@ format:
     toc-location: left
     page-layout: article
 editor: source
+bibliography: anakinra_refs.bib
 reference-location: margin
 citation-location: margin
 body-footer: "Copyright (c) 2022"
@@ -80,8 +81,7 @@ The [NICE guidance on management of hip fracture](https://www.nice.org.uk/guidan
 
 
 ```{r echo=TRUE, results='hide', message=FALSE}
-#| column: body-outset
-#| layout-nrow: 1
+
 # Descriptive statistics and forecasting
 # for the Hip fracture population
 library(tidyverse)
@@ -104,15 +104,6 @@ vol$my <- lubridate::my(vol$my)
 ts_vol <- vol %>% 
   mutate(my = tsibble::yearmonth(my)) %>% 
   tsibble()
-
-p <- vol |> ggplot() + 
-  geom_line(aes(x=my, y=ptnum)) +
-  scale_x_date(date_labels = "%m-%Y") +
-  labs(x="Month-Year of discharge", 
-  y="Number of patients",
-  title="Patients presenting to Wythenshawe with #NOF", 
-  subtitle ="Data courtesy of the NFHD")
-p
 
 fable_1 <- ts_vol %>% 
   model(  
@@ -148,6 +139,8 @@ print_mean <- mean(c(ets_mean,
   round(2)
 
 ```
+Forecasts are based on discharges from Wythenshawe over the period 2011 - 2022. This suggests an expected mean number of presentations per month of `r print_mean`. At this rate, we would expect ~`r print_mean` x 24 = `r print_mean*24` patients to have surgical repair of fractured neck of femur over the 24 month recruitment course of the trial, or `r print_mean*24/40 |> round(1)` per month.  
+
 
 ```{r echo=FALSE, results='show', message=TRUE}
 los <- read.csv("./NHFD_Data/los_apr_22.csv")
@@ -173,24 +166,16 @@ download_file(
 ```
 
 
-Forecasts are based on discharges from Wythenshawe over the period 2011 - 2022. This suggests an expected mean number of presentations per month of `r print_mean`. At this rate, we would expect ~`r print_mean` x 24 = `r print_mean*24` patients to have surgical repair of fractured neck of femur over the 24 month recruitment course of the trial, or `r print_mean*24/40 |> round(1)` per month.  
 
 ### Length of stay
 ```{r echo=TRUE, results='show', message=FALSE}
-#| column: body-outset
-#| layout-nrow: 1
+
 names(los) <-c("my", "ptnum", 
                "acutelos", "acutelosannual", 
                "trustlos", "trustlosannual" )
 acute_los <- los %>% select(my, acutelos)
 acute_los$my <- lubridate::my(acute_los$my) 
 ts_acute_los <- acute_los %>% mutate(my = tsibble::yearmonth(my)) %>% tsibble()
-
-p <- acute_los |> ggplot() + geom_line(aes(x=my, y=acutelos)) +
-  labs(x="Month-Year of discharge", 
-       title="Length-of-stay (LOS) of pts presenting to Wythenshawe with #NOF by month", 
-       subtitle = "Data courtesy of the NHFD", y="Length of stay")
-p
 
 fable_2 <- ts_acute_los %>% model(  
   ets = ETS(acutelos ~  error("M") + trend("M") + season("M")),
@@ -237,8 +222,7 @@ Forecast modelling of length of stay (LOS) suggests an expected mean length of s
 
 
 ```{r echo=TRUE, results='hide', message=FALSE}
-#| column: body-outset
-#| layout-nrow: 1
+
 ana <- read.csv("./NHFD_Data/ana_apr_22.csv")
 names(ana)
 names(ana) <-c("my", 
@@ -253,12 +237,6 @@ names(ana) <-c("my",
 ana <- ana %>% select(my, ga)
 ana$my <- lubridate::my(ana$my) 
 ts_ana <- ana %>% mutate(my = tsibble::yearmonth(my)) %>% tsibble()
-
-p <- ana |> ggplot() + geom_line(aes(x=my, y=ga)) +
-  labs(x="Month-Year of discharge", 
-       title="#NOF pts discharged from Wythenshawe after GA", 
-       subtitle = "Data courtesy of the NHFD", y="General Anaesthetic (%)")
-p
 
 fable_3 <- ts_ana %>% model(  
   ets = ETS(ga ~ error("M") + trend("M") + season("M")),
@@ -288,6 +266,9 @@ print_mean_3 <- mean(c(ets_mean,
                        prophet_mean)) |> 
   round(2)
 ```
+
+A forecast based on the percentage of patients discharged from Wythenshawe who had a General Anaesthetic over the period 2011 - 2022. This suggests an expected mean percentage GA recipients (simple average of 3 model estimates of %GA) of `r print_mean_3`%. 
+
 ```{r echo=FALSE, results='show', message=TRUE}
 ana <- read.csv("./NHFD_Data/ana_apr_22.csv")
 ana %>%
@@ -311,13 +292,11 @@ download_file(
   self_contained = FALSE
 )
 ```
-A forecast based on the percentage of patients discharged from Wythenshawe who had a General Anaesthetic over the period 2011 - 2022. This suggests an expected mean percentage GA recipients (simple average of 3 model estimates of %GA) of `r print_mean_3`%. 
+
 
 #### Spinal Anaesthetic
 
 ```{r echo=TRUE, results='hide', message=FALSE}
-#| column: body-outset
-#| layout-nrow: 1
 ana <- read.csv("./NHFD_Data/ana_apr_22.csv")
 names(ana)
 names(ana) <-c("my", 
@@ -332,12 +311,6 @@ names(ana) <-c("my",
 spinal <- ana %>% select(my, spinal)
 spinal$my <- lubridate::my(spinal$my) 
 ts_spinal <- spinal %>% mutate(my = tsibble::yearmonth(my)) %>% tsibble()
-
-p <- spinal |> ggplot() + geom_line(aes(x=my, y=spinal)) +
-  labs(x="Month-Year of discharge", 
-       title="#NOF pts discharged from Wythenshawe after spinal", 
-       subtitle = "Data courtesy of the NHFD", y="Spinal Anaesthetic (%)")
-p
 
 fable_4 <- ts_spinal%>% model(  
   ets = ETS(spinal ~ error("M") + trend("M") + season("M")),
@@ -367,15 +340,57 @@ print_mean_4 <- mean(c(ets_mean,
                        prophet_mean)) |> round(2)
 ```
 
-A forecast based on the percentage of patients discharged from Wythenshawe who had a Spinal Anaesthetic over the period 2011 - 2022. This suggests an expected mean percentage Spinal recipients (simple average of 3 model estimates of %Spinal) of `r print_mean_4`%. 
+A forecast based on the percentage of patients discharged from Wythenshawe who had a Spinal Anaesthetic over the period 2011 - 2022. This suggests an expected mean percentage Spinal recipients (simple average of 3 model estimates of %Spinal) of `r print_mean_4`%. The REGAIN study did not find a statistically significant difference in the incidence  of new-onset delirium in 2 group 
+
+## Delirium
+
+```{r echo=TRUE, results='hide', message=FALSE}
+
+delirium <- read.csv("./NHFD_Data/delirium_postop.csv")
+names(delirium) <- c("my", "delirious")
+delirium$my <- lubridate::my(delirium$my) 
+ts_delirium <- delirium %>% mutate(my = tsibble::yearmonth(my)) %>% tsibble()
+
+fable_5 <- ts_delirium%>% model(  
+  ets = ETS(delirious ~ error("M") + trend("M") + season("M")),
+  arima = ARIMA(delirious ~ 0 + pdq(1, 1, 1) + PDQ(1, 1, 1)),
+  prophet = prophet(delirious ~ growth("linear") + 
+                      season("year", 
+                             type = "multiplicative"))
+)
+forecast_5 <- forecast(fable_5, h = "3 years")
+autoplot(forecast_5, data=delirium, level=c(80,95)) +
+  labs(x="Month-Year of discharge", 
+       title="ARIMA/ETS/Prophet models predicting percentage of  patients
+       delirium-free postop", 
+       subtitle = "Data courtesy of the NHFD", y="Delirium-free (4AT) (%)")
+arima_means <- forecast_5 %>% filter(.model=='arima')
+arima_mean <- mean(arima_means$.mean)
+ets_means <- forecast_5 %>% filter(.model=='ets')
+ets_mean <- mean(ets_means$.mean)
+prophet_means <- forecast_5 %>% 
+  filter(.model=='prophet')
+prophet_mean <- mean(prophet_means$.mean)
+print_mean_5 <- mean(c(ets_mean, 
+                       arima_mean,
+                       prophet_mean)) |> round(2)
+```
+
+Delirium is assessed using [the 4AT](http://the4at.com). Forecasting the percentage of patients who remain delirium free after their surgery using the ARIMA, ETS and Prophet models results in an estimate (mean) of `r print_mean_5`%. This means `r 100 - print_mean_5`% of participants will suffer delirium as defined by screening with the 4AT. 
+
+If `r print_mean` people present per month, of whom `r 100 - print_mean_5`% become or remain delirious during the postoperative period, we would expect an effective sample size of `r 100 - print_mean_5`% of randomised patients, with significant zero inflation. 
 
 
 
+## Potential outcome measures
+### The 4AT (used for KPI and recommended for screening)
 
+### CAM-ICU-7
 
+### BASIL extended scale 
 
+### DRS-R-98
 
-## Outcome measures
 ### OSLA scale
 
 ![OSLA](images/Delirium-assessment-tool-OSLA.png){fig-align="center" width=400}
@@ -491,6 +506,11 @@ total_pop_4 |>hist(main="Histogram IV of OSLA scores (moderate)",
                    xlab="OSLA score")
 
 ```
+
+## Confounder scales
+### IQCODE
+
+
 :::
 
 ## Frequentist simulation
@@ -506,3 +526,5 @@ total_pop_4 |>hist(main="Histogram IV of OSLA scores (moderate)",
 **Assumption**: There may be significant difference in the "deliriogenic" potential of different anaesthetic methods (spinal/GA) in those presenting to the ED with hip fractures. The descriptive statistics for Wythenshawe hospital can be found above
 
 **Solution** Because the nature of the anaesthetic (spinal versus general) may relate to the nature of the participants' comorbidities and the presence or absence of preoperative delirium, we will use a minimisation strategy to ensure equal numbers of spinal and general anaesthetic procedures in each trial arm. The numbers of participants having GA will vary month-month, but in the forecast above the split is approximately 50/50.
+
+## References

@@ -7,47 +7,51 @@ library(tsibble)
 library(tsibbledata)
 library(feasts)
 library(urca)
-surg <- read.csv("./NHFD_Data/surgery_apr_22.csv")
-names(surg) <-c("my", "nail", "nail_annual",
-                "sliding_hs", "sliding_hs_annual",
-                "cemented_arthro",  "cemented_arthro_annual",
-                "THR", "THR_annual",
-                "sliding_a1a2", "sliding_a1a2_annual")
-surg <- surg %>% select(my, nail, cemented_arthro, sliding_hs, THR)
-surg$my <- lubridate::my(surg$my)
-ts_surg <- surg %>% mutate(my = tsibble::yearmonth(my)) %>% tsibble()
+delirium <- read.csv("./NHFD_Data/delirium_postop.csv")
+names(delirium) <- c("my", "delirious")
+delirium$my <- lubridate::my(delirium$my)
+ts_delirium <- delirium %>% mutate(my = tsibble::yearmonth(my)) %>% tsibble()
 
-surg_long <- pivot_longer(surg, cols=c(2:5))
-names(surg_long) <- c("my", "procedure", "number")
-p <- surg_long |> ggplot(aes(x=my, y=number, fill=procedure)) +
-  geom_bar(position="stack", stat="identity")
-p
+p <- delirium |> ggplot() + geom_line(aes(x=my, y=delirious)) +
   labs(x="Month-Year of discharge",
-       title="Operative procedure of patients presenting to Wythenshawe Hospital with #NOF by month",
-       subtitle = "Data courtesy of the National Hip Fracture Database", y="Length of stay")
+       title="Percentage of patients delirium free postoperatively",
+       subtitle = "Data courtesy of the NHFD", y="Delirium-free (4AT) (%)")
 p
 
-fable_2 <- ts_acute_los %>% model(
-  ets = ETS(acutelos),
-  arima = ARIMA(acutelos),
-  snaive = SNAIVE(acutelos)
+
+fable_5 <- ts_delirium%>% model(
+  ets = ETS(delirious ~ error("M") + trend("M") + season("M")),
+  arima = ARIMA(delirious ~ 0 + pdq(1, 1, 1) + PDQ(1, 1, 1)),
+  prophet = prophet(delirious ~ growth("linear") +
+                      season("year",
+                             type = "multiplicative"))
 )
-forecast_2 <- forecast(fable_2, h = "3 years")
-autoplot(forecast_2, data=acute_los, level=c(80,95)) +
+forecast_5 <- forecast(fable_5, h = "3 years")
+autoplot(forecast_5, data=delirium, level=c(80,95)) +
   labs(x="Month-Year of discharge",
-       title="ARIMA/ETS/SNAIVE models predicting LOS of patients presenting to
-              Wythenshawe Hospital with #NOF",
-       subtitle = "Data courtesy of the National Hip Fracture Database",
-       y="Number of patients")
+       title="ARIMA/ETS/Prophet models predicting \n percentage of pts delirium free postop",
+       subtitle = "Data courtesy of the NHFD", y="Delirium-free (4AT) (%)")
 
-confint_f1 <- tapply(forecast_2 , FUN=hilo())
 
-hilo(forecast_2[[3]][[1]], 80)
-
-arima_means <- forecast_2 %>% filter(.model=='arima')
+arima_means <- forecast_5 %>% filter(.model=='arima')
 arima_mean <- mean(arima_means$.mean)
-ets_means <- forecast_2 %>% filter(.model=='ets')
+ets_means <- forecast_5 %>% filter(.model=='ets')
 ets_mean <- mean(ets_means$.mean)
-snaive_means <- forecast_2 %>% filter(.model=='snaive')
-snaive_mean <- mean(snaive_means$.mean)
-print_mean_2 <- mean(c(snaive_mean, ets_mean, arima_mean)) |> round(2)
+prophet_means <- forecast_5 %>%
+  filter(.model=='prophet')
+prophet_mean <- mean(prophet_means$.mean)
+print_mean_5 <- mean(c(ets_mean,
+                       arima_mean,
+                       prophet_mean)) |> round(2)
+print(print_mean_5)
+
+
+#--------------------------------------------------------------
+# Create a population of patients from which to sample
+# 80% of them score 0 on the ordinal rating scale
+# The other 20% are distributed as a half-normal with a ceiling
+## really need to investigate this and see how severity is in fact distributed
+##
+
+
+
