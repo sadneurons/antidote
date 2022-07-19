@@ -4,7 +4,7 @@ title: "Hip fracture"
 
 ## What is a hip fracture?
 
-
+65000 people fracture their hip every year in the UK. The vast majority of these people are over 65. Two thirds of them are women. Bone thinning (osteopenia) increases the risk of hip fracture and women are increased risk of osteopenia in later life. The hip is vulnerable to fracture during falls, and falls are the most comon cause fo hip fracture. Th risk of death in the 30 days after a hip fracture is 6.5%. This means one in every fifteen people who fracture their hip will have died within 30 days.
 
 ## Why do people fracture their hip?
 
@@ -12,6 +12,9 @@ title: "Hip fracture"
 
 ## How is it repaired?
 
+::: {.column-margin}
 ![Cemented](/images/cemented.jpg){width=400}
-
+:::
+::: {.column-margin}
 ![Sliding/Dynamic hip screw](/images/sliding_hip_screw.jpg){width=400}
+:::

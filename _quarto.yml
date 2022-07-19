@@ -28,7 +28,9 @@ website:
       - about.qmd
 format:
   html:
-    theme: darkly
+    theme:
+      light: pulse
+      dark: darkly
     css: styles.css
 
 editor: source
