@@ -2,7 +2,7 @@
 title: "Anakinra in the Treatment of Inflammation and Delirium after Orthopaedic Trauma and Repair (AnTIDOTe) Randomised Controlled Trial"
 subtitle: "Protocol version DRAFT 0.01"
 highlight-style: github
-bibliography: anakinra.bib
+bibliography: anakinra_refs.bib
 format:
   html:
     toc: true
