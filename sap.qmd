@@ -405,7 +405,6 @@ The OSLA scale is a 4-item scale with a minimum score of 0 and a maximum score o
 
 :::{.column-page}
 ![MDAS Page 1](images/MDAS_Page_1.jpg){width=300}
-
 ![MDAS Page 2](images/MDAS_Page_2.jpg){width=300}
 ![MDAS Page 3](images/MDAS_Page_3.jpg){width=300}
 :::

@@ -2,6 +2,7 @@
 title: "Anakinra in the Treatment of Inflammation and Delirium after Orthopaedic Trauma and Repair (AnTIDOTe) Randomised Controlled Trial"
 subtitle: "Protocol version DRAFT 0.01"
 highlight-style: github
+bibliography: anakinra.bib
 format:
   html:
     toc: true
@@ -482,24 +483,27 @@ In the UK, 65,000 people fracture their hip every year(3). On average, 7% of the
 
 **Hip fracture types**
 
-Fractures of the hip are divided into intra-capsular and extracapsular. The 
-"capsule" refers to the fibrous tissue containing a rich blood supply to the head of the hip which envelops the hip joint (ball:*femoral head* and socket:*acetabulum*). Intra-capsular fractures have the potential to disrupt the blood flow to the femoral head and cause avascular necrosis, especially if they are *displaced*. This is one of the reasons replacement of the femoral head, and the acetabulum (its socket) is preferred in intracapsular fractures. Extracapsular fractures occur outside the capsule and are less likely to disrupt bloodflow, occuring as they do in vascular "cancellous" bone. Thesee can be managed using a dynamic (or sliding) hip screw. Extracapsular fractres can also be subdivided into stable and unstable, depending on the radiographic appearance of the lesser trochanter fragment.
+Fractures of the hip are divided into intra-capsular and extracapsular. The "capsule" refers to the fibrous tissue containing a rich blood supply to the head of the hip which envelops the hip joint (ball:*femoral head* and socket:*acetabulum*). Intra-capsular fractures have the potential to disrupt the blood flow to the femoral head and cause avascular necrosis, especially if they are *displaced*. This is one of the reasons replacement of the femoral head, and the acetabulum (its socket) is preferred in intracapsular fractures. Extracapsular fractures occur outside the capsule and are less likely to disrupt bloodflow, occuring as they do in vascular "cancellous" bone. These can be managed using a 'dynamic' (or 'sliding') hip screw. Extracapsular fractures can also be subdivided into stable and unstable, depending on the radiographic appearance of the lesser trochanter fragment.
 
-Four aspects of compliance with NICE recommendations have been combined into a single key performance indicator, KPI 3 (NHFD Report 2021):
+Four aspects of compliance with NICE recommendations have been combined into a single key performance indicator, (KPI 3; NHFD Report 2021):
 
 1. Patients with a subtrochanteric femoral fracture should be managed with an intramedullary (IM) nail fixation.
 2. Patients with A1 or A2 trochanteric fractures should receive fixation with an extra-medullary fixation device, such as sliding hip screw (SHS) rather than with an IM nail.
-3. Patients with a displaced intracapsular hip fracture should receive a cemented arthroplasty: either hemiarthroplasty
-or total hip arthroplasty (THA).
+3. Patients with a displaced intracapsular hip fracture should receive a cemented arthroplasty: either hemiarthroplasty or total hip arthroplasty (THA).
 4. Cemented THA rather than hemiarthroplasty should be offered to patients with a displaced intracapsular hip fracture who normally walk independently out of doors with no more than the use of a stick, who are not cognitively impaired and are medically fit for anaesthesia and the procedure.
 
 ![Displaced subcapital fracture](images/displaced_subcapital.png){width=500}
 
 ![Stable (left) and unstable (right) extracapsular fracture](images/stable_intertrochanteric.jpg){width=500}
 
-#### Review of existing evidence
 
-**Pre-clinical:** IL-1 is a pro-inflammatory cytokine pivotal to the earliest stages of inflammatory response(7). It induces IL-6 and IL-8 gene expression and promotes lymphocyte differentiation and cellular immune response. The most prevalent preclinical model of delirium uses injection of bacterial lipopolysaccharide (LPS) to switch on the inflammatory cascade. IL-1 in isolation can mimic the cognitive effects of LPS in this model(8). Blockade of IL-1 action using recombinant receptor antagonists prevents the pro-inflammatory effects of LPS in these animal models of delirium(8). Thus, blockade of this early, amplifying step in the pro-inflammatory cytokine cascade may prevent cognitive deterioration.
+#### Review of existing evidence
+**Risk factors for delirium after hip repair**
+The most recent comprehensive meta-analysis, with data from 2090 people with delirium found that age over 80 years, pre-existing dementia and living in 24h care increased the odds ratio of delirium after hip repair [@Smith2017]. They found no association of operative factors with the risk of delirium.
+
+**
+
+**Pre-clinical:** IL-1 is a pro-inflammatory cytokine pivotal to the earliest stages of inflammatory response(7). IL-1 induces pro-inflammatory IL-6 and IL-8 gene expression and promotes lymphocyte differentiation and cellular immune response. The most prevalent preclinical model of delirium uses injection of bacterial lipopolysaccharide (LPS) to switch on the inflammatory cascade. IL-1 in isolation can mimic the cognitive effects of LPS in this model(8). Blockade of IL-1 action using recombinant receptor antagonists prevents the pro-inflammatory effects of LPS in these animal models of delirium(8). Thus, blockade of this early, amplifying step in the pro-inflammatory cytokine cascade may prevent cognitive deterioration.
 
 **Clinical:** In humans, IL-1 is a key driver of neuroinflammation after hip fracture, with raised CSF and serum levels(9).
 
