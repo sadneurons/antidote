@@ -1,7 +1,7 @@
 ---
 title: "Anakinra in the Treatment of Inflammation and Delirium after Orthopaedic Trauma and Repair (AnTIDOTe) Randomised Controlled Trial"
 subtitle: "Protocol version DRAFT 0.01"
-highlight-style: github
+highlight-style: dracula
 bibliography: anakinra_refs.bib
 format:
   html:
@@ -17,6 +17,8 @@ IRAS_NUMBER <- 318609
 EUDRACT_NUMBER <- FALSE
 CLINICAL_TRIALS.GOV_NUMBER <- FALSE
 ISRCTN_NUMBER <- FALSE
+PROTOCOL_VERSION <- "0.1" 
+PROTOCOL_DATE <- "18th July 2022"
 ```
 
 \newpage
@@ -39,7 +41,7 @@ ISRCTN_NUMBER <- FALSE
 
 ### FULL/LONG TITLE OF THE TRIAL
 
-Anakinra in the treatment of inflammation and delirium in orthopaedic trauma and repair: a phase III, rater-blinded, bayesian-adaptive randomised placebo- controlled trial in people aged over 65 presenting with fractured neck of femur.
+Anakinra in the treatment of inflammation and delirium in orthopaedic trauma and repair: a phase II, rater-blinded, bayesian-adaptive randomised placebo-controlled trial in people aged over 65 presenting with fractured neck of femur.
 
 ### SHORT TRIAL TITLE / ACRONYM
 
@@ -54,7 +56,7 @@ Anakinra in the Treatment of Inflammation and Delirium after Orthopaedic Trauma 
 | IRAS                     |`r IRAS_NUMBER`| 
 | EUDRACT                  |        |
 | ClinicalTrials.gov       |        |
-| ISCRTN                   |        |
+| ISRCTN                   |        |
 | University of Manchester |        |
 | KCL CTU                  |        |
 
@@ -64,7 +66,7 @@ Anakinra in the Treatment of Inflammation and Delirium after Orthopaedic Trauma 
 
 ### PROTOCOL VERSION NUMBER AND DATE
 
-v0.1 7th July 2022
+`r paste0("Version:",PROTOCOL_VERSION," Date:",PROTOCOL_DATE)`
 
 ### SPONSOR
 
@@ -74,7 +76,7 @@ University of Manchester
 
 ### FULL/LONG TITLE OF THE TRIAL
 
-Anakinra in the treatment of inflammation and delirium in orthopaedic trauma and repair: a phase III, rater-blinded, bayesian-adaptive randomised placebo- controlled trial in people aged over 65 presenting with fractured neck of femur.
+Anakinra in the treatment of inflammation and delirium in orthopaedic trauma and repair: a phase II, rater-blinded, bayesian-adaptive randomised placebo-controlled trial in people aged over 65 presenting with fractured neck of femur.
 
 ```{r echo=FALSE}
 # Aim: To identify the Trial to enable retrieval from literature or internet searches. It should be immediately evident what the trial is investigating and on whom to allow rapid judgment of relevance.
@@ -88,6 +90,8 @@ Anakinra in the treatment of inflammation and delirium in orthopaedic trauma and
 ```
 
 ### SHORT TRIAL TITLE / ACRONYM
+
+AnTIDOTe-RCT
 
 ```{r echo=FALSE}
 ## Aim: To provide a summary of the long title. It is usually the title used on information sheets and consent forms for research participants or others giving consent or assent on their behalf.
@@ -107,6 +111,7 @@ Anakinra in the treatment of inflammation and delirium in orthopaedic trauma and
 # •	The changes made relative to the previous protocol version should be listed after submission
 # •	Post approval, any changes to the document should be clearly listed with new version control and a summary of changes. See Appendix 6.  
 ```
+`r paste0("Version:",PROTOCOL_VERSION," Date:",PROTOCOL_DATE)`
 
 ### RESEARCH REFERENCE NUMBERS
 
@@ -153,15 +158,20 @@ I also confirm that I will make the findings of the trial publically available t
 
 **For and on behalf of the Trial Sponsor:**
 
-Signature: Date: ..07..../...08.../..2022... Name (please print): **Dr. Ross A. Dunne** Position: **Honorary Senior Lecturer**
+Signature: 
+Date: ..07..../...08.../..2022... 
+Name (please print): 
+Position: .......................
 
-**Chief Investigator:** Signature:\ []
-Date: ....../....../...... Name: (please print):
+**Chief Investigator:** Signature:\ ![signature](/images/sig1.png){width=200}
+Date: ..07./..08../..2022.. Name: (please print):**Dr. Ross A. Dunne** Position: **Honorary Senior Lecturer**
 
 (Optional)
 
-**Statistician:** Signature:\
-Name: (please print): Position:\
+**Statistician:** 
+Signature:\
+Name: (please print): 
+Position:\
 \newpage
 
 ### Key Trial Contacts
@@ -193,11 +203,11 @@ Name: (please print): Position:\
 +---------------------------------+--------------------------------------------------------+
 | Statistician                    | TBD                                                    |
 +---------------------------------+--------------------------------------------------------+
-| Trials Pharmacist               | Beatriz Duran                                          |
+| Trials Pharmacist               | Dr. Beatriz Duran                                          |
 +---------------------------------+--------------------------------------------------------+
-| Committees                      | Data Monitoring and Ethics @sec-dmec                     |
+| Committees                      | Data Monitoring and Ethics [@sec-dmec]                |
 |                                 |                                                        |
-|                                 | Trial Steering Committee @sec-tsc                      |
+|                                 | Trial Steering Committee [@sec-tsc]                      |
 +---------------------------------+--------------------------------------------------------+
 
 : Key Contacts
@@ -313,13 +323,13 @@ Name: (please print): Position:\
 <!-- It may be useful to include a brief synopsis of the trial for quick reference. Complete information and, if required, add additional rows. -->
 
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Trial Title                                |                                                                                                                                                                             |
+| Trial Title                                | Anakinra in the treatment of inflammation and delirium in orthopaedic trauma and repair: a phase II, rater-blinded, bayesian-adaptive randomised placebo-controlled trial in people aged over 65 presenting with fractured neck of femur.                                                                                                                                                                            |
 +============================================+=============================================================================================================================================================================+
-| Internal Ref. no. (or short title)         | AmTIDOTe                                                                                                                                                                    |
+| Internal Ref. no. (or short title)         | AnTIDOTe                                                                                                                                                                    |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Clinical Phase                             | IIa                                                                                                                                                                         |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Trial Design                               | Randomised Controlled Rater Blind                                                                                                                                           |
+| Trial Design                               | Randomised, Controlled, Rater-Blind                                                                                                                                           |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Planned Sample Size                        | n=                                                                                                                                                                          |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -329,11 +339,11 @@ Name: (please print): Position:\
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                            | **Objectives**                                                                                                                                                              |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Primary                                    | To compare the efficacy of Anakinra with placebo in the treatment and prevention of delirium in participants over 65 undergoing surgical repair of fractured neck of femur  |
+| Primary                                    | To compare the efficacy of once daily Anakinra with placebo in the treatment and prevention of delirium in participants over 65 undergoing surgical repair of fractured neck of femur  |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Secondary                                  | To compare the efficacy of Anakinra with placebo in the time to recovery (first stand) in participants over 65 undergoing surgical repair of fractured neck of femur        |
+| Secondary                                  | To compare the efficacy of once daily Anakinra with placebo in the time to recovery (first stand) in participants over 65 undergoing surgical repair of fractured neck of femur        |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Exploratory                                | To compare the efficacy of Anakinra with placebo in the time to medical fitness for discharge in participants over 65 undergoing surgical repair of fractured neck of femur |
+| Exploratory                                | To compare the efficacy of once daily Anakinra with placebo in the time to medical fitness for discharge in participants over 65 undergoing surgical repair of fractured neck of femur |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                            | **Outcomes**                                                                                                                                                                |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -356,7 +366,7 @@ Name: (please print): Position:\
 
 ### ROLE OF TRIAL SPONSOR AND FUNDER
 
-The sponsor has had no role in the design of the protocol or trial. The sponsor maintains responsibility for trial conduct, indemnity, data security and oversight. The sponsor will ensure provision is made for insurance or indemnity to cover liabilities which may arise in relation to the design, management and conduct of the clinical trial. The sponsor will provide investigator(s) with the necessary information to conduct the clinical trial, ensure proper monitoring of the clinical study, ensure all necessary ethic review(s) and approval(s) are obtained. The sponsor will ensure that any reviewing ethics board and regulatory agencies are promptly informed of any significant new information (for example, important findings that affect product safety). The sponsor will ensure compliance with labelling, reporting and record-keeping requirements. The sponsor will ensure that the clinical study is conducted in accordance with Good Clinical Practice (GCP) and the Declaration of Helsinki. The sponsor will ensure that roles and responsibilities of the parties involved in the research and any delegation by the sponsor of its tasks are agreed and documented. The sponsor will ensure appropriate arrangements are made for making information about the research publicly available before it starts (unless a deferral is agreed by or on behalf of the research ethics committee); agreeing appropriate arrangements for making data and tissue accessible, with adequate consent and privacy safeguards, in a timely manner after it has finished; and ensuring arrangements for information about the findings of the research to be made available, including, where appropriate, to participants (For educational research, registration, accessibility of data and tissues, and dissemination may be limited to institutional arrangements). The sponsor will ensure that, where expected or required, the research has approval from a research ethics committee (Whether outright or following a provisional opinion, resubmission or appeal) and any other relevant approval bodies before it begins. The sponsor will verify that regulatory and practical arrangements are in place, before permitting the research to begin in a safe and timely manner. The sponsor will ensure adequate arrangements for finance and management of the research project, including its competent risk management and data management.
+The sponsor, University of Manchester has had no role in the design of the protocol or trial. The sponsor has reviewed draft trial protocols and data management plans. The sponsor maintains responsibility for trial conduct, indemnity, data security and oversight. The sponsor will ensure provision is made for insurance or indemnity to cover liabilities which may arise in relation to the design, management and conduct of the clinical trial. The sponsor will provide investigator(s) with the necessary information to conduct the clinical trial, ensure proper monitoring of the clinical study, ensure all necessary ethic review(s) and approval(s) are obtained. The sponsor will ensure that any reviewing ethics board and regulatory agencies are promptly informed of any significant new information (for example, important findings that affect product safety). The sponsor will ensure compliance with labelling, reporting and record-keeping requirements. The sponsor will ensure that the clinical study is conducted in accordance with Good Clinical Practice (GCP) and the Declaration of Helsinki. The sponsor will ensure that roles and responsibilities of the parties involved in the research and any delegation by the sponsor of its tasks are agreed and documented. The sponsor will ensure appropriate arrangements are made for making information about the research publicly available before it starts (unless a deferral is agreed by or on behalf of the research ethics committee); agreeing appropriate arrangements for making data and tissue accessible, with adequate consent and privacy safeguards, in a timely manner after it has finished; and ensuring arrangements for information about the findings of the research to be made available, including, where appropriate, to participants (For educational research, registration, accessibility of data and tissues, and dissemination may be limited to institutional arrangements). The sponsor will ensure that, where expected or required, the research has approval from a research ethics committee (Whether outright or following a provisional opinion, resubmission or appeal) and any other relevant approval bodies before it begins. The sponsor will verify that regulatory and practical arrangements are in place, before permitting the research to begin in a safe and timely manner. The sponsor will ensure adequate arrangements for finance and management of the research project, including its competent risk management and data management.
 
 <!-- Aim: To clarify the potential influence of sponsor and funders over the trial -->
 
@@ -380,17 +390,17 @@ The sponsor has had no role in the design of the protocol or trial. The sponsor 
 
 <!-- The TSC must have a majority independent representation, including the Chair, meet regularly and send reports to the sponsor. Lay members or patient representatives are desirable -->
 
-The Trial Steering Committee (TSC) will be of majority independent representation including participation by one or more lay persons, preferably with lived experience of delirium or caring for someone with delirium.
+The Trial Steering Committee (TSC) will be of majority independent representation including participation by one or more lay persons, preferably with lived experience of delirium or caring for someone with delirium. The TSC will meet quarterly at a minimum and to be quorate must have one lay member, the chair and two additional members.
 
 #### Data Monitoring and Ethics Committee {#sec-dmec}
 
-The Data Monitoring and Ethics Committee will be of independent representation where the committee members are completely uninvolved in the running of the trial and who cannot be unfairly influenced (either directly or indirectly) by people, or institutions, involved in the trial. At a minimum we will have one independent statistician, one lay member, one expert clinician (Chair)
+The Data Monitoring and Ethics Committee will be of independent representation where the committee members are completely uninvolved in the running of the trial and who cannot be unfairly influenced (either directly or indirectly) by people, or institutions, involved in the trial. At a minimum we will have one independent statistician, one lay member, one expert clinician (Chair). The DMEC will meet at least twice per year. To be quorate, the committee must have at least the chair, a statistician and one other member. Redacted ~(for blinding purposes) minutes of the DMEC will be posted on the trial website.
 
 <!--    Independence is a key characteristic of a Data Monitoring Committee where the committee members are completely uninvolved in the running of the trial and who cannot be unfairly influenced (either directly or indirectly) by people, or institutions, involved in the trial. -->
 
 #### Trial Management Group
 
-The Trial Management Group (TMG) will consist of the Scientific Advisory Committee, members of the Clinical Research Team, the Clinical Trials Unit (CTU) Team and
+The Trial Management Group (TMG) will consist of the Scientific Advisory Committee, members of the Clinical Research Team (CRT), the Clinical Trials Unit (CTU) Team and the trial manager. The TMG will met at a minimum every two weeks for the duration of the trial setup and data collection periods. To be quorate, the TMG must have at least the Chief Investigator, one member of the Clinical Research Team and one member of the CTU team. Minutes of the TMG meetings will be posted on the trial website. 
 
 <!--    The Trial Management Group should meet regularly to ensure all practical details of the trial are progressing well and working well and everyone within the trial understands them. -->
 

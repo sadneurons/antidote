@@ -16,6 +16,7 @@ bibliography: anakinra_refs.bib
 reference-location: margin
 citation-location: margin
 body-footer: "Copyright (c) 2022"
+highlight-style: dracula
 ---
 
 ## Part I: Sample size calculations for a randomised controlled trial in delirium {.unnumbered .unlisted}

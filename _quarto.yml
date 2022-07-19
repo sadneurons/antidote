@@ -34,4 +34,4 @@ format:
     css: styles.css
 
 editor: source
-
+highlight-style: dracula
