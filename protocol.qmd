@@ -545,12 +545,20 @@ However, we have specified a minimum clinically significant difference of 3 poin
 <!-- •  a brief description of the proposed trial -->
 **Aim** The aim of the research is to examine whether Anakinra can reduce the incidence of delirium post hip repair in older people. Anakinra is an interleukin-1 (IL-1) receptor antagonist licensed for the treatment of rheumatoid arthritis. It is given subcutaneously once daily, ideal for inpatients with delirium who may not be able to take oral medications. We will conduct a double-blind randomised controlled trial of Anakinra in older people after hip fracture.
 
-**Objectives** The objectives, in priority order, are to compare subcutaneous Anakinra to placebo given twice daily during the perioperative period in terms of: 1. (1°) Severity of delirium postoperatively as measured by the XXXXXXXX 2. (2°) Time to first weight bearing postoperatively 3. (3°) Time until medically fit for discharge postoperatively 4. (3°) Safety of Anakinra during the perioperative period and in wound healing 5. (3°) Tolerability of Anakinra versus placebo in terms of common side effects 6. (3°) Effect of Anakinra on 30-day mortality
+**Objectives** The objectives, in priority order, are to compare subcutaneous Anakinra to placebo given twice daily during the perioperative period in terms of: 
+1. (1°) Severity of delirium postoperatively as measured by the XXXXXXXX 
+2. (2°) Time to first weight bearing postoperatively 
+3. (3°) Time until medically fit for discharge postoperatively as documented in medical notes
+4. (3°) Safety of Anakinra during the perioperative period and in wound healing [note: to measure?]
+5. (3°) Tolerability of Anakinra versus placebo in terms of common side effects 
+6. (3°) Effect of Anakinra on 30-day mortality
 
 **Exclusion criteria:** 1. Lack of a study partner or caregiver 2. Active infection 3. History of hypersensitivity to or unacceptable side effects of Anakinra 4. Current substance misuse 5. Active malignancy 6. Acute stroke or TIA 7. Currently participating in clinical trial of an investigational medicinal product (CTIMP) 8. Women of child-bearing potential 9. Neutropenia of any cause.
 <!-- •  a description of the population to be studied -->
 
 We plan to conduct this research in a sample of people presenting to the Emergency department at Wythenshawe hospital in South Manchester. Since 2017, Wythenshawe Hospital has been the regional orthopaedic trauma centre, and receives over 40 patients per month with hip fractures. The vast majority of these fractures occur in the over 65s, with a median age of 75.  Higher energy injuries (for example, femoral fractures due to road traffic injuries in younger people) are usually triaged to the regional Major Trauma Centre at Manchester Royal Infirmary. Thus, the sample is pre-selected for older people with low-energy injuries, most often due to falls. Approximately 2/3 of hip fractures occur in women due to the increase in risk posed by postmenopausal osteopenia. 
+
+In order to establish base rates of recruitment, incidence of delirium and therefore the likely duration of the trial, we consulted the National Hip Fracture Database data for Wythenshawe hospital from May 2011 to May 2022 and used the average of three time series models (ARIMA, exponential state space and Prophet) to forecast likely changes over the lifetime of the trial. This results in an expected presentation rate fo patients with fractured neck of femur of 40 per month on average, increasing slightly over the course of the trial. In Wythenshawe hospital, approximately 20% of these people have delirium detected using the 4AT scale postoperatively (a national Key Performance Indicator (KPI)). This means 190 people would be expected to suffer delirium over a 2 year recruitment period. 
 <!-- •  the investigational product(s) and their mechanism of action -->
 
 Anakinra
@@ -558,7 +566,7 @@ Anakinra
 <!-- •  relevant data from preclinical/non-clinical studies -->
 
 <!-- •  relevant data from previous clinical trials such as efficacy, safety, tolerability, pharmacokinetics & pharmacodynamics -->
-This is the first use of Anakinra or any IL1RA in the treatment or prevention fo delirium in humans. Only one study mentioning a posthoc analysis of the occurence of delirium or not in the treatment of COVID19 in the Intensive Care setting is available. This was a comparison to  
+This is the first use of Anakinra or any IL1RA in the treatment or prevention of delirium in humans. However, preclinical data suggest that IL-R1A analogues suppress the inflammatory response in mice, leading to shorter and less severe responses to Lipopolysaccharide induced delirium. Anakinra has demonstrated significant benefit in those suffering from rheumatoid arthritis whose disease is not adequately controlled by Methotrexate. In these patients, significantly reduced levels of IL-1 are found. During the COVID-19 pandemic, Anakinra was established for use in people with severe lung disease due to SARS-Cov-19. Anakinra reduces the mortality in this group by  X%. This was associated with significant reductions in circulating IL-1. 
 <!-- •  if no data is available, include a statement that there is no available clinical research data to date on the investigational product -->
 
 <!-- It should be written so it is easy to read and understand by someone with a basic sense of the topic who may not necessarily be an expert in the area. Some explanation of terms and concepts is likely to be beneficial.  -->
